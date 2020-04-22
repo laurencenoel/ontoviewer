@@ -16,7 +16,7 @@ def my_view(request):
         } """
     headers = {'content-type' : 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
     myparam = { 'query': queryNodes }
-    endpoint = "http://localhost:8080/hdev/sparql"
+    endpoint = "http://localhost:80/hdev/sparql"
     r=requests.get(endpoint,myparam,headers=headers)    
     search = r.json()
     suggestions=[]
