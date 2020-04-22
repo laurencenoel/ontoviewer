@@ -6,10 +6,10 @@
         {"id":"Style","label":"Style","type":"string"}
       ],
   "rows": [
-        {"c":[{"v":"Zygote"},{"v":"Morulla"},{"v":1},{"v":"color:green"}]},
-        {"c":[{"v":"Morulla"},{"v":"Truc"},{"v":1},{"v":"color:red"}]},
-        {"c":[{"v":"Morulla"},{"v":"Cghdiuc"},{"v":1},{"v":"color:red"}]},
-        {"c":[{"v":"Truc"},{"v":"Yak"},{"v":1},{"v":"color:orange"}]},
-        {"c":[{"v":"Cghdiuc"},{"v":"Yuk"},{"v":1},{"v":"color:orange"}]}
+        {"c":[{"v":"Zygote"},{"v":"Morulla"},{"v":new Number("1")},{"v":"color:green"}]},
+        {"c":[{"v":"Morulla"},{"v":"Truc"},{"v":new Number("1")},{"v":"color:red"}]},
+        {"c":[{"v":"Morulla"},{"v":"Cghdiuc"},{"v":new Number("1")},{"v":"color:red"}]},
+        {"c":[{"v":"Truc"},{"v":"Yak"},{"v":new Number("1")},{"v":"color:orange"}]},
+        {"c":[{"v":"Cghdiuc"},{"v":"Yuk"},{"v":new Number("1")},{"v":"color:orange"}]}
       ]
 }
