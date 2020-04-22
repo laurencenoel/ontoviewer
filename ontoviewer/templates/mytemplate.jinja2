@@ -13,7 +13,7 @@
 	
 	 function drawChart() {
 	 
-	  $.getJSON({{request.static_url('ontoviewer:static/test.json')}}, function(jd) {
+	  $.getJSON("{{request.static_url('ontoviewer:static/test.json')}}", function(jd) {
 	  var data = new google.visualization.DataTable(jd);
       var chart = new google.visualization.Sankey(document.getElementById('chart_div'));
       chart.draw(data, {width: 400, height: 240});	  
