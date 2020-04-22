@@ -20,7 +20,7 @@
           async: false
           }).responseText;
 
-	 var data = new google.visualization.DataTable(jsonData);
+	 var data = new google.visualization.DataTable(JSON.parse(jsonData));
       var chart = new google.visualization.Sankey(document.getElementById('chart_div'));
       chart.draw(data, {width: 400, height: 240});	  
 
