@@ -1,0 +1,3 @@
+[run]
+source = ontoviewer
+omit = ontoviewer/test*
