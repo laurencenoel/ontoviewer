@@ -1,42 +1,50 @@
 {% extends "layout.jinja2" %}
 
 {% block scripts %}
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
- 
-     <script type="text/javascript">
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-sankey.min.js"></script>
 
-    google.charts.load('current', {'packages':['sankey']});	  
-    google.charts.setOnLoadCallback(drawChart);
-
-	
-	 function drawChart() {
-	 
-	 
-	      var jsonData = $.ajax({
-          url: "{{request.static_url('ontoviewer:static/test.json')}}",
-          dataType: "json",
-          async: false
-          }).responseText;
-
-	 var data = new google.visualization.DataTable(JSON.parse(jsonData));
-      var chart = new google.visualization.Sankey(document.getElementById('chart_div'));
-      chart.draw(data, {width: 400, height: 240});	  
-
-   }
-
-
-
-
-    </script>
- 
- 
- 
- 
  
 {% endblock scripts %}
 
 {% block content %}
- <div id="chart_div"></div>
+<div id="container"></div>
 {% endblock content %}
+
+{% block endscripts %}
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {from: "Canada",  to: "France",  weight: 2230000},
+      {from: "Canada",  to: "Germany", weight: 1990000},
+      {from: "Canada",  to: "Italy",   weight: 1180000},
+      {from: "Canada",  to: "Spain",   weight:  990000},
+      {from: "USA",     to: "France",  weight:  950000},
+      {from: "USA",     to: "Germany", weight: 2020000},
+      {from: "USA",     to: "Spain",   weight: 1110000}
+    ];
+
+    // create a chart and set the data
+    var chart = anychart.sankey(data);
+
+    // set the width of nodes
+    chart.nodeWidth("30%");
+
+    // set the curvature of the flows
+    chart.curveFactor(0);
+
+    // set the chart title
+    chart.title("Sankey Diagram: Flows (Curvature = 0)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+
+</script>
+ 
+{% endblock endscripts %}
