@@ -1,8 +1,37 @@
 {% extends "layout.jinja2" %}
 
+{% block scripts %}
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ 
+     <script type="text/javascript">
+
+    google.charts.load('current', {'packages':['sankey']});	  
+    google.charts.setOnLoadCallback(drawChart);
+
+	
+	 function drawChart() {
+	 
+	  $.getJSON('result.json', function(jd) {
+	  var data = new google.visualization.DataTable(jd);
+      var chart = new google.visualization.Sankey(document.getElementById('chart_div'));
+      chart.draw(data, {width: 400, height: 240});	  
+	  }
+   
+    }
+	
+
+
+
+    </script>
+ 
+ 
+ 
+ 
+ 
+{% endblock scripts %}
+
 {% block content %}
-<div class="content">
-  <h1><span class="font-semi-bold">Pyramid</span> <span class="smaller">Starter project</span></h1>
-  <p class="lead">Welcome to <span class="font-normal">{{project}}</span>, a&nbsp;Pyramid application generated&nbsp;by<br><span class="font-normal">Cookiecutter</span>.</p>
-</div>
+ <div id="chart_div"></div>
 {% endblock content %}

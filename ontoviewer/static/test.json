@@ -1,0 +1,15 @@
+{
+  "cols": [
+        {"label":"From","type":"string"},
+        {"label":"To","type":"string"},
+        {"label":"Weight","type":"number"},
+        {"label":"Style","type":"string"}
+      ],
+  "rows": [
+        {"c":[{"v":"Zygote"},{"v":"Morulla"},{"v":1},{"v":"color:green"}]},
+        {"c":[{"v":"Morulla"},{"v":"Truc"},{"v":1},{"v":"color:red"}]},
+        {"c":[{"v":"Morulla"},{"v":"Cghdiuc"},{"v":1},{"v":"color:red"}]},
+        {"c":[{"v":"Truc"},{"v":"Yak"},{"v":1},{"v":"color:orange"}]},
+        {"c":[{"v":"Cghdiuc"},{"v":"Yuk"},{"v":1},{"v":"color:orange"}]}
+      ]
+}
