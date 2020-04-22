@@ -22,13 +22,12 @@ anychart.onDocumentReady(function () {
     var chart = anychart.sankey(data);
 
     // set the width of nodes
-    chart.nodeWidth("30%");
+    chart.nodeWidth("10%");
 
-    // set the curvature of the flows
-    chart.curveFactor(0);
+	chart.nodePadding(20);
 
     // set the chart title
-    chart.title("Sankey Diagram: Flows (Curvature = 0)");
+    chart.title("Human Development");
 
     // set the container id
     chart.container("container");
