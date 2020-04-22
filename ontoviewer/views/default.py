@@ -12,8 +12,8 @@ def my_view(request):
         SELECT ?from ?to
         WHERE {
         ?period (rdfs:subClassOf / <http://www.w3.org/2002/07/owl#someValuesFrom>)* <http://purl.obolibrary.org/obo/HsapDv_0000045> .
-        #?period <http://purl.obolibrary.org/obo/hsapdv#start_dpf> ?day2 . 
-        #FILTER (?day2 < 10 ) 
+        ?period <http://purl.obolibrary.org/obo/hsapdv#start_dpf> ?day2 . 
+        FILTER (?day2 < 10 ) 
         ?period oboInOwl:hasDbXref ?startCS .
         FILTER regex(str(?startCS), "EHDAA")
         BIND (IRI(CONCAT("http://purl.obolibrary.org/obo/ehdaa2#",strafter(?startCS,":"))) AS ?startCS2)
