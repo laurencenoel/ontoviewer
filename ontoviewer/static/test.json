@@ -1,9 +1,9 @@
 {
   "cols": [
-        {"label":"From","type":"string"},
-        {"label":"To","type":"string"},
-        {"label":"Weight","type":"number"},
-        {"label":"Style","type":"string"}
+        {"id":"From","label":"From","type":"string"},
+        {"id":"To","label":"To","type":"string"},
+        {"id":"Weight","label":"Weight","type":"number"},
+        {"id":"Style","label":"Style","type":"string"}
       ],
   "rows": [
         {"c":[{"v":"Zygote"},{"v":"Morulla"},{"v":1},{"v":"color:green"}]},
