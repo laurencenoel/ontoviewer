@@ -1,15 +1,9 @@
-{
-  "cols": [
-        {"id":"From","label":"From","type":"string"},
-        {"id":"To","label":"To","type":"string"},
-        {"id":"Weight","label":"Weight","type":"number"},
-        {"id":"Style","label":"Style","type":"string"}
-      ],
-  "rows": [
-        {"c":[{"v":"Zygote"},{"v":"Morulla"},{"v":new Number("1")},{"v":"color:green"}]},
-        {"c":[{"v":"Morulla"},{"v":"Truc"},{"v":new Number("1")},{"v":"color:red"}]},
-        {"c":[{"v":"Morulla"},{"v":"Cghdiuc"},{"v":new Number("1")},{"v":"color:red"}]},
-        {"c":[{"v":"Truc"},{"v":"Yak"},{"v":new Number("1")},{"v":"color:orange"}]},
-        {"c":[{"v":"Cghdiuc"},{"v":"Yuk"},{"v":new Number("1")},{"v":"color:orange"}]}
-      ]
-}
+[
+      {from: "Canada",  to: "France",  weight: 1},
+      {from: "Canada",  to: "Germany", weight: 1},
+      {from: "Canada",  to: "Italy",   weight: 1},
+      {from: "Canada",  to: "Spain",   weight:  1},
+      {from: "USA",     to: "France",  weight:  1},
+      {from: "USA",     to: "Germany", weight: 1},
+      {from: "USA",     to: "Spain",   weight: 1}
+]

@@ -16,15 +16,7 @@
 anychart.onDocumentReady(function () {
 
     // create data
-    var data = [
-      {from: "Canada",  to: "France",  weight: 2230000},
-      {from: "Canada",  to: "Germany", weight: 1990000},
-      {from: "Canada",  to: "Italy",   weight: 1180000},
-      {from: "Canada",  to: "Spain",   weight:  990000},
-      {from: "USA",     to: "France",  weight:  950000},
-      {from: "USA",     to: "Germany", weight: 2020000},
-      {from: "USA",     to: "Spain",   weight: 1110000}
-    ];
+    var data = {{ jsond|tojson|safe }};
 
     // create a chart and set the data
     var chart = anychart.sankey(data);
