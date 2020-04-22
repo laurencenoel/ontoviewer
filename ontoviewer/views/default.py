@@ -3,7 +3,7 @@ from pyramid.view import view_config
 
 @view_config(route_name='home', renderer='../templates/mytemplate.jinja2')
 def my_view(request):
-    var data =  """[
+    data =  """[
         {from: "Canada",  to: "France",  weight: 1},
         {from: "Canada",  to: "Germany", weight: 1},
         {from: "Canada",  to: "Italy",   weight: 1},
