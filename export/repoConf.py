@@ -1,6 +1,7 @@
 from pyramid.config import Configurator
 from pyramid.threadlocal import get_current_registry
 
+
 registry = get_current_registry()
 settings = registry.settings
 if settings == None :
