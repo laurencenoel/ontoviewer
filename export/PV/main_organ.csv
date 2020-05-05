@@ -1,0 +1,31 @@
+"IDENTIFIER","CONCEPT_CODE","DEFINITION","value","PUBLIC_ID"
+UBERON_0002369,ADG,,"adrenal gland",main_organ
+UBERON_0000955,BRA,,"brain",main_organ
+UBERON_0001155,COL,,"colon",main_organ
+UBERON_0010084,DIA,,"diaphragm",main_organ
+UBERON_0001690,EAR,,"ear",main_organ
+UBERON_0001043,ESO,,"esophagus",main_organ
+UBERON_0000970,EYE,,"eye",main_organ
+UBERON_0002110,GAB,,"gall bladder",main_organ
+UBERON_0000045,GAN,,"ganglion",main_organ
+UBERON_0000991,GON,,"gonad",main_organ
+UBERON_0000948,HEA,,"heart",main_organ
+UBERON_0005057,IMO,,"immune organ",main_organ
+UBERON_0002113,KID,,"kidney",main_organ
+UBERON_0000059,LAI,,"large intestine",main_organ
+UBERON_0002107,LIV,,"liver",main_organ
+UBERON_0002048,LUN,,"lung",main_organ
+UBERON_0001264,PAN,,"pancreas",main_organ
+UBERON_0000065,RET,,"respiratory tract",main_organ
+UBERON_0004765,SKE,,"skeletal element",main_organ
+UBERON_0002097,SKB,,"skin of body",main_organ
+UBERON_0002108,SMI,,"small intestine",main_organ
+UBERON_0002240,SPC,,"spinal cord",main_organ
+UBERON_0000945,STO,,"stomach",main_organ
+UBERON_0002046,THY,,"thyroid",main_organ
+UBERON_0001723,TON,,"tongue",main_organ
+UBERON_0002331,UMC,,"umbilical cord",main_organ
+UBERON_0000057,URE,,"urethra",main_organ
+UBERON_0001255,URB,,"urinary bladder",main_organ
+UBERON_0000995,UTE,,"uterus",main_organ
+HUDECA_0000002,OTH,,"other",main_organ
