@@ -8,7 +8,7 @@ import requests
 import csv
 
 requestURL = HCAOQUERY
-print(requestUrl)
+print(requestURL)
 
 def print_usage():
     """Print a help message."""
