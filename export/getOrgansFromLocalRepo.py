@@ -36,7 +36,7 @@ def getAxiomChildren(broader,withLabel=False,exception=[]) :
     ?s_axiom owl:someValuesFrom obo-term:{broader} .  
     ?s rdfs:label ?label .
     FILTER NOT EXISTS {{?s rdfs:subClassOf* <http://purl.obolibrary.org/obo/UBERON_0000064>}}
-    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
+    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
     }}
     """.format(broader=broader)
         
@@ -49,10 +49,12 @@ def getAxiomChildren(broader,withLabel=False,exception=[]) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        if withLabel : 
-            childrenList.append([identifier,label])
-        else : 
-            childrenList.append(identifier)       
+        if "CL_" not in identifier and identifier not in exception :
+            if withLabel : 
+                
+                childrenList.append([identifier,label])
+            else : 
+                childrenList.append(identifier)       
        
     return childrenList
 
@@ -68,7 +70,7 @@ def getChildren(broader,withLabel=False,exception=[]) :
     ?s rdfs:subClassOf*  obo-term:{broader} . 
     ?s rdfs:label ?label .
     FILTER NOT EXISTS {{?s rdfs:subClassOf* <http://purl.obolibrary.org/obo/UBERON_0000064>}}
-    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
+    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
     }}
     """.format(broader=broader)
     
@@ -84,10 +86,11 @@ def getChildren(broader,withLabel=False,exception=[]) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        if withLabel : 
-            childrenList.append([identifier,label])
-        else : 
-            childrenList.append(identifier)       
+        if "CL_" not in identifier and identifier not in exception :
+            if withLabel : 
+                childrenList.append([identifier,label])
+            else : 
+                childrenList.append(identifier)       
         
         axiomChildren = getAxiomChildren(identifier,withLabel,exception)
         childrenList = childrenList + axiomChildren
