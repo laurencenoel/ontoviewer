@@ -35,11 +35,14 @@ def getAxiomChildren(broader,withLabel=False,exception=[]) :
     ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
     ?s_axiom owl:someValuesFrom obo-term:{broader} .  
     ?s rdfs:label ?label .
-    FILTER NOT EXISTS {{?s rdfs:subClassOf* <http://purl.obolibrary.org/obo/UBERON_0000064>}}
-    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064>}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
     }}
     """.format(broader=broader)
-        
+
+    #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
+ 
     myparam = { 'query': query}
     headers = {'Accept' : 'application/sparql-results+json'}
     r=requests.get(requestURL,params=myparam, headers=headers)
@@ -60,7 +63,7 @@ def getAxiomChildren(broader,withLabel=False,exception=[]) :
 
 
 def getChildren(broader,withLabel=False,exception=[]) : 
-    print("get subclasses that are not part of Organ part")
+    print("get subclasses that are not part of Organ part and cell")
     childrenList = []
     query = """
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -69,11 +72,14 @@ def getChildren(broader,withLabel=False,exception=[]) :
     SELECT distinct ?s ?label {{
     ?s rdfs:subClassOf*  obo-term:{broader} . 
     ?s rdfs:label ?label .
-    FILTER NOT EXISTS {{?s rdfs:subClassOf* <http://purl.obolibrary.org/obo/UBERON_0000064>}}
-    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064>}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
     }}
     """.format(broader=broader)
     
+    #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
+ 
     print(query)
     
     myparam = { 'query': query}
@@ -86,7 +92,7 @@ def getChildren(broader,withLabel=False,exception=[]) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        if "CL_" not in identifier and identifier not in exception :
+        if identifier not in exception :
             if withLabel : 
                 childrenList.append([identifier,label])
             else : 
@@ -143,17 +149,22 @@ if __name__ == "__main__":
             dico[child] = elt
 
     print("Get all organs, find their parents, and create file")
-    resultStr = 'IDENTIFIER,CONCEPT_CODE,DEFINITION,PARENT_IDENTIFIER,value'
+    resultStr = 'IDENTIFIER,CONCEPT_CODE,DEFINITION,PARENT_IDENTIFIER,value\n'
     
     organList = getChildren("UBERON_0000062", True, parentList)
     #print("remove duplicates if any")
     #organList = list(dict.fromkeys(organList))
     
+    exceptLabels =  ["compound organ","system element","region element","segment organ","-derived structure","subdivision of","mammalian","adult","right","left"]
+ 
+    
     for organ in organList :
         identifier = organ[0]
         label = organ[1]
-        parentId = askParent(identifier)
-        resultStr+=identifier+',"","","'+parentId+'","'+label+'"\n'
+        for exceptLab in exceptLabels : 
+            if exceptLab not in label : 
+                parentId = askParent(identifier)
+                resultStr+=identifier+',"","","'+parentId+'","'+label+'"\n'
     
     
     with open("PV/organs.csv", "w") as f:
