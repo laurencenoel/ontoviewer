@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
-"""Query OBO endpoint."""
-from export.repoConf import *
+from repoConf import *
 
 import sys
 import getopt
