@@ -52,10 +52,7 @@ def getAxiomChildren(broader,withLabel=False,exception=[]) :
             childrenList.append([identifier,label])
         else : 
             childrenList.append(identifier)       
-        
-        axiomChildren = getAxiomChildren(identifier,withLabel,exception)
-        childrenList = childrenList + axiomChildren
-        
+       
     return childrenList
 
 
@@ -91,7 +88,7 @@ def getChildren(broader,withLabel=False,exception=[]) :
         else : 
             childrenList.append(identifier)       
         
-        axiomChildren = getAxiomChildren(uri,withLabel,exception)
+        axiomChildren = getAxiomChildren(identifier,withLabel,exception)
         childrenList = childrenList + axiomChildren
         
     return childrenList
