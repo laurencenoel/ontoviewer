@@ -22,7 +22,7 @@ Arguments:
 """
     )
     
-def getAxiomChildren(broader,withLabel=False,exception=[]) : 
+def getAxiomChildren(broader,withLabel=False) : 
     print("get axiom subclasses that are not part of Organ part")
     childrenList = []
 
@@ -52,16 +52,19 @@ def getAxiomChildren(broader,withLabel=False,exception=[]) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        if identifier not in exception :
-            if withLabel :                 
-                childrenList.append([identifier,label])
-            else : 
-                childrenList.append(identifier)       
+
+        if withLabel :                 
+            childrenList.append([identifier,label])
+        else : 
+            childrenList.append(identifier)     
+
+        childList = getChildren(identifier,withLabel)
+        childrenList = childrenList + childList
        
     return childrenList
 
 
-def getChildren(broader,withLabel=False,exception=[]) : 
+def getChildren(broader,withLabel=False : 
     print("get subclasses that are not part of Organ part and cell and tissue")
     childrenList = []
     query = """
@@ -71,9 +74,9 @@ def getChildren(broader,withLabel=False,exception=[]) :
     SELECT distinct ?s ?label {{
     ?s rdfs:subClassOf+  obo-term:{broader} . 
     ?s rdfs:label ?label .
-    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
     FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
-    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
     }}
     """.format(broader=broader)
     
@@ -91,13 +94,12 @@ def getChildren(broader,withLabel=False,exception=[]) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        if identifier not in exception :
-            if withLabel : 
-                childrenList.append([identifier,label])
-            else : 
-                childrenList.append(identifier)       
+        if withLabel : 
+            childrenList.append([identifier,label])
+        else : 
+            childrenList.append(identifier)       
         
-        axiomChildren = getAxiomChildren(identifier,withLabel,exception)
+        axiomChildren = getAxiomChildren(identifier,withLabel)
         childrenList = childrenList + axiomChildren
         
     return childrenList
@@ -150,7 +152,7 @@ if __name__ == "__main__":
     print("Get all organs, find their parents, and create file")
     resultStr = 'IDENTIFIER,CONCEPT_CODE,DEFINITION,PARENT_IDENTIFIER,value\n'
     
-    organList = getChildren("UBERON_0000062", True, parentList)
+    organList = getChildren("UBERON_0000062", True)
     #print("remove duplicates if any")
     #organList = list(dict.fromkeys(organList))
     
@@ -158,10 +160,11 @@ if __name__ == "__main__":
  
     
     for organ in organList :
-        identifier = organ[0]
-        label = organ[1]
-        parentId = askParent(identifier)
-        resultStr+=identifier+',"","","'+parentId+'","'+label+'"\n'
+        if organ not in parentList :
+            identifier = organ[0]
+            label = organ[1]
+            parentId = askParent(identifier)
+            resultStr+=identifier+',"","","'+parentId+'","'+label+'"\n'
     
     
     with open("PV/organs.csv", "w") as f:
