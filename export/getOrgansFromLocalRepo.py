@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """Query OBO endpoint."""
-from ontoviewer.export.repoConf import *
+from export.repoConf import *
 
 import sys
 import getopt
