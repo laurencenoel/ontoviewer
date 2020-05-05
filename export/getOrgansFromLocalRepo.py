@@ -52,9 +52,8 @@ def getAxiomChildren(broader,withLabel=False,exception=[]) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        if "CL_" not in identifier and identifier not in exception :
-            if withLabel : 
-                
+        if identifier not in exception :
+            if withLabel :                 
                 childrenList.append([identifier,label])
             else : 
                 childrenList.append(identifier)       
@@ -155,16 +154,14 @@ if __name__ == "__main__":
     #print("remove duplicates if any")
     #organList = list(dict.fromkeys(organList))
     
-    exceptLabels =  ["compound organ","system element","region element","segment organ","-derived structure","subdivision of","mammalian","adult","right","left"]
+    #exceptLabels =  ["compound organ","system element","region element","segment organ","-derived structure","subdivision of","mammalian","adult","right","left"]
  
     
     for organ in organList :
         identifier = organ[0]
         label = organ[1]
-        for exceptLab in exceptLabels : 
-            if exceptLab not in label : 
-                parentId = askParent(identifier)
-                resultStr+=identifier+',"","","'+parentId+'","'+label+'"\n'
+        parentId = askParent(identifier)
+        resultStr+=identifier+',"","","'+parentId+'","'+label+'"\n'
     
     
     with open("PV/organs.csv", "w") as f:
