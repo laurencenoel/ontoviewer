@@ -8,6 +8,7 @@ import requests
 import csv
 
 requestURL = HCAOQUERY
+unique = {}
 
 
 def print_usage():
@@ -35,9 +36,10 @@ def getAxiomChildren(broader,withLabel=False) :
     ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
     ?s_axiom owl:someValuesFrom obo-term:{broader} .  
     ?s rdfs:label ?label .
-    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
     FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
-    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
+    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left","i"))}}
     }}
     """.format(broader=broader)
 
@@ -52,14 +54,15 @@ def getAxiomChildren(broader,withLabel=False) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
+        if identifier not in unique.keys() : 
+            unique[identifier] = label
+            if withLabel :                 
+                childrenList.append([identifier,label])
+            else : 
+                childrenList.append(identifier)     
 
-        if withLabel :                 
-            childrenList.append([identifier,label])
-        else : 
-            childrenList.append(identifier)     
-
-        childList = getChildren(identifier,withLabel)
-        childrenList = childrenList + childList
+            childList = getChildren(identifier,withLabel)
+            childrenList = childrenList + childList
        
     return childrenList
 
@@ -77,6 +80,7 @@ def getChildren(broader,withLabel=False) :
     FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
     FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
     FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
+    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left","i"))}}
     }}
     """.format(broader=broader)
     
@@ -94,13 +98,15 @@ def getChildren(broader,withLabel=False) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        if withLabel : 
-            childrenList.append([identifier,label])
-        else : 
-            childrenList.append(identifier)       
+        if identifier not in unique.keys() : 
+            unique[identifier] = label
+            if withLabel : 
+                childrenList.append([identifier,label])
+            else : 
+                childrenList.append(identifier)       
         
-        axiomChildren = getAxiomChildren(identifier,withLabel)
-        childrenList = childrenList + axiomChildren
+            axiomChildren = getAxiomChildren(identifier,withLabel)
+            childrenList = childrenList + axiomChildren
         
     return childrenList
 
