@@ -22,7 +22,7 @@ Arguments:
 """
     )
     
-def getAxiomChildren(uri,withLabel=False,exception=[]) : 
+def getAxiomChildren(broader,withLabel=False,exception=[]) : 
     childrenList = []
 
     query = """
@@ -53,7 +53,7 @@ def getAxiomChildren(uri,withLabel=False,exception=[]) :
         else : 
             childrenList.append(identifier)       
         
-        axiomChildren = getAxiomChildren(uri,withLabel)
+        axiomChildren = getAxiomChildren(identifier,withLabel,exception)
         childrenList = childrenList + axiomChildren
         
     return childrenList
