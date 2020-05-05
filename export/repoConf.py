@@ -7,7 +7,7 @@ settings = registry.settings
 if settings == None :
     import configparser
     config = configparser.ConfigParser()
-    config.read('../../development.ini')
+    config.read('../development.ini')
     settings=config['app:main']
 
 HCAOQUERY = settings['repo_hcao_query']
