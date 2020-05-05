@@ -142,7 +142,7 @@ if __name__ == "__main__":
     print("Get all organs, find their parents, and create file")
     resultStr = 'IDENTIFIER,CONCEPT_CODE,DEFINITION,PARENT_IDENTIFIER,value'
     
-    organList = getChildren("UBERON_0000062", True, parentList
+    organList = getChildren("UBERON_0000062", True, parentList)
     print("remove duplicates if any")
     organList = list(dict.fromkeys(organList))
     
