@@ -8,7 +8,7 @@ import requests
 import csv
 
 requestURL = HCAOQUERY
-print(requestURL)
+
 
 def print_usage():
     """Print a help message."""
@@ -23,6 +23,7 @@ Arguments:
     )
     
 def getAxiomChildren(broader,withLabel=False,exception=[]) : 
+    print("get axiom subclasses that are not part of Organ part")
     childrenList = []
 
     query = """
@@ -43,7 +44,7 @@ def getAxiomChildren(broader,withLabel=False,exception=[]) :
     headers = {'Accept' : 'application/sparql-results+json'}
     r=requests.get(requestURL,params=myparam, headers=headers)
     results=r.json()
-    
+
     for row in results["results"]["bindings"] : 
         uri = row["s"]["value"]
         label = row["label"]["value"]
