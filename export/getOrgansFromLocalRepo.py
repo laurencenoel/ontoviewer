@@ -32,7 +32,7 @@ def getAxiomChildren(uri,withLabel=False,exception=[]) :
     SELECT distinct ?s ?label {{
     ?s rdfs:subClassOf ?s_axiom .
     ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
-    ?s_axiom owl:someValuesFrom <{broader}> .  
+    ?s_axiom owl:someValuesFrom obo-term:{broader} .  
     ?s rdfs:label ?label .
     FILTER NOT EXISTS {{?s rdfs:subClassOf* <http://purl.obolibrary.org/obo/UBERON_0000064>}}
     FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
@@ -67,7 +67,7 @@ def getChildren(broader,withLabel=False,exception=[]) :
     PREFIX obo-term: <http://purl.obolibrary.org/obo/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     SELECT distinct ?s ?label {{
-    ?s rdfs:subClassOf*  <{broader}> . 
+    ?s rdfs:subClassOf*  obo-term:{broader} . 
     ?s rdfs:label ?label .
     FILTER NOT EXISTS {{?s rdfs:subClassOf* <http://purl.obolibrary.org/obo/UBERON_0000064>}}
     FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
