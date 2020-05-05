@@ -64,7 +64,7 @@ def getAxiomChildren(broader,withLabel=False) :
     return childrenList
 
 
-def getChildren(broader,withLabel=False : 
+def getChildren(broader,withLabel=False) : 
     print("get subclasses that are not part of Organ part and cell and tissue")
     childrenList = []
     query = """
