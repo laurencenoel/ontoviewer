@@ -73,7 +73,8 @@ def getChildren(broader,withLabel=False,exception=[]) :
     FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
     }}
     """.format(broader=broader)
-        
+    
+    print(query)
     
     myparam = { 'query': query}
     headers = {'Accept' : 'application/sparql-results+json'}
