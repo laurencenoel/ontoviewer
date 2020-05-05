@@ -143,8 +143,8 @@ if __name__ == "__main__":
     resultStr = 'IDENTIFIER,CONCEPT_CODE,DEFINITION,PARENT_IDENTIFIER,value'
     
     organList = getChildren("UBERON_0000062", True, parentList)
-    print("remove duplicates if any")
-    organList = list(dict.fromkeys(organList))
+    #print("remove duplicates if any")
+    #organList = list(dict.fromkeys(organList))
     
     for organ in organList :
         uri = organ[0]
