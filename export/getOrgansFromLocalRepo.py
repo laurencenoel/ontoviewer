@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from repoConf import *
+from export.repoConf import *
 
 import sys
 import getopt
