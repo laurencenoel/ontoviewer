@@ -147,9 +147,8 @@ if __name__ == "__main__":
     #organList = list(dict.fromkeys(organList))
     
     for organ in organList :
-        uri = organ[0]
+        identifier = organ[0]
         label = organ[1]
-        idenfier = uri.split("/")[-1]
         parentId = askParent(identifier)
         resultStr+=identifier+',"","","'+parentId+'","'+label+'"\n'
     
