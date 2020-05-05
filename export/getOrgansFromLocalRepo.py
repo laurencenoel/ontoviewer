@@ -35,9 +35,9 @@ def getAxiomChildren(broader,withLabel=False,exception=[]) :
     ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
     ?s_axiom owl:someValuesFrom obo-term:{broader} .  
     ?s rdfs:label ?label .
-    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
+    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
     FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
-    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
+    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
     }}
     """.format(broader=broader)
 
@@ -62,18 +62,18 @@ def getAxiomChildren(broader,withLabel=False,exception=[]) :
 
 
 def getChildren(broader,withLabel=False,exception=[]) : 
-    print("get subclasses that are not part of Organ part and cell")
+    print("get subclasses that are not part of Organ part and cell and tissue")
     childrenList = []
     query = """
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX obo-term: <http://purl.obolibrary.org/obo/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     SELECT distinct ?s ?label {{
-    ?s rdfs:subClassOf*  obo-term:{broader} . 
+    ?s rdfs:subClassOf+  obo-term:{broader} . 
     ?s rdfs:label ?label .
-    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
+    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
     FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
-    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
+    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
     }}
     """.format(broader=broader)
     
