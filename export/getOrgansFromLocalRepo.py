@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 
 """Query OBO endpoint."""
-
+from ontoviewer.export.repoConf import *
 
 import sys
 import getopt
 import requests
 import csv
 
-requestURL = "http://openstack-192-168-100-40.genouest.org/rdf4j-server/repositories/hcao/"
+requestURL = HCAOQUERY
+print(requestUrl)
 
 def print_usage():
     """Print a help message."""
@@ -22,7 +23,7 @@ Arguments:
 """
     )
     
-def getAxiomChildren(uri,withLabel=False) : 
+def getAxiomChildren(uri,withLabel=False,exception=[]) : 
     childrenList = []
 
     query = """
@@ -59,7 +60,7 @@ def getAxiomChildren(uri,withLabel=False) :
     return childrenList
 
 
-def getChildren(broader,withLabel=False) : 
+def getChildren(broader,withLabel=False,exception=[]) : 
     print("get subclasses that are not part of Organ part")
     childrenList = []
     query = """
@@ -90,7 +91,7 @@ def getChildren(broader,withLabel=False) :
         else : 
             childrenList.append(identifier)       
         
-        axiomChildren = getAxiomChildren(uri,withLabel)
+        axiomChildren = getAxiomChildren(uri,withLabel,exception)
         childrenList = childrenList + axiomChildren
         
     return childrenList
@@ -131,6 +132,7 @@ if __name__ == "__main__":
         print("skipping headers")
         next(csv_reader)
         for lines in csv_reader:
+            print(lines[0])
             if "HUDECA_0000002" not in lines[0] : 
                 parentList.append(lines[0])
      
@@ -142,7 +144,7 @@ if __name__ == "__main__":
     print("Get all organs, find their parents, and create file")
     resultStr = 'IDENTIFIER,CONCEPT_CODE,DEFINITION,PARENT_IDENTIFIER,value'
     
-    organList = getChildren("http://purl.obolibrary.org/obo/UBERON_0000062", True)
+    organList = getChildren("http://purl.obolibrary.org/obo/UBERON_0000062", True, parentList)
     
     for organ in organList :
         uri = organ[0]
