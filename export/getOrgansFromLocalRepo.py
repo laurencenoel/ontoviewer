@@ -35,7 +35,7 @@ def getAxiomChildren(broader,withLabel=False,exception=[]) :
     ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
     ?s_axiom owl:someValuesFrom obo-term:{broader} .  
     ?s rdfs:label ?label .
-    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064>}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
     FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
     FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
     }}
@@ -72,7 +72,7 @@ def getChildren(broader,withLabel=False,exception=[]) :
     SELECT distinct ?s ?label {{
     ?s rdfs:subClassOf*  obo-term:{broader} . 
     ?s rdfs:label ?label .
-    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064>}}
+    FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
     FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
     FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
     }}
