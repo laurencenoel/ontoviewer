@@ -117,9 +117,18 @@ def askParent(identifier) :
     else :
         return ["HUDECA_0000002"]
         
-        
+def askOrganPart(identifier) : 
+    for elt in listAllOrgPart : 
+        if elt[0] == identifier : 
+            return "organ part - "
+    return ""       
       
-        
+def askTissue(identifier) : 
+    for elt in Tissue : 
+        if elt[0] == identifier : 
+            return "tissue"
+    return ""       
+            
 
 if __name__ == "__main__":
     try:
@@ -223,10 +232,8 @@ if __name__ == "__main__":
         label = organ[1]
         if identifier not in parentList and "CL_" not in identifier :
             description = ""
-            if identifier in listAllOrgPart : 
-                description = "organ part - "
-            if identifier in listAllTissue : 
-                description += "tissue"
+            description = askOrganPart(identifier)
+            description += askTissue(identifier)
             parentIdList = askParent(identifier)
             for parentId in parentIdList : 
                 resultStr+=identifier+"_"+parentId+',"","'+description+'","'+parentId+'","'+label+'","organ"\n'
