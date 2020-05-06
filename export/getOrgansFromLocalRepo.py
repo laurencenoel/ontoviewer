@@ -8,7 +8,6 @@ import requests
 import csv
 
 requestURL = HCAOQUERY
-unique = {}
 
 
 def print_usage():
@@ -151,13 +150,17 @@ if __name__ == "__main__":
                 parentList.append(lines[0])
      
     for elt in parentList : 
+        print(elt)
+        unique = {}
         listChildren = getChildren(elt)
-        for child in listChildren : 
-            dico[child] = elt
+        dico[elt]= listChildren
+        #for child in listChildren : 
+            #dicoElt[child] = elt
 
     with open("PV/organ_child.csv", "w") as f2:
         for key,value in dico.items() : 
-            f2.write(key + ";" + value)
+            for elt in value : 
+                f2.write(key + ";" + elt+"\n")
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("Get all organs, find their parents, and create file")
