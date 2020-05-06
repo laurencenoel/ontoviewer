@@ -10,6 +10,8 @@ import csv
 requestURL = HCAOQUERY
 
 dicoChildParent = {}
+listAllTissue = []
+listAllOrgPart = []
 
 def print_usage():
     """Print a help message."""
@@ -24,7 +26,7 @@ Arguments:
     )
     
 def getAxiomChildren(broader,withLabel=False) : 
-    print("get axiom subclasses that are not part of Organ part")
+    print("get axiom subclasses")
     childrenList = []
 
     query = """
@@ -36,10 +38,7 @@ def getAxiomChildren(broader,withLabel=False) :
     ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
     ?s_axiom owl:someValuesFrom obo-term:{broader} .  
     ?s rdfs:label ?label .
-    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
-    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
     FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
-    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
     FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left","i"))}}
     }}
     """.format(broader=broader)
@@ -70,7 +69,7 @@ def getAxiomChildren(broader,withLabel=False) :
 
 
 def getChildren(broader,withLabel=False) : 
-    print("get subclasses that are not part of Organ part and cell and tissue")
+    print("get subclasses")
     childrenList = []
     query = """
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -79,18 +78,13 @@ def getChildren(broader,withLabel=False) :
     SELECT distinct ?s ?label {{
     ?s rdfs:subClassOf+  obo-term:{broader} . 
     ?s rdfs:label ?label .
-    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
-    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
     FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
-    #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
     FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left","i"))}}
     }}
     """.format(broader=broader)
     
     #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
  
-    print(query)
-    
     myparam = { 'query': query}
     headers = {'Accept' : 'application/sparql-results+json'}
     r=requests.get(requestURL,params=myparam, headers=headers)
@@ -114,11 +108,18 @@ def getChildren(broader,withLabel=False) :
         
     return childrenList
 
+
+
+
 def askParent(identifier) : 
     if identifier in dicoChildParent.keys() : 
         return dicoChildParent[identifier]
     else :
         return ["HUDECA_0000002"]
+        
+        
+      
+        
 
 if __name__ == "__main__":
     try:
@@ -162,8 +163,7 @@ if __name__ == "__main__":
         #for child in listChildren : 
             #dicoElt[child] = elt
 
-    
-    
+        
     for organ,value in dico.items() : 
         for child in value : 
             if child in dicoChildParent.keys() : 
@@ -177,12 +177,37 @@ if __name__ == "__main__":
         for child,parentList in dicoChildParent.items() : 
             for parent in parentList : 
                 f2.write(child+";"+parent+"\n")
+                
+                
+    print("Get organ parts")
+    unique = {}
+    listChildOrgPart = getChildren("UBERON_0000064",True)
+    listAxiomTopOrgPart = getAxiomChildren("UBERON_0000064",True)
+    listAllOrgPart = listChildOrgPart + listAxiomTopOrgPart
+
+    with open("PV/organ_part.csv", "w") as f3:
+        for organ_part in listAllOrgPart :
+            identifier = organ_part[0]
+            label = organ_part[1]
+            f3.write(identifier+";"+label+"\n")   
     
+    print("Get Tissue")
+    unique = {}
+    listChildTissue = getChildren("UBERON_0000479",True)
+    listAxiomTopTissue = getAxiomChildren("UBERON_0000479",True)
+    listAllTissue = listChildTissue + listAxiomTopTissue
+    
+    with open("PV/tissue.csv", "w") as f4:
+        for tissue in listAllTissue :
+            identifier = tissue[0]
+            label = tissue[1]
+            f4.write(identifier+";"+label+"\n") 
+
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("Get all organs, find their parents, and create file")
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-    resultStr = 'IDENTIFIER,CONCEPT_CODE,DEFINITION,PARENT_IDENTIFIER,value\n'
+    resultStr = 'IDENTIFIER,CONCEPT_CODE,DEFINITION,PARENT_IDENTIFIER,value,PUBLIC_ID\n'
     
     unique = {}
     
@@ -196,10 +221,15 @@ if __name__ == "__main__":
     for organ in organList :        
         identifier = organ[0]
         label = organ[1]
-        if identifier not in parentList :
+        if identifier not in parentList and "CL_" not in identifier :
+            description = ""
+            if identifier in listAllOrgPart : 
+                description = "organ part - "
+            if identifier in listAllTissue : 
+                description += "tissue"
             parentIdList = askParent(identifier)
             for parentId in parentIdList : 
-                resultStr+=identifier+"_"+parentId+',"","","'+parentId+'","'+label+'"\n'
+                resultStr+=identifier+"_"+parentId+',"","'+description+'","'+parentId+'","'+label+'","organ"\n'
     
     
     with open("PV/organs.csv", "w") as f:
