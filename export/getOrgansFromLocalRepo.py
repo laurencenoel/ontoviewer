@@ -9,6 +9,7 @@ import csv
 
 requestURL = HCAOQUERY
 
+dicoChildParent = {}
 
 def print_usage():
     """Print a help message."""
@@ -62,7 +63,8 @@ def getAxiomChildren(broader,withLabel=False) :
                 childrenList.append(identifier)     
 
             childList = getChildren(identifier,withLabel)
-            childrenList = childrenList + childList
+            if len(childList) > 1 : 
+                childrenList.extend(childList)
        
     return childrenList
 
@@ -107,15 +109,16 @@ def getChildren(broader,withLabel=False) :
                 childrenList.append(identifier)       
         
             axiomChildren = getAxiomChildren(identifier,withLabel)
-            childrenList = childrenList + axiomChildren
+            if len(axiomChildren) > 1 : 
+                childrenList.extend(axiomChildren)
         
     return childrenList
 
 def askParent(identifier) : 
-    if identifier in dico.keys() : 
+    if identifier in dicoChildParent.keys() : 
         return dico[identifier]
     else :
-        return "HUDECA_0000002"
+        return ["HUDECA_0000002"]
 
 if __name__ == "__main__":
     try:
@@ -159,10 +162,17 @@ if __name__ == "__main__":
         #for child in listChildren : 
             #dicoElt[child] = elt
 
+    
     with open("PV/organ_child.csv", "w") as f2:
         for key,value in dico.items() : 
-            for elt in value : 
-                f2.write(key + ";" + elt+"\n")
+            for child in value : 
+                if value in dicoChildParent.keys() : 
+                    myList = dicoChildPArent[value]
+                    myList.append(child)
+                    dicoChildParent[value] = myList
+                else :
+                    dicoChildParent[value] = [child]
+
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("Get all organs, find their parents, and create file")
@@ -182,8 +192,9 @@ if __name__ == "__main__":
         identifier = organ[0]
         label = organ[1]
         if identifier not in parentList :
-            parentId = askParent(identifier)
-            resultStr+=identifier+',"","","'+parentId+'","'+label+'"\n'
+            parentIdList = askParent(identifier)
+            for parentId in parentIdList : 
+                resultStr+=identifier+"_"+parentId+',"","","'+parentId+'","'+label+'"\n'
     
     
     with open("PV/organs.csv", "w") as f:
