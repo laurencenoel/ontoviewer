@@ -116,7 +116,7 @@ def getChildren(broader,withLabel=False) :
 
 def askParent(identifier) : 
     if identifier in dicoChildParent.keys() : 
-        return dico[identifier]
+        return dicoChildParent[identifier]
     else :
         return ["HUDECA_0000002"]
 
@@ -163,16 +163,21 @@ if __name__ == "__main__":
             #dicoElt[child] = elt
 
     
+    
+    for organ,value in dico.items() : 
+        for child in value : 
+            if child in dicoChildParent.keys() : 
+                myList = dicoChildParent[child]
+                myList.append(organ)
+                dicoChildParent[child] = myList
+            else :
+                dicoChildParent[child] = [organ]
+                    
     with open("PV/organ_child.csv", "w") as f2:
-        for organ,value in dico.items() : 
-            for child in value : 
-                if child in dicoChildParent.keys() : 
-                    myList = dicoChildParent[child]
-                    myList.append(organ)
-                    dicoChildParent[child] = myList
-                else :
-                    dicoChildParent[child] = [organ]
-
+        for child,parentList in dicoChildParent.items() : 
+            for parent in parentList : 
+                f2.write(child+";"+parent+"\n")
+    
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("Get all organs, find their parents, and create file")
