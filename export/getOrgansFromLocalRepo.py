@@ -164,14 +164,14 @@ if __name__ == "__main__":
 
     
     with open("PV/organ_child.csv", "w") as f2:
-        for key,value in dico.items() : 
+        for organ,value in dico.items() : 
             for child in value : 
                 if child in dicoChildParent.keys() : 
-                    myList = dicoChildPArent[child]
-                    myList.append(key)
+                    myList = dicoChildParent[child]
+                    myList.append(organ)
                     dicoChildParent[child] = myList
                 else :
-                    dicoChildParent[child] = [key]
+                    dicoChildParent[child] = [organ]
 
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
