@@ -150,15 +150,15 @@ if __name__ == "__main__":
         print("skipping headers")
         next(csv_reader)
         for lines in csv_reader:
-            print(lines[0])
             if "HUDECA_0000002" not in lines[0] : 
                 parentList.append(lines[0])
      
     for elt in parentList : 
-        print(elt)
         unique = {}
         listChildren = getChildren(elt)
-        dico[elt]= listChildren
+        listAxiomTop = getAxiomChildren(elt)
+        listAllChildren = listChildren + listAxiomTop
+        dico[elt]= listAllChildren
         #for child in listChildren : 
             #dicoElt[child] = elt
 
