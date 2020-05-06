@@ -37,7 +37,7 @@ def getAxiomChildren(broader,withLabel=False) :
     ?s rdfs:label ?label .
     #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
     #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
-    FILTER NOT EXISTS {{?s?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
+    FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
     #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
     FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left","i"))}}
     }}
@@ -79,7 +79,7 @@ def getChildren(broader,withLabel=False) :
     ?s rdfs:label ?label .
     #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000064}}
     #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:CL_0000003}}
-    FILTER NOT EXISTS {{?s?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
+    FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
     #FILTER NOT EXISTS {{?s rdfs:subClassOf* obo-term:UBERON_0000479}}
     FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left","i"))}}
     }}
