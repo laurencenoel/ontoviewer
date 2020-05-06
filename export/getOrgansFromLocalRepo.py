@@ -155,7 +155,13 @@ if __name__ == "__main__":
         for child in listChildren : 
             dico[child] = elt
 
+    with open("PV/organ_child.csv", "w") as f2:
+        for key,value in dico.items() : 
+            f2.write(key + ";" + value)
+    
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("Get all organs, find their parents, and create file")
+   print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     resultStr = 'IDENTIFIER,CONCEPT_CODE,DEFINITION,PARENT_IDENTIFIER,value\n'
     
     unique = {}
@@ -167,10 +173,10 @@ if __name__ == "__main__":
     #exceptLabels =  ["compound organ","system element","region element","segment organ","-derived structure","subdivision of","mammalian","adult","right","left"]
  
     
-    for organ in organList :
-        if organ not in parentList :
-            identifier = organ[0]
-            label = organ[1]
+    for organ in organList :        
+        identifier = organ[0]
+        label = organ[1]
+        if identifier not in parentList :
             parentId = askParent(identifier)
             resultStr+=identifier+',"","","'+parentId+'","'+label+'"\n'
     
