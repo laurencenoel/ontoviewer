@@ -122,7 +122,7 @@ def askParent(identifier) :
 def askOrganPart(identifier) : 
     for elt in listAllOrgPart : 
         if elt[0] == identifier : 
-            return "UBERON_0000064 "
+            return "UBERON_0000064"
     return ""       
       
 def askTissue(identifier) : 
