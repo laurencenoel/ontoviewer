@@ -39,7 +39,7 @@ def getAxiomChildren(broader,withLabel=False) :
     ?s_axiom owl:someValuesFrom obo-term:{broader} .  
     ?s rdfs:label ?label .
     FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
-    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left","i"))}}
+    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left|cistern|space","i"))}}
     }}
     """.format(broader=broader)
 
@@ -76,10 +76,10 @@ def getChildren(broader,withLabel=False) :
     PREFIX obo-term: <http://purl.obolibrary.org/obo/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     SELECT distinct ?s ?label {{
-    ?s rdfs:subClassOf+  obo-term:{broader} . 
+    ?s rdfs:subClassOf*  obo-term:{broader} . 
     ?s rdfs:label ?label .
     FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
-    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left","i"))}}
+    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left|cistern|space","i"))}}
     }}
     """.format(broader=broader)
     
@@ -108,8 +108,10 @@ def getChildren(broader,withLabel=False) :
         
     return childrenList
 
-
-
+def addToDico(organ,prim) :
+    listElt = dico[organ]
+    listElt.append(prim)
+    dico[organ] = listElt
 
 def askParent(identifier) : 
     if identifier in dicoChildParent.keys() : 
@@ -120,15 +122,22 @@ def askParent(identifier) :
 def askOrganPart(identifier) : 
     for elt in listAllOrgPart : 
         if elt[0] == identifier : 
-            return "organ part - "
+            return "UBERON_0000064 "
     return ""       
       
 def askTissue(identifier) : 
     for elt in listAllTissue : 
         if elt[0] == identifier : 
-            return "tissue"
+            return "UBERON_0000479 "
     return ""       
             
+def checkExceptLabel(label) : 
+    exceptLabels =  ["compound organ","system element","region element","segment organ","-derived structure","subdivision of","mammalian","adult","right","left","zone of","regional part of "]
+    for elt in exceptLabels : 
+        if elt in label : 
+            return False
+    return True
+
 
 if __name__ == "__main__":
     try:
@@ -165,13 +174,29 @@ if __name__ == "__main__":
      
     for elt in parentList : 
         unique = {}
-        listChildren = getChildren(elt)
-        listAxiomTop = getAxiomChildren(elt)
-        listAllChildren = listChildren + listAxiomTop
+        #listChildren = getChildren(elt)
+        #listAxiomTop = getAxiomChildren(elt)
+        #listAllChildren = listChildren + listAxiomTop
+        listAllChildren = getChildren(elt)
         dico[elt]= listAllChildren
         #for child in listChildren : 
             #dicoElt[child] = elt
 
+        
+    print("adding primordium and swellings")
+    addToDico("UBERON_0000970","UBERON_0003071")
+    addToDico("UBERON_0000948","UBERON_0003084")
+    addToDico("UBERON_0002046","UBERON_0003091")
+    addToDico("UBERON_0005057","UBERON_0005562")
+    addToDico("UBERON_0002048","UBERON_0005597")
+    addToDico("UBERON_0001264","UBERON_0003921")
+    addToDico("UBERON_0000945","UBERON_0012172")
+    addToDico("UBERON_0000065","UBERON_0008947")
+    addToDico("UBERON_0002107","UBERON_0003894")
+    addToDico("UBERON_0002110","UBERON_0006242")
+    addToDico("UBERON_0010084","UBERON_0010084")
+    addToDico("UBERON_0001723","UBERON_0006260")
+    
         
     for organ,value in dico.items() : 
         for child in value : 
@@ -190,9 +215,11 @@ if __name__ == "__main__":
                 
     print("Get organ parts")
     unique = {}
-    listChildOrgPart = getChildren("UBERON_0000064",True)
-    listAxiomTopOrgPart = getAxiomChildren("UBERON_0000064",True)
-    listAllOrgPart = listChildOrgPart + listAxiomTopOrgPart
+    #listChildOrgPart = getChildren("UBERON_0000064",True)
+    #listAxiomTopOrgPart = getAxiomChildren("UBERON_0000064",True)
+    #listAllOrgPart = listChildOrgPart + listAxiomTopOrgPart
+    
+    listAllOrgPart = getChildren("UBERON_0000064",True)
 
     with open("PV/organ_part.csv", "w") as f3:
         for organ_part in listAllOrgPart :
@@ -202,9 +229,11 @@ if __name__ == "__main__":
     
     print("Get Tissue")
     unique = {}
-    listChildTissue = getChildren("UBERON_0000479",True)
-    listAxiomTopTissue = getAxiomChildren("UBERON_0000479",True)
-    listAllTissue = listChildTissue + listAxiomTopTissue
+    #listChildTissue = getChildren("UBERON_0000479",True)
+    #listAxiomTopTissue = getAxiomChildren("UBERON_0000479",True)
+    #listAllTissue = listChildTissue + listAxiomTopTissue
+    listAllTissue = getChildren("UBERON_0000479",True)
+    
     
     with open("PV/tissue.csv", "w") as f4:
         for tissue in listAllTissue :
@@ -216,7 +245,7 @@ if __name__ == "__main__":
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("Get all organs, find their parents, and create file")
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-    resultStr = 'IDENTIFIER,CONCEPT_CODE,DEFINITION,PARENT_IDENTIFIER,value,PUBLIC_ID\n'
+    resultStr = 'IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,PARENT_IDENTIFIER,value,PUBLIC_ID\n'
     
     unique = {}
     
@@ -224,20 +253,25 @@ if __name__ == "__main__":
     #print("remove duplicates if any")
     #organList = list(dict.fromkeys(organList))
     
-    #exceptLabels =  ["compound organ","system element","region element","segment organ","-derived structure","subdivision of","mammalian","adult","right","left"]
- 
+  
     
     for organ in organList :        
         identifier = organ[0]
         label = organ[1]
+
         if identifier not in parentList and "CL_" not in identifier :
-            description = ""
-            description = askOrganPart(identifier)
-            description += askTissue(identifier)
-            parentIdList = askParent(identifier)
-            for parentId in parentIdList : 
-                resultStr+=identifier+"_"+parentId+',"","'+description+'","'+parentId+'","'+label+'","organ"\n'
+            isNotException = checkExceptLabel(label)
+            if isNotException : 
+                descriptors = ""
+                descriptors = askOrganPart(identifier)
+                #descriptors += askTissue(identifier)
+                if askTissue == "" : 
+                    parentIdList = askParent(identifier)
+                    parentStr = " ".join(parentIdList)
+                    resultStr+='"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","organ"\n'
     
+    print("add bone marrow")
+    resulStr+='"getNextPvId(),"","UBERON_0002371","","UBERON_0000479","UBERON_0004765","","Bone marrow","organ"\n'
     
     with open("PV/organs.csv", "w") as f:
         f.write(resultStr)
