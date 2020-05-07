@@ -124,7 +124,7 @@ def askOrganPart(identifier) :
     return ""       
       
 def askTissue(identifier) : 
-    for elt in Tissue : 
+    for elt in listAllTissue : 
         if elt[0] == identifier : 
             return "tissue"
     return ""       
