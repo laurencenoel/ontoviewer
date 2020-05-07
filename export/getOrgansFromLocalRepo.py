@@ -209,8 +209,8 @@ if __name__ == "__main__":
                     
     with open("PV/organ_child.csv", "w") as f2:
         for child,parentList in dicoChildParent.items() : 
-            for parent in parentList : 
-                f2.write(child+";"+parent+"\n")
+            parentStr = " ".join(parentList)
+            f2.write(child+";"+parent+"\n")
                 
                 
     print("Get organ parts")
