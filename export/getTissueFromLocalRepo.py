@@ -59,7 +59,10 @@ def getChildrenOrAxiomWithDev(broader) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        devOrgId = row["devOrgan"]["value"]
+        if "devOrgan" in row : 
+            devOrgId = row["devOrgan"]["value"]
+        else : 
+            devOrgId = ""
         if identifier not in unique.keys() : 
             unique[identifier] = label
             childrenList.append([identifier,label,devOrgId])
@@ -146,11 +149,12 @@ if __name__ == "__main__":
             devOrgan = tissue[2]
             descriptors = ""
             parentStr = askOrgParent(identifier)
-            devPar = askOrgParent(devOrgan)
-            if devPar != "" :
-                if parentStr == "" : 
-                    parentStr += devPar
-                else :
-                    parentStr += " "+devPar
+            if devOrgan != "" : 
+                devPar = askOrgParent(devOrgan)
+                if devPar != "" :
+                    if parentStr == "" : 
+                        parentStr += devPar
+                    else :
+                        parentStr += " "+devPar
             f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","tissue_type"\n')
     
