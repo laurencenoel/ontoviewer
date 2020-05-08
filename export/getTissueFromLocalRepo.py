@@ -145,5 +145,5 @@ if __name__ == "__main__":
             label = tissue[1]
             descriptors = ""
             parentStr = askOrgParent(identifier)
-            f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","organ"\n')
+            f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","tissue_type"\n')
     
