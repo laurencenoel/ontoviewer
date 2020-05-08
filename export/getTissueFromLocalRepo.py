@@ -47,10 +47,11 @@ def getChildrenOrAxiomWithDev(broader) :
     {{ ?s rdfs:subClassOf ?s_axiom2 .
     ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
     ?s_axiom2 owl:someValuesFrom ?devOrgan . }}
+        {{ ?s rdfs:subClassOf ?s_axiom2 .
+    ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002202>  .
+    ?s_axiom2 owl:someValuesFrom ?devOrgan . }}
     UNION {{ ?s <http://purl.obolibrary.org/obo/RO_0002387> ?devOrgan . }}
-    UNION {{ ?s rdfs:subClassOf ?n . ?n rdfs:subClassOf ?s_axiom2 .
-    ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
-    ?s_axiom2 owl:someValuesFrom ?devOrgan .  }}    
+    UNION {{ ?s  <http://purl.obolibrary.org/obo/RO_0002202> ?devOrgan .  }}    
     }}    
     }}
     """.format(broader=broader)
