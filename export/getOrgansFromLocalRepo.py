@@ -103,7 +103,7 @@ def getOrigin(organ) :
         identifier = uri.split("/")[-1]
         if identifier not in unique.keys() : 
             unique[identifier] = label
-            childrenList.append([identifier])       
+            childrenList.append(identifier)       
             childL = getOrigin(identifier)
             if len(childL) > 1 : 
                 childrenList.extend(childL)
