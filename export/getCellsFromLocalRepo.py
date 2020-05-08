@@ -47,7 +47,6 @@ def getCells() :
     myparam = { 'query': query}
     headers = {'Accept' : 'application/sparql-results+json'}
     r=requests.get(requestURL,params=myparam, headers=headers)
-    print(r.status_code)
     results=r.json()
     
     for row in results["results"]["bindings"] : 
@@ -106,15 +105,16 @@ if __name__ == "__main__":
     print("FOR EACH CELL, CHECK IF IDENTIFIER IS IN ORGAN CHILD AND CREATE FILE")
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
-    
+    cells = []
     with open("PV/cell_PV.csv", "w") as f:
         f.write('IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,PARENT_IDENTIFIER,value,PUBLIC_ID\n')
-  
     
-        for cell in cellList :        
-            identifier = cell[0]
-            label = cell[1]
-            descriptors = ""
-            parentStr = askOrgParent(identifier)
-            f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","cell_type"\n')
+        for cell in cellList : 
+            if cell not in cells : 
+                cells.append(cell)
+                identifier = cell[0]
+                label = cell[1]
+                descriptors = ""
+                parentStr = askOrgParent(identifier)
+                f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","cell_type"\n')
     
