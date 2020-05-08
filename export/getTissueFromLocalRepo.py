@@ -58,7 +58,7 @@ def getChildrenOrAxiomWithDev(broader) :
     for row in results["results"]["bindings"] : 
         uri = row["s"]["value"]
         label = row["label"]["value"]
-        identifier = uri.split("/")[-1
+        identifier = uri.split("/")[-1]
         devOrgId = row["devOrgan"]["value"]
         if identifier not in unique.keys() : 
             unique[identifier] = label
