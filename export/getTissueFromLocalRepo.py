@@ -46,6 +46,7 @@ def getChildrenOrAxiomWithDev(broader) :
     ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
     ?s_axiom2 owl:someValuesFrom ?devOrgan .}}
     }}
+    
     """.format(broader=broader)
     
     #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
@@ -81,7 +82,12 @@ def addToDico(organ,prim) :
 def askOrgParent(identifier) : 
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
-    return ""      
+    return ""   
+
+def askOrgOrigin(identifier) : 
+    if identifier in orgOrigin.keys() : 
+        return orgOrigin[identifier]
+    return ""       
       
            
 if __name__ == "__main__":
@@ -132,7 +138,19 @@ if __name__ == "__main__":
             print(organ)
             parents = lines[1]
             orgParent[organ] = parents
-
+            
+            
+    print("Get origins")
+    orgOrigin = {}
+    with open("PV/origin_parent.csv", "r") as forigin:
+        csv_reader = csv.reader(forigin, delimiter=';')
+        print("skipping headers")
+        next(csv_reader)
+        for lines in csv_reader:
+            origin = lines[0]
+            print(organ)
+            parents = lines[1]
+            orgOrigin[origin] = parents
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("CHECK IF IDENTIFIER IS IN ORGAN CHILD TO ADD PARENT AND CREATE FILE")
@@ -156,5 +174,11 @@ if __name__ == "__main__":
                         parentStr += devPar
                     else :
                         parentStr += " "+devPar
+            origin = askOrgOrigin(identifier)
+            if origin != "" and origin not in parentStr :
+                if parentStr == "" :
+                    parentStr += origin
+                else : 
+                    parentStr += " "+origin
             f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","tissue_type"\n')
     

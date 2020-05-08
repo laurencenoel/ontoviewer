@@ -10,6 +10,7 @@ import csv
 requestURL = HCAOQUERY
 
 dicoChildParent = {}
+dicoOriginParent = {}
 listAllTissue = []
 listAllOrgPart = []
 
@@ -68,7 +69,51 @@ def getChildrenOrAxiom(broader,withLabel=False) :
                 childrenList.extend(childL)
         
     return childrenList
+
+
+
+def getOrigin(organ) : 
+    print("get Origin for " + broader)
+    childrenList = []
+    query = """
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX obo-term: <http://purl.obolibrary.org/obo/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    SELECT distinct ?s ?label {{
+    {{
+    obo-term:{organ} <http://purl.obolibrary.org/obo/RO_0002202> ?s . }}
+    UNION {{
+    obo-term:{organ} rdfs:subClassOf ?s_axiom .
+    {{ ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  . }} UNION {{ ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/RO_0002494> . }}
+    ?s_axiom owl:someValuesFrom ?s . }}
+    ?s rdfs:label ?label .
+    }}
+    """.format(broader=broader)
     
+    #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
+ 
+    myparam = { 'query': query}
+    headers = {'Accept' : 'application/sparql-results+json'}
+    r=requests.get(requestURL,params=myparam, headers=headers)
+    results=r.json()
+    
+    for row in results["results"]["bindings"] : 
+        uri = row["s"]["value"]
+        label = row["label"]["value"]
+        identifier = uri.split("/")[-1]
+        if identifier not in unique.keys() : 
+            unique[identifier] = label
+            childrenList.append([identifier,label])       
+            childL = getOrigin(identifier)
+            if len(childL) > 1 : 
+                childrenList.extend(childL)
+        
+    return childrenList
+
+
+
+
+ 
     
 def getCells() : 
     print("get all Cells : contains cells/cyte/blast or has obo namespace CL")
@@ -162,6 +207,7 @@ if __name__ == "__main__":
 
     dico = {}
     parentList = []
+    dicoOrigin = {}
     
     print("Get main organs and create dico with their children as keys")
     with open("PV/main_organ.csv", "r") as f:
@@ -180,28 +226,13 @@ if __name__ == "__main__":
         listAllChildren = getChildrenOrAxiom(elt)
         dico[elt]= listAllChildren
         addToDico(elt,elt)
+        
+        listAllOrigin = getOrigin(elt)
+        dicoOrigin[elt] = listAllOrigin
         #for child in listChildren : 
             #dicoElt[child] = elt
-
         
-    #print("adding primordium and swellings")
-    #addToDico("UBERON_0000970","UBERON_0003071")
-    #addToDico("UBERON_0000948","UBERON_0003084")
-    #addToDico("UBERON_0002046","UBERON_0003091")
-    #addToDico("UBERON_0005057","UBERON_0005562")
-    #addToDico("UBERON_0002048","UBERON_0005597")
-    #addToDico("UBERON_0001264","UBERON_0003921")
-    #addToDico("UBERON_0000945","UBERON_0012172")
-    #addToDico("UBERON_0000065","UBERON_0008947")
-    #addToDico("UBERON_0000065","UBERON_0036072")
-    #addToDico("UBERON_0000065","UBERON_0036073")
-    #addToDico("UBERON_0002107","UBERON_0003894")
-    #addToDico("UBERON_0002110","UBERON_0006242")
-    #addToDico("UBERON_0010084","UBERON_0010084")
-    #addToDico("UBERON_0001723","UBERON_0006260")
-    
-    
-        
+    print("create file for organs with their children as keys")
     for organ,value in dico.items() : 
         for child in value : 
             if child in dicoChildParent.keys() : 
@@ -213,6 +244,22 @@ if __name__ == "__main__":
                     
     with open("PV/organ_child.csv", "w") as f2:
         for child,parentList in dicoChildParent.items() : 
+            parentStr = " ".join(parentList)
+            f2.write(child+";"+parentStr+"\n")
+            
+            
+    print("create file for origins with their origin as keys")
+    for organ,value in dicoOrigin.items() : 
+        for child in value : 
+            if child in dicoOriginParent.keys() : 
+                myList = dicoOriginParent[child]
+                myList.append(organ)
+                dicoOriginParent[child] = myList
+            else :
+                dicoOriginParent[child] = [organ]
+                    
+    with open("PV/origin_child.csv", "w") as forigin:
+        for child,parentList in dicoOriginParent.items() : 
             parentStr = " ".join(parentList)
             f2.write(child+";"+parentStr+"\n")
                 
