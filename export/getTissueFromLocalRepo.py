@@ -25,14 +25,14 @@ Arguments:
 """
     )
     
-def getChildrenOrAxiom(broader,withLabel=False) : 
+def getChildrenOrAxiomWithDev(broader) : 
     print("get subclasses for " + broader)
     childrenList = []
     query = """
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX obo-term: <http://purl.obolibrary.org/obo/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
-    SELECT distinct ?s ?label {{
+    SELECT distinct ?s ?label ?devOrgan {{
     {{
     ?s rdfs:subClassOf  obo-term:{broader} . }}
     UNION {{
@@ -42,6 +42,9 @@ def getChildrenOrAxiom(broader,withLabel=False) :
     ?s rdfs:label ?label .
     FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
     FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left|cistern|space","i"))}}
+    OPTIONAL {{ ?s rdfs:subClassOf ?s_axiom2 .
+    ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
+    ?s_axiom2 owl:someValuesFrom ?devOrgan .}}
     }}
     """.format(broader=broader)
     
@@ -55,15 +58,12 @@ def getChildrenOrAxiom(broader,withLabel=False) :
     for row in results["results"]["bindings"] : 
         uri = row["s"]["value"]
         label = row["label"]["value"]
-        identifier = uri.split("/")[-1]
+        identifier = uri.split("/")[-1
+        devOrgId = row["devOrgan"]["value"]
         if identifier not in unique.keys() : 
             unique[identifier] = label
-            if withLabel : 
-                childrenList.append([identifier,label])
-            else : 
-                childrenList.append(identifier)       
-        
-            childL = getChildrenOrAxiom(identifier,withLabel)
+            childrenList.append([identifier,label,devOrgId])
+            childL = getChildrenOrAxiomWithDev(identifier)
             if len(childL) > 1 : 
                 childrenList.extend(childL)
         
@@ -108,7 +108,7 @@ if __name__ == "__main__":
     #listAllT = getChildren("UBERON_0000479",True)
     #listAllAxiomTop = getAxiomChildren("UBERON_0000479",True)
     #listAllTissue = listAllT + listAllAxiomTop
-    listAllTissue = getChildrenOrAxiom("UBERON_0000479",True)
+    listAllTissue = getChildrenOrAxiomWithDev("UBERON_0000479")
     #MEMO Check Tissue FROM EHDAA
     
     #with open("PV/tissueAll.csv", "w") as fT:
@@ -143,7 +143,14 @@ if __name__ == "__main__":
         for tissue in listAllTissue :        
             identifier = tissue[0]
             label = tissue[1]
+            devOrgan = tissue[2]
             descriptors = ""
             parentStr = askOrgParent(identifier)
+            devPar = askOrgParent(devOrgan)
+            if devPar != "" :
+                if parentStr == "" : 
+                    parentStr += devPar
+                else :
+                    parentStr += " "+devPar
             f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","tissue_type"\n')
     

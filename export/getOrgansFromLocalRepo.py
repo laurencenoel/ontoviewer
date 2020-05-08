@@ -179,6 +179,7 @@ if __name__ == "__main__":
         #listAllChildren = listChildren + listAxiomTop
         listAllChildren = getChildrenOrAxiom(elt)
         dico[elt]= listAllChildren
+        addToDico(elt,elt)
         #for child in listChildren : 
             #dicoElt[child] = elt
 
@@ -192,10 +193,13 @@ if __name__ == "__main__":
     #addToDico("UBERON_0001264","UBERON_0003921")
     #addToDico("UBERON_0000945","UBERON_0012172")
     #addToDico("UBERON_0000065","UBERON_0008947")
+    #addToDico("UBERON_0000065","UBERON_0036072")
+    #addToDico("UBERON_0000065","UBERON_0036073")
     #addToDico("UBERON_0002107","UBERON_0003894")
     #addToDico("UBERON_0002110","UBERON_0006242")
     #addToDico("UBERON_0010084","UBERON_0010084")
     #addToDico("UBERON_0001723","UBERON_0006260")
+    
     
         
     for organ,value in dico.items() : 
