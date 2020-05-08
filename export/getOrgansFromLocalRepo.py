@@ -242,7 +242,7 @@ if __name__ == "__main__":
   
     print("Get Cells")
     unique = {}
-    listAllCells = getCells("UBERON_0000479",True)    
+    listAllCells = getCells()    
     
     with open("PV/cells_labels.csv", "w") as fcells:
         for cell in listAllCells :
