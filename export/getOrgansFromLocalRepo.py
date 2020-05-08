@@ -258,7 +258,7 @@ if __name__ == "__main__":
     with open("PV/origin_parent.csv", "w") as forigin:
         for child,parentList in dicoOriginParent.items() : 
             parentStr = " ".join(parentList)
-            f2.write(child+";"+parentStr+"\n")
+            forigin.write(child+";"+parentStr+"\n")
                 
                 
     print("Get organ parts")
