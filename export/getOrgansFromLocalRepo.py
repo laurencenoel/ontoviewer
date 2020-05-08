@@ -25,6 +25,50 @@ Arguments:
 """
     )
     
+def getChildrenOrAxiom(broader,withLabel=False) : 
+    print("get subclasses for " + broader)
+    childrenList = []
+    query = """
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX obo-term: <http://purl.obolibrary.org/obo/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    SELECT distinct ?s ?label {{
+    {{
+    ?s rdfs:subClassOf  obo-term:{broader} . }}
+    UNION {{
+    ?s rdfs:subClassOf ?s_axiom .
+    ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
+    ?s_axiom owl:someValuesFrom obo-term:{broader} . }}
+    ?s rdfs:label ?label .
+    FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
+    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left|cistern|space","i"))}}
+    }}
+    """.format(broader=broader)
+    
+    #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
+ 
+    myparam = { 'query': query}
+    headers = {'Accept' : 'application/sparql-results+json'}
+    r=requests.get(requestURL,params=myparam, headers=headers)
+    results=r.json()
+    
+    for row in results["results"]["bindings"] : 
+        uri = row["s"]["value"]
+        label = row["label"]["value"]
+        identifier = uri.split("/")[-1]
+        if identifier not in unique.keys() : 
+            unique[identifier] = label
+            if withLabel : 
+                childrenList.append([identifier,label])
+            else : 
+                childrenList.append(identifier)       
+        
+            childL = getChildrenOrAxiom(identifier,withLabel)
+            if len(childL) > 1 : 
+                childrenList.extend(childL)
+        
+    return childrenList
+    
 def getAxiomChildren(broader,withLabel=False) : 
     print("get axiom subclasses")
     childrenList = []
@@ -177,7 +221,7 @@ if __name__ == "__main__":
         #listChildren = getChildren(elt)
         #listAxiomTop = getAxiomChildren(elt)
         #listAllChildren = listChildren + listAxiomTop
-        listAllChildren = getChildren(elt)
+        listAllChildren = getChildrenOrAxiom(elt)
         dico[elt]= listAllChildren
         #for child in listChildren : 
             #dicoElt[child] = elt
@@ -219,7 +263,7 @@ if __name__ == "__main__":
     #listAxiomTopOrgPart = getAxiomChildren("UBERON_0000064",True)
     #listAllOrgPart = listChildOrgPart + listAxiomTopOrgPart
     
-    listAllOrgPart = getChildren("UBERON_0000064",True)
+    listAllOrgPart = getChildrenOrAxiom("UBERON_0000064",True)
 
     with open("PV/organ_part.csv", "w") as f3:
         for organ_part in listAllOrgPart :
@@ -232,7 +276,7 @@ if __name__ == "__main__":
     #listChildTissue = getChildren("UBERON_0000479",True)
     #listAxiomTopTissue = getAxiomChildren("UBERON_0000479",True)
     #listAllTissue = listChildTissue + listAxiomTopTissue
-    listAllTissue = getChildren("UBERON_0000479",True)
+    listAllTissue = getChildrenOrAxiom("UBERON_0000479",True)
     
     
     with open("PV/tissue.csv", "w") as f4:
@@ -257,7 +301,7 @@ if __name__ == "__main__":
         #organList = organL + organAxiomTop
         #print("remove duplicates if any")
 
-        organList = getChildren("UBERON_0000062", True)
+        organList = getChildrenOrAxiom("UBERON_0000062", True)
   
 
         for organ in organList :        
