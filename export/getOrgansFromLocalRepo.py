@@ -259,7 +259,8 @@ if __name__ == "__main__":
         for child,parentList in dicoOriginParent.items() : 
             parentStr = " ".join(parentList)
             forigin.write(child+";"+parentStr+"\n")
-                
+    
+    
                 
     print("Get organ parts")
     unique = {}

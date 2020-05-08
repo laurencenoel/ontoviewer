@@ -25,6 +25,43 @@ Arguments:
 """
     )
     
+    
+def getParent(child) : 
+    print("get parent for " + child)
+    parentList = []
+    query = """
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX obo-term: <http://purl.obolibrary.org/obo/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    SELECT distinct ?s ?label ?devOrgan {{
+    {{ 
+    obo-term:{child} rdfs:subClassOf  ?s . }}
+    UNION {{
+    obo-term:{child} rdfs:subClassOf ?s_axiom .
+    ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
+    ?s_axiom owl:someValuesFrom ?s . 
+    }}
+    ?s rdfs:label ?label .
+      }}
+    """.format(child=child)
+    
+    myparam = { 'query': query}
+    headers = {'Accept' : 'application/sparql-results+json'}
+    r=requests.get(requestURL,params=myparam, headers=headers)
+    results=r.json()
+    
+    for row in results["results"]["bindings"] : 
+        uri = row["s"]["value"]
+        label = row["label"]["value"]
+        identifier = uri.split("/")[-1]
+        if identifier not in unique.keys() : 
+            unique[identifier] = label
+            parentList.append(identifier)
+            parentL = getParent(identifier)
+            if len(childL) >= 1 : 
+                parentList.extend(parentL)        
+    return parentList
+    
 def getChildrenOrAxiomWithDev(broader) : 
     print("get subclasses for " + broader)
     childrenList = []
@@ -88,6 +125,11 @@ def askOrgParent(identifier) :
 def askOrgOrigin(identifier) : 
     if identifier in orgOrigin.keys() : 
         return orgOrigin[identifier]
+    else :
+        parentList = getParent(identifier)
+        for parent in parentList : 
+            if parent in orgOrigin.keys() : 
+                return orgOrigin[parent]        
     return ""       
       
            
