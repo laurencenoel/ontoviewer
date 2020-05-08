@@ -140,17 +140,17 @@ if __name__ == "__main__":
             orgParent[organ] = parents
             
             
-    print("Get origins")
-    orgOrigin = {}
-    with open("PV/origin_parent.csv", "r") as forigin:
-        csv_reader = csv.reader(forigin, delimiter=';')
-        print("skipping headers")
-        next(csv_reader)
-        for lines in csv_reader:
-            origin = lines[0]
-            print(organ)
-            parents = lines[1]
-            orgOrigin[origin] = parents
+    #print("Get origins")
+    #orgOrigin = {}
+    #with open("PV/origin_parent.csv", "r") as forigin:
+        #csv_reader = csv.reader(forigin, delimiter=';')
+        #print("skipping headers")
+        #next(csv_reader)
+        #for lines in csv_reader:
+            #origin = lines[0]
+            #print(organ)
+            #parents = lines[1]
+            #orgOrigin[origin] = parents
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("CHECK IF IDENTIFIER IS IN ORGAN CHILD TO ADD PARENT AND CREATE FILE")
@@ -174,11 +174,11 @@ if __name__ == "__main__":
                         parentStr += devPar
                     else :
                         parentStr += " "+devPar
-            origin = askOrgOrigin(identifier)
-            if origin != "" and origin not in parentStr :
-                if parentStr == "" :
-                    parentStr += origin
-                else : 
-                    parentStr += " "+origin
+            #origin = askOrgOrigin(identifier)
+            #if origin != "" and origin not in parentStr :
+                #if parentStr == "" :
+                    #parentStr += origin
+                #else : 
+                    #parentStr += " "+origin
             f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","tissue_type"\n')
     

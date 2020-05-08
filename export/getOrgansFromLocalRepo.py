@@ -223,9 +223,9 @@ if __name__ == "__main__":
         dico[elt]= listAllChildren
         addToDico(elt,elt)
         
-        unique = {}
-        listAllOrigin = getOrigin(elt)
-        dicoOrigin[elt] = listAllOrigin
+        #unique = {}
+        #listAllOrigin = getOrigin(elt)
+        #dicoOrigin[elt] = listAllOrigin
 
         
     print("create file for organs with their children as keys")
@@ -244,20 +244,20 @@ if __name__ == "__main__":
             f2.write(child+";"+parentStr+"\n")
             
             
-    print("create file for origins with their origin as keys")
-    for organ,value in dicoOrigin.items() : 
-        for child in value : 
-            if child in dicoOriginParent.keys() : 
-                myList = dicoOriginParent[child]
-                myList.append(organ)
-                dicoOriginParent[child] = myList
-            else :
-                dicoOriginParent[child] = [organ]
+    #print("create file for origins with their origin as keys")
+    #for organ,value in dicoOrigin.items() : 
+        #for child in value : 
+            #if child in dicoOriginParent.keys() : 
+                #myList = dicoOriginParent[child]
+                #myList.append(organ)
+                #dicoOriginParent[child] = myList
+            #else :
+                #dicoOriginParent[child] = [organ]
                     
-    with open("PV/origin_parent.csv", "w") as forigin:
-        for child,parentList in dicoOriginParent.items() : 
-            parentStr = " ".join(parentList)
-            forigin.write(child+";"+parentStr+"\n")
+    #with open("PV/origin_parent.csv", "w") as forigin:
+        #for child,parentList in dicoOriginParent.items() : 
+            #parentStr = " ".join(parentList)
+            #forigin.write(child+";"+parentStr+"\n")
                 
                 
     print("Get organ parts")
