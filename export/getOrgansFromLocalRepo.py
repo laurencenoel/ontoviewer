@@ -79,14 +79,13 @@ def getOrigin(organ) :
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX obo-term: <http://purl.obolibrary.org/obo/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
-    SELECT distinct ?s ?label {{
+    SELECT distinct ?s  {{
     {{
     obo-term:{organ} <http://purl.obolibrary.org/obo/RO_0002202> ?s . }}
     UNION {{
     obo-term:{organ} rdfs:subClassOf ?s_axiom .
     {{ ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  . }} UNION {{ ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/RO_0002494> . }}
     ?s_axiom owl:someValuesFrom ?s . }}
-    ?s rdfs:label ?label .
     }}
     """.format(organ=organ)
     
@@ -103,7 +102,7 @@ def getOrigin(organ) :
         identifier = uri.split("/")[-1]
         if identifier not in unique.keys() : 
             unique[identifier] = label
-            childrenList.append([identifier,label])       
+            childrenList.append([identifier])       
             childL = getOrigin(identifier)
             if len(childL) > 1 : 
                 childrenList.extend(childL)
@@ -220,17 +219,14 @@ if __name__ == "__main__":
      
     for elt in parentList : 
         unique = {}
-        #listChildren = getChildren(elt)
-        #listAxiomTop = getAxiomChildren(elt)
-        #listAllChildren = listChildren + listAxiomTop
         listAllChildren = getChildrenOrAxiom(elt)
         dico[elt]= listAllChildren
         addToDico(elt,elt)
         
+        unique = {}
         listAllOrigin = getOrigin(elt)
         dicoOrigin[elt] = listAllOrigin
-        #for child in listChildren : 
-            #dicoElt[child] = elt
+
         
     print("create file for organs with their children as keys")
     for organ,value in dico.items() : 
