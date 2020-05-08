@@ -33,7 +33,7 @@ def getParent(child) :
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX obo-term: <http://purl.obolibrary.org/obo/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
-    SELECT distinct ?s ?label ?devOrgan {{
+    SELECT distinct ?s ?label {{
     {{ 
     obo-term:{child} rdfs:subClassOf  ?s . }}
     UNION {{
@@ -58,7 +58,7 @@ def getParent(child) :
             unique[identifier] = label
             parentList.append(identifier)
             parentL = getParent(identifier)
-            if len(childL) >= 1 : 
+            if len(parentL) >= 1 : 
                 parentList.extend(parentL)        
     return parentList
     
