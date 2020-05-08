@@ -36,12 +36,9 @@ def getCells() :
     ?s rdfs:label ?label .
     ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" . 
     FILTER NOT EXISTS { ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" . FILTER(regex(str(?s),"CP_")) }
+    FILTER NOT EXISTS { ?label <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" . FILTER(regex(?label," by ")) }
     }
     """
-    
-    #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
- 
-    print(query)
     
     myparam = { 'query': query}
     headers = {'Accept' : 'application/sparql-results+json'}
@@ -81,16 +78,39 @@ if __name__ == "__main__":
         print_usage()
         sys.exit(0)
    
+   
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    print("                      GET CELLS                                     ")
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    
     cellList = getCells()
     
-    resultStr = 'IDENTIFIER,CONCEPT_CODE,DEFINITION,value,PUBLIC_ID\n'
-     
-    for cell in cellList :
-        identifier = organ[0]
-        label = organ[1]
-        resultStr+=identifier+',"","","'+label+'","cells"\n'
+    print("Get organ child")
+    orgParent = {}
+    with open("PV/organ_child.csv", "r") as fo:
+        csv_reader = csv.reader(fo, delimiter=';')
+        print("skipping headers")
+        next(csv_reader)
+        for lines in csv_reader:
+            organ = lines[0]
+            print(organ)
+            parents = lines[1]
+            orgParent[organ] = parents
+
+    
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    print("FOR EACH CELL, CHECK IF IDENTIFIER IS IN ORGAN CHILD AND CREATE FILE")
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
     
-    with open("PV/cells.csv", "w") as f:
-        f.write(resultStr)
+    with open("PV/cell_PV.csv", "w") as f:
+        f.write('IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,PARENT_IDENTIFIER,value,PUBLIC_ID\n')
+  
+    
+        for cell in cellList :        
+            identifier = cell[0]
+            label = cell[1]
+            descriptors = ""
+            parentStr = askOrgParent(identifier)
+            f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","cell_type"\n')
     
