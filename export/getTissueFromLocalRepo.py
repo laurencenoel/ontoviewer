@@ -183,7 +183,10 @@ if __name__ == "__main__":
         print("skipping headers")
         next(csv_reader)
         for lines in csv_reader:
-            orgParent[lines[0]] = lines[1]
+            organ = lines[0]
+            print(organ)
+            parents = lines[1]
+            orgParent[organ] = parents
 
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
