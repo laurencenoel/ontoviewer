@@ -227,19 +227,19 @@ if __name__ == "__main__":
             #dicoElt[child] = elt
 
         
-    print("adding primordium and swellings")
-    addToDico("UBERON_0000970","UBERON_0003071")
-    addToDico("UBERON_0000948","UBERON_0003084")
-    addToDico("UBERON_0002046","UBERON_0003091")
-    addToDico("UBERON_0005057","UBERON_0005562")
-    addToDico("UBERON_0002048","UBERON_0005597")
-    addToDico("UBERON_0001264","UBERON_0003921")
-    addToDico("UBERON_0000945","UBERON_0012172")
-    addToDico("UBERON_0000065","UBERON_0008947")
-    addToDico("UBERON_0002107","UBERON_0003894")
-    addToDico("UBERON_0002110","UBERON_0006242")
-    addToDico("UBERON_0010084","UBERON_0010084")
-    addToDico("UBERON_0001723","UBERON_0006260")
+    #print("adding primordium and swellings")
+    #addToDico("UBERON_0000970","UBERON_0003071")
+    #addToDico("UBERON_0000948","UBERON_0003084")
+    #addToDico("UBERON_0002046","UBERON_0003091")
+    #addToDico("UBERON_0005057","UBERON_0005562")
+    #addToDico("UBERON_0002048","UBERON_0005597")
+    #addToDico("UBERON_0001264","UBERON_0003921")
+    #addToDico("UBERON_0000945","UBERON_0012172")
+    #addToDico("UBERON_0000065","UBERON_0008947")
+    #addToDico("UBERON_0002107","UBERON_0003894")
+    #addToDico("UBERON_0002110","UBERON_0006242")
+    #addToDico("UBERON_0010084","UBERON_0010084")
+    #addToDico("UBERON_0001723","UBERON_0006260")
     
         
     for organ,value in dico.items() : 
