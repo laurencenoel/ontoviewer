@@ -26,7 +26,7 @@ Arguments:
     )
     
 def getChildrenOrAxiom(broader,withLabel=False) : 
-    print("get subclasses")
+    print("get subclasses for " + broader)
     childrenList = []
     query = """
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -50,7 +50,6 @@ def getChildrenOrAxiom(broader,withLabel=False) :
     myparam = { 'query': query}
     headers = {'Accept' : 'application/sparql-results+json'}
     r=requests.get(requestURL,params=myparam, headers=headers)
-    print(r.status_code)
     results=r.json()
     
     for row in results["results"]["bindings"] : 
@@ -145,6 +144,6 @@ if __name__ == "__main__":
             identifier = tissue[0]
             label = tissue[1]
             descriptors = ""
-            parentStr = askOrgParent[identifier]
+            parentStr = askOrgParent(identifier)
             f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","organ"\n')
     
