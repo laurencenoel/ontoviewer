@@ -60,7 +60,7 @@ def getChildrenOrAxiomWithDev(broader) :
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
         if "devOrgan" in row : 
-            devOrgId = row["devOrgan"]["value"]
+            devOrgId = row["devOrgan"]["value"].split("/")[-1]
         else : 
             devOrgId = ""
         if identifier not in unique.keys() : 
