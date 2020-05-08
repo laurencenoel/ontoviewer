@@ -73,7 +73,7 @@ def getChildrenOrAxiom(broader,withLabel=False) :
 
 
 def getOrigin(organ) : 
-    print("get Origin for " + broader)
+    print("get Origin for " + organ)
     childrenList = []
     query = """
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -88,7 +88,7 @@ def getOrigin(organ) :
     ?s_axiom owl:someValuesFrom ?s . }}
     ?s rdfs:label ?label .
     }}
-    """.format(broader=broader)
+    """.format(organ=organ)
     
     #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
  
@@ -258,7 +258,7 @@ if __name__ == "__main__":
             else :
                 dicoOriginParent[child] = [organ]
                     
-    with open("PV/origin_child.csv", "w") as forigin:
+    with open("PV/origin_parent.csv", "w") as forigin:
         for child,parentList in dicoOriginParent.items() : 
             parentStr = " ".join(parentList)
             f2.write(child+";"+parentStr+"\n")
