@@ -54,12 +54,10 @@ def getParent(child) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        if identifier not in unique.keys() : 
-            unique[identifier] = label
-            parentList.append(identifier)
-            parentL = getParent(identifier)
-            if len(parentL) >= 1 : 
-                parentList.extend(parentL)        
+        parentList.append(identifier)
+        parentL = getParent(identifier)
+        if len(parentL) >= 1 : 
+            parentList.extend(parentL)        
     return parentList
     
 def getChildrenOrAxiomWithDev(broader) : 
@@ -126,6 +124,7 @@ def askOrgOrigin(identifier) :
     if identifier in orgOrigin.keys() : 
         return orgOrigin[identifier]
     else :
+        
         parentList = getParent(identifier)
         for parent in parentList : 
             if parent in orgOrigin.keys() : 
