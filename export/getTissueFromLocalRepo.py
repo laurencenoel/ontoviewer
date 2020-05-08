@@ -115,11 +115,8 @@ if __name__ == "__main__":
     
     print("Get Tissue")
     unique = {}
-    #listAllT = getChildren("UBERON_0000479",True)
-    #listAllAxiomTop = getAxiomChildren("UBERON_0000479",True)
-    #listAllTissue = listAllT + listAllAxiomTop
     listAllTissue = getChildrenOrAxiomWithDev("UBERON_0000479")
-    #MEMO Check Tissue FROM EHDAA
+
     
     #with open("PV/tissueAll.csv", "w") as fT:
         #for tissue in listAllTissue :
@@ -141,17 +138,17 @@ if __name__ == "__main__":
             orgParent[organ] = parents
             
             
-    #print("Get origins")
-    #orgOrigin = {}
-    #with open("PV/origin_parent.csv", "r") as forigin:
-        #csv_reader = csv.reader(forigin, delimiter=';')
-        #print("skipping headers")
-        #next(csv_reader)
-        #for lines in csv_reader:
-            #origin = lines[0]
-            #print(organ)
-            #parents = lines[1]
-            #orgOrigin[origin] = parents
+    print("Get origins")
+    orgOrigin = {}
+    with open("PV/origin_parent.csv", "r") as forigin:
+        csv_reader = csv.reader(forigin, delimiter=';')
+        print("skipping headers")
+        next(csv_reader)
+        for lines in csv_reader:
+            origin = lines[0]
+            print(organ)
+            parents = lines[1]
+            orgOrigin[origin] = parents
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("CHECK IF IDENTIFIER IS IN ORGAN CHILD TO ADD PARENT AND CREATE FILE")
@@ -175,11 +172,11 @@ if __name__ == "__main__":
                         parentStr += devPar
                     else :
                         parentStr += " "+devPar
-            #origin = askOrgOrigin(identifier)
-            #if origin != "" and origin not in parentStr :
-                #if parentStr == "" :
-                    #parentStr += origin
-                #else : 
-                    #parentStr += " "+origin
+            origin = askOrgOrigin(identifier)
+            if origin != "" and origin not in parentStr :
+                if parentStr == "" :
+                    parentStr += origin
+                else : 
+                    parentStr += " "+origin
             f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","tissue_type"\n')
     
