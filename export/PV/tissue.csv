@@ -206,6 +206,7 @@ UBERON_0000428;prostate epithelium
 UBERON_0000429;enteric plexus
 UBERON_0000444;lymphoid follicle
 UBERON_0005292;extraembryonic tissue
+UBERON_0000479;tissue
 UBERON_0000484;simple cuboidal epithelium
 UBERON_0000485;simple columnar epithelium
 UBERON_0000486;multilaminar epithelium
@@ -1613,10 +1614,8 @@ UBERON_0036072;respiratory primordium epithelium
 UBERON_0036073;respiratory primordium mesenchyme
 UBERON_0036146;cardiopharyngeal field
 UBERON_0036186;fibroelastic connective tissue
-UBERON_0036260;embryonic cisterna chyli
 UBERON_2001431;primitive olfactory epithelium
 UBERON_2005259;continuous capillary
 UBERON_2005260;fenestrated capillary
 UBERON_2007013;preplacodal ectoderm
 UBERON_4000013;mineralized skeletal tissue
-UBERON_0000913;interstitial fluid

@@ -929,6 +929,7 @@ UBERON_0035841;esophagogastric junction muscularis propria
 UBERON_0035966;scleral lamina cribrosa
 UBERON_4200041;aponeurosis palmaris
 UBERON_0000063;organ subunit
+UBERON_0000064;organ part
 UBERON_0000072;proximo-distal subdivision of respiratory tract
 UBERON_0004802;respiratory tract epithelium
 UBERON_0004821;pulmonary alveolus epithelium
@@ -1406,7 +1407,6 @@ UBERON_0010306;bulbar conjunctiva
 UBERON_0010307;conjunctival fornix
 UBERON_0014698;lacrimal caruncle
 UBERON_0010366;conjunctival vasculature
-UBERON_0015155;conjunctival space
 UBERON_0001820;sweat gland
 UBERON_0001821;sebaceous gland
 UBERON_0011845;duct of sebaceous gland
@@ -2088,7 +2088,6 @@ UBERON_0005322;mesonephric nephron
 UBERON_0005342;malleus head
 UBERON_0005355;malleus neck
 UBERON_0005429;dorsal pancreatic duct
-UBERON_0005435;upper part of cisterna chyli
 UBERON_0005448;greater omentum
 UBERON_0035498;gastrophrenic ligament
 UBERON_0004686;gastro-splenic ligament
