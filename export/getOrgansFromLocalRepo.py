@@ -79,13 +79,14 @@ def getOrigin(organ) :
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX obo-term: <http://purl.obolibrary.org/obo/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
-    SELECT distinct ?s  {{
+    SELECT distinct ?s ?label {{
     {{
     obo-term:{organ} <http://purl.obolibrary.org/obo/RO_0002202> ?s . }}
     UNION {{
     obo-term:{organ} rdfs:subClassOf ?s_axiom .
     {{ ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  . }} UNION {{ ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/RO_0002494> . }}
     ?s_axiom owl:someValuesFrom ?s . }}
+    ?s rdfs:label ?label .
     }}
     """.format(organ=organ)
     
