@@ -25,49 +25,6 @@ Arguments:
 """
     )
     
-def getAxiomChildren(broader,withLabel=False) : 
-    print("get axiom subclasses")
-    childrenList = []
-
-    query = """
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    PREFIX obo-term: <http://purl.obolibrary.org/obo/>
-    PREFIX owl: <http://www.w3.org/2002/07/owl#>
-    SELECT distinct ?s ?label {{
-    ?s rdfs:subClassOf ?s_axiom .
-    ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
-    ?s_axiom owl:someValuesFrom obo-term:{broader} .  
-    ?s rdfs:label ?label .
-    FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
-    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left|cistern|space","i"))}}
-    }}
-    """.format(broader=broader)
-
-    #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
- 
-    myparam = { 'query': query}
-    headers = {'Accept' : 'application/sparql-results+json'}
-    r=requests.get(requestURL,params=myparam, headers=headers)
-    results=r.json()
-
-    for row in results["results"]["bindings"] : 
-        uri = row["s"]["value"]
-        label = row["label"]["value"]
-        identifier = uri.split("/")[-1]
-        if identifier not in unique.keys() : 
-            unique[identifier] = label
-            if withLabel :                 
-                childrenList.append([identifier,label])
-            else : 
-                childrenList.append(identifier)     
-
-            childList = getChildren(identifier,withLabel)
-            if len(childList) > 1 : 
-                childrenList.extend(childList)
-       
-    return childrenList
-
-
 def getChildrenOrAxiom(broader,withLabel=False) : 
     print("get subclasses")
     childrenList = []
@@ -118,27 +75,13 @@ def addToDico(organ,prim) :
     listElt.append(prim)
     dico[organ] = listElt
 
-def askParent(identifier) : 
-    if identifier in dicoChildParent.keys() : 
-        return dicoChildParent[identifier]
-    else :
-        return ["HUDECA_0000002"]
         
 def askOrgParent(identifier) : 
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
     return ""      
       
-     
-            
-def checkExceptLabel(label) : 
-    exceptLabels =  ["compound organ","system element","region element","segment organ","-derived structure","subdivision of","mammalian","adult","right","left","zone of","regional part of "]
-    for elt in exceptLabels : 
-        if elt in label : 
-            return False
-    return True
-
-
+           
 if __name__ == "__main__":
     try:
         optlist, args = getopt.getopt(sys.argv[1:], "hr")
@@ -177,7 +120,7 @@ if __name__ == "__main__":
             
             
     print("Get organ child")
-    orgParent = []
+    orgParent = {}
     with open("PV/organ_child.csv", "r") as fo:
         csv_reader = csv.reader(fo, delimiter=';')
         print("skipping headers")
