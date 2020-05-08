@@ -65,7 +65,7 @@ def getChildrenOrAxiom(broader,withLabel=False) :
                 childrenList.append(identifier)       
         
             childL = getChildrenOrAxiom(identifier,withLabel)
-            if len(childL) > 1 : 
+            if len(childL) >= 1 : 
                 childrenList.extend(childL)
         
     return childrenList
@@ -83,7 +83,8 @@ def getOrigin(organ) :
     {{  obo-term:{organ} <http://purl.obolibrary.org/obo/RO_0002202>|<http://purl.obolibrary.org/obo/RO_0002494> ?s . }}
     UNION {{
     obo-term:{organ} rdfs:subClassOf ?s_axiom .
-    {{ ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/RO_0002202>  . }} UNION {{ ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/RO_0002494> . }}
+     {{ ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/RO_0002202>  . }} 
+    UNION {{ ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/RO_0002494> . }}
     ?s_axiom owl:someValuesFrom ?s . }}
     ?s rdfs:label ?label .
     }}
@@ -104,7 +105,7 @@ def getOrigin(organ) :
             unique[identifier] = label
             childrenList.append(identifier)       
             childL = getOrigin(identifier)
-            if len(childL) > 1 : 
+            if len(childL) >= 1 : 
                 childrenList.extend(childL)
         
     return childrenList

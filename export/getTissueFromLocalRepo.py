@@ -69,7 +69,7 @@ def getChildrenOrAxiomWithDev(broader) :
             unique[identifier] = label
             childrenList.append([identifier,label,devOrgId])
             childL = getChildrenOrAxiomWithDev(identifier)
-            if len(childL) > 1 : 
+            if len(childL) >= 1 : 
                 childrenList.extend(childL)
         
     return childrenList
@@ -172,6 +172,7 @@ if __name__ == "__main__":
                         parentStr += devPar
                     else :
                         parentStr += " "+devPar
+
             origin = askOrgOrigin(identifier)
             if origin != "" and origin not in parentStr :
                 if parentStr == "" :
