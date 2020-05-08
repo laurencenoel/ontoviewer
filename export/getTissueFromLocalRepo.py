@@ -50,9 +50,8 @@ def getChildrenOrAxiomWithDev(broader) :
     UNION {{ ?s <http://purl.obolibrary.org/obo/RO_0002387> ?devOrgan . }}
     UNION {{ ?s rdfs:subClassOf ?n . ?n rdfs:subClassOf ?s_axiom2 .
     ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
-    ?s_axiom2 owl:someValuesFrom ?devOrgan .  }}
-    }}
-    
+    ?s_axiom2 owl:someValuesFrom ?devOrgan .  }}    
+    }}    
     """.format(broader=broader)
     
     #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
