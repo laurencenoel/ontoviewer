@@ -33,12 +33,13 @@ def getChildrenOrAxiomWithDev(broader) :
     PREFIX obo-term: <http://purl.obolibrary.org/obo/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     SELECT distinct ?s ?label ?devOrgan {{
-    {{
+    {{ 
     ?s rdfs:subClassOf  obo-term:{broader} . }}
     UNION {{
     ?s rdfs:subClassOf ?s_axiom .
     ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
-    ?s_axiom owl:someValuesFrom obo-term:{broader} . }}
+    ?s_axiom owl:someValuesFrom obo-term:{broader} . 
+    }}
     ?s rdfs:label ?label .
     FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
     FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left|cistern|space","i"))}}
@@ -47,7 +48,7 @@ def getChildrenOrAxiomWithDev(broader) :
     ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
     ?s_axiom2 owl:someValuesFrom ?devOrgan . }}
     UNION {{ ?s <http://purl.obolibrary.org/obo/RO_0002387> ?devOrgan . }}
-    UNION {{ ?s rdfs:subClassOf ?n . ?n subClassOf ?s_axiom2 .
+    UNION {{ ?s rdfs:subClassOf ?n . ?n rdfs:subClassOf ?s_axiom2 .
     ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
     ?s_axiom2 owl:someValuesFrom ?devOrgan .  }}
     }}
