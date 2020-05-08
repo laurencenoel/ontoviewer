@@ -245,34 +245,39 @@ if __name__ == "__main__":
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("Get all organs, find their parents, and create file")
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-    resultStr = 'IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,PARENT_IDENTIFIER,value,PUBLIC_ID\n'
-    
-    unique = {}
-    
-    organList = getChildren("UBERON_0000062", True)
-    #print("remove duplicates if any")
-    #organList = list(dict.fromkeys(organList))
-    
-  
-    
-    for organ in organList :        
-        identifier = organ[0]
-        label = organ[1]
-
-        if identifier not in parentList and "CL_" not in identifier :
-            isNotException = checkExceptLabel(label)
-            if isNotException : 
-                descriptors = ""
-                descriptors = askOrganPart(identifier)
-                #descriptors += askTissue(identifier)
-                if askTissue == "" : 
-                    parentIdList = askParent(identifier)
-                    parentStr = " ".join(parentIdList)
-                    resultStr+='"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","organ"\n'
-    
-    print("add bone marrow")
-    resulStr+='"getNextPvId(),"","UBERON_0002371","","UBERON_0000479","UBERON_0004765","","Bone marrow","organ"\n'
     
     with open("PV/organs.csv", "w") as f:
-        f.write(resultStr)
+    
+        f.write("IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,PARENT_IDENTIFIER,value,PUBLIC_ID\n")
+    
+        unique = {}
+    
+        #organL = getChildren("UBERON_0000062", True)
+        #organAxiomTop = getAxiomChildren("UBERON_0000062",True)
+        #organList = organL + organAxiomTop
+        #print("remove duplicates if any")
+
+        organList = getChildren("UBERON_0000062", True)
+  
+
+        for organ in organList :        
+            identifier = organ[0]
+            label = organ[1]
+
+            if identifier not in parentList and "CL_" not in identifier :
+                isNotException = checkExceptLabel(label)
+                if isNotException : 
+                    descriptors = ""
+                    descriptors = askOrganPart(identifier)
+                    #descriptors += askTissue(identifier)
+                    if askTissue == "" : 
+                        parentIdList = askParent(identifier)
+                        parentStr = " ".join(parentIdList)
+                        f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","organ"\n')
+    
+        print("add bone marrow")
+        f.write('"getNextPvId(),"","UBERON_0002371","","UBERON_0000479","UBERON_0004765","","Bone marrow","organ"\n')
+    
+    
+
     
