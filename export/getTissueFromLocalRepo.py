@@ -54,10 +54,7 @@ def getParent(child) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        parentList.append(identifier)
-        parentL = getParent(identifier)
-        if len(parentL) >= 1 : 
-            parentList.extend(parentL)        
+        parentList.append(identifier)      
     return parentList
     
 def getChildrenOrAxiomWithDev(broader) : 
@@ -118,13 +115,18 @@ def addToDico(organ,prim) :
 def askOrgParent(identifier) : 
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
+    else : 
+        parentList = getParent(identifier)
+        for parent in parentList : 
+            if parent in orgParent.keys() : 
+                return orgParent[parent]    
+    
     return ""   
 
 def askOrgOrigin(identifier) : 
     if identifier in orgOrigin.keys() : 
         return orgOrigin[identifier]
     else :
-        
         parentList = getParent(identifier)
         for parent in parentList : 
             if parent in orgOrigin.keys() : 
