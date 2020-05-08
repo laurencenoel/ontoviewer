@@ -22,7 +22,11 @@ Arguments:
 """
     )
     
-
+        
+def askOrgParent(identifier) : 
+    if identifier in orgParent.keys() : 
+        return orgParent[identifier]
+    return ""  
 
 
 def getCells() : 
