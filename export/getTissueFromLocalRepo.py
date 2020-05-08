@@ -44,9 +44,9 @@ def getChildrenOrAxiomWithDev(broader) :
     FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
     FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left|cistern|space","i"))}}
     OPTIONAL {{ 
-    ?devOrgan rdfs:subClassOf ?s_axiom2 .
+    ?s rdfs:subClassOf ?s_axiom2 .
     ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
-    ?s_axiom2 owl:someValuesFrom ?s . }}
+    ?s_axiom2 owl:someValuesFrom ?devOrgan . }}
        }}
     """.format(broader=broader)
     
