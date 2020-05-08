@@ -42,11 +42,12 @@ def getChildrenOrAxiomWithDev(broader) :
     ?s rdfs:label ?label .
     FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
     FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left|cistern|space","i"))}}
-    OPTIONAL {{ {{ ?s rdfs:subClassOf ?s_axiom2 .
+    OPTIONAL {{ 
+    {{ ?s rdfs:subClassOf ?s_axiom2 .
     ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
-    ?s_axiom2 owl:someValuesFrom ?devOrgan . 
-          }} UNION {{ ?s <http://purl.obolibrary.org/obo/RO_0002387> ?devOrgan . }}
-          }} UNION {{ ?s rdfs:subClassOf ?n . ?n subClassOf ?s_axiom2 .
+    ?s_axiom2 owl:someValuesFrom ?devOrgan . }}
+    UNION {{ ?s <http://purl.obolibrary.org/obo/RO_0002387> ?devOrgan . }}
+    UNION {{ ?s rdfs:subClassOf ?n . ?n subClassOf ?s_axiom2 .
     ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
     ?s_axiom2 owl:someValuesFrom ?devOrgan .  }}
     }}
