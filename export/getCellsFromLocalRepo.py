@@ -197,7 +197,7 @@ if __name__ == "__main__":
     #brain
     dicoOrgCell["UBERON_0000955"] = getAllChildren("CL_1001579") + getAllChildren("CL_2000005") + getAllChildren("CL_2000043") + getAllChildren("CL_0000126")
     #heart
-    dicoOrgCell["UBERON_0000948"] = getAllChildren["CL_0002494")
+    dicoOrgCell["UBERON_0000948"] = getAllChildren("CL_0002494")
     
     dicoCP = {}
     print("create children as keys")
