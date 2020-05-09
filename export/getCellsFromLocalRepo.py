@@ -24,6 +24,38 @@ Arguments:
 
 
 
+def getAllChildren(broader) : 
+    print("get subclasses for " + broader)
+    childrenList = []
+    query = """
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX obo-term: <http://purl.obolibrary.org/obo/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    SELECT distinct ?s ?label  {{
+    {{ 
+    ?s rdfs:subClassOf+  obo-term:{broader} . }}
+    ?s rdfs:label ?label .
+       }}
+    """.format(broader=broader)
+    
+    #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
+ 
+    myparam = { 'query': query}
+    headers = {'Accept' : 'application/sparql-results+json'}
+    r=requests.get(requestURL,params=myparam, headers=headers)
+    results=r.json()
+    
+    for row in results["results"]["bindings"] : 
+        uri = row["s"]["value"]
+        label = row["label"]["value"]
+        identifier = uri.split("/")[-1]
+        childrenList.append(identifier)
+       
+    return childrenList
+
+
+
+
 def getChildren(broader) : 
     print("get subclasses for " + broader)
     childrenList = []
