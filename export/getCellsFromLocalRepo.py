@@ -146,7 +146,7 @@ def askOrgParent(identifier) :
     
 def askDicoCP(identifier) : 
     if identifier in dicoCP.keys() : 
-        return dicoCP[identifier]
+        return " ".joint(dicoCP[identifier])
     return ""  
 
 
