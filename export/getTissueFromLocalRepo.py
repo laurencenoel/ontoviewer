@@ -142,7 +142,7 @@ def askOrgOrigin(identifier) :
 def askLabel(label) : 
     if "respiratory" in label : 
         return "UBERON_0000065"
-    elif "brain" in label or "diencephal" in label or  : 
+    elif "brain" in label or "encephal" in label : 
         return "UBERON_0000955"
     elif "cardio" in label or "cardial" in label : 
         return "UBERON_0000948"
