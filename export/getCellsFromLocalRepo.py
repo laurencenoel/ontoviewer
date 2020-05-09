@@ -101,13 +101,20 @@ def getParent(child,n) :
 def askOrgParent(identifier) : 
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
+    elif identifier in tissueParent.keys() : 
+        return tissueParent[identifier]
     else : 
-        parentList = getParent(identifier,8)
+        parentList = getParent(identifier,4)
         for parent in parentList : 
             if parent in  tissueParent.keys() : 
                 return orgParent[parent]   
             elif parent in orgParent.keys() : 
                 return tissueParent[parent]
+    return ""  
+    
+def askDicoCP(identifier) : 
+    if identifier in dicoCP.keys() : 
+        return dicoCP[identifier]
     return ""  
 
 
@@ -180,9 +187,29 @@ if __name__ == "__main__":
             orgParent[organ] = parents
 
     
-    print("get early cell")
-    unique = {}
-    earlyCell = getChildren("UBERON_0000922")
+    #print("get early cell")
+    #unique = {}
+    #earlyCell = getChildren("UBERON_0000922")
+    
+    
+    print("specific cell")
+    dicoOrgCell = {}
+    #brain
+    dicoOrgCell["UBERON_0000955"] = getAllChildren("CL_1001579") + getAllChildren("CL_2000005") + getAllChildren("CL_2000043") + getAllChildren("CL_0000126")
+    #heart
+    dicoOrgCell["UBERON_0000948"] = getAllChildren["CL_0002494")
+    
+    dicoCP = {}
+    print("create children as keys")
+    for organ,value in dicoOrgCell.items() : 
+        for child in value : 
+            if child in dicoCP.keys() : 
+                myList = dicoCP[child]
+                myList.append(organ)
+                dicoCP[child] = myList
+            else :
+                dicoCP[child] = [organ]    
+
     
     print("Get tissue Parent")
     tissueParent = {}
@@ -209,13 +236,17 @@ if __name__ == "__main__":
                 label = cell[1]
                 if label == "animal zygote" : 
                     label = "zygote"
+                    parentStr = "UBERON_0000922"
+                if label == "blastoderm cell" : 
+                    parentStr = "UBERON_0000922"
                 descriptors = ""
                 parentStr = askOrgParent(identifier)
-                if identifier in earlyCell : 
-                    if parentStr == "" : 
-                        parentStr += "UBERON_0000922"
-                    else : 
-                        parentStr += " UBERON_0000922"
+                specCell = askDicoCP(identifier)
+                if specCell != "" : 
+                    parentStr = specCell
                 f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","cell_type"\n')
     
-    print(" ".join(earlyCell))
+            
+        print("add embryonic cell")
+        f.write('"getNextPvId(),"","CL_0000361","","","UBERON_0000922","","gastrula cell","cell_type"\n')
+        f.write('"getNextPvId(),"","CL_0000360","","","UBERON_0000922","","morula cell","cell_type"\n')
