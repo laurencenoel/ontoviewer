@@ -35,9 +35,9 @@ def getParent(child) :
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     SELECT distinct ?s ?label {{
     {{ 
-    obo-term:{child} rdfs:subClassOf{1,2}  ?s . }}
+    obo-term:{child} rdfs:subClassOf{{1,2}}  ?s . }}
     UNION {{
-    obo-term:{child} rdfs:subClassOf{1,2} ?s_axiom .
+    obo-term:{child} rdfs:subClassOf{{1,2}} ?s_axiom .
     ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
     ?s_axiom owl:someValuesFrom ?s . 
     }}
@@ -129,7 +129,7 @@ def askOrgOrigin(identifier) :
         parentList = getParent(identifier)
         for parent in parentList : 
             if parent in orgOrigin.keys() : 
-                return orgOrigin[parent]        
+                return orgOrigin[parent]
     return ""       
       
            
