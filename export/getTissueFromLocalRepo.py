@@ -122,7 +122,7 @@ def askOrgParent(identifier) :
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
     else : 
-        parentList = getParent(identifier,5)
+        parentList = getParent(identifier,3)
         for parent in parentList : 
             if parent in orgParent.keys() : 
                 return orgParent[parent]    
@@ -132,7 +132,7 @@ def askOrgOrigin(identifier) :
     if identifier in orgOrigin.keys() : 
         return orgOrigin[identifier]
     else :
-        parentList = getParent(identifier,5)
+        parentList = getParent(identifier,3)
         for parent in parentList : 
             if parent in orgOrigin.keys() : 
                 return orgOrigin[parent]
