@@ -22,6 +22,59 @@ Arguments:
 """
     )
 
+
+
+def getChildrenOrAxiomWithDev(broader) : 
+    print("get subclasses for " + broader)
+    childrenList = []
+    query = """
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX obo-term: <http://purl.obolibrary.org/obo/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    SELECT distinct ?s ?label ?devOrgan {{
+    {{ 
+    ?s rdfs:subClassOf  obo-term:{broader} . }}
+    UNION {{
+    ?s rdfs:subClassOf ?s_axiom .
+    ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
+    ?s_axiom owl:someValuesFrom obo-term:{broader} . 
+    }}
+    ?s rdfs:label ?label .
+    FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
+    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left|cistern|space","i"))}}
+    OPTIONAL {{ 
+    ?s rdfs:subClassOf ?s_axiom2 .
+    ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
+    ?s_axiom2 owl:someValuesFrom ?devOrgan . }}
+       }}
+    """.format(broader=broader)
+    
+    #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
+ 
+    myparam = { 'query': query}
+    headers = {'Accept' : 'application/sparql-results+json'}
+    r=requests.get(requestURL,params=myparam, headers=headers)
+    results=r.json()
+    
+    for row in results["results"]["bindings"] : 
+        uri = row["s"]["value"]
+        label = row["label"]["value"]
+        identifier = uri.split("/")[-1]
+        if "devOrgan" in row : 
+            devOrgId = row["devOrgan"]["value"].split("/")[-1]
+        else : 
+            devOrgId = ""
+        if identifier not in unique.keys() : 
+            unique[identifier] = label
+            childrenList.append([identifier,label,devOrgId])
+            childL = getChildrenOrAxiomWithDev(identifier)
+            if len(childL) >= 1 : 
+                childrenList.extend(childL)
+        
+    return childrenList
+
+
+
 def getParent(child,n) : 
     print("get parent for " + child)
     parentList = []
@@ -64,7 +117,7 @@ def askOrgParent(identifier) :
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
     else : 
-        parentList = getParent(identifier,3)
+        parentList = getParent(identifier,6)
         for parent in parentList : 
             if parent in orgParent.keys() : 
                 return orgParent[parent]   
@@ -143,6 +196,11 @@ if __name__ == "__main__":
             orgParent[organ] = parents
 
     
+    print("get early cell")
+    earlyCell = getChildrenOrAxiomWithDev("UBERON_0000922")
+    
+    
+    
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("FOR EACH CELL, CHECK IF IDENTIFIER IS IN ORGAN CHILD AND CREATE FILE")
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
@@ -156,7 +214,14 @@ if __name__ == "__main__":
                 cells.append(cell)
                 identifier = cell[0]
                 label = cell[1]
+                if label == "animal zygote" : 
+                    label == "zygote"
                 descriptors = ""
                 parentStr = askOrgParent(identifier)
+                if identifier in earlyCell : 
+                    if parentStr == "" : 
+                        parentStr = "UBERON_0000922"
+                    else : 
+                        parentStr = " UBERON_0000922"
                 f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","cell_type"\n')
     
