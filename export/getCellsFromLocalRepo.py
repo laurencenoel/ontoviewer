@@ -197,6 +197,7 @@ if __name__ == "__main__":
 
     
     print("get early cell")
+    unique = {}
     earlyCell = getChildrenOrAxiomWithDev("UBERON_0000922")
     
     
