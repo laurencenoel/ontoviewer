@@ -33,7 +33,7 @@ def getAllChildren(broader) :
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     SELECT distinct ?s ?label  {{
     {{ 
-    ?s rdfs:subClassOf+  obo-term:{broader} . }}
+    ?s rdfs:subClassOf* obo-term:{broader} . }}
     ?s rdfs:label ?label .
        }}
     """.format(broader=broader)
