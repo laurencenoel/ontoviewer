@@ -266,16 +266,16 @@ if __name__ == "__main__":
                 cells.append(cell)
                 identifier = cell[0]
                 label = cell[1]
-                if label == "animal zygote" : 
-                    label = "zygote"
-                    parentStr = "UBERON_0000922"
-                if label == "blastoderm cell" : 
-                    parentStr = "UBERON_0000922"
                 descriptors = ""
                 parentStr = askOrgParent(identifier)
                 specCell = askDicoCP(identifier)
                 if specCell != "" : 
                     parentStr = specCell
+                if label == "animal zygote" : 
+                    label = "zygote"
+                    parentStr = "UBERON_0000922"
+                if label == "blastoderm cell" : 
+                    parentStr = "UBERON_0000922"
                 f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","cell_type"\n')
     
             
