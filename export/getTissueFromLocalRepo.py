@@ -215,6 +215,7 @@ if __name__ == "__main__":
     print("CHECK IF IDENTIFIER IS IN ORGAN CHILD TO ADD PARENT AND CREATE FILE")
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
+    tissueParent = {}    
     
     with open("PV/tissue_PV.csv", "w") as f:
         f.write('IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,PARENT_IDENTIFIER,value,PUBLIC_ID\n')
@@ -248,4 +249,8 @@ if __name__ == "__main__":
                     parentStr += " "+specialId
                 
             f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","tissue_type"\n')
-    
+            tissueParent[identifier] = parentStr
+            
+    with open("PV/tissue_parent.csv", "w") as ftissue:
+        for tissue,parent in tissueParent.items() : 
+            ftissue.write(tissue+";"+parent)

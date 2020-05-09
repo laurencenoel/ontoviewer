@@ -31,7 +31,7 @@ def getChildrenOrAxiomWithDev(broader) :
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX obo-term: <http://purl.obolibrary.org/obo/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
-    SELECT distinct ?s ?label ?devOrgan {{
+    SELECT distinct ?s ?label  {{
     {{ 
     ?s rdfs:subClassOf  obo-term:{broader} . }}
     UNION {{
@@ -40,12 +40,6 @@ def getChildrenOrAxiomWithDev(broader) :
     ?s_axiom owl:someValuesFrom obo-term:{broader} . 
     }}
     ?s rdfs:label ?label .
-    FILTER NOT EXISTS {{ ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" }}
-    FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|mammalian|adult|right|left|cistern|space","i"))}}
-    OPTIONAL {{ 
-    ?s rdfs:subClassOf ?s_axiom2 .
-    ?s_axiom2 owl:onProperty <http://purl.obolibrary.org/obo/RO_0002387>  .
-    ?s_axiom2 owl:someValuesFrom ?devOrgan . }}
        }}
     """.format(broader=broader)
     
@@ -60,13 +54,9 @@ def getChildrenOrAxiomWithDev(broader) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        if "devOrgan" in row : 
-            devOrgId = row["devOrgan"]["value"].split("/")[-1]
-        else : 
-            devOrgId = ""
         if identifier not in unique.keys() : 
             unique[identifier] = label
-            childrenList.append([identifier,label,devOrgId])
+            childrenList.append(identifier)
             childL = getChildrenOrAxiomWithDev(identifier)
             if len(childL) >= 1 : 
                 childrenList.extend(childL)
@@ -117,10 +107,12 @@ def askOrgParent(identifier) :
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
     else : 
-        parentList = getParent(identifier,8)
+        parentList = getParent(identifier,5)
         for parent in parentList : 
             if parent in orgParent.keys() : 
                 return orgParent[parent]   
+            elif parent in tissueParent.keys() : 
+                return tissueParent[parent]
     return ""  
 
 
@@ -187,11 +179,8 @@ if __name__ == "__main__":
     orgParent = {}
     with open("PV/organ_child.csv", "r") as fo:
         csv_reader = csv.reader(fo, delimiter=';')
-        print("skipping headers")
-        next(csv_reader)
         for lines in csv_reader:
             organ = lines[0]
-            print(organ)
             parents = lines[1]
             orgParent[organ] = parents
 
@@ -200,7 +189,14 @@ if __name__ == "__main__":
     unique = {}
     earlyCell = getChildrenOrAxiomWithDev("UBERON_0000922")
     
-    
+    print("Get tissue Parent")
+    tissueParent = {}
+    with open("PV/tissue_parent.csv", "r") as ft:
+        csv_reader = csv.reader(ft, delimiter=';')
+        for lines in csv_reader:
+            tissue = lines[0]
+            parents = lines[1]
+            tissueParent[tissue] = parents
     
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
