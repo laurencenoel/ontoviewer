@@ -34,8 +34,11 @@ CL_0002535;epithelial cell of cervix
 CL_1001575;uterine cervix squamous cell
 CL_1001587;uterine cervix glandular cell
 UBERON_0012248;cervical mucosa
+UBERON_0012247;cervical gland
 UBERON_0012249;ectocervix
+UBERON_0013760;external cervical os
 UBERON_0013758;cervical os
+UBERON_0013759;internal cervical os
 UBERON_0013761;cervical cavity
 UBERON_0001258;neck of urinary bladder
 UBERON_0004230;urinary bladder neck smooth muscle
@@ -44,6 +47,7 @@ UBERON_0005010;mucosa of neck of urinary bladder
 UBERON_0015181;neck of tooth
 UBERON_0005913;zone of bone organ
 UBERON_0006633;coracoid process of scapula
+UBERON_0010760;supraglenoid tubercle
 UBERON_0016440;glabella region of bone
 UBERON_0004103;alveolar ridge
 UBERON_0034898;alveolar ridge of premaxilla
@@ -72,9 +76,11 @@ UBERON_0006724;osseus spiral lamina
 UBERON_0014624;basis modioli
 UBERON_0000401;mandibular ramus
 UBERON_0004657;mandible condylar process
+UBERON_0004658;mandible head
 UBERON_0004660;mandible coronoid process
 UBERON_0004661;mandible temporal crest
 UBERON_0001269;acetabular part of hip bone
+UBERON_0006802;acetabular rim
 UBERON_0007830;pelvic girdle bone/zone
 UBERON_0001274;ischium
 UBERON_0009000;ischial spine
@@ -111,6 +117,7 @@ UBERON_0001844;cochlea
 UBERON_0001863;scala vestibuli
 UBERON_0001864;scala tympani
 UBERON_0002295;scala media
+UBERON_0011078;endolymphatic space
 CL_0002315;supporting cell of cochlea
 CL_0000634;Claudius cell
 CL_0002168;border cell of cochlea
@@ -124,11 +131,14 @@ CL_1000191;pillar cell
 CL_0002163;internal pillar cell of cochlea
 CL_0002164;external pillar cell of cochlea
 UBERON_0006106;cochlear canal
+UBERON_0002819;apex of cochlea
 UBERON_0006586;otolymph
 UBERON_0001845;perilymph
 UBERON_0001852;endolymph
 UBERON_0007223;osseus cochlea
+UBERON_0006495;osseus cochlear canal
 UBERON_0005236;osseus labyrinth vestibule
+UBERON_0002279;vestibular aqueduct
 UBERON_0002501;oval window
 UBERON_0002502;round window of inner ear
 UBERON_0003995;subarcuate fossa
@@ -151,8 +161,10 @@ UBERON_0002503;greater trochanter
 UBERON_0008786;third trochanter
 UBERON_0004769;diaphysis
 UBERON_0001010;diaphysis of ulna
+UBERON_0013748;ulnar metaphysis
 UBERON_0001028;diaphysis of radius
 UBERON_0004652;humerus diaphysis
+UBERON_0002498;deltopectoral crest
 UBERON_0006862;diaphysis of femur
 UBERON_0006865;metaphysis of femur
 UBERON_0006863;proximal metaphysis of femur
@@ -169,6 +181,7 @@ UBERON_0013750;metaphysis of tibia
 UBERON_0013751;metaphysis of radius
 UBERON_0016928;metaphysis of fibula
 UBERON_0002516;epiphyseal plate
+UBERON_0016425;epiphyseal plate of radius
 UBERON_0006768;epiphyseal line
 UBERON_0006861;diaphysis proper
 UBERON_0016423;compact bone of diaphysis
@@ -178,19 +191,24 @@ UBERON_0009991;lateral condyle of tibia
 UBERON_0009990;medial condyle of tibia
 UBERON_0009980;condyle of femur
 UBERON_0009984;medial condyle of femur
+UBERON_0009987;medial epicondyle of femur
 UBERON_0009985;lateral condyle of femur
+UBERON_0009986;lateral epicondyle of femur
 UBERON_0001437;epiphysis
 UBERON_0004379;distal epiphysis
 UBERON_0004404;distal epiphysis of humerus
 UBERON_0006806;entepicondyle of humerus
 UBERON_0006807;ectepicondyle of humerus
 UBERON_0009988;condyle of humerus
+UBERON_0010853;capitulum of humerus
 UBERON_0012130;olecranon fossa
 UBERON_0004405;distal epiphysis of tibia
 UBERON_0004406;distal epiphysis of femur
 UBERON_0004407;distal epiphysis of radius
 UBERON_0004408;distal epiphysis of ulna
+UBERON_0011575;styloid process of ulna
 UBERON_0004410;distal epiphysis of fibula
+UBERON_0012291;lateral malleolus of fibula
 UBERON_0004448;distal epiphysis of phalanx
 UBERON_0004409;distal epiphysis of phalanx of manus
 UBERON_0014886;distal epiphysis of distal phalanx of manual digit
@@ -293,6 +311,7 @@ UBERON_0004403;periosteum of epiphysis
 UBERON_0010388;proximal segment of rib
 UBERON_0002230;head of rib
 UBERON_0002231;body of rib
+UBERON_0002235;tubercle of rib
 UBERON_0010424;distal segment of rib
 UBERON_0006805;sternal end of clavicle
 UBERON_0013069;popliteal area
@@ -303,15 +322,18 @@ UBERON_0006776;annular epiphysis
 UBERON_0006811;occipital condyle
 UBERON_0006837;tegmen tympani
 UBERON_0007170;squamous part of occipital bone
+UBERON_0013469;external occipital protuberance
 UBERON_0007172;angle of scapula
 UBERON_0007175;inferior angle of scapula
 UBERON_0007176;superior angle of scapula
 UBERON_0011941;lateral angle of scapula
 UBERON_0018265;anterior root of zygomatic arch
 UBERON_0018542;mandibular symphyseal region
+UBERON_0018299;mandibular symphyseal tooth
 UBERON_0009978;epicondyle
 UBERON_0009979;condyle
 UBERON_0010066;tympanic plate
+UBERON_0013173;anterior part of tympanic bone
 UBERON_0010355;ossification center
 UBERON_0009638;orbitosphenoid ossification center
 UBERON_0009637;alisphenoid ossification center
@@ -337,13 +359,18 @@ UBERON_0001068;skin of back
 UBERON_0009014;lower back skin
 UBERON_0009015;upper back skin
 UBERON_0001418;skin of thorax
+UBERON_0001868;skin of chest
+UBERON_0019200;skin of anterior chest
 UBERON_0003836;abdominal segment skin
 UBERON_0001416;skin of abdomen
 UBERON_0036149;suprapubic skin
 CL_2000013;fibroblast of skin of abdomen
 UBERON_0001415;skin of pelvis
+UBERON_0012336;perianal skin
+UBERON_0012281;perianal sebaceous gland
 UBERON_0034726;trunk taste bud
 UBERON_0001331;skin of penis
+UBERON_0001471;skin of prepuce of penis
 UBERON_0001419;skin of limb
 UBERON_0003532;hindlimb skin
 UBERON_0001511;skin of leg
@@ -352,6 +379,7 @@ UBERON_0004262;upper leg skin
 UBERON_0004264;lower leg skin
 UBERON_0001513;skin of pes
 UBERON_0001512;skin of ankle
+UBERON_0015873;heel skin
 UBERON_0003530;pedal digit skin
 UBERON_0005277;dorsal skin of toe
 UBERON_0005279;nail bed of toe
@@ -382,29 +410,39 @@ UBERON_0004263;upper arm skin
 UBERON_0015790;autopod skin
 UBERON_0013776;skin of palmar/plantar part of autopod
 UBERON_0015249;digit skin
+UBERON_0005275;dorsal skin of digit
+UBERON_0005273;nail bed
 UBERON_0001483;skin of shoulder
 UBERON_0001554;skin of hip
 UBERON_0003534;tail skin
 UBERON_0004084;genital labium
 UBERON_0004014;labium minora
 UBERON_0004085;labium majora
+UBERON_0013720;dartos muscle of labia majora
 UBERON_0005298;skin of clitoris
+UBERON_0011375;skin of prepuce of clitoris
 UBERON_0007121;skin nerve field
 UBERON_0012180;head or neck skin
 UBERON_0001084;skin of head
 UBERON_1000021;skin of face
 UBERON_0001457;skin of eyelid
+UBERON_0013766;epicanthal fold
 UBERON_0008803;skin of cheek
 UBERON_0015476;nose skin
 UBERON_0016462;periorbital skin
 UBERON_0016475;skin of forehead
+UBERON_0034765;glabella skin
 UBERON_0018151;skin of upper lip
+UBERON_0016918;upper vermilion
 CL_2000081;melanocyte of skin of face
 UBERON_0001458;skin of lip
+UBERON_0018150;skin of lower lip
+UBERON_0016919;lower vermilion
 UBERON_0001459;skin of external ear
 UBERON_0016915;vermilion
 UBERON_0034720;head taste bud
 UBERON_0001417;skin of neck
+UBERON_0010854;skin of front of neck
 UBERON_0015474;axilla skin
 UBERON_0015479;scrotum skin
 UBERON_0019204;skin epithelium
@@ -426,6 +464,7 @@ CL_2000092;hair follicular keratinocyte
 CL_0002483;hair follicle melanocyte
 UBERON_0003967;cutaneous elastic tissue
 UBERON_0008877;epidermal-dermal junction
+UBERON_0001993;reticular layer of dermis
 UBERON_0019210;pole of lens
 UBERON_0016459;posterior pole of lens
 UBERON_0019208;anterior pole of lens
@@ -438,6 +477,7 @@ UBERON_0035416;diaphragma sellae
 UBERON_0035431;mediastinal pleura
 UBERON_0035453;laryngeal ventricle
 UBERON_0009853;body of uterus
+UBERON_0035465;endometrial cavity
 UBERON_0035468;costodiaphragmatic recess
 UBERON_0035536;body of gallbladder
 UBERON_0035606;cartilage of external acoustic meatus
@@ -463,14 +503,17 @@ UBERON_0001162;cardia of stomach
 UBERON_0004550;gastroesophageal sphincter
 UBERON_0004935;submucosa of cardia of stomach
 UBERON_0004996;mucosa of cardia of stomach
+UBERON_0008859;cardiac gastric gland
 UBERON_0001163;lesser curvature of stomach
 UBERON_0001166;pylorus
 UBERON_0001165;pyloric antrum
 UBERON_0004936;submucosa of pyloric antrum
 UBERON_0004997;mucosa of pyloric antrum
+CL_0000508;type G enteroendocrine cell
 UBERON_0001202;pyloric sphincter
 UBERON_0004937;submucosa of pylorus
 UBERON_0004998;mucosa of pylorus
+UBERON_0008861;pyloric gastric gland
 UBERON_0005637;pyloric region epithelium
 UBERON_0008858;pyloric canal
 UBERON_0011953;stomach glandular region
@@ -478,6 +521,7 @@ UBERON_0006931;stomach glandular region mucosa
 UBERON_0006924;stomach glandular epithelium
 UBERON_0000325;gastric gland
 UBERON_0009971;principal gastric gland
+CL_1000315;principal gastric gland goblet cell
 CL_0002181;mucus neck cell of gastric gland
 CL_0002183;stem cell of gastric gland
 UBERON_0002399;lesser omentum
@@ -488,11 +532,14 @@ UBERON_0005017;mucosa of lacrimal sac
 UBERON_0011186;Krause's gland
 CL_1000436;epithelial cell of lacrimal sac
 UBERON_0001848;auricular cartilage
+UBERON_0004106;crus of ear
 UBERON_0002444;lens fiber
 UBERON_0010188;protuberance
 UBERON_0006260;lingual swellings
 UBERON_0006756;median lingual swelling
+UBERON_0014705;median lingual swelling epithelium
 UBERON_0006757;lateral lingual swelling
+UBERON_0009522;lateral lingual swelling epithelium
 UBERON_0002539;pharyngeal arch
 UBERON_0003115;pharyngeal arch 4
 UBERON_0003121;pharyngeal arch artery 4
@@ -557,12 +604,14 @@ UBERON_0004914;duodenal papilla
 UBERON_0012271;major duodenal papilla
 UBERON_0012272;minor duodenal papilla
 UBERON_0004913;hepatopancreatic ampulla
+UBERON_0004915;sphincter of hepatopancreatic ampulla
 UBERON_0005050;liver papillary process
 UBERON_0005435;upper part of cisterna chyli
 UBERON_0007136;rectouterine fold
 UBERON_0009882;anal column
 CL_0002634;epithelial cell of anal column
 CL_0002635;nonkeratinized epithelial cell of anal column
+CL_0002636;nonkeratinized epithelial cell of inferior part of anal canal
 CL_0002637;keratinized epithelial cell of the anal canal
 CL_1000438;epithelial cell of wall of inferior part of anal canal
 UBERON_0011140;superficial part of masseter muscle
@@ -579,6 +628,7 @@ UBERON_0019293;white matter of pontine tegmentum
 UBERON_0002790;dorsal acoustic stria
 UBERON_0003046;ventral acoustic stria
 UBERON_0002932;trapezoid body
+UBERON_0016843;lateral nucleus of trapezoid body
 UBERON_0002952;intermediate acoustic stria
 UBERON_0022271;corticopontine fibers
 UBERON_0002047;pontine raphe nucleus
@@ -644,8 +694,12 @@ UBERON_0002164;tectobulbar tract
 UBERON_0002559;medullary reticular formation
 UBERON_0035940;central medullary reticular nuclear complex
 UBERON_0009775;lateral medullary reticular complex
+UBERON_0002154;lateral reticular nucleus
+UBERON_0016633;parvocellular reticular nucleus
 UBERON_0009776;intermediate reticular formation
+UBERON_0009777;intermediate reticular nucleus
 UBERON_0016826;paramedian medullary reticular complex
+UBERON_0016827;dorsal paramedian reticular nucleus
 UBERON_0002589;lateral corticospinal tract
 UBERON_0002610;cochlear nuclear complex
 UBERON_0001720;cochlear nucleus
@@ -722,6 +776,7 @@ UBERON_0009576;medulla oblongata sulcus limitans
 UBERON_0013166;vallecula of cerebellum
 UBERON_0014649;white matter of medulla oblongata
 UBERON_0002163;inferior cerebellar peduncle
+UBERON_0002592;juxtarestiform body
 UBERON_0002640;cuneocerebellar tract
 UBERON_0002714;rubrospinal tract
 UBERON_0002718;solitary tract
@@ -760,12 +815,15 @@ UBERON_0002564;lateral orbital gyrus
 UBERON_0002570;medial orbital gyrus
 UBERON_0002644;intermediate orbital gyrus
 UBERON_0002766;fusiform gyrus
+UBERON_0022364;occipital fusiform gyrus
 UBERON_0002973;parahippocampal gyrus
 UBERON_0022383;anterior parahippocampal gyrus
 UBERON_0034773;uncus of parahippocampal gyrus
 UBERON_0001953;presubiculum
+UBERON_0013558;Brodmann (1909) area 27
 UBERON_0002656;periamygdaloid area
 UBERON_0002657;posterior parahippocampal gyrus
+UBERON_0022394;posterior parahippocampal white matter
 UBERON_0002728;entorhinal cortex
 UBERON_0022323;entorhinal cortex layer 4
 UBERON_0022325;entorhinal cortex layer 5
@@ -777,9 +835,11 @@ UBERON_0035933;paracentral lobule
 UBERON_0035932;anterior segment of paracentral lobule
 UBERON_0035934;posterior segment of paracentral lobule
 UBERON_0002581;postcentral gyrus
+UBERON_0008930;somatosensory cortex
 UBERON_0002599;medial olfactory gyrus
 UBERON_0002686;angular gyrus
 UBERON_0002688;supramarginal gyrus
+UBERON_0013573;Brodmann (1909) area 40
 UBERON_0002967;cingulate gyrus
 UBERON_0002738;isthmus of cingulate gyrus
 UBERON_0002740;posterior cingulate gyrus
@@ -798,6 +858,8 @@ UBERON_0006114;lateral occipital cortex
 UBERON_0022367;inferior lateral occipital cortex
 UBERON_0022368;superior lateral occipital cortex
 UBERON_0002943;lingual gyrus
+UBERON_0002905;intralingual sulcus
+UBERON_0035925;central sulcus of insula
 UBERON_0002948;superior occipital gyrus
 UBERON_0006092;cuneus cortex
 UBERON_0014608;inferior occipital gyrus
@@ -821,9 +883,12 @@ UBERON_0001874;putamen
 UBERON_0001875;globus pallidus
 UBERON_0002476;lateral globus pallidus
 UBERON_0002477;medial globus pallidus
+UBERON_0002763;accessory medullary lamina of globus pallidus
 UBERON_0002727;medial medullary lamina of globus pallidus
 UBERON_0002765;lateral medullary lamina of globus pallidus
 UBERON_0002778;ventral pallidum
+UBERON_0003017;substantia innominata
+UBERON_0010010;basal nucleus of telencephalon
 UBERON_0006516;dorsal pallidum
 UBERON_0001881;island of Calleja
 UBERON_0001882;nucleus accumbens
@@ -833,9 +898,11 @@ UBERON_0002437;cerebral hemisphere white matter
 UBERON_0022260;radiation of cerebral hemisphere
 UBERON_0022262;auditory radiation
 UBERON_0022264;optic radiation
+UBERON_0035935;Meyer's loop of optic radiation
 UBERON_0034746;anterior thalamic radiation
 UBERON_0034747;posterior thalamic radiation
 UBERON_0015708;splenium of the corpus callosum
+UBERON_0034676;forceps major of corpus callosum
 UBERON_0034678;forceps minor of corpus callosum
 UBERON_0008967;centrum semiovale
 UBERON_0000373;tapetum of corpus callosum
@@ -844,6 +911,7 @@ UBERON_0001887;internal capsule of telencephalon
 UBERON_0014525;limb of internal capsule of telencephalon
 UBERON_0014526;anterior limb of internal capsule
 UBERON_0014527;posterior limb of internal capsule
+UBERON_0034749;retrolenticular part of internal capsule
 UBERON_0002940;anterior column of fornix
 UBERON_0004545;external capsule of telencephalon
 UBERON_0004682;corona radiata of neuraxis
@@ -895,6 +963,7 @@ UBERON_0007629;medial septal complex
 UBERON_0001877;medial septal nucleus
 UBERON_0001879;nucleus of diagonal band
 UBERON_0007628;lateral septal complex
+UBERON_0002667;lateral septal nucleus
 UBERON_0001878;septofimbrial nucleus
 UBERON_0001880;bed nucleus of stria terminalis
 UBERON_0002219;subfornical organ
@@ -911,9 +980,11 @@ UBERON_0000451;prefrontal cortex
 UBERON_0013541;Brodmann (1909) area 10
 UBERON_0013545;Brodmann (1909) area 14
 UBERON_0001384;primary motor cortex
+UBERON_0013535;Brodmann (1909) area 4
 UBERON_0006482;Brodmann (1909) area 45
 UBERON_0014639;frontal sulcus
 UBERON_0022252;precentral sulcus
+UBERON_0002764;inferior precentral sulcus
 UBERON_0002669;anterior horizontal limb of lateral sulcus
 UBERON_0002670;anterior ascending limb of lateral sulcus
 UBERON_0002672;anterior subcentral sulcus
@@ -927,6 +998,7 @@ UBERON_0009835;anterior cingulate cortex
 UBERON_0022438;rostral anterior cingulate cortex
 UBERON_0006101;Brodmann (1909) area 24
 UBERON_0016538;temporal cortex
+UBERON_0013552;Brodmann (1909) area 21
 UBERON_0016530;parietal cortex
 UBERON_0016540;occipital cortex
 UBERON_0002023;claustrum of brain
@@ -946,11 +1018,17 @@ UBERON_0034752;secondary auditory cortex
 UBERON_0001950;neocortex
 UBERON_0002301;layer of neocortex
 UBERON_0005390;cortical layer I
+UBERON_0035153;dorsolateral prefrontal cortex layer 1
 UBERON_0005391;cortical layer II
+UBERON_0035154;dorsolateral prefrontal cortex layer 2
 UBERON_0005392;cortical layer III
+UBERON_0035155;dorsolateral prefrontal cortex layer 3
 UBERON_0005393;cortical layer IV
+UBERON_0035156;dorsolateral prefrontal cortex layer 4
 UBERON_0005394;cortical layer V
+UBERON_0035157;dorsolateral prefrontal cortex layer 5
 UBERON_0005395;cortical layer VI
+UBERON_0035158;dorsolateral prefrontal cortex layer 6
 UBERON_0006094;superior parietal cortex
 UBERON_0002421;hippocampal formation
 UBERON_0023787;subicular complex
@@ -980,6 +1058,7 @@ CL_0002608;hippocampal neuron
 CL_1001569;hippocampal interneuron
 CL_1001571;hippocampal pyramidal neuron
 CL_1001580;hippocampus glial cell
+CL_0002604;astrocyte of the hippocampus
 UBERON_0002191;subiculum
 UBERON_0002305;layer of hippocampus
 UBERON_0035787;layer of CA2 field
@@ -998,7 +1077,9 @@ UBERON_0005372;hippocampus stratum radiatum
 UBERON_0014554;CA1 stratum radiatum
 UBERON_0014556;CA3 stratum radiatum
 UBERON_0035786;layer of CA1 field
+UBERON_0014570;CA1 alveus
 UBERON_0035788;layer of CA3 field
+UBERON_0014571;CA3 alveus
 UBERON_0003876;hippocampal field
 UBERON_0003881;CA1 field of hippocampus
 UBERON_0003882;CA2 field of hippocampus
@@ -1010,6 +1091,7 @@ UBERON_0002586;calcarine sulcus
 UBERON_0002590;prepyriform area
 UBERON_0002683;rhinal sulcus
 UBERON_0002721;lateral sulcus
+UBERON_0002910;posterior ascending limb of lateral sulcus
 UBERON_0002894;olfactory cortex
 UBERON_0022317;olfactory cortex layer 1
 UBERON_0022318;olfactory cortex layer 2
@@ -1018,13 +1100,18 @@ UBERON_0001883;olfactory tubercle
 UBERON_0002266;anterior olfactory nucleus
 UBERON_0002893;nucleus of lateral olfactory tract
 UBERON_0002895;secondary olfactory cortex
+UBERON_0013559;Brodmann (1909) area 28
 UBERON_0004725;piriform cortex
+UBERON_0014283;piriform cortex layer 3
 UBERON_0002916;central sulcus
 UBERON_0006083;perirhinal cortex
 UBERON_0006102;Brodmann (1909) area 35
 UBERON_0006104;Brodmann (1909) area 36
 UBERON_0009834;dorsolateral prefrontal cortex
+UBERON_0013540;Brodmann (1909) area 9
 CL_0010012;cerebral cortex neuron
+CL_0002609;neuron of cerebral cortex
+CL_2000056;Meynert cell
 UBERON_0013529;Brodmann area
 UBERON_0004717;Brodmann (1909) area 29
 UBERON_0004718;Brodmann (1909) area 26
@@ -1066,10 +1153,12 @@ UBERON_0014735;paleocortex
 UBERON_0014950;layer of developing cerebral cortex
 UBERON_0034711;cortical preplate
 UBERON_0004040;cortical intermediate zone
+UBERON_0034994;hindbrain cortical intermediate zone
 UBERON_0004035;cortical subplate
 UBERON_0005343;cortical plate
 UBERON_0014935;cerebral cortex marginal layer
 CL_1001579;cerebral cortex glial cell
+CL_0002605;astrocyte of the cerebral cortex
 UBERON_0016634;premotor cortex
 UBERON_0016636;supplemental motor cortex
 CL_1001602;cerebral cortex endothelial cell
@@ -1091,6 +1180,7 @@ UBERON_0022730;transverse frontopolar gyri complex
 UBERON_0024183;inferior transverse frontopolar gyrus
 UBERON_0024201;superior transverse frontopolar gyrus
 UBERON_0002595;orbital sulcus
+UBERON_0002612;transverse orbital sulcus
 UBERON_0010262;operculum of brain
 UBERON_0002560;temporal operculum
 UBERON_0002593;orbital operculum
@@ -1109,8 +1199,10 @@ UBERON_0002913;intraparietal sulcus
 UBERON_0002915;postcentral sulcus of parietal lobe
 UBERON_0006088;inferior parietal cortex
 UBERON_0002600;limbic lobe
+UBERON_0002601;fasciolar gyrus
 UBERON_0005366;olfactory lobe
 UBERON_0002264;olfactory bulb
+UBERON_0004001;olfactory bulb layer
 UBERON_0002922;olfactory trigone
 UBERON_0022273;lacrimal lake
 UBERON_0022274;lacrimal papilla
@@ -1123,21 +1215,25 @@ UBERON_0019254;upper eyelash
 UBERON_0003844;upper eyelid epithelium
 UBERON_0003857;upper eyelid mesenchyme
 UBERON_0004773;superior eyelid tarsus
+UBERON_0010379;superior tarsal muscle
 UBERON_0010309;palpebral bone
 UBERON_0001713;lower eyelid
 UBERON_0019255;lower eyelash
 UBERON_0003845;lower eyelid epithelium
 UBERON_0003858;lower eyelid mesenchyme
 UBERON_0004774;inferior eyelid tarsus
+UBERON_0015751;inferior tarsal muscle
 UBERON_0034772;margin of eyelid
 UBERON_0035034;eyelid epithelium
 UBERON_0001604;levator palpebrae superioris
+UBERON_0004508;skeletal muscle tissue of levator palpebrae superioris
 UBERON_0001812;palpebral conjunctiva
 UBERON_0003510;eyelid blood vessel
 UBERON_0003581;eyelid connective tissue
 UBERON_0009648;eyelid subcutaneous connective tissue
 UBERON_0004772;eyelid tarsus
 UBERON_0001818;tarsal gland
+UBERON_0004000;tarsal gland acinus
 UBERON_0001822;orbital septum
 UBERON_0004724;medial palpebral ligament
 UBERON_0010330;eyelid mesenchyme
@@ -1145,6 +1241,7 @@ CL_1000391;melanocyte of eyelid
 UBERON_0013229;eyelid gland
 UBERON_0013228;sweat gland of eyelid
 UBERON_0013231;sebaceous gland of eyelid
+UBERON_0018233;gland of Zeis
 UBERON_0004923;organ component layer
 UBERON_0000344;mucosa
 UBERON_0019042;reproductive system mucosa
@@ -1154,11 +1251,13 @@ UBERON_0004811;endometrium epithelium
 UBERON_0022355;basal layer of endometrium
 UBERON_0022356;outer layer of endometrium
 UBERON_0012276;endometrium glandular epithelium
+UBERON_0002451;endometrial gland
 UBERON_0011949;endometrium luminal epithelium
 CL_0002255;stromal cell of endometrium
 CL_0002656;glandular cell of endometrium
 UBERON_0015172;endometrial blood vessel
 UBERON_0004983;mucosa of vagina
+UBERON_0008798;rugal fold of vagina
 UBERON_0004984;mucosa of seminal vesicle
 UBERON_0004985;mucosa of ejaculatory duct
 UBERON_0004986;mucosa of deferent duct
@@ -1177,6 +1276,7 @@ UBERON_0008342;intestinal villus of duodenum
 UBERON_0008346;duodenal epithelium
 CL_1000356;microfold cell of epithelium proper of duodenum
 CL_1001589;duodenum glandular cell
+CL_1000324;duodenal goblet cell
 UBERON_0013482;crypt of Lieberkuhn of duodenum
 UBERON_0015834;duodenum lamina propria
 UBERON_0012494;muscularis mucosae of duodenum
@@ -1217,6 +1317,7 @@ CL_1000344;paneth cell of epithelium proper of small intestine
 CL_1000345;paneth cell of epithelium of crypt of Lieberkuhn of small intestine
 CL_1000495;small intestine goblet cell
 UBERON_0003454;small intestine Peyer's patch
+CL_1000411;endothelial cell of Peyer's patch
 UBERON_0001207;mucosa of large intestine
 UBERON_0000317;colonic mucosa
 UBERON_0000314;cecum mucosa
@@ -1237,20 +1338,26 @@ UBERON_0007178;muscularis mucosae of colon
 UBERON_0013485;crypt of Lieberkuhn of colon
 UBERON_0003342;mucosa of anal canal
 UBERON_0003346;mucosa of rectum
+UBERON_0012497;muscularis mucosae of rectum
 UBERON_0001239;muscularis mucosae of large intestine
 UBERON_0001278;epithelium of large intestine
 UBERON_0000397;colonic epithelium
 UBERON_0005636;caecum epithelium
 UBERON_0013695;colon endothelium
+CL_1001572;colon endothelial cell
 CL_0011108;colon epithelial cell
 CL_1000347;vacuolar absorptive cell of epithelium of colon
 CL_1000405;epithelial cell of appendix
 CL_1001588;colon glandular cell
+CL_0002265;type D cell of colon
 UBERON_0003354;epithelium of rectum
+CL_1001595;rectum glandular cell
 UBERON_0015716;anal canal epithelium
 UBERON_0022281;epithelium of crypt of Lieberkuhn of large intestine
 CL_0002071;enterocyte of epithelium of large intestine
+CL_1000346;vacuolar absorptive cell of epithelium proper of large intestine
 CL_1000320;large intestine goblet cell
+CL_1000321;large intestine crypt goblet cell
 UBERON_0001984;crypt of Lieberkuhn of large intestine
 UBERON_0011189;lamina propria of large intestine
 UBERON_0000333;intestinal gland
@@ -1267,15 +1374,18 @@ UBERON_0010387;Peyer's patch T cell area
 UBERON_0001240;muscularis mucosae of intestine
 UBERON_0001277;intestinal epithelium
 UBERON_0001213;intestinal villus
+UBERON_0018410;lacteal
 CL_0002563;intestinal epithelial cell
 CL_0000510;paneth cell
 CL_0000584;enterocyte
+CL_1000337;enterocyte of epithelium of duodenal gland
 CL_0002253;epithelial cell of large intestine
 CL_0002203;Brush cell of epithelium proper of large intestine
 CL_0002658;glandular cell of the large intestine
 CL_1000360;microfold cell of epithelium proper of large intestine
 CL_0002254;epithelial cell of small intestine
 CL_1001516;intestinal enteroendocrine cell
+CL_0002680;PP cell of intestine
 UBERON_0001199;mucosa of stomach
 UBERON_0012651;mucosa of gastroduodenal junction
 UBERON_0000424;gastric pit
@@ -1286,6 +1396,7 @@ CL_1000313;gastric goblet cell
 CL_1000314;gastric cardiac gland goblet cell
 CL_1000323;pylroric gastric gland goblet cell
 CL_0002180;mucous cell of stomach
+CL_0002182;surface mucosal cell of stomach
 UBERON_0008791;rugal fold of stomach
 UBERON_0005023;mucosa of oropharynx
 CL_0000577;type EC enteroendocrine cell
@@ -1297,6 +1408,7 @@ UBERON_0006676;muscularis mucosa
 UBERON_0035840;esophagogastric junction muscularis mucosa
 UBERON_0004648;esophagus muscularis mucosa
 UBERON_0006912;urinary bladder muscularis mucosa
+UBERON_0016500;muscularis mucosa of fundus of urinary bladder
 UBERON_0004980;mucosa of ureter
 UBERON_0005004;mucosa of right ureter
 UBERON_0005005;mucosa of left ureter
@@ -1305,8 +1417,10 @@ UBERON_0001259;mucosa of urinary bladder
 UBERON_0005009;mucosa of trigone of urinary bladder
 UBERON_0001261;lamina propria of urinary bladder
 UBERON_0004645;urinary bladder urothelium
+CL_1001428;bladder urothelial cell
 UBERON_0003729;mouth mucosa
 UBERON_0006956;buccal mucosa
+UBERON_0008420;buccal epithelium
 UBERON_0035967;alveolar mucosa
 UBERON_0036293;oral frenulum
 UBERON_0006689;frenulum of tongue
@@ -1325,17 +1439,22 @@ UBERON_0001828;gingiva
 UBERON_0011601;gingiva of upper jaw
 UBERON_0011602;gingiva of lower jaw
 UBERON_0001949;gingival epithelium
+UBERON_0013195;parakeratinized epithelium of gingiva
 UBERON_0012376;retromolar triangle
 UBERON_0003343;mucosa of oral region
 UBERON_0005334;oral lamina propria
 UBERON_0001830;minor salivary gland
 UBERON_0002447;palatine gland
 UBERON_0006330;anterior lingual gland
+UBERON_0015445;anterior lingual gland duct
 UBERON_0005019;mucosa of palate
 UBERON_0005024;mucosa of soft palate
+UBERON_0005025;mucosa of uvula
 UBERON_0005046;mucosa of hard palate
+UBERON_0008799;transverse palatine fold
 UBERON_0002424;oral epithelium
 UBERON_0014453;gustatory epithelium of palate
+UBERON_0034670;palatal taste bud
 UBERON_0011642;oral epithelium from ectoderm
 UBERON_0009671;nasal fin
 UBERON_0012287;Rathkes pouch epithelium
@@ -1350,6 +1469,7 @@ CL_1000447;epithelial cell of stratum germinativum of esophagus
 UBERON_0004785;respiratory system mucosa
 UBERON_0000355;pharyngeal mucosa
 UBERON_0004987;mucosa of laryngopharynx
+UBERON_0004982;mucosa of epiglottis
 UBERON_0005022;mucosa of nasopharynx
 UBERON_0034721;pharyngeal taste bud
 UBERON_0000379;tracheal mucosa
@@ -1359,6 +1479,8 @@ UBERON_0005040;mucosa of terminal bronchiole
 UBERON_0005041;mucosa of respiratory bronchiole
 UBERON_0002051;epithelium of bronchiole
 UBERON_0001955;epithelium of respiratory bronchiole
+CL_1000351;basal cell of epithelium of respiratory bronchiole
+CL_0002638;bronchioalveolar stem cell
 UBERON_0001958;terminal bronchiole epithelium
 CL_0002206;brush cell of terminal bronchiole
 CL_1000332;serous cell of epithelium of terminal bronchiole
@@ -1386,6 +1508,7 @@ UBERON_0002232;olfactory gland
 UBERON_0015784;duct of olfactory gland
 UBERON_0015785;acinus of olfactory gland
 UBERON_0015786;respiratory segment of nasal mucosa
+UBERON_0005385;nasal cavity respiratory epithelium
 UBERON_0005384;nasal cavity epithelium
 CL_0002480;nasal mucosa goblet cell
 UBERON_0009672;oronasal membrane
@@ -1393,6 +1516,7 @@ UBERON_0012278;gland of nasal mucosa
 UBERON_0000031;lamina propria of trachea
 UBERON_0004779;respiratory system lamina propria
 UBERON_0005033;mucosa of gallbladder
+UBERON_0004781;gall bladder lamina propria
 UBERON_0004999;mucosa of biliary tree
 UBERON_0004988;mucosa of cystic duct
 UBERON_0005000;mucosa of common bile duct
@@ -1401,10 +1525,12 @@ UBERON_0005002;mucosa of right hepatic duct
 UBERON_0005003;mucosa of left hepatic duct
 UBERON_0005006;mucosa of renal pelvis
 UBERON_0005007;mucosa of major calyx
+UBERON_0005912;transitional epithelium of major calyx
 UBERON_0005008;mucosa of minor calyx
 UBERON_0005018;mucosa of nasal septum
 UBERON_0005021;mucosa of sphenoidal sinus
 UBERON_0005026;mucosa of middle ear
+UBERON_0005044;mucosa of pharyngotympanic tube
 UBERON_0005027;mucosa of frontal sinus
 UBERON_0005028;mucosa of maxillary sinus
 UBERON_0005029;mucosa of lacrimal canaliculus
@@ -1413,13 +1539,16 @@ UBERON_0005043;mucosa of nasolacrimal duct
 UBERON_0005045;mucosa of ethmoidal sinus
 UBERON_0012299;mucosa of urethra
 UBERON_0005013;mucosa of male urethra
+UBERON_0005015;mucosa of prostatic urethra
 UBERON_0005014;mucosa of female urethra
 UBERON_0005016;mucosa of intermediate urethra
 UBERON_0012480;cloacal mucosa
 UBERON_0000030;lamina propria
 UBERON_0002326;lamina propria of urethra
+UBERON_0016516;lamina propria of prostatic urethra
 UBERON_0005205;lamina propria of vagina
 UBERON_0006815;areolar connective tissue
+CL_1000303;fibroblast of areolar connective tissue
 UBERON_0003350;epithelium of mucosa
 UBERON_0008790;rugal fold
 UBERON_0012430;tunica fibrosa of eyeball
@@ -1444,6 +1573,7 @@ UBERON_0010294;scleral endothelium
 UBERON_0010295;substantia propria of sclera
 UBERON_0022350;visceral serous membrane
 UBERON_0002401;visceral pleura
+CL_1000493;mesothelial cell of visceral pleura
 UBERON_0002425;visceral serous pericardium
 UBERON_0002348;epicardium
 UBERON_0001082;epicardium of ventricle
@@ -1451,6 +1581,7 @@ CL_1000309;epicardial adipocyte
 CL_1000310;adipocyte of epicardial fat of right ventricle
 CL_1000311;adipocyte of epicardial fat of left ventricle
 UBERON_0015128;subepicardial layer of epicardium
+UBERON_0015129;epicardial fat
 UBERON_0001178;visceral peritoneum
 UBERON_0007826;peritoneal mesentery
 UBERON_0001170;mesentery of small intestine
@@ -1460,12 +1591,15 @@ UBERON_0005711;foregut duodenum mesentery
 UBERON_0005712;midgut duodenum mesentery
 UBERON_0003398;mesentery of jejunum
 UBERON_0003396;mesentery of colon
+UBERON_0005677;caecum mesentery
 UBERON_0013138;coronary ligament of liver
 CL_1000457;mesothelial cell of visceral peritoneum
 UBERON_0022351;parietal serous membrane
 UBERON_0002408;parietal serous pericardium
 UBERON_0001366;parietal peritoneum
+CL_1000456;mesothelial cell of parietal peritoneum
 UBERON_0002400;parietal pleura
+CL_1000492;mesothelial cell of parietal pleura
 UBERON_0001768;uvea
 UBERON_0001776;optic choroid
 CL_2000070;optic choroid fibroblast
@@ -1482,14 +1616,19 @@ UBERON_0011892;anterior uvea
 UBERON_0001769;iris
 UBERON_0001606;muscle of iris
 UBERON_0001607;sphincter pupillae
+CL_0002243;smooth muscle cell of sphincter of pupil
 UBERON_0004234;iris smooth muscle
+UBERON_0001608;dilatator pupillae
+CL_1000445;myoepithelial cell of dilator pupillae
 UBERON_0001771;pupil
 UBERON_0010223;left pupil
 UBERON_0010224;right pupil
 UBERON_0001779;iris stroma
 UBERON_0002269;pupillary membrane
 UBERON_0002506;iris epithelium
+CL_0002565;iris pigment epithelial cell
 UBERON_0004118;vasculature of iris
+UBERON_0003511;iris blood vessel
 UBERON_0001775;ciliary body
 UBERON_0034935;pars plicata of ciliary body
 UBERON_0034936;pars plana of ciliary body
@@ -1513,8 +1652,11 @@ UBERON_0002202;submucosa of trachea
 UBERON_0003617;trachea elastic tissue
 UBERON_0005203;trachea gland
 UBERON_0004778;larynx submucosa
+UBERON_0005204;larynx submucosa gland
 UBERON_0004924;submucosa of pharynx
+UBERON_0004925;submucosa of laryngopharynx
 UBERON_0003611;respiratory system elastic tissue
+UBERON_0003615;lung elastic tissue
 UBERON_0004938;submucosa of biliary tree
 UBERON_0004926;submucosa of cystic duct
 UBERON_0004939;submucosa of common bile duct
@@ -1522,6 +1664,7 @@ UBERON_0004940;submucosa of common hepatic duct
 UBERON_0004941;submucosa of right hepatic duct
 UBERON_0004942;submucosa of left hepatic duct
 UBERON_0004943;submucosa of urinary bladder
+UBERON_0004944;submucosa of trigone of urinary bladder
 UBERON_0011298;submucosa of uterine tube
 UBERON_0018257;submucosa of digestive tract
 UBERON_0001200;submucosa of stomach
@@ -1536,6 +1679,7 @@ UBERON_0003329;submucosa of anal canal
 UBERON_0003330;submucosa of rectum
 UBERON_0003331;submucosa of colon
 UBERON_0004927;submucosa of cecum
+UBERON_0004928;submucosa of appendix
 UBERON_0004929;submucosa of ascending colon
 UBERON_0004930;submucosa of transverse colon
 UBERON_0004931;submucosa of descending colon
@@ -1552,6 +1696,7 @@ CL_1000306;fibroblast of tunica adventitia of artery
 UBERON_0002522;tunica media
 UBERON_0003618;aorta tunica media
 UBERON_0007239;tunica media of artery
+UBERON_0006563;tunica media of pulmonary trunk
 UBERON_0007243;tunica media of vein
 UBERON_0015433;blood vessel external elastic membrane
 UBERON_0003619;aorta tunica intima
@@ -1568,6 +1713,7 @@ UBERON_0001746;capsule of thyroid gland
 UBERON_0001748;capsule of parathyroid gland
 UBERON_0002052;adrenal gland capsule
 UBERON_0002122;capsule of thymus
+UBERON_0006936;thymus subcapsular epithelium
 UBERON_0004641;spleen capsule
 UBERON_0005207;tonsil capsule
 UBERON_0016479;capsule of liver
@@ -1585,9 +1731,13 @@ UBERON_0003254;amniotic ectoderm
 UBERON_0003262;amniotic mesoderm
 UBERON_0001040;yolk sac
 UBERON_0008852;visceral yolk sac
+UBERON_0009743;visceral yolk sac cavity
+UBERON_0035676;secondary yolk sac cavity
 UBERON_0008853;parietal yolk sac
+UBERON_0035677;primary yolk sac cavity
 UBERON_0003257;yolk sac endoderm
 UBERON_0003316;mesenchyme of yolk sac
+UBERON_0011919;yolk sac blood island
 UBERON_0005251;yolk sac cavity
 CL_0002354;yolk sac hematopoietic stem cell
 UBERON_0003124;chorion
@@ -1602,8 +1752,10 @@ UBERON_0010333;extraembryonic membrane mesenchyme
 UBERON_0004369;Reichert's membrane
 UBERON_0004666;interventricular septum membranous part
 UBERON_0009859;endosteum
+CL_0002157;endosteal cell
 UBERON_0006217;cloacal membrane
 UBERON_0006610;tunica albuginea
+UBERON_0006643;tunica albuginea of testis
 UBERON_0006614;aponeurosis
 UBERON_0006661;epicranial aponeurosis
 UBERON_0014780;palatine aponeurosis
@@ -1613,15 +1765,19 @@ UBERON_0006650;tunica vaginalis testis
 UBERON_0012103;suspensory ligament of breast
 UBERON_0011234;fibrous membrane of synovial tendon sheath
 UBERON_0000304;tendon sheath
+UBERON_0011233;synovial membrane of synovial tendon sheath
 UBERON_0000437;arachnoid barrier layer
 UBERON_0005742;adventitia
 UBERON_0001252;adventitia of ureter
+CL_1000708;ureter adventitial cell
+CL_1000308;fibrocyte of adventitia of ureter
 UBERON_0006645;adventitia of epididymis
 UBERON_0006647;adventitia of ductus deferens
 UBERON_0006648;adventitia of seminal vesicle
 UBERON_0012504;adventitia of esophagus
 CL_0002503;adventitial cell
 UBERON_0005452;hepatic cord
+UBERON_0001283;bile canaliculus
 UBERON_0005283;tela choroidea
 UBERON_0005286;tela choroidea of midbrain cerebral aqueduct
 UBERON_0005287;tela choroidea of fourth ventricle
@@ -1669,6 +1825,7 @@ UBERON_0002289;midbrain cerebral aqueduct
 UBERON_0005357;brain ependyma
 UBERON_0002192;ventricular system choroidal fissure
 UBERON_0004670;ependyma
+UBERON_0005359;spinal cord ependyma
 UBERON_0005983;heart layer
 UBERON_0002165;endocardium
 UBERON_0001081;endocardium of ventricle
@@ -1676,17 +1833,22 @@ UBERON_0009712;endocardium of right ventricle
 UBERON_0009713;endocardium of left ventricle
 UBERON_0002166;endocardium of atrium
 UBERON_0034903;left atrium endocardium
+UBERON_0011006;endocardium of left auricle
 UBERON_0009129;right atrium endocardium
+UBERON_0011007;endocardium of right auricle
 UBERON_0011005;endocardium of auricle
 UBERON_0003930;atrioventricular canal endocardium
 UBERON_0005243;interventricular septum endocardium
 UBERON_0002062;endocardial cushion
+CL_0008022;endocardial cushion cell
 UBERON_0005316;endocardial endothelium
 CL_0002350;endocardial cell
 UBERON_0002349;myocardium
 UBERON_0001083;myocardium of ventricle
 UBERON_0006566;left ventricle myocardium
+UBERON_0036290;myocardium of anterior wall of left ventricle
 UBERON_0006567;right ventricle myocardium
+UBERON_0036291;myocardium of anterior wall of right ventricle
 UBERON_0018649;cardiac muscle tissue of ventricle
 UBERON_0004146;His-Purkinje system
 UBERON_0002353;atrioventricular bundle
@@ -1697,6 +1859,7 @@ CL_1000369;transitional myocyte of septal division of left branch of atrioventri
 CL_1000374;transitional myocyte of posterior division of left branch of atrioventricular bundle
 CL_1000375;myocardial endocrine cell of septal division of left branch of atrioventricular bundle
 UBERON_0005987;right branch of atrioventricular bundle
+CL_1000371;transitional myocyte of right branch of atrioventricular bundle
 CL_0010005;atrioventricular bundle cell
 CL_1000481;transitional myocyte of atrioventricular bundle
 CL_1000372;transitional myocyte of atrial part of atrioventricular bundle
@@ -1725,6 +1888,7 @@ UBERON_0005988;atrium myocardial trabecula
 UBERON_0004265;outflow tract myocardium
 UBERON_0005248;bulbus cordis myocardium
 UBERON_0004123;myocardial layer
+UBERON_0004124;myocardium trabecular layer
 UBERON_0004493;cardiac muscle tissue of myocardium
 UBERON_0002350;conducting system of heart
 UBERON_0002063;sinus venosus
@@ -1735,6 +1899,8 @@ CL_1000409;myocyte of sinoatrial node
 CL_1000477;cardiac pacemaker cell of sinoatrial node
 CL_1000478;transitional myocyte of sinoatrial node
 UBERON_0002352;atrioventricular node
+CL_1000410;myocyte of atrioventricular node
+CL_1000479;Purkinje myocyte of atrioventricular node
 UBERON_0005982;Bachmann's bundle
 UBERON_0009966;internodal tract
 UBERON_0015125;anterior internodal tract
@@ -1758,10 +1924,12 @@ UBERON_0014851;chorda tendinea of left ventricle
 UBERON_0014852;chorda tendinea of right ventricle
 UBERON_0007182;muscle layer of infundibulum of uterine tube
 UBERON_0002523;tunica intima
+UBERON_0011392;blood vessel internal elastic membrane
 UBERON_0005388;photoreceptor array
 UBERON_0000966;retina
 UBERON_0000053;macula lutea
 UBERON_0001786;fovea centralis
+UBERON_0002823;clivus of fovea centralis
 UBERON_0002822;macula lutea proper
 CL_0000740;retinal ganglion cell
 CL_0000748;retinal bipolar neuron
@@ -1780,6 +1948,7 @@ UBERON_0008927;sublaminar layers S1 or S2
 UBERON_0008923;sublaminar layer S2
 UBERON_0008922;sublaminar layer S1
 UBERON_0008928;sublaminar layers S2 or S3
+UBERON_0008924;sublaminar layer S3
 UBERON_0008929;sublaminar layers S4 or S5
 UBERON_0008925;sublaminar layer S4
 UBERON_0008926;sublaminar layer S5
@@ -1787,8 +1956,11 @@ UBERON_0007619;limiting membrane of retina
 UBERON_0001788;outer limiting layer of retina
 UBERON_0001794;inner limiting layer of retina
 UBERON_0001782;pigmented layer of retina
+CL_0002586;retinal pigment epithelial cell
 UBERON_0001783;optic disc
 UBERON_0004864;vasculature of retina
+UBERON_0003501;retina blood vessel
+UBERON_0001620;central retinal artery
 CL_0002485;retinal melanocyte
 CL_0002585;retinal blood vessel endothelial cell
 UBERON_0008921;substratum of layer of retina
@@ -1813,6 +1985,7 @@ UBERON_0001992;papillary layer of dermis
 UBERON_0000412;dermal papilla
 CL_1000302;fibroblast of papillary layer of dermis
 UBERON_0003585;dermis connective tissue
+UBERON_0003426;dermis adipose tissue
 UBERON_0003719;Pacinian corpuscle
 CL_0002482;dermal melanocyte
 CL_0002551;fibroblast of dermis
@@ -1826,6 +1999,7 @@ CL_0002521;subcutaneous fat cell
 UBERON_0002243;cutaneous vein
 CL_0002583;subcutaneous preadipocyte
 UBERON_0008876;hypodermis skeletal muscle layer
+UBERON_0005467;platysma
 UBERON_0015453;subcutaneous lymph node
 UBERON_0015783;smooth muscle layer in fatty layer of subcutaneous tissue
 UBERON_0002025;stratum basale of epidermis
@@ -1837,7 +2011,9 @@ CL_0002288;type V taste receptor cell
 CL_0002289;type I taste bud cell
 CL_0000242;Merkel cell
 UBERON_0002026;stratum spinosum of epidermis
+CL_0000649;prickle cell
 UBERON_0002069;stratum granulosum of epidermis
+CL_0000712;stratum granulosum cell
 UBERON_0002027;stratum corneum of epidermis
 UBERON_0002284;hyponychium
 CL_0002153;corneocyte
@@ -1847,11 +2023,14 @@ UBERON_0010402;epidermis suprabasal layer
 UBERON_0011190;lunule of nail
 UBERON_0010507;layer of dura mater
 UBERON_0010506;meningeal dura mater
+UBERON_0035425;falx cerebelli
 UBERON_0010505;periosteal dura mater
 UBERON_0012375;subserosa
+UBERON_0012374;subserosal plexus
 UBERON_0018260;layer of muscle tissue
 UBERON_0034933;layer of smooth muscle tissue
 UBERON_0001296;myometrium
+UBERON_0015173;helicine branch of uterine artery
 UBERON_0004224;muscular coat of vas deferens
 UBERON_0008856;stomach muscularis externa
 UBERON_0008857;stomach smooth muscle circular layer
@@ -1871,6 +2050,7 @@ UBERON_0012419;taenia coli
 UBERON_0006660;muscular coat
 UBERON_0035841;esophagogastric junction muscularis propria
 UBERON_0012378;muscle layer of urinary bladder
+UBERON_0000381;urinary bladder detrusor smooth muscle
 UBERON_0004665;muscular coat of seminal vesicle
 UBERON_0006642;muscle layer of oviduct
 UBERON_0006646;muscle layer of epididymis
@@ -1884,6 +2064,7 @@ UBERON_0018261;muscular coat of digestive tract
 UBERON_0012367;muscle layer of intestine
 UBERON_0011198;muscle layer of large intestine
 UBERON_0012489;muscle layer of colon
+UBERON_0035805;muscle layer of sigmoid colon
 UBERON_0012490;muscle layer of anal canal
 UBERON_0018111;muscle layer of rectum
 UBERON_0011201;muscle layer of small intestine
@@ -1906,14 +2087,18 @@ UBERON_0005196;spleen germinal center
 UBERON_0010421;spleen B cell corona
 UBERON_0001960;periarterial lymphatic sheath
 UBERON_0010401;spleen central arteriole
+UBERON_0013132;penicillar arteriole
 UBERON_0001250;red pulp of spleen
 UBERON_0001266;splenic cord
+CL_1000489;reticular cell of splenic cord
 UBERON_0003910;splenic sinusoid
 UBERON_0009967;spleen venous sinus
+CL_1000397;endothelial cell of venous sinus of red pulp of spleen
 UBERON_0001265;trabecula of spleen
 UBERON_0010399;spleen trabecular artery
 UBERON_0010400;spleen trabecular vein
 UBERON_0001747;parenchyma of thyroid gland
+CL_0000570;parafollicular cell
 UBERON_0001280;liver parenchyma
 UBERON_0005221;liver right lobe parenchyma
 UBERON_0010704;parenchyma of quadrate lobe of liver
@@ -1922,11 +2107,14 @@ UBERON_0005222;liver left lobe parenchyma
 UBERON_0001171;portal lobule
 UBERON_0001172;hepatic acinus
 UBERON_0001279;portal triad
+UBERON_0001246;interlobular bile duct
 UBERON_0001282;intralobular bile duct
 UBERON_0004647;liver lobule
 UBERON_0001281;hepatic sinusoid
 UBERON_0009548;hepatic sinusoid of left of lobe of liver
+UBERON_0011737;caudate lobe hepatic sinusoid
 UBERON_0009549;hepatic sinusoid of right of lobe of liver
+UBERON_0011738;quadrate lobe hepatic sinusoid
 CL_1000398;endothelial cell of hepatic sinusoid
 UBERON_0014400;hepatic sinusoidal space
 UBERON_0006729;liver perisinusoidal space
@@ -1938,10 +2126,12 @@ UBERON_0001284;renal column
 UBERON_0009650;cortical arch of kidney
 UBERON_0010533;metanephros cortex
 UBERON_0004738;metanephric juxtaglomerular apparatus
+UBERON_0005122;metanephric macula densa
 UBERON_0005115;metanephric cortical collecting duct
 UBERON_0005117;metanephric distal convoluted tubule
 UBERON_0005124;metanephric proximal convoluted tubule
 UBERON_0005151;metanephric proximal tubule
+UBERON_0005125;metanephric proximal straight tubule
 UBERON_0001229;renal corpuscle
 UBERON_0000074;renal glomerulus
 UBERON_0004736;metanephric glomerulus
@@ -1955,21 +2145,30 @@ UBERON_0007306;pronephric glomerular capillary
 UBERON_0007307;pronephric glomerular basement membrane
 UBERON_0005325;mesonephric glomerulus
 UBERON_0005326;mesonephric glomerulus vasculature
+UBERON_0006182;mesonephric glomerular mesangium
 UBERON_0005327;mesonephric glomerular epithelium
 UBERON_0006183;mesonephric glomerular capillary
 UBERON_0002319;mesangium
 UBERON_0002320;glomerular mesangium
 UBERON_0002321;extraglomerular mesangium
+CL_0002173;extraglomerular mesangial cell
 UBERON_0004188;glomerular epithelium
 UBERON_0004189;glomerular endothelium
+UBERON_0004294;glomerular capillary endothelium
+CL_1001005;glomerular capillary endothelial cell
 UBERON_0005750;glomerular parietal epithelium
+CL_1000452;parietal epithelial cell
 UBERON_0005777;glomerular basement membrane
 UBERON_0005787;lamina densa of glomerular basement membrane
 UBERON_0005788;lamina rara interna
 UBERON_0005789;lamina rara externa
 CL_1000510;kidney glomerular epithelial cell
+CL_1000450;epithelial cell of glomerular capsule
+CL_1000451;epithelial cell of visceral layer of glomerular capsule
 UBERON_0004190;renal glomerulus vasculature
+UBERON_0004212;glomerular capillary
 CL_1000746;glomerular cell
+CL_0002188;glomerular endothelial cell
 UBERON_0001230;glomerular capsule
 UBERON_0001286;Bowman's space
 UBERON_0005749;glomerular tuft
@@ -1983,15 +2182,21 @@ CL_1001213;arcuate artery endothelial cell
 CL_1001214;arcuate artery smooth muscle cell
 UBERON_0002303;juxtaglomerular apparatus
 UBERON_0005320;mesonephric juxtaglomerular apparatus
+UBERON_0005324;mesonephric macula densa
 UBERON_0002335;macula densa
 UBERON_0003546;distal convoluted tubule macula densa
 UBERON_0005202;distal straight tubule macula densa
 CL_1000850;macula densa epithelial cell
 CL_1000618;juxtaglomerular complex cell
+CL_0000648;kidney granular cell
 UBERON_0004203;cortical collecting duct
+CL_1000549;kidney cortex collecting duct epithelial cell
+CL_1000715;kidney cortex collecting duct intercalated cell
 UBERON_0005168;renal interlobular vein
 UBERON_0005268;renal cortex artery
+CL_1001045;kidney cortex artery cell
 UBERON_0005269;renal cortex vein
+CL_1001052;kidney cortex vein cell
 UBERON_0005270;renal cortex interstitium
 UBERON_0018117;left renal cortex interstitium
 UBERON_0018118;right renal cortex interstitium
@@ -2001,29 +2206,36 @@ UBERON_0006851;renal cortex peritubular capillary
 UBERON_0006853;renal cortex tubule
 UBERON_0004134;proximal tubule
 UBERON_0006173;pronephric proximal tubule
+UBERON_0009622;pronephric proximal straight tubule
 UBERON_0006192;mesonephric proximal tubule
 UBERON_0001287;proximal convoluted tubule
 UBERON_0007298;pronephric proximal convoluted tubule
 UBERON_0012428;proximal convoluted tubule brush border
 CL_1000838;kidney proximal convoluted tubule epithelial cell
 UBERON_0001290;proximal straight tubule
+CL_1000839;kidney proximal straight tubule epithelial cell
 CL_0002306;epithelial cell of proximal tubule
 UBERON_0008404;proximal tubular epithelium
 UBERON_0001292;distal convoluted tubule
+CL_1000849;kidney distal convoluted tubule epithelial cell
 CL_1000615;kidney cortex tubule cell
+CL_0002305;epithelial cell of distal tubule
 CL_0002681;kidney cortical cell
 CL_0002584;renal cortical epithelial cell
 CL_1000854;kidney blood vessel cell
 CL_1000891;kidney arterial blood vessel cell
+CL_1001064;kidney artery smooth muscle cell
 CL_1000893;kidney venous blood vessel cell
 CL_1000892;kidney capillary endothelial cell
 UBERON_0009871;nephrogenic zone
+UBERON_0010531;metanephros induced blastemal cells
 UBERON_0009883;medullary ray
 UBERON_0001749;parenchyma of parathyroid gland
 UBERON_0008946;lung parenchyma
 UBERON_0008870;pulmonary alveolar parenchyma
 UBERON_0010369;secondary pulmonary lobule
 UBERON_0005158;parenchyma of central nervous system
+UBERON_0034907;pineal parenchyma
 UBERON_0001978;parenchyma of pancreas
 UBERON_0005220;pancreas head parenchyma
 UBERON_0005223;pancreas body parenchyma
@@ -2035,10 +2247,14 @@ UBERON_0006541;outer medulla inner stripe loop of Henle
 UBERON_0004201;kidney outer medulla inner stripe
 UBERON_0004202;kidney outer medulla outer stripe
 UBERON_0004204;outer medullary collecting duct
+CL_1000548;kidney outer medulla collecting duct epithelial cell
+CL_1000717;kidney outer medulla collecting duct intercalated cell
 UBERON_0004775;outer renal medulla vasa recta
 UBERON_0005213;outer renal medulla interstitium
+CL_1000804;kidney outer medulla interstitial cell
 UBERON_0006341;outer renal medulla peritubular capillary
 CL_1000616;kidney outer medulla cell
+CL_1001111;kidney loop of Henle thin descending limb epithelial cell
 UBERON_0000063;organ subunit
 UBERON_0001801;anterior segment of eyeball
 UBERON_0022287;tear film
@@ -2047,6 +2263,7 @@ UBERON_0000389;lens cortex
 UBERON_0001803;epithelium of lens
 UBERON_0005614;lens anterior epithelium
 CL_0002224;lens epithelial cell
+CL_0002223;anterior lens cell
 UBERON_0001804;capsule of lens
 CL_0002222;vertebrate lens cell
 CL_0011004;lens fiber cell
@@ -2069,7 +2286,9 @@ UBERON_0004817;lacrimal gland epithelium
 UBERON_0011857;acinus of lacrimal gland
 UBERON_0001850;lacrimal drainage system
 UBERON_0001770;lacrimal canaliculus
+CL_1000433;epithelial cell of lacrimal canaliculus
 UBERON_0002392;nasolacrimal duct
+CL_1000437;epithelial cell of nasolacrimal duct
 UBERON_0010284;lacrimal punctum
 CL_1000435;epithelial cell of lacrimal duct
 UBERON_0001811;conjunctiva
@@ -2081,7 +2300,9 @@ UBERON_0010306;bulbar conjunctiva
 UBERON_0010307;conjunctival fornix
 UBERON_0014698;lacrimal caruncle
 UBERON_0010366;conjunctival vasculature
+UBERON_0010367;conjunctival vein
 CL_1000432;conjunctival epithelial cell
+CL_2000084;conjunctiva goblet cell
 UBERON_0015155;conjunctival space
 UBERON_0000058;duct
 UBERON_0001765;mammary duct
@@ -2117,19 +2338,26 @@ UBERON_0035074;duct of apocrine sweat gland
 UBERON_0003928;digestive system duct
 UBERON_0007329;pancreatic duct
 UBERON_0001064;ventral pancreatic duct
+CL_0002079;pancreatic ductal cell
 UBERON_0005429;dorsal pancreatic duct
 UBERON_0009970;epithelium of pancreatic duct
+CL_1000322;pancreatic goblet cell
 UBERON_0002394;bile duct
 UBERON_0005604;extrahepatic part of hepatic duct
+UBERON_0001175;common hepatic duct
 UBERON_0003703;extrahepatic bile duct
 UBERON_0001174;common bile duct
 UBERON_0001152;cystic duct
+UBERON_0010017;spiral valve of cystic duct
 UBERON_0001176;right hepatic duct
 UBERON_0001177;left hepatic duct
 UBERON_0010081;future common hepatic duct
 UBERON_0004822;extrahepatic bile duct epithelium
 UBERON_0005171;hepatic duct
+UBERON_0004834;hepatic duct smooth muscle
 UBERON_0003704;intrahepatic bile duct
+UBERON_0004823;intrahepatic bile duct epithelium
+CL_0002538;intrahepatic bile duct epithelial cell
 UBERON_0004058;biliary ductule
 UBERON_0004820;bile duct epithelium
 CL_1000488;cholangiocyte
@@ -2146,6 +2374,7 @@ UBERON_0004358;caput epididymis
 UBERON_0004359;corpus epididymis
 UBERON_0004360;cauda epididymis
 UBERON_0004544;epididymis epithelium
+CL_1001590;epididymis glandular cell
 UBERON_0004835;epididymis smooth muscle
 UBERON_0006641;appendix epididymis
 UBERON_0008824;duct of epididymis
@@ -2168,8 +2397,10 @@ UBERON_0034770;bulbourethral gland epithelium
 UBERON_0010151;duct of bulbourethral gland
 UBERON_0000998;seminal vesicle
 UBERON_0004805;seminal vesicle epithelium
+CL_1001597;seminal vesicle glandular cell
 UBERON_0005903;duct of seminal vesicle
 UBERON_0006946;efferent duct
+UBERON_0006948;efferent duct epithelium
 UBERON_0002485;prostate duct
 CL_0002232;epithelial cell of prostatic duct
 CL_0002236;basal epithelial cell of prostatic duct
@@ -2183,16 +2414,21 @@ UBERON_0005080;metanephric ureteric bud
 UBERON_0011574;mesonephric duct lumen
 UBERON_0003060;pronephric duct
 UBERON_0010146;paraurethral duct
+UBERON_0011830;duct of lesser vestibular gland
 UBERON_0011831;duct of vestibular gland
+UBERON_0010150;duct of major vestibular gland
 UBERON_0011845;duct of sebaceous gland
 UBERON_0034969;epithelial layer of duct
 CL_0000068;duct epithelial cell
 CL_0000072;non-branched duct epithelial cell
+CL_1000454;kidney collecting duct epithelial cell
+CL_1001432;kidney collecting duct intercalated cell
 CL_0000069;branched duct epithelial cell
 CL_0000377;tracheoblast
 CL_0002326;luminal epithelial cell of mammary gland
 CL_0002660;luminal cell of acinus of lactiferous gland
 CL_0002662;luminal cell of lactiferous duct
+CL_0002661;luminal cell of lactiferous terminal ductal lobular unit
 UBERON_0035105;sac of scrotum
 UBERON_0035831;costal diaphragm
 UBERON_0011932;pilosebaceous unit
@@ -2209,7 +2445,9 @@ UBERON_0015149;ventral hair
 UBERON_0015150;dorsal hair
 UBERON_0016446;hair of head
 UBERON_0022279;strand of hair on external ear
+UBERON_0015147;pinna hair
 UBERON_0010171;strand of hair of face
+UBERON_0011931;nasal hair
 UBERON_0016447;hair of trunk
 UBERON_0000329;hair root
 UBERON_0002074;hair shaft
@@ -2227,7 +2465,9 @@ UBERON_0003484;eye sebaceous gland
 CL_0002140;acinar cell of sebaceous gland
 UBERON_0003485;vagina sebaceous gland
 UBERON_0011827;areolar gland
+UBERON_0011854;acinus of areolar gland
 CL_2000021;sebaceous gland native cell
+CL_0000317;sebum secreting cell
 UBERON_0011846;acinus of sebaceous gland
 UBERON_0002033;arrector muscle of hair
 UBERON_0014765;crus of diaphragm
@@ -2248,6 +2488,7 @@ UBERON_0002170;upper lobe of right lung
 UBERON_0004899;right lung cranial lobe lobar bronchus mesenchyme
 UBERON_0005244;lobar bronchus of right lung cranial lobe
 UBERON_0005639;right lung cranial lobe epithelium
+UBERON_0005674;right lung cranial lobe endothelium
 UBERON_0005678;right lung cranial lobe segmental bronchus
 UBERON_0005681;right lung upper lobe bronchiole
 UBERON_0008952;upper lobe of left lung
@@ -2258,6 +2499,7 @@ UBERON_0008949;lower lobe of lung
 UBERON_0002171;lower lobe of right lung
 UBERON_0005245;lobar bronchus of right lung caudal lobe
 UBERON_0005640;right lung caudal lobe epithelium
+UBERON_0005675;right lung caudal lobe endothelium
 UBERON_0005679;right lung caudal lobe segmental bronchus
 UBERON_0012059;right lung lower lobe bronchiole
 UBERON_0008953;lower lobe of left lung
@@ -2269,11 +2511,16 @@ UBERON_0004900;right lung middle lobe lobar bronchus mesenchyme
 UBERON_0012063;lobar bronchus of right lung middle lobe
 UBERON_0012068;right lung middle lobe bronchiole
 UBERON_0006518;right lung lobe
+UBERON_0003404;lobar bronchus of right lung
+UBERON_0015795;right lung lobar bronchus epitheium
 UBERON_0008951;left lung lobe
+UBERON_0003405;lobar bronchus of left lung
+UBERON_0015794;left lung lobar bronchus epithelium
 UBERON_0002183;lobar bronchus
 UBERON_0002339;epithelium of lobar bronchus
 UBERON_0003591;lobar bronchus connective tissue
 UBERON_0004884;lobar bronchus mesenchyme
+UBERON_0004901;right lung lobar bronchus mesenchyme
 UBERON_0004889;lobar bronchus vasculature
 UBERON_0012084;lumen of secondary bronchus
 UBERON_0002184;segmental bronchus
@@ -2298,9 +2545,11 @@ UBERON_0005483;thymus lobe
 UBERON_0005457;left thymus lobe
 UBERON_0005469;right thymus lobe
 UBERON_0009913;renal lobe
+UBERON_0009914;renal lobule
 UBERON_0001802;posterior segment of eyeball
 UBERON_0001799;vitreous chamber of eyeball
 UBERON_0001798;vitreous body
+UBERON_0001797;vitreous humor
 UBERON_0006010;hyaloid canal
 UBERON_0009911;lobule
 UBERON_0001912;lobule of mammary gland
@@ -2310,6 +2559,7 @@ CL_1000418;myoepithelial cell of lactiferous alveolus
 UBERON_0011856;acinus of lactiferous gland
 CL_1000468;myoepithelial cell of acinus of lactiferous gland
 UBERON_0002125;thymus lobule
+UBERON_0003988;thymus corticomedullary boundary
 UBERON_0010368;pulmonary lobule
 UBERON_0008874;pulmonary acinus
 UBERON_0002169;alveolar sac
@@ -2343,6 +2593,7 @@ UBERON_0001180;superior recess of lesser sac
 UBERON_0001181;inferior recess of lesser sac
 UBERON_0003274;mesothelium of omental bursa
 UBERON_0005252;lesser sac cavity
+UBERON_0006342;left subhepatic recess
 UBERON_0035651;glans
 UBERON_0001299;glans penis
 UBERON_0012241;male urethral meatus
@@ -2354,16 +2605,21 @@ UBERON_0006311;chamber of eyeball
 UBERON_0003675;tooth crown
 UBERON_0003955;molar crown
 UBERON_0006844;cusp of tooth
+UBERON_0016929;lingual cusp of tooth
 UBERON_0017295;cingulum of tooth
 UBERON_0013613;upper jaw cingulum
 UBERON_0017298;cingulum of upper incisor tooth
 UBERON_0017312;cingulum of upper canine tooth
 UBERON_0017613;cingulum of upper jaw molar
 UBERON_0017296;cingulum of incisor tooth
+UBERON_0017299;cingulum of lower incisor tooth
 UBERON_0017297;cingulum of canine tooth
+UBERON_0017313;cingulum of lower canine tooth
 UBERON_0013612;lower jaw cingulum
+UBERON_0017612;cingulum of lower jaw molar
 UBERON_0017614;cingulum of molar tooth
 UBERON_0003677;tooth root
+UBERON_0008854;root of molar tooth
 UBERON_0004662;vertebra lamina
 UBERON_0004732;segmental subdivision of nervous system
 UBERON_0004731;neuromere
@@ -2397,6 +2653,7 @@ UBERON_0014777;spinal neuromere
 UBERON_0004733;segmental subdivision of hindbrain
 UBERON_0005290;myelencephalon
 UBERON_0019262;white matter of myelencephalon
+UBERON_0035938;amiculum of inferior olive
 UBERON_0022258;endolemniscal nucleus
 UBERON_0001895;metencephalon
 UBERON_0019291;white matter of metencephalon
@@ -2404,8 +2661,10 @@ UBERON_0024045;white matter of the cerebellar cortex
 UBERON_0002568;amiculum of dentate nucleus
 UBERON_0002659;superior medullary velum
 UBERON_0019292;white matter of pons
+UBERON_0002152;middle cerebellar peduncle
 UBERON_0000988;pons
 UBERON_0000127;facial nucleus
+UBERON_0003011;facial motor nucleus
 UBERON_0002147;reticulotegmental nucleus
 UBERON_0002567;basal part of pons
 UBERON_0002151;pontine nuclear group
@@ -2417,6 +2676,7 @@ UBERON_0002794;medial longitudinal fasciculus of pons
 UBERON_0004048;pontine cistern
 UBERON_0004133;salivatory nucleus
 UBERON_0007634;parabrachial nucleus
+UBERON_0002869;diffuse reticular nucleus
 UBERON_0002037;cerebellum
 UBERON_0034708;cerebellum marginal layer
 UBERON_0002129;cerebellar cortex
@@ -2467,6 +2727,8 @@ UBERON_0004004;cerebellum lobule
 UBERON_0005293;cerebellum lobe
 UBERON_0003012;flocculonodular lobe
 UBERON_0002131;anterior lobe of cerebellum
+UBERON_0014473;precentral fissure of cerebellum
+UBERON_0002566;superior precentral sulcus
 UBERON_0004002;posterior lobe of cerebellum
 UBERON_0004130;cerebellar layer
 UBERON_0002956;granular layer of cerebellar cortex
@@ -2499,12 +2761,14 @@ UBERON_0014540;white matter lamina of cerebellum
 UBERON_0014642;vestibulocerebellum
 UBERON_0016565;cerebral blood vessel
 CL_1001611;cerebellar neuron
+CL_2000028;cerebellum glutamatergic neuron
 UBERON_0003302;roof plate of metencephalon
 UBERON_0003310;floor plate of metencephalon
 UBERON_0004673;trigeminal nerve root
 UBERON_0002796;motor root of trigeminal nerve
 UBERON_0009907;sensory root of trigeminal nerve
 UBERON_0004674;facial nerve root
+UBERON_0010287;motor root of facial nerve
 UBERON_0006517;kidney calyx
 UBERON_0001227;minor calyx
 UBERON_0001226;major calyx
@@ -2515,7 +2779,9 @@ UBERON_0000415;artery wall
 UBERON_0004663;aorta wall
 UBERON_0004784;heart ventricle wall
 UBERON_0036285;wall of left ventricle
+UBERON_0036288;anterior wall of left ventricle
 UBERON_0036286;wall of right ventricle
+UBERON_0036289;anterior wall of right ventricle
 UBERON_0000328;gut wall
 UBERON_0035120;fauces
 UBERON_0035270;roof of nasopharynx
@@ -2524,6 +2790,7 @@ UBERON_0035383;lateral wall of nasopharynx
 UBERON_0035401;posterior wall of nasopharynx
 UBERON_0001096;wall of esophagus
 UBERON_0001975;serosa of esophagus
+UBERON_0003283;mesentery of oesophagus
 UBERON_0003832;esophagus muscle
 UBERON_0007652;esophageal sphincter
 UBERON_0002112;smooth muscle of esophagus
@@ -2540,15 +2807,23 @@ UBERON_0004239;small intestine smooth muscle
 UBERON_0001169;wall of large intestine
 UBERON_0001209;serosa of large intestine
 UBERON_0003334;serosa of rectum
+UBERON_0003395;mesentery of rectum
 UBERON_0003335;serosa of colon
+UBERON_0012498;serosa of appendix
 UBERON_0004220;large intestine smooth muscle
+UBERON_0018112;rectum smooth muscle tissue
 UBERON_0001243;serosa of intestine
 UBERON_0004221;intestine smooth muscle
 UBERON_0035240;posterior wall of oropharynx
 UBERON_0035286;lateral wall of oropharynx
 UBERON_0000459;uterine wall
+UBERON_0001297;serosa of uterus
+UBERON_0003885;mesometrium
+UBERON_0010391;parametrium
+UBERON_0010413;parametrial fat pad
 UBERON_0009916;wall of ureter
 UBERON_0001256;wall of urinary bladder
+UBERON_0001260;serosa of urinary bladder
 UBERON_0003697;abdominal wall
 UBERON_0002358;peritoneum
 UBERON_0034696;fold of peritoneum
@@ -2577,6 +2852,7 @@ UBERON_0018529;female inguinal ring
 UBERON_0018530;male inguinal ring
 UBERON_0001221;transversus abdominis muscle
 UBERON_0002382;rectus abdominis muscle
+UBERON_0004511;skeletal muscle tissue of rectus abdominis
 UBERON_0011016;pyramidalis
 UBERON_0010975;external oblique pre-muscle mass
 UBERON_0001220;quadratus lumborum
@@ -2584,6 +2860,7 @@ UBERON_0003702;inguinal canal
 UBERON_0004353;female inguinal canal
 UBERON_0004354;male inguinal canal
 UBERON_0006635;anterior abdominal wall
+UBERON_0013705;fascia of Scarpa
 UBERON_0006655;septum of scrotum
 UBERON_0016403;thoracic wall
 UBERON_0016435;chest wall
@@ -2595,12 +2872,19 @@ UBERON_0002296;dorsal mesentery
 UBERON_0005685;midgut dorsal mesentery
 UBERON_0005686;caecum dorsal mesentery
 UBERON_0005602;dorsal mesogastrium
+UBERON_0006293;spleen primordium
 UBERON_0009668;ventral mesentery
+UBERON_0005626;ventral mesogastrium
+UBERON_0001247;falciform ligament
+UBERON_0015142;falciform fat
 UBERON_0004854;gastrointestinal system mesentery
+UBERON_0003281;mesentery of stomach
 UBERON_0003282;mesentery of heart
 UBERON_0010277;mesocardium
 UBERON_0005601;dorsal mesocardium
+UBERON_0002248;transverse pericardial sinus
 UBERON_0010279;pericardial sinus
+UBERON_0010283;oblique pericardial sinus
 UBERON_0003284;mesentery of midgut
 UBERON_0003393;mesentery of urinary system
 UBERON_0003394;mesentery of hindgut
@@ -2612,7 +2896,9 @@ CL_0002578;mesenteric preadipocyte
 UBERON_0012332;broad ligament of uterus
 UBERON_0015143;mesenteric fat pad
 UBERON_0000977;pleura
+CL_1000491;mesothelial cell of pleura
 UBERON_0002357;serous pericardium
+UBERON_0007188;mesothelium of serous pericardium
 UBERON_0007616;layer of synovial tissue
 UBERON_0002018;synovial membrane of synovial joint
 CL_0000214;synovial cell
@@ -2656,6 +2942,7 @@ CL_2000046;ventricular cardiac muscle cell
 CL_2000066;cardiac ventricle fibroblast
 UBERON_0002494;papillary muscle of heart
 UBERON_0002511;trabecula carnea
+UBERON_0006828;trabecula carnea of atrium
 UBERON_0005337;outflow tract of ventricle
 UBERON_0005455;interventricular groove
 UBERON_0005489;anterior interventricular sulcus
@@ -2677,6 +2964,7 @@ UBERON_0003369;fossa ovalis of heart
 UBERON_0005208;right atrium valve
 UBERON_0002134;tricuspid valve
 UBERON_0005484;tricuspid valve leaflet
+UBERON_0005998;tricuspid valve cusp
 UBERON_0005997;tricuspid valve anulus
 UBERON_0010189;right atrium venous valve
 UBERON_0005965;outflow part of right atrium
@@ -2698,6 +2986,7 @@ UBERON_0035825;left adrenal gland cortex
 UBERON_0035827;right adrenal gland cortex
 UBERON_0009753;adrenal gland cortex zone
 UBERON_0002053;zona glomerulosa of adrenal gland
+CL_0002099;type I cell of adrenal cortex
 UBERON_0002054;zona fasciculata of adrenal gland
 UBERON_0002055;zona reticularis of adrenal gland
 CL_1001601;adrenal gland glandular cell
@@ -2734,6 +3023,7 @@ UBERON_0002432;pars intermedia of adenohypophysis
 UBERON_0002433;pars tuberalis of adenohypophysis
 UBERON_0006377;remnant of Rathke's pouch
 UBERON_0006964;pars distalis of adenohypophysis
+CL_0002177;folliculostellate cell of pars distalis of adenohypophysis
 UBERON_0013522;subdivision of tube
 UBERON_0034980;jugular bulb
 UBERON_0034981;superior bulb of internal jugular vein
@@ -2747,6 +3037,7 @@ UBERON_0035177;abdominal part of esophagus
 UBERON_0035216;thoracic part of esophagus
 UBERON_0001051;hypopharynx
 UBERON_0000388;epiglottis
+UBERON_0001742;epiglottic cartilage
 UBERON_0009695;epithelium of laryngopharynx
 UBERON_0010384;lumen of laryngopharynx
 UBERON_0035450;cervical part of esophagus
@@ -2758,16 +3049,22 @@ UBERON_0004921;subdivision of digestive tract
 UBERON_0001155;colon
 UBERON_0000168;proximal-distal subdivision of colon
 UBERON_0001157;transverse colon
+CL_1000283;smooth muscle fiber of transverse colon
 UBERON_0001158;descending colon
+CL_1000284;smooth muscle fiber of descending colon
 UBERON_0001156;ascending colon
+CL_1000282;smooth muscle fiber of ascending colon
 UBERON_0001159;sigmoid colon
+CL_1000285;smooth muscle cell of sigmoid colon
 UBERON_0001153;caecum
 UBERON_0001154;vermiform appendix
+UBERON_0013689;appendix lymphoid tissue
 CL_1000281;smooth muscle cell of cecum
 UBERON_0007159;lumen of colon
 CL_1000280;smooth muscle cell of colon
 UBERON_0001045;midgut
 UBERON_0003352;epithelium of midgut
+UBERON_0003259;endoderm of midgut
 UBERON_0007147;lumen of midgut
 UBERON_0002116;ileum
 UBERON_0003705;Meckel's diverticulum
@@ -2780,6 +3077,7 @@ UBERON_0003582;nasopharynx connective tissue
 UBERON_0008310;nasopharyngeal gland
 UBERON_0010061;lumen of nasopharynx
 UBERON_0012330;nasal-associated lymphoid tissue
+UBERON_0001732;pharyngeal tonsil
 UBERON_0001735;tonsillar ring
 UBERON_0002372;tonsil
 UBERON_0002373;palatine tonsil
@@ -2789,10 +3087,13 @@ UBERON_0035228;tonsillar fossa
 UBERON_0010423;primary lymphoid nodule of tonsil
 UBERON_0013688;tonsil germinal center
 UBERON_0013696;tonsil epithelium
+UBERON_0012181;tonsil crypt
 UBERON_0003091;thyroid primordium
 UBERON_0001761;future foramen cecum
 UBERON_0003261;thyroid primordium endoderm
 UBERON_0003295;pharyngeal gland
+UBERON_0005562;thymus primordium
+UBERON_0008817;thymus primordium endoderm
 UBERON_0003351;pharyngeal epithelium
 UBERON_0016545;pharyngeal ectoderm
 UBERON_0005879;pharyngeal cleft
@@ -2807,6 +3108,7 @@ UBERON_0007689;thyroid diverticulum
 UBERON_0008804;stylopharyngeus muscle
 UBERON_0010060;pharyngeal opening of pharyngotympanic tube
 UBERON_0010234;palatopharyngeus muscle
+UBERON_0018103;posterior fascicle of palatopharyngeus
 UBERON_0010937;salpingopharyngeus muscle
 UBERON_0011345;pharyngeal raphe
 UBERON_0001731;cavity of pharynx
@@ -2816,6 +3118,7 @@ UBERON_0004794;esophagus secretion
 CL_0002252;epithelial cell of esophagus
 CL_0002221;keratinized squamous cell of esophagus
 CL_0002654;epithelial cell of stratum corneum of esophageal epithelium
+CL_0002643;nonkeratinized cell of stratum corneum of esophageal epithelium
 CL_0002655;epithelial cell of stratum spinosum of esophageal epithelium
 CL_0002657;glandular cell of esophagus
 CL_0002641;epithelial cell of esophageal gland proper
@@ -2848,23 +3151,27 @@ UBERON_0008584;vertical muscle of tongue
 UBERON_0001574;palatoglossus muscle
 UBERON_0001723;tongue
 UBERON_0001610;lingual artery
+UBERON_0001611;sublingual artery
 UBERON_0003357;epithelium of tongue
 UBERON_0006918;parakeratinized epithelium of tongue
 UBERON_0014452;gustatory epithelium of tongue
 UBERON_0006699;foramen cecum of tongue
 UBERON_0003409;gland of tongue
+UBERON_0013475;gustatory gland
 UBERON_0003416;mesenchyme of tongue
 UBERON_0006688;sublingual caruncle
 UBERON_0007367;surface of tongue
 UBERON_0007371;superior surface of tongue
 UBERON_0007373;inferior surface of tongue
 UBERON_0009471;dorsum of tongue
+UBERON_0010033;posterior part of tongue
 UBERON_0010032;anterior part of tongue
 UBERON_0011876;body of tongue
 UBERON_0011877;margin of tongue
 UBERON_0014790;lingual septum
 UBERON_0001833;lip
 UBERON_0001834;upper lip
+UBERON_0005402;philtrum
 UBERON_0001835;lower lip
 UBERON_0034719;lip taste bud
 UBERON_0004833;lip skeletal muscle
@@ -2880,6 +3187,7 @@ UBERON_0001044;saliva-secreting gland
 UBERON_0001829;major salivary gland
 UBERON_0001831;parotid gland
 UBERON_0003360;epithelium of parotid gland
+UBERON_0035076;parotid gland myoepithelium
 UBERON_0003419;mesenchyme of parotid
 UBERON_0011847;acinus of parotid gland
 UBERON_0001832;sublingual gland
@@ -2889,9 +3197,11 @@ UBERON_0001736;submandibular gland
 UBERON_0003359;epithelium of submandibular gland
 UBERON_0003418;mesenchyme of submandibular gland
 UBERON_0012102;buccal salivary gland
+UBERON_0010241;molar gland
 UBERON_0004809;salivary gland epithelium
 UBERON_0011850;acinus of salivary gland
 UBERON_0010056;future tongue
+UBERON_0010059;hypoglossal cord
 UBERON_0011349;pterygomandibular raphe
 UBERON_0011595;jaw region
 UBERON_0034995;jaw mesenchyme
@@ -2934,7 +3244,9 @@ UBERON_0018591;upper primary incisor tooth
 UBERON_0018593;upper central primary incisor tooth
 UBERON_0018594;upper lateral primary incisor tooth
 UBERON_0018603;upper central incisor tooth
+UBERON_0016454;upper central secondary incisor tooth
 UBERON_0018604;upper lateral incisor tooth
+UBERON_0016455;upper lateral secondary incisor tooth
 UBERON_0019253;upper secondary incisor tooth
 UBERON_0015847;upper left incisor tooth
 UBERON_0011593;maxillary tooth
@@ -2965,6 +3277,7 @@ UBERON_0001682;palatine bone
 UBERON_0002396;vomer
 UBERON_0011597;bone of upper jaw
 UBERON_0002244;premaxilla
+UBERON_0005620;primary palate
 UBERON_0002397;maxilla
 UBERON_0035139;anterior nasal spine of maxilla
 UBERON_0001764;maxillary sinus
@@ -2995,7 +3308,9 @@ UBERON_0017748;lower primary incisor tooth
 UBERON_0018595;lower central primary incisor tooth
 UBERON_0018596;lower lateral primary incisor tooth
 UBERON_0018601;lower central incisor tooth
+UBERON_0018568;lower central secondary incisor tooth
 UBERON_0018602;lower lateral incisor tooth
+UBERON_0018570;lower lateral secondary incisor tooth
 UBERON_0018623;lower secondary incisor tooth
 UBERON_0011594;dentary tooth
 UBERON_0003667;lower jaw molar
@@ -3020,6 +3335,8 @@ UBERON_0018562;lower secondary canine tooth
 UBERON_0018617;primary lower tooth
 UBERON_0018614;permanent lower tooth
 UBERON_0012111;diastema
+UBERON_0035119;diastema between incisors
+UBERON_0035115;diastema between central incisors
 UBERON_0012360;bone of jaw
 UBERON_0001709;upper jaw region
 UBERON_0034909;intermaxillary suture
@@ -3035,7 +3352,9 @@ UBERON_0003216;hard palate
 UBERON_0035122;interincisive suture
 UBERON_0035126;transverse palatine suture
 UBERON_0035127;suture of hard palate
+UBERON_0016442;median palatine suture
 UBERON_0006672;incisive canal
+UBERON_0036144;incisive duct
 UBERON_0011347;raphe of hard palate
 UBERON_0012074;bony part of hard palate
 UBERON_0010426;oropharyngeal choana
@@ -3051,6 +3370,8 @@ UBERON_0001655;submental vein
 UBERON_0008596;mentalis muscle
 CL_0002166;epithelial cell of Malassez
 UBERON_0009654;alveolar artery
+UBERON_0014693;inferior alveolar artery
+UBERON_0001617;mental artery
 UBERON_0001052;rectum
 UBERON_0009670;rectal lumen
 CL_1000286;smooth muscle cell of rectum
@@ -3086,6 +3407,7 @@ UBERON_0006574;pectinate line
 UBERON_0007158;lumen of anal canal
 CL_1000279;smooth muscle cell of large intestine
 UBERON_0001073;ileocecal junction
+UBERON_0000569;ileocecal valve
 CL_0002504;enteric smooth muscle cell
 UBERON_0012425;striated border microvillus layer
 UBERON_0012427;intestinal brush border layer
@@ -3097,10 +3419,13 @@ UBERON_0009145;pharyngeal region of foregut
 UBERON_0008814;pharyngeal arch system
 UBERON_0004117;pharyngeal pouch
 UBERON_0007123;pharyngeal pouch 2
+UBERON_0010023;dorsal part of pharyngeal pouch 2
 UBERON_0007122;pharyngeal pouch 1
 UBERON_0007124;pharyngeal pouch 3
+UBERON_0010025;dorsal part of pharyngeal pouch 3
 UBERON_0007125;pharyngeal pouch 4
 UBERON_0009722;entire pharyngeal arch endoderm
+UBERON_0007690;early pharyngeal endoderm
 UBERON_0010046;entire pharyngeal arch associated mesenchyme
 UBERON_0010359;pharyngeal arch mesenchyme from neural crest
 UBERON_0010360;pharyngeal arch mesenchyme from head mesenchyme
@@ -3115,14 +3440,18 @@ UBERON_0012172;stomach primordium
 UBERON_0004908;upper digestive tract
 UBERON_0001046;hindgut
 UBERON_0003353;epithelium of hindgut
+UBERON_0003260;endoderm of hindgut
 UBERON_0007148;lumen of hindgut
 UBERON_0009503;mesenchyme of hindgut
 UBERON_0006866;terminal part of digestive tract
 UBERON_0012465;lumen of terminal part of digestive tract
+UBERON_0012463;cloacal lumen
+UBERON_0009669;embryonic cloacal lumen
 UBERON_0016885;epithelium of terminal part of digestive tract
 UBERON_0016886;muscle tissue of terminal part of digestive tract
 UBERON_0004185;endodermal part of digestive tract
 UBERON_0004912;biliary bud
+UBERON_0006242;gall bladder primordium
 UBERON_0008835;hepatic diverticulum
 UBERON_0008836;liver bud
 UBERON_0004906;ectodermal part of digestive tract
@@ -3142,6 +3471,7 @@ UBERON_0013168;thyroepiglottic ligament
 UBERON_0013169;vestibular ligament
 UBERON_0013171;cricothyroid ligament
 UBERON_0002486;glottis
+UBERON_0003706;laryngeal vocal fold
 UBERON_0003583;larynx connective tissue
 UBERON_0001741;corniculate cartilage
 UBERON_0006494;apex of arytenoid
@@ -3163,6 +3493,7 @@ UBERON_0008572;posterior crico-arytenoid
 UBERON_0010958;arytenoid muscle
 UBERON_0008574;transverse arytenoid
 UBERON_0008575;oblique arytenoid
+UBERON_0011025;aryepiglotticus muscle
 UBERON_0004816;larynx epithelium
 UBERON_0010212;laryngeal apparatus
 UBERON_0001739;laryngeal cartilage
@@ -3185,19 +3516,24 @@ UBERON_0000170;pair of lungs
 UBERON_0002048;lung
 UBERON_0002167;right lung
 UBERON_0003364;epithelium of right lung
+UBERON_0005672;right lung endothelium
 UBERON_0004888;right lung hilus
 UBERON_0006526;right lung alveolar system
+UBERON_0003536;right lung alveolar duct
 UBERON_0009537;vascular element of right lung
 UBERON_0009603;right lung associated mesenchyme
 UBERON_0002168;left lung
 UBERON_0003365;epithelium of left lung
+UBERON_0005673;left lung endothelium
 UBERON_0004887;left lung hilus
 UBERON_0006525;left lung alveolar system
+UBERON_0003537;left lung alveolar duct
 UBERON_0009536;vascular element of left lung
 UBERON_0009602;left lung associated mesenchyme
 UBERON_0019190;mucous gland of lung
 UBERON_0035767;intrapulmonary bronchus
 UBERON_0000102;lung vasculature
+CL_1001567;lung endothelial cell
 UBERON_0000114;lung connective tissue
 UBERON_0000115;lung epithelium
 UBERON_0013479;lung endothelium
@@ -3205,6 +3541,7 @@ CL_0000082;epithelial cell of lung
 CL_1000143;lung goblet cell
 CL_1000223;lung neuroendocrine cell
 UBERON_0003512;lung blood vessel
+UBERON_0016405;pulmonary capillary
 UBERON_0004883;lung mesenchyme
 UBERON_0004886;lung hilus
 UBERON_0006524;alveolar system
@@ -3212,20 +3549,30 @@ UBERON_0002173;pulmonary alveolar duct
 UBERON_0004893;interalveolar septum
 UBERON_0007311;sputum
 CL_0002553;fibroblast of lung
+CL_2000093;bronchus fibroblast of lung
 CL_1000271;lung ciliated cell
 CL_1000272;lung secretory cell
 UBERON_0011862;pulmonary collagen fibril
 UBERON_0018226;pulmonary part of lymphatic system
+UBERON_0018227;pulmonary lymphatic vessel
 CL_1001603;lung macrophage
 UBERON_0003580;lower respiratory tract connective tissue
 UBERON_0003571;trachea connective tissue
+UBERON_0009644;trachea non-cartilage connective tissue
+UBERON_0009653;trachea basement membrane
+UBERON_0003493;trachea reticular lamina
 UBERON_0003592;bronchus connective tissue
+UBERON_0003590;main bronchus connective tissue
 UBERON_0003603;lower respiratory tract cartilage
 UBERON_0001956;cartilage of bronchus
+UBERON_0001102;cartilage of main bronchus
 UBERON_0003604;trachea cartilage
+UBERON_0006679;carina of trachea
 UBERON_0004233;lower respiratory tract smooth muscle
 UBERON_0003387;smooth muscle of trachea
+UBERON_0006680;trachealis
 UBERON_0004242;bronchus smooth muscle
+UBERON_0004241;main bronchus smooth muscle
 UBERON_0004815;lower respiratory tract epithelium
 UBERON_0001901;epithelium of trachea
 UBERON_0003279;endothelium of trachea
@@ -3236,6 +3583,7 @@ CL_1000348;basal cell of epithelium of trachea
 CL_1000377;dense-core granulated cell of epithelium of trachea
 UBERON_0002031;epithelium of bronchus
 UBERON_0002340;epithelium of main bronchus
+UBERON_0003280;endothelium of main bronchus
 UBERON_0004818;terminal bronchus epithelium
 CL_0002328;bronchial epithelial cell
 CL_0000158;club cell
@@ -3244,6 +3592,7 @@ CL_0002332;ciliated cell of the bronchus
 CL_1000312;bronchial goblet cell
 CL_1000349;basal cell of epithelium of bronchus
 UBERON_0009652;bronchus basement membrane
+UBERON_0003492;bronchus reticular lamina
 CL_1000331;serous cell of epithelium of bronchus
 UBERON_0007196;tracheobronchial tree
 UBERON_0002185;bronchus
@@ -3265,6 +3614,7 @@ UBERON_0003505;trachea blood vessel
 UBERON_0006833;lumen of trachea
 CL_0002600;smooth muscle cell of trachea
 UBERON_0009505;mesenchyme of trachea
+UBERON_0007267;trachea pre-cartilage rings
 UBERON_0011148;submucosal gland
 UBERON_0015247;bifurcation of trachea
 CL_0002202;epithelial cell of tracheobronchial tree
@@ -3275,6 +3625,7 @@ CL_0002329;basal epithelial cell of tracheobronchial tree
 UBERON_0015472;tracheobronchial lymph node
 CL_0002632;epithelial cell of lower respiratory tract
 UBERON_0009778;pleural sac
+UBERON_0002402;pleural cavity
 UBERON_0001557;upper respiratory tract
 UBERON_0004814;upper respiratory tract epithelium
 CL_0002631;epithelial cell of upper respiratory tract
@@ -3284,6 +3635,7 @@ UBERON_0001707;nasal cavity
 UBERON_0000402;nasal vestibule
 UBERON_0004110;midnasal cavity
 UBERON_0004802;respiratory tract epithelium
+CL_0002370;respiratory goblet cell
 UBERON_0000162;cloaca
 UBERON_0000163;embryonic cloaca
 UBERON_0000164;primitive urogenital sinus
@@ -3298,6 +3650,7 @@ UBERON_0012478;cloacal gland
 UBERON_0012481;cloacal epithelium
 UBERON_0012485;cloacal villus
 UBERON_0014783;cloacal muscle
+UBERON_0013501;cloacal sphincter
 UBERON_0013515;subdivision of oviduct
 UBERON_0000996;vagina
 UBERON_0000051;fornix of vagina
@@ -3324,6 +3677,7 @@ UBERON_0009022;right uterine horn
 UBERON_0003366;epithelium of uterine horn
 UBERON_0002493;uterine artery
 CL_0002149;epithelial cell of uterus
+CL_0002244;squamous cell of ectocervix
 UBERON_0006955;uterine epithelium
 CL_0002601;uterine smooth muscle cell
 UBERON_0013769;uterine lumen
@@ -3346,9 +3700,12 @@ UBERON_0001336;membranous urethra of male or female
 UBERON_0012301;female membranous urethra
 UBERON_0012302;male membranous urethra
 UBERON_0001337;spongiose part of urethra
+UBERON_0012294;navicular fossa of spongiose part of urethra
 UBERON_0005800;section of aorta
 UBERON_0001515;thoracic aorta
 UBERON_0001496;ascending aorta
+UBERON_0010172;bulb of aorta
+UBERON_0003707;sinus of Valsalva
 UBERON_0001508;arch of aorta
 UBERON_0016920;descending trunk of arch of aorta
 UBERON_0016923;preductal region of aortic arch
@@ -3357,6 +3714,7 @@ UBERON_0016925;juxtaductal region of aortic arch
 UBERON_0035539;esophageal artery
 UBERON_0002345;descending thoracic aorta
 UBERON_0005612;intercostal artery
+UBERON_0006198;dorsal intercostal artery
 UBERON_0013133;superior phrenic artery
 UBERON_0001514;descending aorta
 UBERON_0001516;abdominal aorta
@@ -3366,6 +3724,7 @@ UBERON_0035322;right common iliac artery
 UBERON_0035529;left common iliac artery
 UBERON_0001308;external iliac artery
 UBERON_0001354;inferior epigastric artery
+UBERON_0034693;cremasteric artery
 UBERON_0002060;femoral artery
 UBERON_0034964;superficial epigastric artery
 UBERON_0001355;deep femoral artery
@@ -3379,6 +3738,7 @@ UBERON_0001539;dorsalis pedis artery
 UBERON_0001538;posterior tibial artery
 UBERON_0035195;plantar metatarsal artery
 UBERON_0035292;branch of posterior tibial artery
+UBERON_0001540;peroneal artery
 UBERON_0001541;medial plantar artery
 UBERON_0007317;superficial external pudendal artery
 UBERON_0009041;superficial circumflex iliac artery
@@ -3417,9 +3777,11 @@ UBERON_0003468;ureteric segment of renal artery
 UBERON_0001188;right testicular artery
 UBERON_0001189;left testicular artery
 UBERON_0001312;superior vesical artery
+UBERON_0005192;deferent duct artery
 UBERON_0001640;celiac artery
 UBERON_0001192;left gastric artery
 UBERON_0001194;splenic artery
+UBERON_0035830;left gastroepiploic artery
 UBERON_0005436;common hepatic artery
 UBERON_0010132;gastroduodenal artery
 UBERON_0035829;right gastroepiploic artery
@@ -3427,22 +3789,27 @@ UBERON_0002070;superior pancreaticoduodenal artery
 UBERON_0015480;proper hepatic artery
 UBERON_0006637;celiac trunk
 UBERON_0012255;inferior phrenic artery
+UBERON_0001198;superior suprarenal artery
 UBERON_0005464;median sacral artery
 UBERON_0006636;lumbar artery
 UBERON_0010192;genital artery
+UBERON_0001187;testicular artery
 UBERON_0012173;middle suprarenal artery
 UBERON_0005185;renal medulla collecting duct
+CL_1000546;kidney medulla collecting duct epithelial cell
 UBERON_0001305;ovarian follicle
 UBERON_0003981;primordial ovarian follicle
 UBERON_0000035;primary ovarian follicle
 UBERON_0000037;tertiary ovarian follicle
 UBERON_0000036;secondary ovarian follicle
 UBERON_0003982;mature ovarian follicle
+UBERON_0000450;corpus albicans
 UBERON_0007180;atretic follicle of ovary
 UBERON_0000038;follicular fluid
 UBERON_0000039;follicular antrum
 UBERON_0000155;theca cell layer
 UBERON_0005170;granulosa cell layer
+UBERON_0001306;cumulus oophorus
 UBERON_0002206;mammillary body
 UBERON_0001936;tuberomammillary nucleus
 UBERON_0001938;lateral mammillary nucleus
@@ -3460,9 +3827,12 @@ UBERON_0018115;left renal pelvis
 UBERON_0018116;right renal pelvis
 UBERON_0001228;renal papilla
 UBERON_0004227;kidney pelvis smooth muscle
+CL_1000702;kidney pelvis smooth muscle cell
 UBERON_0004788;kidney pelvis urothelium
+CL_1000703;kidney pelvis urothelial cell
 CL_1000505;kidney pelvis cell
 UBERON_0004200;kidney pyramid
+UBERON_0005111;metanephric pyramid
 UBERON_0000440;trabecula
 UBERON_0000439;arachnoid trabecula
 UBERON_0002195;trabecula of lymph node
@@ -3481,6 +3851,7 @@ UBERON_0002626;head of caudate nucleus
 UBERON_0002628;tail of caudate nucleus
 UBERON_0002630;body of caudate nucleus
 UBERON_0005403;ventral striatum
+UBERON_0002263;lentiform nucleus
 UBERON_0002038;substantia nigra
 UBERON_0001965;substantia nigra pars compacta
 UBERON_0001966;substantia nigra pars reticulata
@@ -3502,24 +3873,31 @@ UBERON_0011741;cardiac valve leaflet
 UBERON_0034949;lymphatic valve
 UBERON_0006675;venous valve
 UBERON_0009973;ureterovesical junction
+UBERON_0012303;ureteral orifice
 UBERON_0015420;ureteral valve
 UBERON_0001069;head of pancreas
+UBERON_0010373;uncinate process of pancreas
 UBERON_0001150;body of pancreas
 UBERON_0001151;tail of pancreas
 UBERON_0001294;inner medulla of kidney
 UBERON_0003455;inner renal medulla loop of Henle
+UBERON_0004193;loop of Henle ascending limb thin segment
+UBERON_0005114;metanephric ascending thin limb
 UBERON_0004205;inner medullary collecting duct
 UBERON_0004776;inner renal medulla vasa recta
 UBERON_0005214;inner renal medulla interstitium
 UBERON_0001285;nephron
 UBERON_0004194;long nephron
+UBERON_0005132;metanephric long nephron
 UBERON_0004195;short nephron
+UBERON_0005140;metanephric short nephron
 UBERON_0005110;metanephric nephron
 UBERON_0004737;metanephric collecting duct
 UBERON_0005134;metanephric nephron epithelium
 UBERON_0005146;metanephric nephron tubule
 UBERON_0005129;metanephric distal tubule
 UBERON_0005130;metanephric loop of Henle
+UBERON_0005116;metanephric descending thin limb
 UBERON_0005127;metanephric thick ascending limb
 CL_1000123;metanephric nephron tubule epithelial cell
 UBERON_0005148;metanephric S-shaped body
@@ -3530,6 +3908,7 @@ CL_1000090;pronephric nephron tubule epithelial cell
 UBERON_0005322;mesonephric nephron
 UBERON_0005319;mesonephric collecting duct
 UBERON_0005330;mesonephric nephron epithelium
+UBERON_0006190;mesonephric distal tubule
 UBERON_0001232;collecting duct of renal tubule
 UBERON_0014388;kidney collecting duct epithelium
 CL_1001225;kidney collecting duct cell
@@ -3539,14 +3918,17 @@ UBERON_0007685;region of nephron tubule
 UBERON_0001288;loop of Henle
 UBERON_0034997;renal medulla loop of Henle
 UBERON_0001289;descending limb of loop of Henle
+CL_1001021;kidney loop of Henle descending limb epithelial cell
 UBERON_0004136;intermediate tubule
 UBERON_0005096;descending thin limb
 CL_1000453;epithelial cell of intermediate tubule
 UBERON_0005164;ascending limb of loop of Henle
+UBERON_0001291;thick ascending limb of loop of Henle
 CL_1000909;kidney loop of Henle epithelial cell
 UBERON_0006534;renal convoluted tubule
 UBERON_0009035;renal straight tubule
 UBERON_0004135;distal tubule
+UBERON_0008408;distal tubular epithelium
 UBERON_0004810;nephron tubule epithelium
 UBERON_0009651;nephron tubule basement membrane
 CL_1000494;nephron tubule epithelial cell
@@ -3569,9 +3951,11 @@ UBERON_0004519;muscle of anal triangle
 UBERON_0001609;isthmus of thyroid gland
 UBERON_0003891;stroma
 UBERON_0007195;stroma of bone marrow
+UBERON_0000332;yellow bone marrow
 UBERON_0004184;prostate gland stroma
 UBERON_0005169;interstitial tissue
 UBERON_0005212;Leydig cell region of testis
+CL_0000178;Leydig cell
 UBERON_0005215;kidney interstitium
 UBERON_0005211;renal medulla interstitium
 UBERON_0018119;left renal medulla interstitium
@@ -3580,10 +3964,12 @@ CL_1000682;kidney medulla interstitial cell
 UBERON_0018113;left kidney interstitium
 UBERON_0018114;right kidney interstitium
 CL_1000500;kidney interstitial cell
+CL_1000606;kidney nerve cell
 CL_0002241;pulmonary interstitial fibroblast
 UBERON_0006960;ovary stroma
 UBERON_0010233;stroma of thyroid gland
 UBERON_0016478;liver stroma
+UBERON_0016480;interlobular stroma of liver
 UBERON_0018234;stroma of pancreas
 UBERON_0002499;cochlear labyrinth
 UBERON_0001855;cochlear duct of membranous labyrinth
@@ -3605,6 +3991,7 @@ UBERON_0008831;inner spiral sulcus
 UBERON_0008832;outer spiral sulcus
 UBERON_0002281;vestibular membrane of cochlear duct
 UBERON_0002282;stria vascularis of cochlear duct
+UBERON_0007352;stria vascularis vasculature
 UBERON_0003243;epithelium of cochlear duct
 UBERON_0006725;spiral ligament
 UBERON_0008813;helicotrema
@@ -3612,8 +3999,11 @@ UBERON_0011922;cochlear basement membrane
 UBERON_0001862;vestibular labyrinth
 UBERON_0001856;semicircular duct
 UBERON_0001857;anterior semicircular duct
+UBERON_0007274;crista of ampulla of anterior semicircular duct of membranous laybrinth
 UBERON_0001858;posterior semicircular duct
+UBERON_0007275;crista of ampulla of posterior semicircular duct of membranous laybrinth
 UBERON_0001859;lateral semicircular duct
+UBERON_0007276;crista of ampulla of lateral semicircular duct of membranous laybrinth
 UBERON_0004043;semicircular canal ampulla
 UBERON_0004721;crista ampullaris
 UBERON_0006935;crista ampullaris neuroepithelium
@@ -3622,6 +4012,7 @@ CL_1000385;type 2 vestibular sensory cell of epithelium of crista of ampulla of 
 UBERON_0009038;sulcus ampullaris
 UBERON_0013764;common crus of semicircular duct
 UBERON_0001861;ductus reuniens
+UBERON_0003363;epithelium of ductus reuniens
 UBERON_0002518;otolith organ
 UBERON_0001853;utricle of membranous labyrinth
 UBERON_0002214;macula of utricle of membranous labyrinth
@@ -3635,6 +4026,8 @@ CL_1000384;type 2 vestibular sensory cell of epithelium of macula of saccule of 
 UBERON_0003242;epithelium of saccule
 UBERON_0016567;statoconial membrane
 UBERON_0002519;otolithic part of statoconial membrane
+UBERON_0002280;otolith
+UBERON_2000315;asteriscus
 UBERON_0016568;gelatinous layer of statoconial membrane
 UBERON_0016569;subcupular meshwork of statoconial membrane
 UBERON_0002824;vestibular ganglion
@@ -3649,6 +4042,7 @@ UBERON_0003976;saccule duct
 UBERON_0003977;utricle duct
 UBERON_0002271;periventricular zone of hypothalamus
 UBERON_0001929;supraoptic nucleus
+UBERON_0035928;dorsolateral part of supraoptic nucleus
 UBERON_0001930;paraventricular nucleus of hypothalamus
 UBERON_0001932;arcuate nucleus of hypothalamus
 UBERON_0002273;lateral zone of hypothalamus
@@ -3664,6 +4058,7 @@ UBERON_0001934;dorsomedial nucleus of hypothalamus
 UBERON_0002034;suprachiasmatic nucleus
 UBERON_0002620;tuber cinereum
 UBERON_0007769;medial preoptic region
+UBERON_0002035;medial preoptic nucleus
 UBERON_0002259;corpora quadrigemina
 UBERON_0001945;superior colliculus
 UBERON_0006783;layer of superior colliculus
@@ -3711,8 +4106,10 @@ CL_0002142;dark cell of eccrine sweat gland
 CL_0002146;clear cell of eccrine sweat gland
 UBERON_0007773;scrotal sweat gland
 CL_1000448;epithelial cell of sweat gland
+CL_1000417;myoepithelial cell of sweat gland
 UBERON_0004790;skin mucous gland
 UBERON_0016852;skin scent gland
+UBERON_0016853;interdigital gland
 CL_0002308;epithelial cell of skin gland
 UBERON_0013703;integumentary projection
 UBERON_0000021;cutaneous appendage
@@ -3725,6 +4122,7 @@ UBERON_0017163;skin bony tubercle
 UBERON_0006059;falx cerebri
 UBERON_0006081;fundus of gallbladder
 UBERON_0006203;conchal part of pinna
+UBERON_0015885;cymba conchae of pinna
 UBERON_0018533;crus of penis or clitoris
 UBERON_0006639;crus of penis
 UBERON_0006640;crus of clitoris
@@ -3750,6 +4148,7 @@ UBERON_0010956;pterygopharyngeal part of superior pharyngeal constrictor
 UBERON_0010995;deep part of masseter muscle
 UBERON_0013165;epiglottic vallecula
 UBERON_0014730;osteon
+UBERON_0014731;haversian canal
 UBERON_0015139;infundibulum of gallbladder
 UBERON_0016464;dorsum of nose
 UBERON_0018152;pars flaccida of tympanic membrane
