@@ -24,7 +24,7 @@ Arguments:
 
 
 
-def getChildrenOrAxiomWithDev(broader) : 
+def getChildren(broader) : 
     print("get subclasses for " + broader)
     childrenList = []
     query = """
@@ -34,11 +34,6 @@ def getChildrenOrAxiomWithDev(broader) :
     SELECT distinct ?s ?label  {{
     {{ 
     ?s rdfs:subClassOf  obo-term:{broader} . }}
-    UNION {{
-    ?s rdfs:subClassOf ?s_axiom .
-    ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
-    ?s_axiom owl:someValuesFrom obo-term:{broader} . 
-    }}
     ?s rdfs:label ?label .
        }}
     """.format(broader=broader)
@@ -109,9 +104,9 @@ def askOrgParent(identifier) :
     else : 
         parentList = getParent(identifier,5)
         for parent in parentList : 
-            if parent in orgParent.keys() : 
+            if parent in  tissueParent.keys() : 
                 return orgParent[parent]   
-            elif parent in tissueParent.keys() : 
+            elif parent in orgParent.keys() : 
                 return tissueParent[parent]
     return ""  
 
