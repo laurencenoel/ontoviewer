@@ -102,7 +102,7 @@ def askOrgParent(identifier) :
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
     else : 
-        parentList = getParent(identifier,5)
+        parentList = getParent(identifier,8)
         for parent in parentList : 
             if parent in  tissueParent.keys() : 
                 return orgParent[parent]   
