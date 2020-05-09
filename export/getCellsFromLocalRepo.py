@@ -182,7 +182,7 @@ if __name__ == "__main__":
     
     print("get early cell")
     unique = {}
-    earlyCell = getChildrenOrAxiomWithDev("UBERON_0000922")
+    earlyCell = getChildren("UBERON_0000922")
     
     print("Get tissue Parent")
     tissueParent = {}
