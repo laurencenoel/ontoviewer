@@ -132,7 +132,7 @@ def askOrgOrigin(identifier) :
     if identifier in orgOrigin.keys() : 
         return orgOrigin[identifier]
     else :
-        parentList = getParent(identifier,3)
+        parentList = getParent(identifier,2)
         for parent in parentList : 
             if parent in orgOrigin.keys() : 
                 return orgOrigin[parent]
