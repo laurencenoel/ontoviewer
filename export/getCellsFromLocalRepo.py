@@ -117,7 +117,7 @@ def askOrgParent(identifier) :
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
     else : 
-        parentList = getParent(identifier,6)
+        parentList = getParent(identifier,8)
         for parent in parentList : 
             if parent in orgParent.keys() : 
                 return orgParent[parent]   
@@ -202,6 +202,7 @@ if __name__ == "__main__":
     
     
     
+    
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("FOR EACH CELL, CHECK IF IDENTIFIER IS IN ORGAN CHILD AND CREATE FILE")
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
@@ -216,13 +217,14 @@ if __name__ == "__main__":
                 identifier = cell[0]
                 label = cell[1]
                 if label == "animal zygote" : 
-                    label == "zygote"
+                    label = "zygote"
                 descriptors = ""
                 parentStr = askOrgParent(identifier)
                 if identifier in earlyCell : 
                     if parentStr == "" : 
-                        parentStr = "UBERON_0000922"
+                        parentStr += "UBERON_0000922"
                     else : 
-                        parentStr = " UBERON_0000922"
+                        parentStr += " UBERON_0000922"
                 f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","cell_type"\n')
     
+    print(" ".join(earlyCell))
