@@ -50,12 +50,12 @@ def getParent(child,n) :
     r=requests.get(requestURL,params=myparam, headers=headers)
     results=r.json()
     
+    n = n-1
     for row in results["results"]["bindings"] : 
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
         parentList.append(identifier)  
-        n= n-1
         if n > 0 : 
             parentL = getParent(identifier,n)
             if len(parentL) >= 1 : 
