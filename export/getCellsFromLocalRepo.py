@@ -52,7 +52,7 @@ def getChildren(broader) :
         if identifier not in unique.keys() : 
             unique[identifier] = label
             childrenList.append(identifier)
-            childL = getChildrenOrAxiomWithDev(identifier)
+            childL = getChildren(identifier)
             if len(childL) >= 1 : 
                 childrenList.extend(childL)
         
