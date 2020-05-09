@@ -26,7 +26,7 @@ Arguments:
     )
     
     
-def getParent(child) : 
+def getParent(child,n) : 
     print("get parent for " + child)
     parentList = []
     query = """
@@ -54,7 +54,13 @@ def getParent(child) :
         uri = row["s"]["value"]
         label = row["label"]["value"]
         identifier = uri.split("/")[-1]
-        parentList.append(identifier)      
+        parentList.append(identifier)  
+        n= n-1
+        if n > 0 : 
+            parentL = getParent(identifier,n)
+            if len(parentL) >= 1 : 
+                parentList.extend(parentL)
+                
     return parentList
     
 def getChildrenOrAxiomWithDev(broader) : 
@@ -116,7 +122,7 @@ def askOrgParent(identifier) :
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
     else : 
-        parentList = getParent(identifier)
+        parentList = getParent(identifier,3)
         for parent in parentList : 
             if parent in orgParent.keys() : 
                 return orgParent[parent]    
@@ -126,7 +132,7 @@ def askOrgOrigin(identifier) :
     if identifier in orgOrigin.keys() : 
         return orgOrigin[identifier]
     else :
-        parentList = getParent(identifier)
+        parentList = getParent(identifier,3)
         for parent in parentList : 
             if parent in orgOrigin.keys() : 
                 return orgOrigin[parent]

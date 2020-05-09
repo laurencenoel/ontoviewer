@@ -21,11 +21,53 @@ Arguments:
     -p           Path to the directory for results
 """
     )
+
+def getParent(child,n) : 
+    print("get parent for " + child)
+    parentList = []
+    query = """
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX obo-term: <http://purl.obolibrary.org/obo/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    SELECT distinct ?s ?label {{
+    {{ 
+    obo-term:{child} rdfs:subClassOf  ?s . }}
+    UNION {{
+    obo-term:{child} rdfs:subClassOf ?s_axiom .
+    ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
+    ?s_axiom owl:someValuesFrom ?s . 
+    }}
+    ?s rdfs:label ?label .
+      }}
+    """.format(child=child)
     
+    myparam = { 'query': query}
+    headers = {'Accept' : 'application/sparql-results+json'}
+    r=requests.get(requestURL,params=myparam, headers=headers)
+    results=r.json()
+    
+    for row in results["results"]["bindings"] : 
+        uri = row["s"]["value"]
+        label = row["label"]["value"]
+        identifier = uri.split("/")[-1]
+        parentList.append(identifier)  
+        n= n-1
+        if n > 0 : 
+            parentL = getParent(identifier,n)
+            if len(parentL) >= 1 : 
+                parentList.extend(parentL)
+
+
+
         
 def askOrgParent(identifier) : 
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
+    else : 
+        parentList = getParent(identifier,4)
+        for parent in parentList : 
+            if parent in orgParent.keys() : 
+                return orgParent[parent]   
     return ""  
 
 
