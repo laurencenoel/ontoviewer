@@ -122,7 +122,7 @@ def askOrgParent(identifier) :
     if identifier in orgParent.keys() : 
         return orgParent[identifier]
     else : 
-        parentList = getParent(identifier,3)
+        parentList = getParent(identifier,5)
         for parent in parentList : 
             if parent in orgParent.keys() : 
                 return orgParent[parent]    
@@ -132,12 +132,25 @@ def askOrgOrigin(identifier) :
     if identifier in orgOrigin.keys() : 
         return orgOrigin[identifier]
     else :
-        parentList = getParent(identifier,3)
+        parentList = getParent(identifier,5)
         for parent in parentList : 
             if parent in orgOrigin.keys() : 
                 return orgOrigin[parent]
     return ""       
-      
+
+
+def askLabel(label) : 
+    if "respiratory" in label : 
+        return "UBERON_0000065"
+    elif "brain" in label or "diencephal" in label or  : 
+        return "UBERON_0000955"
+    elif "cardio" in label or "cardial" in label : 
+        return "UBERON_0000948"
+    elif "hematopoietic" in label : 
+        return "UBERON_0004765"
+
+    return ""    
+ 
            
 if __name__ == "__main__":
     try:
@@ -213,9 +226,9 @@ if __name__ == "__main__":
             devOrgan = tissue[2]
             descriptors = ""
             parentStr = askOrgParent(identifier)
-            if devOrgan != "" : 
+            if devOrgan != ""  : 
                 devPar = askOrgParent(devOrgan)
-                if devPar != "" :
+                if devPar != "" and devPar not in parentStr :
                     if parentStr == "" : 
                         parentStr += devPar
                     else :
@@ -227,5 +240,12 @@ if __name__ == "__main__":
                     parentStr += origin
                 else : 
                     parentStr += " "+origin
+            specialId = askLabel(label)
+            if specialId != "" and specialId not in parentStr : 
+                if parentStr == "" :
+                    parentStr += specialId
+                else : 
+                    parentStr += " "+specialId
+                
             f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","tissue_type"\n')
     
