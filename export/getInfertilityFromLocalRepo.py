@@ -26,6 +26,7 @@ def getChildrenOrAxiom(broader,withLabel=False) :
     ?s_axiom owl:someValuesFrom obo-term:{broader} . 
     }}
     ?s rdfs:label ?label .
+    }}
     """.format(broader=broader)
     
  
