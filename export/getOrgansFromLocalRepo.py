@@ -215,7 +215,7 @@ if __name__ == "__main__":
         print("skipping headers")
         next(csv_reader)
         for lines in csv_reader:
-            if "HUDECA_0000002" not in lines[2] : 
+            if "HUDECA_" not in lines[2] : 
                 parentList.append(lines[2])
      
     for elt in parentList : 
