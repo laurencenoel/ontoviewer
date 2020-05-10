@@ -31,3 +31,4 @@
 "getNextPvId()",EEC,UBERON_0000922,,"early embryonic cell","Tissue_Site_PID"
 "getNextPvId()",MUL,HUDECA_0000003,,"multiple","Tissue_Site_PID"
 "getNextPvId()",OTH,HUDECA_0000002,,"other","Tissue_Site_PID"
+"getNextPvId()",NOT,HUDECA_0000004,,"not specified","Tissue_Site_PID"
