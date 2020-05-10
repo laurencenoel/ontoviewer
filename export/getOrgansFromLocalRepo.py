@@ -304,7 +304,7 @@ if __name__ == "__main__":
     print("Get all organs, find their parents, and create file")
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
-    with open("PV/organs_PV.csv", "w") as f:
+    with open("PV/organ-PV.csv", "w") as f:
     
         f.write("IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,value,PUBLIC_ID\n")
     

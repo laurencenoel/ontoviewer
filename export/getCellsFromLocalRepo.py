@@ -258,7 +258,7 @@ if __name__ == "__main__":
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
     cells = []
-    with open("PV/cell_PV.csv", "w") as f:
+    with open("PV/cell-PV.csv", "w") as f:
         f.write('IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,value,PUBLIC_ID\n')
     
         for cell in cellList : 

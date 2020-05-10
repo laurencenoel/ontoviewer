@@ -217,7 +217,7 @@ if __name__ == "__main__":
     
     tissueParent = {}    
     
-    with open("PV/tissue_PV.csv", "w") as f:
+    with open("PV/tissue-PV.csv", "w") as f:
         f.write('IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,value,PUBLIC_ID\n')
   
     
