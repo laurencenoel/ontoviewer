@@ -210,13 +210,13 @@ if __name__ == "__main__":
     dicoOrigin = {}
     
     print("Get main organs and create dico with their children as keys")
-    with open("PV/main_organ.csv", "r") as f:
+    with open("PV/main-organ.csv", "r") as f:
         csv_reader = csv.reader(f, delimiter=',')
         print("skipping headers")
         next(csv_reader)
         for lines in csv_reader:
-            if "HUDECA_0000002" not in lines[0] : 
-                parentList.append(lines[0])
+            if "HUDECA_0000002" not in lines[2] : 
+                parentList.append(lines[2])
      
     for elt in parentList : 
         unique = {}
