@@ -331,10 +331,10 @@ if __name__ == "__main__":
                     if askTissue(identifier) == "" and askCell(identifier) == "" : 
                         parentIdList = askParent(identifier)
                         parentStr = " ".join(parentIdList)
-                        f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","'+label+'","organ_type"\n')
+                        f.write('"getNextPvId()","","'+identifier+'","","'+descriptors+'","'+parentStr+'","'+label+'","organ_type"\n')
     
         print("add bone marrow")
-        f.write('"getNextPvId(),"","UBERON_0002371","","UBERON_0000479","UBERON_0004765","Bone marrow","organ_type"\n')
+        f.write('"getNextPvId()","","UBERON_0002371","","UBERON_0000479","UBERON_0004765","Bone marrow","organ_type"\n')
     
     
 

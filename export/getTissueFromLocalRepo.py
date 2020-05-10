@@ -248,7 +248,7 @@ if __name__ == "__main__":
                 else : 
                     parentStr += " "+specialId
                 
-            f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","'+label+'","tissue_type"\n')
+            f.write('"getNextPvId()","","'+identifier+'","","'+descriptors+'","'+parentStr+'","'+label+'","tissue_type"\n')
             tissueParent[identifier] = parentStr
             
     with open("PV/tissue_parent.csv", "w") as ftissue:
