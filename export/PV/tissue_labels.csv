@@ -174,12 +174,12 @@ UBERON_0007124;pharyngeal pouch 3
 UBERON_0010025;dorsal part of pharyngeal pouch 3
 UBERON_0007125;pharyngeal pouch 4
 UBERON_0013156;1st arch mandibular endoderm
-UBERON_0022361;lung field
 UBERON_0008947;respiratory primordium
+UBERON_0005597;lung primordium
 UBERON_0036072;respiratory primordium epithelium
 UBERON_0036073;respiratory primordium mesenchyme
-UBERON_0005597;lung primordium
 UBERON_0012172;stomach primordium
+UBERON_0022361;lung field
 UBERON_0000076;external ectoderm
 UBERON_0005216;optic eminence surface ectoderm
 UBERON_0003050;olfactory placode
@@ -243,15 +243,6 @@ CL_1000357;microfold cell of epithelium proper of jejunum
 CL_1000358;microfold cell of epithelium proper of ileum
 UBERON_0004693;Peyer's patch epithelium
 UBERON_0011184;epithelium of crypt of Lieberkuhn
-UBERON_0001213;intestinal villus
-UBERON_0008343;intestinal villus of jejunum
-UBERON_0013483;crypt of Lieberkuhn of jejunum
-UBERON_0008342;intestinal villus of duodenum
-UBERON_0013482;crypt of Lieberkuhn of duodenum
-UBERON_0015834;duodenum lamina propria
-UBERON_0008344;intestinal villus of ileum
-UBERON_0013481;crypt of Lieberkuhn of ileum
-UBERON_0018410;lacteal
 CL_0002563;intestinal epithelial cell
 CL_0000584;enterocyte
 CL_1000337;enterocyte of epithelium of duodenal gland
@@ -266,6 +257,15 @@ CL_1000360;microfold cell of epithelium proper of large intestine
 CL_0002250;intestinal crypt stem cell
 CL_0002254;epithelial cell of small intestine
 CL_1000411;endothelial cell of Peyer's patch
+UBERON_0001213;intestinal villus
+UBERON_0008343;intestinal villus of jejunum
+UBERON_0013483;crypt of Lieberkuhn of jejunum
+UBERON_0008342;intestinal villus of duodenum
+UBERON_0013482;crypt of Lieberkuhn of duodenum
+UBERON_0015834;duodenum lamina propria
+UBERON_0008344;intestinal villus of ileum
+UBERON_0013481;crypt of Lieberkuhn of ileum
+UBERON_0018410;lacteal
 UBERON_0001276;epithelium of stomach
 UBERON_0005477;stomach fundus epithelium
 UBERON_0005637;pyloric region epithelium
@@ -313,12 +313,12 @@ UBERON_0002169;alveolar sac
 UBERON_0002299;alveolus of lung
 UBERON_0004861;right lung alveolus
 UBERON_0004862;left lung alveolus
-UBERON_0035963;epithelial lining fluid
+CL_0010003;epithelial cell of alveolus of lung
 UBERON_0002172;alveolar atrium
 UBERON_0004894;alveolar wall
 UBERON_0004895;alveolar smooth muscle
 UBERON_0008870;pulmonary alveolar parenchyma
-CL_0010003;epithelial cell of alveolus of lung
+UBERON_0035963;epithelial lining fluid
 UBERON_0002339;epithelium of lobar bronchus
 UBERON_0015794;left lung lobar bronchus epithelium
 UBERON_0015795;right lung lobar bronchus epitheium
@@ -339,11 +339,11 @@ CL_1001567;lung endothelial cell
 UBERON_0001901;epithelium of trachea
 UBERON_0003279;endothelium of trachea
 CL_0002207;brush cell of trachea
-UBERON_0009653;trachea basement membrane
-UBERON_0003493;trachea reticular lamina
 CL_1000330;serous cell of epithelium of trachea
 CL_1000348;basal cell of epithelium of trachea
 CL_1000377;dense-core granulated cell of epithelium of trachea
+UBERON_0009653;trachea basement membrane
+UBERON_0003493;trachea reticular lamina
 UBERON_0002031;epithelium of bronchus
 UBERON_0002340;epithelium of main bronchus
 UBERON_0003280;endothelium of main bronchus
@@ -353,9 +353,9 @@ CL_0000158;club cell
 CL_0002208;brush cell of bronchus
 CL_0002332;ciliated cell of the bronchus
 CL_1000349;basal cell of epithelium of bronchus
+CL_1000331;serous cell of epithelium of bronchus
 UBERON_0009652;bronchus basement membrane
 UBERON_0003492;bronchus reticular lamina
-CL_1000331;serous cell of epithelium of bronchus
 UBERON_0004816;larynx epithelium
 UBERON_0010498;pseudostratified columnar epithelium
 UBERON_0010501;pseudostratified smooth columnar epithelium
@@ -521,8 +521,8 @@ UBERON_0015135;primary lactiferous duct
 UBERON_0015136;secondary lactiferous duct
 UBERON_0015137;tertiary lactiferous duct
 UBERON_0015138;quarternary lactiferous duct
-UBERON_0004182;mammary gland cord
 CL_1000419;myoepithelial cell of lactiferous duct
+UBERON_0004182;mammary gland cord
 UBERON_0007499;epithelial sac
 UBERON_0034953;embryonic lymph sac
 UBERON_0036260;embryonic cisterna chyli
@@ -536,11 +536,11 @@ UBERON_0009743;visceral yolk sac cavity
 UBERON_0035676;secondary yolk sac cavity
 UBERON_0008853;parietal yolk sac
 UBERON_0035677;primary yolk sac cavity
+CL_0002354;yolk sac hematopoietic stem cell
 UBERON_0003257;yolk sac endoderm
 UBERON_0003316;mesenchyme of yolk sac
 UBERON_0011919;yolk sac blood island
 UBERON_0005251;yolk sac cavity
-CL_0002354;yolk sac hematopoietic stem cell
 UBERON_0008969;dental follicle
 UBERON_0003051;ear vesicle
 UBERON_0013526;otocyst lumen
@@ -655,17 +655,17 @@ UBERON_0004193;loop of Henle ascending limb thin segment
 UBERON_0005114;metanephric ascending thin limb
 UBERON_0005130;metanephric loop of Henle
 UBERON_0005116;metanephric descending thin limb
-UBERON_0001289;descending limb of loop of Henle
-CL_1001021;kidney loop of Henle descending limb epithelial cell
+CL_1000909;kidney loop of Henle epithelial cell
+CL_1000453;epithelial cell of intermediate tubule
 CL_1001111;kidney loop of Henle thin descending limb epithelial cell
+CL_1001021;kidney loop of Henle descending limb epithelial cell
+UBERON_0001289;descending limb of loop of Henle
 UBERON_0004136;intermediate tubule
 UBERON_0005096;descending thin limb
-CL_1000453;epithelial cell of intermediate tubule
 UBERON_0005164;ascending limb of loop of Henle
 UBERON_0001291;thick ascending limb of loop of Henle
 UBERON_0005127;metanephric thick ascending limb
 UBERON_0005202;distal straight tubule macula densa
-CL_1000909;kidney loop of Henle epithelial cell
 UBERON_0006534;renal convoluted tubule
 UBERON_0001287;proximal convoluted tubule
 UBERON_0005124;metanephric proximal convoluted tubule
@@ -673,17 +673,17 @@ UBERON_0007298;pronephric proximal convoluted tubule
 CL_1000838;kidney proximal convoluted tubule epithelial cell
 UBERON_0001292;distal convoluted tubule
 UBERON_0005117;metanephric distal convoluted tubule
-UBERON_0003546;distal convoluted tubule macula densa
 CL_1000849;kidney distal convoluted tubule epithelial cell
+UBERON_0003546;distal convoluted tubule macula densa
 UBERON_0009035;renal straight tubule
 UBERON_0004135;distal tubule
 UBERON_0005129;metanephric distal tubule
 UBERON_0006175;pronephric distal tubule
+CL_0002305;epithelial cell of distal tubule
+CL_1000850;macula densa epithelial cell
 UBERON_0002335;macula densa
 UBERON_0005122;metanephric macula densa
 UBERON_0005324;mesonephric macula densa
-CL_1000850;macula densa epithelial cell
-CL_0002305;epithelial cell of distal tubule
 UBERON_0008408;distal tubular epithelium
 UBERON_0006853;renal cortex tubule
 UBERON_0004134;proximal tubule
@@ -696,10 +696,10 @@ UBERON_0005146;metanephric nephron tubule
 CL_1000123;metanephric nephron tubule epithelial cell
 UBERON_0005310;pronephric nephron tubule
 CL_1000090;pronephric nephron tubule epithelial cell
+CL_1000507;kidney tubule cell
+CL_1000494;nephron tubule epithelial cell
 UBERON_0004810;nephron tubule epithelium
 UBERON_0009651;nephron tubule basement membrane
-CL_1000494;nephron tubule epithelial cell
-CL_1000507;kidney tubule cell
 UBERON_0007684;uriniferous tubule
 UBERON_0001285;nephron
 UBERON_0004194;long nephron
@@ -720,6 +720,22 @@ UBERON_0005319;mesonephric collecting duct
 UBERON_0005330;mesonephric nephron epithelium
 UBERON_0005327;mesonephric glomerular epithelium
 UBERON_0006183;mesonephric glomerular capillary
+CL_1000449;epithelial cell of nephron
+CL_1001225;kidney collecting duct cell
+CL_1000454;kidney collecting duct epithelial cell
+CL_1001432;kidney collecting duct intercalated cell
+CL_1000715;kidney cortex collecting duct intercalated cell
+CL_1000717;kidney outer medulla collecting duct intercalated cell
+CL_1000549;kidney cortex collecting duct epithelial cell
+CL_1000548;kidney outer medulla collecting duct epithelial cell
+CL_1000546;kidney medulla collecting duct epithelial cell
+CL_1000612;kidney corpuscule cell
+CL_1000746;glomerular cell
+CL_0002173;extraglomerular mesangial cell
+CL_0002188;glomerular endothelial cell
+CL_1000510;kidney glomerular epithelial cell
+CL_1000450;epithelial cell of glomerular capsule
+CL_1000451;epithelial cell of visceral layer of glomerular capsule
 UBERON_0001229;renal corpuscle
 UBERON_0000074;renal glomerulus
 UBERON_0004736;metanephric glomerulus
@@ -733,41 +749,25 @@ UBERON_0006182;mesonephric glomerular mesangium
 UBERON_0002319;mesangium
 UBERON_0002320;glomerular mesangium
 UBERON_0002321;extraglomerular mesangium
-CL_0002173;extraglomerular mesangial cell
 UBERON_0004188;glomerular epithelium
 UBERON_0005777;glomerular basement membrane
 UBERON_0005787;lamina densa of glomerular basement membrane
 UBERON_0005788;lamina rara interna
 UBERON_0005789;lamina rara externa
-CL_1000510;kidney glomerular epithelial cell
-CL_1000450;epithelial cell of glomerular capsule
-CL_1000451;epithelial cell of visceral layer of glomerular capsule
 UBERON_0004190;renal glomerulus vasculature
 UBERON_0004212;glomerular capillary
-CL_1000746;glomerular cell
-CL_0002188;glomerular endothelial cell
 UBERON_0001230;glomerular capsule
 UBERON_0001286;Bowman's space
 UBERON_0005749;glomerular tuft
 UBERON_0005751;visceral layer of glomerular capsule
 UBERON_0004639;renal afferent arteriole
 UBERON_0004640;renal efferent arteriole
-CL_1000612;kidney corpuscule cell
 UBERON_0001232;collecting duct of renal tubule
 UBERON_0004204;outer medullary collecting duct
-CL_1000548;kidney outer medulla collecting duct epithelial cell
-CL_1000717;kidney outer medulla collecting duct intercalated cell
 UBERON_0004205;inner medullary collecting duct
 UBERON_0004203;cortical collecting duct
-CL_1000549;kidney cortex collecting duct epithelial cell
-CL_1000715;kidney cortex collecting duct intercalated cell
 UBERON_0005185;renal medulla collecting duct
-CL_1000546;kidney medulla collecting duct epithelial cell
-CL_1001225;kidney collecting duct cell
-CL_1000454;kidney collecting duct epithelial cell
-CL_1001432;kidney collecting duct intercalated cell
 UBERON_0004211;nephron epithelium
-CL_1000449;epithelial cell of nephron
 UBERON_0010532;primitive nephron
 UBERON_0010535;primitive metanephric nephron
 UBERON_0004198;comma-shaped body
@@ -799,16 +799,16 @@ UBERON_0000486;multilaminar epithelium
 UBERON_0000365;urothelium
 UBERON_0001254;urothelium of ureter
 UBERON_0005912;transitional epithelium of major calyx
-UBERON_0011947;ureter luminal urothelium
 CL_1000706;ureter urothelial cell
+UBERON_0011947;ureter luminal urothelium
 UBERON_0004645;urinary bladder urothelium
 CL_1001428;bladder urothelial cell
 UBERON_0004788;kidney pelvis urothelium
 CL_1000703;kidney pelvis urothelial cell
 CL_0000731;urothelial cell
 CL_1000442;urothelial cell of trigone of urinary bladder
-UBERON_0007179;basal cell layer of urothelium
 CL_1000486;basal cell of urothelium
+UBERON_0007179;basal cell layer of urothelium
 UBERON_0001344;epithelium of vagina
 UBERON_0006923;vagina squamous epithelium
 CL_1001578;vagina squamous cell
@@ -881,8 +881,8 @@ UBERON_0006918;parakeratinized epithelium of tongue
 UBERON_0003929;digestive tract epithelium
 UBERON_0001976;epithelium of esophagus
 UBERON_0006920;esophagus squamous epithelium
-CL_3000000;ciliated epithelial cell of esophagus
 CL_1000447;epithelial cell of stratum germinativum of esophagus
+CL_3000000;ciliated epithelial cell of esophagus
 UBERON_0002424;oral epithelium
 UBERON_0006919;tongue squamous epithelium
 UBERON_0008420;buccal epithelium
@@ -990,6 +990,10 @@ CL_0000649;prickle cell
 CL_0002187;basal cell of epidermis
 CL_0002189;granular cell of epidermis
 CL_0002190;squamous cell of epidermis
+CL_0002135;nonkeratinized cell of epidermis
+CL_1000428;stem cell of epidermis
+CL_2000000;epidermal melanocyte
+CL_0002483;hair follicle melanocyte
 UBERON_0001037;strand of hair
 UBERON_0001702;eyelash
 UBERON_0019254;upper eyelash
@@ -1028,15 +1032,13 @@ CL_0000712;stratum granulosum cell
 UBERON_0002071;stratum lucidum of epidermis
 UBERON_0002073;hair follicle
 UBERON_0015252;coat hair follicle
+CL_0002559;hair follicle cell
 UBERON_0005932;bulb of hair follicle
 UBERON_0005933;hair root sheath
 UBERON_0005941;hair inner root sheath
 UBERON_0005942;hair outer root sheath
 UBERON_0005943;hair root sheath matrix
 UBERON_0005968;infundibulum of hair follicle
-CL_0002559;hair follicle cell
-CL_0002483;hair follicle melanocyte
-CL_0002135;nonkeratinized cell of epidermis
 UBERON_0004882;eponychium
 UBERON_0007771;epidermis gland
 UBERON_0001821;sebaceous gland
@@ -1094,8 +1096,6 @@ UBERON_0008198;nail plate
 UBERON_0011190;lunule of nail
 UBERON_0015886;root of nail
 UBERON_0010402;epidermis suprabasal layer
-CL_1000428;stem cell of epidermis
-CL_2000000;epidermal melanocyte
 CL_0000362;epidermal cell
 UBERON_0006964;pars distalis of adenohypophysis
 CL_0002177;folliculostellate cell of pars distalis of adenohypophysis
@@ -1367,6 +1367,7 @@ CL_1000436;epithelial cell of lacrimal sac
 CL_0000079;stratified epithelial cell
 CL_0000666;fenestrated cell
 CL_0010002;epithelial cell of umbilical artery
+CL_0002484;epithelial melanocyte
 UBERON_0005769;basement membrane of epithelium
 UBERON_0004370;anterior limiting lamina of cornea
 UBERON_0004367;Descemet's membrane
@@ -1383,7 +1384,6 @@ UBERON_0001967;reticular lamina of epithelium
 UBERON_0003490;respiratory system reticular lamina
 UBERON_0007825;reticular membrane of spiral organ
 UBERON_0006677;surface of epithelium
-CL_0002484;epithelial melanocyte
 UBERON_0011945;luminal layer of epithelium
 UBERON_0007688;anlage
 UBERON_0036146;cardiopharyngeal field
@@ -1425,8 +1425,8 @@ UBERON_0001732;pharyngeal tonsil
 UBERON_0002373;palatine tonsil
 UBERON_0003949;tubal tonsil
 UBERON_0007250;lingual tonsil
-UBERON_0035228;tonsillar fossa
 UBERON_0005207;tonsil capsule
+UBERON_0035228;tonsillar fossa
 UBERON_0001211;Peyer's patch
 UBERON_0003453;large intestine Peyer's patch
 UBERON_0003454;small intestine Peyer's patch
@@ -1439,7 +1439,6 @@ CL_0000884;mucosa-associated lymphoid tissue macrophage
 UBERON_0003483;thymus lymphoid tissue
 UBERON_0013689;appendix lymphoid tissue
 UBERON_0012429;hematopoietic tissue
-UBERON_0000361;red bone marrow
 CL_1001610;bone marrow hematopoietic cell
 CL_0000556;megakaryocyte
 CL_0002027;CD9-positive, CD41-positive megakaryocyte cell
@@ -1448,6 +1447,7 @@ CL_0002001;CD34-positive, CD38-positive granulocyte monocyte progenitor
 CL_0002002;Kit-positive granulocyte monocyte progenitor
 CL_0002476;bone marrow macrophage
 CL_0010004;mononuclear cell of bone marrow
+UBERON_0000361;red bone marrow
 UBERON_0003104;mesenchyme
 UBERON_0004883;lung mesenchyme
 UBERON_0004884;lobar bronchus mesenchyme
@@ -1736,8 +1736,8 @@ UBERON_0015418;urethra mesenchymal layer
 CL_0008019;mesenchymal cell
 CL_0000569;cardiac mesenchymal cell
 UBERON_0001758;periodontium
-UBERON_0035967;alveolar mucosa
 UBERON_0008266;periodontal ligament
+UBERON_0035967;alveolar mucosa
 UBERON_0002384;connective tissue
 UBERON_0011823;dense connective tissue
 UBERON_0007846;dense regular connective tissue
@@ -2138,9 +2138,9 @@ UBERON_0002024;internal carotid nerve plexus
 UBERON_0011325;pharyngeal nerve plexus
 UBERON_0001813;spinal nerve plexus
 UBERON_0003725;cervical nerve plexus
-UBERON_0035647;posterior auricular nerve
 UBERON_0005430;ansa cervicalis
 UBERON_0008833;great auricular nerve
+UBERON_0035647;posterior auricular nerve
 UBERON_0035768;coccygeal nerve plexus
 UBERON_0001814;brachial nerve plexus
 UBERON_0001148;median nerve
@@ -2156,10 +2156,10 @@ UBERON_0034984;nerve to quadratus femoris
 UBERON_0034987;lumbar nerve plexus
 UBERON_0001322;sciatic nerve
 UBERON_0001323;tibial nerve
+UBERON_0015488;sural nerve
 UBERON_0035109;plantar nerve
 UBERON_0035110;lateral plantar nerve
 UBERON_0035111;medial plantar nerve
-UBERON_0015488;sural nerve
 UBERON_0001324;common fibular nerve
 UBERON_0035207;deep fibular nerve
 UBERON_0035526;superficial fibular nerve
@@ -2293,22 +2293,22 @@ UBERON_0002352;atrioventricular node
 CL_1000410;myocyte of atrioventricular node
 CL_1000479;Purkinje myocyte of atrioventricular node
 UBERON_0004146;His-Purkinje system
-UBERON_0002353;atrioventricular bundle
-UBERON_0005986;left branch of atrioventricular bundle
+CL_0010007;His-Purkinje system cell
+CL_0010005;atrioventricular bundle cell
+CL_1000375;myocardial endocrine cell of septal division of left branch of atrioventricular bundle
+CL_1000481;transitional myocyte of atrioventricular bundle
 CL_1000370;transitional myocyte of left branch of atrioventricular bundle
 CL_1000368;transitional myocyte of anterior division of left branch of atrioventricular bundle
 CL_1000369;transitional myocyte of septal division of left branch of atrioventricular bundle
 CL_1000374;transitional myocyte of posterior division of left branch of atrioventricular bundle
-CL_1000375;myocardial endocrine cell of septal division of left branch of atrioventricular bundle
-UBERON_0005987;right branch of atrioventricular bundle
 CL_1000371;transitional myocyte of right branch of atrioventricular bundle
-CL_0010005;atrioventricular bundle cell
-CL_1000481;transitional myocyte of atrioventricular bundle
 CL_1000372;transitional myocyte of atrial part of atrioventricular bundle
 CL_1000373;transitional myocyte of ventricular part of atrioventricular bundle
 CL_1000484;Purkinje myocyte of atrioventricular bundle
+UBERON_0002353;atrioventricular bundle
+UBERON_0005986;left branch of atrioventricular bundle
+UBERON_0005987;right branch of atrioventricular bundle
 UBERON_0002354;cardiac Purkinje fiber
-CL_0010007;His-Purkinje system cell
 UBERON_0005982;Bachmann's bundle
 UBERON_0009966;internodal tract
 UBERON_0015125;anterior internodal tract
@@ -2495,9 +2495,9 @@ UBERON_0000926;mesoderm
 CL_0000222;mesodermal cell
 CL_0002546;embryonic blood vessel endothelial progenitor cell
 UBERON_0003068;axial mesoderm
-UBERON_0034878;prechordal mesoderm
 UBERON_0003063;prechordal plate
 UBERON_0004880;chordamesoderm
+UBERON_0034878;prechordal mesoderm
 UBERON_0003886;future coelemic cavity lumen
 UBERON_0002346;neurectoderm
 UBERON_0006238;future brain
@@ -2539,7 +2539,6 @@ UBERON_0012327;pearly penile papule
 UBERON_0012376;retromolar triangle
 UBERON_0018303;adrenal tissue
 UBERON_0010232;placodal ectoderm
-UBERON_0000913;interstitial fluid
 CL_0000864;tissue-resident macrophage
 CL_0000091;Kupffer cell
 CL_0000581;peritoneal macrophage
@@ -2554,3 +2553,4 @@ CL_0002247;pleural macrophage
 CL_0002477;adipose macrophage
 CL_0002478;F4/80-negative adipose macrophage
 CL_0002479;F4/80-positive adipose macrophage
+UBERON_0000913;interstitial fluid
