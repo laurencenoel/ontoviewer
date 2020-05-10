@@ -218,7 +218,7 @@ if __name__ == "__main__":
     tissueParent = {}    
     
     with open("PV/tissue_PV.csv", "w") as f:
-        f.write('IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,PARENT_IDENTIFIER,value,PUBLIC_ID\n')
+        f.write('IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,value,PUBLIC_ID\n')
   
     
         for tissue in listAllTissue :        
@@ -248,7 +248,7 @@ if __name__ == "__main__":
                 else : 
                     parentStr += " "+specialId
                 
-            f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","tissue_type"\n')
+            f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","'+label+'","tissue_type"\n')
             tissueParent[identifier] = parentStr
             
     with open("PV/tissue_parent.csv", "w") as ftissue:

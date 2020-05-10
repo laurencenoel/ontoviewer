@@ -306,7 +306,7 @@ if __name__ == "__main__":
     
     with open("PV/organs_PV.csv", "w") as f:
     
-        f.write("IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,PARENT_IDENTIFIER,value,PUBLIC_ID\n")
+        f.write("IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,value,PUBLIC_ID\n")
     
         unique = {}
     
@@ -331,10 +331,10 @@ if __name__ == "__main__":
                     if askTissue(identifier) == "" and askCell(identifier) == "" : 
                         parentIdList = askParent(identifier)
                         parentStr = " ".join(parentIdList)
-                        f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","organ"\n')
+                        f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","'+label+'","organ_type"\n')
     
         print("add bone marrow")
-        f.write('"getNextPvId(),"","UBERON_0002371","","UBERON_0000479","UBERON_0004765","","Bone marrow","organ"\n')
+        f.write('"getNextPvId(),"","UBERON_0002371","","UBERON_0000479","UBERON_0004765","Bone marrow","organ_type"\n')
     
     
 

@@ -259,7 +259,7 @@ if __name__ == "__main__":
     
     cells = []
     with open("PV/cell_PV.csv", "w") as f:
-        f.write('IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,PARENT_IDENTIFIER,value,PUBLIC_ID\n')
+        f.write('IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,value,PUBLIC_ID\n')
     
         for cell in cellList : 
             if cell not in cells : 
@@ -276,9 +276,9 @@ if __name__ == "__main__":
                     parentStr = "UBERON_0000922"
                 if label == "blastoderm cell" : 
                     parentStr = "UBERON_0000922"
-                f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","","'+label+'","cell_type"\n')
+                f.write('"getNextPvId(),"","'+identifier+'","","'+descriptors+'","'+parentStr+'","'+label+'","cell_type"\n')
     
             
         print("add embryonic cell")
-        f.write('"getNextPvId(),"","CL_0000361","","","UBERON_0000922","","gastrula cell","cell_type"\n')
-        f.write('"getNextPvId(),"","CL_0000360","","","UBERON_0000922","","morula cell","cell_type"\n')
+        f.write('"getNextPvId(),"","CL_0000361","","","UBERON_0000922","gastrula cell","cell_type"\n')
+        f.write('"getNextPvId(),"","CL_0000360","","","UBERON_0000922","morula cell","cell_type"\n')
