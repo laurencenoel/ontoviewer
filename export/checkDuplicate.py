@@ -15,9 +15,7 @@ if __name__ == "__main__":
     print("                    CHECK DUPLICATE                                 ")
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
-
-    
-	files = ["PV/organs_PV.csv", "PV/tissue_PV.csv","PV/cell_PV.csv"]
+    files = ["PV/organs_PV.csv","PV/tissue_PV.csv","PV/cell_PV.csv"]
 	for file in files : 
 		with open(file, "r") as f:
 			unique=[]
