@@ -23,7 +23,7 @@ if __name__ == "__main__":
             for lines in csv_reader:
                 short_uri = lines[2]
                 if short_uri in unique :
-                    print(file + " " + short_uri)
+                    print(file + " " + short_uri + " ".join(lines))
                 else :
                     unique.append(short_uri)
     
