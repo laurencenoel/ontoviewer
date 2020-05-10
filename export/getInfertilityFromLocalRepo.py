@@ -7,7 +7,7 @@ import getopt
 import requests
 import csv
 
-requestURL = HCAOQUERY
+requestURL = MONDOQUERY
 
       
 def getChildrenOrAxiom(broader,withLabel=False) : 

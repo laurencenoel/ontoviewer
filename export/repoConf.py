@@ -12,3 +12,4 @@ if settings == None :
 
 HCAOQUERY = settings['repo_hcao_query']
 HCAOUPDATE = settings['repo_hcao_update']
+MONDOQUERY = settings['repo_mondo_query']
