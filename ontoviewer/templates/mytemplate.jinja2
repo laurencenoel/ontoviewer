@@ -14,7 +14,7 @@
 
 <script>
 	var query =  "select ?s where {?s ?p ?o } LIMIT 5";
-	var url = "http:localhost:8080/rdf4j-server/repositories/hcao?query=" + encodeURIComponent(query);
+	var url = "http://localhost:8080/rdf4j-server/repositories/hcao?query=" + encodeURIComponent(query);
 	$.getJSON(url).success(function(data) {
 		$('#resultat').html("<p>" + data.results.bindings[0].libelle.value + "</p>");
 	})
