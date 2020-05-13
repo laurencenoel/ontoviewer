@@ -207,7 +207,8 @@ if __name__ == "__main__":
     print("                      GET CELLS                                     ")
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
-    cellList = getCells()
+    #cellList = getCells()
+    cellList = getChildrenOrAxiom("CL_0000003",True)
     
     print("Get organ child")
     orgParent = {}

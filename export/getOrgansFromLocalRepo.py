@@ -291,7 +291,7 @@ if __name__ == "__main__":
   
     print("Get Cells")
     unique = {}
-    listAllCells = getCells()    
+    listAllCells = getChildrenOrAxiom("CL_0000003",True)  
     
     with open("PV/cells_labels.csv", "w") as fcells:
         for cell in listAllCells :
