@@ -2,32 +2,22 @@
 
 {% block  more_scripts %}
 
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  
 {% endblock  more_scripts %}
 
 {% block content %}
-<div id="container" >YES </div>
+<div id="resultat" >YES </div>
 {% endblock content %}
 
 {% block comp_script %}
 
 <script>
-var data = "SELECT distinct ?s WHERE { ?s ?p ?o } LIMIT 5";
-
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function() {
-  if(this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("POST", "http://localhost:8080/rdf4j-server/repositories/hcao");
-xhr.setRequestHeader("Content-Type", "application/json");
-
-xhr.send(data);
+	var query =  select ?s where {?s ?p ?o } LIMIT 5";
+	var url = "http:localhost:8080/rdf4j-server/repositories/hcao?query=" + encodeURIComponent(query);
+	$.getJSON(url).success(function(data) {
+		$('#resultat').html("<p>" + data.results.bindings[0].libelle.value + "</p>");
+	})
 
  </script>
  
