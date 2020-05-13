@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="{{request.locale_name}}">
+
+{% block head %}
   <head>
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="pyramid web application">
-    <link rel="shortcut icon" href="{{request.static_url('ontoviewer:static/pyramid-16x16.png')}}">
+    <meta name="author" content="Pylons Project">
+     <title>{% block title %}Test{% endblock %}</title>
 
-    <title>Ontoviewer</title>
- {% block scripts %}
+   {% block more_scripts %} {% endblock %}
+  {% block more_links %} {% endblock %}
+   </head>
+  {% endblock head %}
+
+<body>
+
+
+
+
+
   
-{% endblock scripts %}
- 
- 
+            {% block content %}
+	
+             <p>Some content</p>
+	  
+	   
+            {% endblock content %}
+
+
 
   
-    <style>
-	html, body, #container {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-	</style>
 
 
-  </head>
 
-  <body>
- {% block content %}
-                <p>No content</p>
- {% endblock content %}
+            {% block comp_script %}
+
+
+<script>
+</script>
+
+         {% endblock comp_script %}
+
+
+    </body>
 
 
 
 
-  </body>
-   {% block endscripts %}
-  
-{% endblock endscripts %}
+
+
+			
 </html>
