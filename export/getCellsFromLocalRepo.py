@@ -22,6 +22,47 @@ Arguments:
 """
     )
 
+def getChildrenOrAxiom(broader,withLabel=False) : 
+    print("get subclasses for " + broader)
+    childrenList = []
+    query = """
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX obo-term: <http://purl.obolibrary.org/obo/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    SELECT distinct ?s ?label {{
+    {{
+    ?s rdfs:subClassOf  obo-term:{broader} . }}
+    UNION {{
+    ?s rdfs:subClassOf ?s_axiom .
+    ?s_axiom owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050>  .
+    ?s_axiom owl:someValuesFrom obo-term:{broader} . }}
+    ?s rdfs:label ?label .
+    }}
+    """.format(broader=broader)
+    
+    #FILTER NOT EXISTS {{?s rdfs:label ?label . FILTER(regex(?label,"cell|blast|cyte|compound organ|system element|region element|segment organ|-derived structure|subdivision of|mammalian|adult|right|left","i"))}}
+ 
+    myparam = { 'query': query}
+    headers = {'Accept' : 'application/sparql-results+json'}
+    r=requests.get(requestURL,params=myparam, headers=headers)
+    results=r.json()
+    
+    for row in results["results"]["bindings"] : 
+        uri = row["s"]["value"]
+        label = row["label"]["value"]
+        identifier = uri.split("/")[-1]
+        if identifier not in unique.keys() : 
+            unique[identifier] = label
+            if withLabel : 
+                childrenList.append([identifier,label])
+            else : 
+                childrenList.append(identifier)       
+        
+            childL = getChildrenOrAxiom(identifier,withLabel)
+            if len(childL) >= 1 : 
+                childrenList.extend(childL)
+        
+    return childrenList
 
 
 def getAllChildren(broader) : 
