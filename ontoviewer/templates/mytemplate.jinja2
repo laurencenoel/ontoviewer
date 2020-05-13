@@ -2,7 +2,7 @@
 
 {% block  more_scripts %}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
  
 {% endblock  more_scripts %}
 
@@ -13,22 +13,26 @@
 {% block comp_script %}
 
 <script>
-var settings = {
-"url": "http://openstack-192-168-100-11.genouest.org/rdf4j-server/repositories/amyp",
-"method": "POST",
-"timeout": 0,
-"crossOrigin" : true,
-"headers": {
-"Content-Type": "application/sparql-query",
-"Access-Control-Allow-Origin":"*"
-},
-"data": "SELECT distinct ?s WHERE { ?s ?p ?o } LIMIT 5",
-};
+var data = "prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+\nprefix owl: <http://www.w3.org/2002/07/owl#> 
+\nSELECT distinct ?s
+\nWHERE { 
+\n?s ?p ?o
+\n} LIMIT 5";
 
-$.ajax(settings).done(function (response) {
-alert(response);
-}); 
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
 
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "http://openstack-192-168-100-40.genouest.org/rdf4j-server/repositories/hcao");
+xhr.setRequestHeader("Content-Type", "application/sparql-query");
+
+xhr.send(data);
 </script>
 
  
