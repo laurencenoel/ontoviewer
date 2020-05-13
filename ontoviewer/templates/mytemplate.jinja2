@@ -24,7 +24,7 @@ xhr.addEventListener("readystatechange", function() {
   }
 });
 
-xhr.open("POST", "http://openstack-192-168-100-40.genouest.org/rdf4j-server/repositories/hcao");
+xhr.open("POST", "http://131.254.158.26:8080/rdf4j-server/repositories/hcao");
 xhr.setRequestHeader("Content-Type", "application/sparql-query");
 
 xhr.send(data);
