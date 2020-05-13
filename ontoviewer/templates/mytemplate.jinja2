@@ -1,8 +1,7 @@
 {% extends "layout.jinja2" %}
 
 {% block scripts %}
-<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-sankey.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
  
 {% endblock scripts %}
@@ -13,28 +12,21 @@
 
 {% block endscripts %}
 <script>
-anychart.onDocumentReady(function () {
+var settings = {
+"url": "http://localhost:8080/rdf4j-server/repositories/hcao",
+"method": "POST",
+"timeout": 0,
+"crossDomain": true,
+"headers": {
+"Content-Type": "application/sparql-query",
+"Access-Control-Allow-Origin":"*"
+},
+"data": "prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \r\nprefix owl: <http://www.w3.org/2002/07/owl#> \r\nSELECT distinct ?s\r\nWHERE { \r\n?s ?p ?o\r\n} LIMIT 5",
+};
 
-    // create data
-    var data = {{ jsond|tojson|safe }};
-
-    // create a chart and set the data
-    var chart = anychart.sankey(data);
-
-    // set the width of nodes
-    chart.nodeWidth("10%");
-
-	chart.nodePadding(20);
-
-    // set the chart title
-    chart.title("Human Development");
-
-    // set the container id
-    chart.container("container");
-
-    // initiate drawing the chart
-    chart.draw();
-});
+$.ajax(settings).done(function (response) {
+alert(response);
+}); 
 
 </script>
  
