@@ -7,7 +7,7 @@
 {% endblock scripts %}
 
 {% block content %}
-<div id="container" ></div>
+<div id="container" >Hello</div>
 {% endblock content %}
 
 {% block endscripts %}
@@ -16,16 +16,15 @@ var settings = {
 "url": "http://localhost:8080/rdf4j-server/repositories/hcao",
 "method": "POST",
 "timeout": 0,
-"crossDomain": true,
 "headers": {
 "Content-Type": "application/sparql-query",
 "Access-Control-Allow-Origin":"*"
 },
-"data": "prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \r\nprefix owl: <http://www.w3.org/2002/07/owl#> \r\nSELECT distinct ?s\r\nWHERE { \r\n?s ?p ?o\r\n} LIMIT 5",
+"data": "SELECT distinct ?s WHERE { ?s ?p ?o } LIMIT 5",
 };
 
 $.ajax(settings).done(function (response) {
-alert(response);
+console.log(response);
 }); 
 
 </script>
