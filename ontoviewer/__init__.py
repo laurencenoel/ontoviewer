@@ -6,7 +6,7 @@ def main(global_config, **settings):
     """
     with Configurator(settings=settings) as config:
         config.include('pyramid_jinja2')
-        config.include('cors')
+        config.include('.cors')
     
      # make sure to add this before other routes to intercept OPTIONS
         config.add_cors_preflight_handler()
