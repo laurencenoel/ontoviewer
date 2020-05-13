@@ -7,10 +7,3 @@ from pyramid.events import NewResponse, subscriber
 def my_view(request):
     return {'project': 'ontoviewer'}
 
-@view_config(request_method='OPTIONS', permission='options')
-def options(self):
-    return Response(b'', headerlist=[
-        ('Access-Control-Allow-Origin', 'http://localhost:8080'),
-        ('Access-Control-Allow-Methods', 'POST'),
-        ('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization'),
-    ])
