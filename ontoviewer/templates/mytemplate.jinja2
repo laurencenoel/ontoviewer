@@ -13,12 +13,7 @@
 {% block comp_script %}
 
 <script>
-var data = "prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-\nprefix owl: <http://www.w3.org/2002/07/owl#> 
-\nSELECT distinct ?s
-\nWHERE { 
-\n?s ?p ?o
-\n} LIMIT 5";
+var data = "SELECT distinct ?s WHERE { ?s ?p ?o } LIMIT 5";
 
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
