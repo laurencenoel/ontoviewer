@@ -249,6 +249,7 @@ if __name__ == "__main__":
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
     #cellList = getCells()
+    unique={}
     cellList = getChildrenOrAxiom("CL_0000003",True)
     
     print("Get organ child")
