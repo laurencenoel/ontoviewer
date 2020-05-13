@@ -24,11 +24,11 @@ xhr.addEventListener("readystatechange", function() {
   }
 });
 
-xhr.open("POST", "/rdf4j-server/repositories/hcao");
-xhr.setRequestHeader("Content-Type", "application/sparql-query");
+xhr.open("POST", "http://localhost:8080/rdf4j-server/repositories/hcao");
+xhr.setRequestHeader("Content-Type", "application/json");
 
 xhr.send(data);
-</script>
 
+ </script>
  
 {% endblock comp_script %}
