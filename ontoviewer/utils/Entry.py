@@ -6,6 +6,7 @@ from rdflib.namespace import SKOS,RDF,RDFS,OWL,DC,XSD
 import json
 from conf.repo import *
 
+
 class Entry(object) :
 
     def __init__(self,identifier,uriBase,queryEndpoint,updateEndpoint):
@@ -190,7 +191,6 @@ class Entry(object) :
 
 
 class HcaoEntry(Entry) :
-
     def __init__(self,identifier):
         super().__init__(identifier,STR_HCAO,HCAOQUERY,HCAOUPDATE)
 
