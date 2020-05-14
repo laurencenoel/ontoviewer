@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from export.repoConf import *
+from repoConf import *
 
 import sys
 import getopt
@@ -85,16 +85,17 @@ def getLabels(idList) :
         obo-term:{ide} rdfs:label ?label .
         }}
         """.format(ide=identifier)
+        
+        myparam = { 'query': query}
+        headers = {'Accept' : 'application/sparql-results+json'}
+        r=requests.get(requestURL,params=myparam, headers=headers)
+        results=r.json()
     
-    headers = {'Accept' : 'application/sparql-results+json'}
-    r=requests.get(requestURL,params=myparam, headers=headers)
-    results=r.json()
-    
-    for row in results["results"]["bindings"] : 
-        label = row["label"]["value"]
-        labels += label + ", "
-    if len(labels) > 2 :      
-        labels = labels[:-2]
+        for row in results["results"]["bindings"] : 
+            label = row["label"]["value"]
+            labels += label + ", "
+        if len(labels) > 2 :      
+            labels = labels[:-2]
         
     return labels
 
