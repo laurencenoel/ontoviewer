@@ -17,3 +17,8 @@ def organs(request):
         label = HcaoEntry(itemId).getLabel()   
        
     return {'project': 'ontoviewer', 'label': label, 'itemId' : itemId}
+    
+    
+@view_config(route_name='organs_comp', renderer='../templates/organs_comp.jinja2')
+def organs_comp(request):    
+    return {'project': 'ontoviewer'}

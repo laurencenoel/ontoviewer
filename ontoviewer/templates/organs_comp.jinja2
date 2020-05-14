@@ -1,0 +1,236 @@
+{% extends "layout.jinja2" %}
+
+
+{% block  more_scripts %}
+	<script src="https://d3js.org/d3.v5.min.js"></script>	
+ 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+{% endblock  more_scripts %}
+
+  {% block more_links %}   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+	<style>
+.intro {text-align: center; margin: 10px 30px 50px 30px;}
+
+
+.node circle {
+  cursor: pointer;
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font-size: 12px;
+}
+
+path.link {
+  fill: none;
+  stroke: #ECECEC;
+  stroke-width: 1px;
+}
+
+.ext-link {
+  font-weight: bold;
+}
+
+    </style>
+
+
+  {% endblock %}
+
+{% block content %}
+
+
+<div class="intro">
+<h1>Main organs</h1>
+<p>You can also check the organs listed in the <a href="http://ontology.staging.data.humancellatlas.org/ontologies/hcao/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000062" target="_blank">hca tree ontology</a> or in the <a href="/organs" target="_blank">table view</a></p>
+
+</div>
+
+  <div id="body" style="margin:20px">
+
+    <script type="text/javascript">
+
+var m = [50, 240, 50, 240],
+    w = 1200 - m[1] - m[3],
+    h = 800 - m[0] - m[2],
+    i = 0,
+    root;
+
+var tree = d3.layout.tree()
+    .size([h, w]);
+
+var diagonal = d3.svg.diagonal()
+    .projection(function(d) { return [d.y, d.x]; });
+
+var vis = d3.select("#body").append("svg:svg")
+    .attr("width", w + m[1] + m[3])
+    .attr("height", h + m[0] + m[2])
+  	.append("svg:g")
+    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+
+  var dataset ={"uri":"http://purl.hudeca.org/thesaurus/organism_structure","name":"main organs","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0002369","name":"adrenal gland","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0001235","name":"adrenal cortex","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001236","name":"adrenal medulla","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000955","name":"brain","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0002420","name":"basal ganglion","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003547","name":"brain meninx","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002037","name":"cerebellum","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000956","name":"cerebral cortex","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001886","name":"choroid plexus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001851","name":"cortex","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004040","name":"cortical intermediate zone","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005343","name":"cortical plate","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0034711","name":"cortical preplate","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004035","name":"cortical subplate","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006222","name":"diencephalon","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004703","name":"dorsal thalamus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001899","name":"epithalamus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0016525","name":"frontal lobe","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0034876","name":"future neurohypophysis","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0014371","name":"future telencephalon","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004023","name":"ganglionic eminence","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001898","name":"hypothalamus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004025","name":"lateral ganglionic eminence","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0016526","name":"lobe of cerebral hemisphere","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004024","name":"medial ganglionic eminence","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0007645","name":"meninx","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0010092","name":"metencephalon","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005290","name":"myelencephalon","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002021","name":"occipital lobe","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002264","name":"olfactory bulb","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001872","name":"parietal lobe","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000988","name":"pons","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006215","name":"rhombic lip","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001892","name":"rhombomere","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002038","name":"substantia nigra","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001871","name":"temporal lobe","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001155","name":"colon","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0010084","name":"diaphragm","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0035831","name":"costal diaphragm","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0014765","name":"crus of diaphragm","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0007145","name":"dome of diaphragm","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001690","name":"ear","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0001848","name":"auricular cartilage","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001846","name":"inner ear","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003051","name":"otic vesicle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001459","name":"skin of external ear","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002364","name":"tympanic membrane","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001043","name":"esophagus","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0035177","name":"abdominal part of esophagus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0013473","name":"lower esophagus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0035216","name":"thoracic part of esophagus","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000970","name":"eye","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0001801","name":"anterior segment of eyeball","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0011892","name":"anterior uvea","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000964","name":"cornea","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005427","name":"corneal primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001711","name":"eyelid","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003071","name":"eye primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005389","name":"lens","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003073","name":"lens placode","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001713","name":"lower eyelid","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006531","name":"oculomotor muscle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001776","name":"optic choroid","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000941","name":"optic nerve","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004128","name":"optic vesicle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0018104","name":"parafoveal part of retina","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006276","name":"perioptic mesenchyme","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0016462","name":"periorbital skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001802","name":"posterior segment of eyeball","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005425","name":"presumptive neural retina","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005424","name":"presumptive retinal pigmented epithelium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002269","name":"pupillary membrane","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000966","name":"retina","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001773","name":"sclera","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001457","name":"skin of eyelid","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001768","name":"uvea","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001799","name":"vitreous chamber of eyeball","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002110","name":"gall bladder","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0002394","name":"bile duct","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004912","name":"biliary bud","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001173","name":"biliary tree","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006242","name":"gall bladder primordium","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000045","name":"ganglion","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0000044","name":"dorsal root ganglion","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003078","name":"epibranchial placode","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006232","name":"facio-acoustic VII-VIII preganglion complex","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0009124","name":"geniculate placode","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0013499","name":"glossopharyngeal-vagus IX-X preganglion complex","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001808","name":"parasympathetic ganglion","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001806","name":"sympathetic ganglion","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001675","name":"trigeminal ganglion","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000991","name":"gonad","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0001307","name":"capsule of ovary","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0011757","name":"differentiated genital tubercle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005795","name":"embryonic uterus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001301","name":"epididymis","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006233","name":"female genital tubercle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005294","name":"gonadal ridge","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005564","name":"gonad primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006261","name":"male genital tubercle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003074","name":"mesonephric duct","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0016505","name":"Mullerian tubercle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000992","name":"ovary","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000473","name":"testicle","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000948","name":"heart","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0003115","name":"4th pharyngeal arch","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003117","name":"6th pharyngeal arch","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005432","name":"aortic sac","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002137","name":"aortic valve","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001508","name":"arch of aorta","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001496","name":"ascending aorta","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002087","name":"atrioventricular canal","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002133","name":"atrioventricular valve","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0010172","name":"bulb of aorta","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002081","name":"cardiac atrium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002082","name":"cardiac ventricle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005994","name":"chorda tendineae","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006218","name":"common atrial chamber","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006060","name":"conotruncus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001621","name":"coronary artery","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005438","name":"coronary sinus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002062","name":"endocardial cushion","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002166","name":"endocardium of atrium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001081","name":"endocardium of ventricle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002348","name":"epicardium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003084","name":"heart primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002085","name":"interatrial septum","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002094","name":"interventricular septum","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004666","name":"interventricular septum membranous part","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0016925","name":"juxtaductal region of aortic arch","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0010277","name":"mesocardium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002135","name":"mitral valve","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0007151","name":"mitral valve leaflet","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004125","name":"myocardial compact layer","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002302","name":"myocardium of atrium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001083","name":"myocardium of ventricle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004124","name":"myocardium trabecular layer","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004145","name":"outflow tract","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002494","name":"papillary muscle of heart","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002407","name":"pericardium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0016923","name":"preductal region of aortic arch","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0007278","name":"presumptive sinus venosus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004140","name":"primary heart field","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0010227","name":"primordial atrium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002333","name":"pulmonary trunk","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002146","name":"pulmonary valve","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0009889","name":"second heart field","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002086","name":"sinoatrial valve","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002063","name":"sinus venosus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002134","name":"tricuspid valve","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005484","name":"tricuspid valve leaflet","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002061","name":"truncus arteriosus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006283","name":"ventricle","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005057","name":"immune organ","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0002122","name":"capsule of thymus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000029","name":"lymph node","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002106","name":"spleen","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006293","name":"spleen primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002370","name":"thymus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005483","name":"thymus lobe","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005562","name":"thymus primordium","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002113","name":"kidney","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0002015","name":"capsule of kidney","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003064","name":"intermediate mesoderm","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005095","name":"kidney rudiment","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001226","name":"major calyx","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000080","name":"metanephros","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002120","name":"pronephros","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005754","name":"rostral part of nephrogenic cord","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000059","name":"large intestine","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0001156","name":"ascending colon","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001158","name":"descending colon","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001052","name":"rectum","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001159","name":"sigmoid colon","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001157","name":"transverse colon","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002107","name":"liver","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0005171","name":"hepatic duct","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0008836","name":"liver bud","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003894","name":"liver primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001113","name":"lobe of liver","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001116","name":"quadrate lobe of liver","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002048","name":"lung","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0002299","name":"alveolus of lung","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0008950","name":"azygous lobe of lung","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000101","name":"lobe of lung","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005597","name":"lung primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0008955","name":"middle lobe of lung","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0008947","name":"respiratory primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0008948","name":"upper lobe of lung","size":1.0}],"size":1.0},{"uri":"http://purl.hudeca.org/kb/other","name":"other","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0003114","name":"3rd pharyngeal arch","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001516","name":"abdominal aorta","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003697","name":"abdominal wall","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002196","name":"adenohypophysis","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0009195","name":"anal membrane","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003068","name":"axial mesoderm","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004164","name":"branchiomeric muscle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006956","name":"buccal mucosa","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001748","name":"capsule of parathyroid gland","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001746","name":"capsule of thyroid gland","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0007106","name":"chorionic villus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002064","name":"common cardinal vein","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002067","name":"dermis","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004290","name":"dermomyotome","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001514","name":"descending aorta","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0016920","name":"descending trunk of arch of aorta","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001295","name":"endometrium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0008778","name":"epaxial musculature","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005631","name":"extraembryonic membrane","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0011693","name":"extraembryonic portion of umbilical artery","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003889","name":"fallopian tube","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0035651","name":"glans","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0012180","name":"head or neck skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0008777","name":"hypaxial musculature","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002072","name":"hypodermis","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001072","name":"inferior vena cava","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002199","name":"integument","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001817","name":"lacrimal gland","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003081","name":"lateral plate mesoderm","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001328","name":"lobe of prostate","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005051","name":"mediastinum testis","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003849","name":"mesencephalic neural crest","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005685","name":"midgut dorsal mesentery","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005020","name":"mucosa of tongue","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001499","name":"muscle of arm","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001383","name":"muscle of leg","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002377","name":"muscle of neck","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003082","name":"myotome","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002342","name":"neural crest","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001049","name":"neural tube","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005619","name":"palatal shelves","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0010145","name":"paraurethral gland","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001021","name":"peripheral nerve","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006562","name":"pharynx","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002533","name":"post-anal tail bud","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0016924","name":"postductal region of aortic arch","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003076","name":"posterior neural tube","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0011374","name":"prepuce","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003059","name":"presomitic mesoderm","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003820","name":"prostate bud","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0012287","name":"Rathke\'s pouch","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003852","name":"rhombencephalic neural crest","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001044","name":"salivary gland","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0017651","name":"salivary gland primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006849","name":"scapula","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0011817","name":"skin appendage placode","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001003","name":"skin epidermis","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0008803","name":"skin of cheek","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_1000021","name":"skin of face","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0016475","name":"skin of forehead","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001084","name":"skin of head","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001458","name":"skin of lip","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004874","name":"somatopleure","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002329","name":"somite","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003853","name":"spinal cord neural crest","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004873","name":"splanchnopleure","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006298","name":"submandibular gland primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001585","name":"superior vena cava","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001515","name":"thoracic aorta","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001091","name":"tooth","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0008281","name":"tooth bud","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005598","name":"trunk somite","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005734","name":"tunica adventitia of blood vessel","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005876","name":"undifferentiated genital tubercle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004876","name":"urogenital fold","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006307","name":"urogenital membrane","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000996","name":"vagina","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001000","name":"vas deferens","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006675","name":"venous valve","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0009668","name":"ventral mesentery","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002412","name":"vertebra","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001178","name":"visceral peritoneum","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001264","name":"pancreas","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_3011040","name":"first pancreatic bud","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001069","name":"head of pancreas","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004913","name":"hepatopancreatic ampulla","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0010375","name":"pancreas dorsal primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003921","name":"pancreas primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0010376","name":"pancreas ventral primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001151","name":"tail of pancreas","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000065","name":"respiratory tract","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0002185","name":"bronchus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003706","name":"laryngeal vocal fold","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001737","name":"larynx","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005018","name":"mucosa of nasal septum","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005023","name":"mucosa of oropharynx","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000004","name":"nose","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_6005037","name":"tracheal primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0007196","name":"tracheobronchial tree","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001557","name":"upper respiratory tract","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004765","name":"skeletal element","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0007237","name":"1st arch mandibular component","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0007238","name":"1st arch maxillary component","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004362","name":"1st pharyngeal arch","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003066","name":"2nd pharyngeal arch","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004356","name":"apical ectodermal ridge","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002371","name":"bone marrow","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002241","name":"chondrocranium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001105","name":"clavicle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003113","name":"dermatocranium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0012314","name":"embryonic facial prominence","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0009292","name":"embryonic nasal process","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0007144","name":"embryonic post-anal tail","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006231","name":"facial bone primordium","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000981","name":"femur","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006871","name":"footplate","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005417","name":"forelimb bud","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0009293","name":"frontal process","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004066","name":"frontonasal prominence","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0011602","name":"gingiva of lower jaw","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0011601","name":"gingiva of upper jaw","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0006875","name":"handplate","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005418","name":"hindlimb bud","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000976","name":"humerus","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001273","name":"ilium (bone)","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004067","name":"lateral nasal prominence","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004068","name":"medial nasal prominence","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001706","name":"nasal septum","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0010947","name":"occipitalis","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002515","name":"periosteum","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0008895","name":"pharyngeal endoskeleton (viscerocranium)","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005620","name":"primary palate","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001423","name":"radius","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001716","name":"secondary palate","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003689","name":"sella turcica","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001424","name":"ulna","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001683","name":"zygomatic bone","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002097","name":"skin of body","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0002427","name":"arm skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0015474","name":"axilla skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004016","name":"dermatome","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005275","name":"dorsal skin of digit","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003531","name":"forelimb skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0015873","name":"heel skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003532","name":"hindlimb skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0009014","name":"lower back skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004264","name":"lower leg skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0005311","name":"mammary placode","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003533","name":"manual digit skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0009565","name":"nail of manual digit","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0009567","name":"nail of pedal digit","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0012336","name":"perianal skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001416","name":"skin of abdomen","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001512","name":"skin of ankle","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001068","name":"skin of back","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001868","name":"skin of chest","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001517","name":"skin of elbow","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001513","name":"skin of foot","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003403","name":"skin of forearm","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001519","name":"skin of hand","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001511","name":"skin of leg","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001419","name":"skin of limb","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001417","name":"skin of neck","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001483","name":"skin of shoulder","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001418","name":"skin of thorax","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001085","name":"skin of trunk","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004263","name":"upper arm skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0009015","name":"upper back skin","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0004262","name":"upper leg skin","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002108","name":"small intestine","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0001153","name":"cecum","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002114","name":"duodenum","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002116","name":"ileum (intestine)","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002115","name":"jejunum","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002240","name":"spinal cord","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000945","name":"stomach","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0012172","name":"stomach primordium","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002046","name":"thyroid","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0001118","name":"lobe of thyroid gland","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0003091","name":"thyroid primordium","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001723","name":"tongue","children":[{"uri":"http://purl.obolibrary.org/obo/UBERON_0006260","name":"lingual swellings","size":1.0}],"size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0002331","name":"umbilical cord","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000057","name":"urethra","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0001255","name":"urinary bladder","size":1.0},{"uri":"http://purl.obolibrary.org/obo/UBERON_0000995","name":"uterus","size":1.0}],"size":1.0};
+  console.log(dataset.uri);
+  //var json = JSON.parse(dataset);
+// d3.json("json?language=&root=", function(json) {
+  root = dataset;
+  root.x0 = (h / 2);
+  root.y0 = 0;
+
+  function toggleAll(d) {
+    if (d.children) {
+      d.children.forEach(toggleAll);
+      toggle(d);
+    }
+  }
+
+  // Initialize the display to show a few nodes.
+  root.children.forEach(toggleAll);
+  update(root);
+// });
+
+function update(source) {
+  var duration = d3.event && d3.event.altKey ? 5000 : 500;
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse();
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = vis.selectAll("g.node")
+      .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("svg:g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+      .on("click", function(d) { toggle(d); update(d); });
+
+  nodeEnter.append("svg:circle")
+      .attr("r", 1e-6)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  // add a link to the concept
+  var a = nodeEnter.append("a")
+	  .attr("xlink:href", function(d){ return d.uri; })
+	  .attr("target", "_blank");
+  
+  a.append("svg:text")
+      .attr("x", function(d) { return d.children || d._children ? 10 : 10; })
+      .attr("dy", ".35em")
+      .attr("text-anchor", function(d) { return d.children || d._children ? "start" : "start" ; })
+      .text(function(d) { return (d.name != null)?d.name:d.uri ; })
+      .style("fill-opacity", 1e-6);
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+      .attr("r", 8)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeUpdate.select("text")
+      .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+      .remove();
+
+  nodeExit.select("circle")
+      .attr("r", 1e-8);
+
+  nodeExit.select("text")
+      .style("fill-opacity", 1e-8);
+
+  // Update the links…
+  var link = vis.selectAll("path.link")
+      .data(tree.links(nodes), function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("svg:path", "g")
+      .attr("class", "link")
+      .attr("d", function(d) {
+        var o = {x: source.x0, y: source.y0};
+        return diagonal({source: o, target: o});
+      })
+    .transition()
+      .duration(duration)
+      .attr("d", diagonal);
+
+  // Transition links to their new position.
+  link.transition()
+      .duration(duration)
+      .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+      .duration(duration)
+      .attr("d", function(d) {
+        var o = {x: source.x, y: source.y};
+        return diagonal({source: o, target: o});
+      })
+      .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+    d.x0 = d.x;
+    d.y0 = d.y;
+  });
+}
+
+// Toggle children.
+function toggle(d) {
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+}
+
+    </script>
+    
+	<!--
+	    <div id="header" style="text-align:center; font-size: 0.9em;">
+  		<span id="help-popover" data-original-title="" title="" style="text-decoration: underline; cursor: pointer;"><i class="icon-info-sign"></i>aide</span>
+  	</div>
+	-->
+	
+    <script>
+        $(document).ready(function () {
+          // add external link behavior to every external link
+          $('text').mouseover(function() {
+            $(this).attr("class", "ext-link");
+          });
+          $('text').mouseout(function() {
+            $(this).attr("class", "");
+          });
+          
+          $('#help-popover').popover({
+        	  html: true,
+              trigger : "click",
+              delay: { show: 0, hide: 400 },
+              content: '<ol><li>Cliquer un cercle bleu pour ouvrir l\'arbre (les cercles blancs sont les feuilles de l\'arbre et sont inactifs).</li><li>Recliquer sur un cercle ouvert pour le fermer.</li><li>Cliquer sur un libellé pour naviguer sur l\'URI du concept.</li></ol>',
+              placement: "bottom"
+          });
+          $('#help-popover').css("text-decoration", "underline").css("cursor", "pointer");
+        });         
+    </script>
+  
+	
+
+{% endblock content %}
+
