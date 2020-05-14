@@ -17,32 +17,6 @@
 .fixed-table-pagination { font-size: .7rem; }
 
 
-/* Tooltip container */
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
- 
-  /* Position the tooltip text - see examples below! */
-  position: absolute;
-  z-index: 1;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
 </style>
 
   {% endblock %}
@@ -80,7 +54,7 @@
           <th data-field="organ" data-filter-control="input" data-filter-control="select" data-sortable="true" data-title-tooltip="adrenal gland,brain,colon,diaphragm,ear,esophagus,ear,gall bladder,ganglion,gonad,hear,immune organ,kidney,large intestine,liver,lung, pancreas, respiratory tract,skeletal element,skin,small intestine,spinal cord,stomach,thyroid,tongue,umbilical cord,urethra..">Main organ</th>
           <th data-field="organ_type" data-filter-control="input" data-sortable="true">Organ part or subdivision</th>
 		  <!--<th data-field="type" data-filter-control="select" data-sortable="true">Type</th>-->
-		  <th data-field="anatomic_system" data-filter-control="input" data-sortable="true">Anatomical system</th>
+		  <th data-field="anatomic_system" data-filter-control="input" data-sortable="true" data-title-tooltip="genitourinary system, integumental system, musculoskeletal system, cardiovascular system, central nervous system, respiratory system, digestive system, peripheral nervous system, endocrine system, hematopoietic system, sensory system, exocrine system, extraembryonic tissue, reproductive system, hepatobiliary system, head, pancreatic system">Anatomical system</th>
         </tr>
       </thead>
     </table>
