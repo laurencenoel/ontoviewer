@@ -376,19 +376,18 @@ if __name__ == "__main__":
         identifier = organ[0]
         label = organ[1]
         isNotException = checkExceptLabel(label)
-                if isNotException : 
-                    if askTissue(identifier) == "" and askCell(identifier) == "" : 
-                        mainOrganIdList = askParent(identifier)
-                        organList = getLabels(mainOrganIdList)
-                        systemIdList = askSystem(identifier)
-                        systemList = getLabels(systemIdList)
-                        descriptors = askOrganPart(identifier)
-                        if descriptors == "" : 
-                            descriptors = "subClass"
-                        else : 
-                            descriptors = "specific organ part"
-                        if organList == label : 
-                            descriptors = "main class"
+            if isNotException : 
+                if askTissue(identifier) == "" and askCell(identifier) == "" : 
+                    mainOrganIdList = askParent(identifier)
+                    organList = getLabels(mainOrganIdList)
+                    systemIdList = askSystem(identifier)
+                    systemList = getLabels(systemIdList)
+                    descriptors = askOrganPart(identifier)
+                    if descriptors == "" : 
+                        descriptors = "subClass"
+                    else : 
+                        descriptors = "specific organ part"
+                    if organList != label :
                         datajson.append({"organ":organList,"organ_type":label,"type":descriptors,"anatomic_system":systemList})
     
     with open("../ontoviewer/static/organ.json", "w") as outfile:
