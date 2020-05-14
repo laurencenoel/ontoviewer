@@ -2,7 +2,7 @@
 "getNextPvId()",ADG,UBERON_0002369,,"adrenal gland","Tissue_Site_PID"
 "getNextPvId()",BRA,UBERON_0000955,,"brain","Tissue_Site_PID"
 "getNextPvId()",COL,UBERON_0001155,,"colon","Tissue_Site_PID"
-"getNextPvId()",DIA,UBERON_0010084,,"diaphragm","Tissue_Site_PID"
+"getNextPvId()",DIA,UBERON_0001103,,"diaphragm","Tissue_Site_PID"
 "getNextPvId()",EAR,UBERON_0001690,,"ear","Tissue_Site_PID"
 "getNextPvId()",ESO,UBERON_0001043,,"esophagus","Tissue_Site_PID"
 "getNextPvId()",EYE,UBERON_0000970,,"eye","Tissue_Site_PID"
