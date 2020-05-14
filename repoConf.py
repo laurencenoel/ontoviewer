@@ -1,6 +1,5 @@
 from pyramid.config import Configurator
 from pyramid.threadlocal import get_current_registry
-from repoConf import *
 
 registry = get_current_registry()
 settings = registry.settings
