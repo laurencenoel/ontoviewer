@@ -335,8 +335,8 @@ if __name__ == "__main__":
             label = cell[1]
             fcells.write(identifier+";"+label+"\n") 
 
-
-
+    
+    systList = []
     print("Get anatomic_system")
     with open("PV/anatomic-system.csv", "r") as f:
         csv_reader = csv.reader(f, delimiter=',')
