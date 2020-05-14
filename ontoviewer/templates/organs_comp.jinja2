@@ -202,6 +202,8 @@ function toggle(d) {
 }
 
     </script>
+	
+</div>
     
 	<!--
 	    <div id="header" style="text-align:center; font-size: 0.9em;">
@@ -219,14 +221,6 @@ function toggle(d) {
             $(this).attr("class", "");
           });
           
-          $('#help-popover').popover({
-        	  html: true,
-              trigger : "click",
-              delay: { show: 0, hide: 400 },
-              content: '<ol><li>Cliquer un cercle bleu pour ouvrir l\'arbre (les cercles blancs sont les feuilles de l\'arbre et sont inactifs).</li><li>Recliquer sur un cercle ouvert pour le fermer.</li><li>Cliquer sur un libellé pour naviguer sur l\'URI du concept.</li></ol>',
-              placement: "bottom"
-          });
-          $('#help-popover').css("text-decoration", "underline").css("cursor", "pointer");
         });         
     </script>
   
