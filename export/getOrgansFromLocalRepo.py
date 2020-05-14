@@ -28,6 +28,8 @@ Arguments:
 """
     )
     
+
+    
 def getChildrenOrAxiom(broader,withLabel=False) : 
     print("get subclasses for " + broader)
     childrenList = []
@@ -171,9 +173,17 @@ def askTissue(identifier) :
     for elt in listAllTissue : 
         if elt[0] == identifier : 
             return "UBERON_0000479"
-    return ""     
+    return ""   
 
-      
+def hasHeadOrgan(organL,systL) : 
+    if "brain" in organL or "ear" in organL or "tongue" in organL or "eye" in organL : 
+        if "head" not in systL : 
+            if systL == "" : 
+                systL = "head"
+            else : 
+                systL += ", head"
+    return systL
+ 
             
 def askCell(identifier) : 
     for elt in listAllCells : 
@@ -382,17 +392,23 @@ if __name__ == "__main__":
                 organList = getLabels(mainOrganIdList)
                 systemIdList = askSystem(identifier)
                 systemList = getLabels(systemIdList)
-                descriptors = askOrganPart(identifier)
-                if descriptors == "" : 
-                    descriptors = "primary subdivisions"
-                else : 
-                    descriptors = "secondary subdivisions"
+                #descriptors = askOrganPart(identifier)
+                #if descriptors == "" : 
+                    #descriptors = "primary subdivisions"
+                #else : 
+                    #descriptors = "secondary subdivisions"
                 if organList != label :
+                    systemList = hasHeadOrgan(organList,systemList)
                     if organList == "" : organList = "other"
                     if systemList == "" : systemList = "other"
-                    datajson.append({"organ":organList,"organ_type":label,"type":descriptors,"anatomic_system":systemList})
-    datajson.append({"organ":"skeletal element","organ_type":"bone marrow","type":"primary subdivisions","anatomic_system":"hematopeitic system, musculoskeletal system"})
-    
+                    #datajson.append({"organ":organList,"organ_type":label,"type":descriptors,"anatomic_system":systemList})
+                    datajson.append({"organ":organList,"organ_type":label,"anatomic_system":systemList})
+                
+               
+                
+    #datajson.append({"organ":"skeletal element","organ_type":"bone marrow","type":"primary subdivisions","anatomic_system":"hematopeitic system, musculoskeletal system"})
+    datajson.append({"organ":"skeletal element","organ_type":"bone marrow","anatomic_system":"hematopeitic system, musculoskeletal system"})
+
     with open("../ontoviewer/static/organ.json", "w") as outfile:
         json.dump(datajson, outfile)
     
