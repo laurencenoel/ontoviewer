@@ -418,7 +418,7 @@ if __name__ == "__main__":
             datajson.append({"organ":organList,"organ_type":label,"type":descriptors,"anatomic_system":systemList})
     
     with open("../ontoviewer/static/organ.json", "w") as outfile:
-        json.dump(data, outfile)
+        json.dump(datajson, outfile)
     
 
 
