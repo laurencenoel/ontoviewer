@@ -94,8 +94,9 @@ def getLabels(idList) :
         for row in results["results"]["bindings"] : 
             label = row["label"]["value"]
             labels += label + ", "
-        if len(labels) > 2 :      
-            labels = labels[:-2]
+            
+    if len(labels) > 2 :
+        labels = labels[:-2]
         
     return labels
 
@@ -143,37 +144,6 @@ def getOrigin(organ) :
 
 
  
-    
-def getCells() : 
-    print("get all Cells : contains cells/cyte/blast or has obo namespace CL")
-    childrenList = []
-    query = """
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    PREFIX obo-term: <http://purl.obolibrary.org/obo/>
-    PREFIX owl: <http://www.w3.org/2002/07/owl#>
-    SELECT distinct ?s ?label {
-    ?s rdfs:label ?label .
-    ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" . 
-    FILTER NOT EXISTS { ?s <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" . FILTER(regex(str(?s),"CP_")) }
-    FILTER NOT EXISTS { ?label <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "cell" . FILTER(regex(?label," by ")) }
-    }
-    """
-        
-    myparam = { 'query': query}
-    headers = {'Accept' : 'application/sparql-results+json'}
-    r=requests.get(requestURL,params=myparam, headers=headers)
-    print(r.status_code)
-    results=r.json()
-    
-    for row in results["results"]["bindings"] : 
-        uri = row["s"]["value"]
-        label = row["label"]["value"]
-        identifier = uri.split("/")[-1]
-        
-        childrenList.append([identifier,label])
-       
-    return childrenList
-
 
 def addToDico(organ,prim) :
     listElt = dico[organ]
@@ -213,7 +183,7 @@ def askCell(identifier) :
                         
 
 def checkExceptLabel(label) : 
-    exceptLabels =  ["compound organ","system element","region element","segment organ","-derived structure","subdivision of","mammalian","adult","right","left","zone of","regional part of "]
+    exceptLabels =  ["compound organ","system element","region element","segment organ","-derived structure","subdivision of","mammalian","adult","right","left","zone of","regional part of ","cistern","space"]
     for elt in exceptLabels : 
         if elt in label : 
             return False
@@ -405,17 +375,21 @@ if __name__ == "__main__":
     for organ in organList : 
         identifier = organ[0]
         label = organ[1]
-        if askTissue(identifier) == "" and askCell(identifier) == "" : 
-            mainOrganIdList = askParent(identifier)
-            organList = getLabels(mainOrganIdList)
-            systemIdList = askSystem(identifier)
-            systemList = getLabels(systemIdList)
-            descriptors = askOrganPart(identifier)
-            if descriptors == "" : 
-                descriptors = "subClass"
-            else : 
-                descriptors = "specific organ part"
-            datajson.append({"organ":organList,"organ_type":label,"type":descriptors,"anatomic_system":systemList})
+        isNotException = checkExceptLabel(label)
+                if isNotException : 
+                    if askTissue(identifier) == "" and askCell(identifier) == "" : 
+                        mainOrganIdList = askParent(identifier)
+                        organList = getLabels(mainOrganIdList)
+                        systemIdList = askSystem(identifier)
+                        systemList = getLabels(systemIdList)
+                        descriptors = askOrganPart(identifier)
+                        if descriptors == "" : 
+                            descriptors = "subClass"
+                        else : 
+                            descriptors = "specific organ part"
+                        if organList == label : 
+                            descriptors = "main class"
+                        datajson.append({"organ":organList,"organ_type":label,"type":descriptors,"anatomic_system":systemList})
     
     with open("../ontoviewer/static/organ.json", "w") as outfile:
         json.dump(datajson, outfile)
