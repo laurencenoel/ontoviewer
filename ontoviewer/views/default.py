@@ -14,4 +14,4 @@ def my_view(request):
     print("identifiant : " + itemId)  
     label = HcaoEntry(itemId).getLabel()
     print("label : " + label)      
-    return {'project': 'ontoviewer', 'label': label}
+    return {'project': 'ontoviewer', 'label': label, 'itemId' : itemId}

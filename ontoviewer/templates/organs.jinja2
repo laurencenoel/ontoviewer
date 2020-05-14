@@ -19,6 +19,9 @@
 
 {% block content %}
 
+<h1>Labels related to : {{ label }}</h1>
+<p>You can also check <a href="http://ontology.staging.data.humancellatlas.org/ontologies/hcao/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F{{ itemId }} target="_blank">hca tree ontology</a> or the <a href="" target="_blank">tree about main anatomic component</a></p>
+
 <table
   id="table"
   data-filter-control="true"
@@ -32,7 +35,7 @@
           <th data-field="organ" data-filter-control="input" data-filter-control="select" data-sortable="true" >Main organ</th>
           <th data-field="organ_type" data-filter-control="input" data-sortable="true">Organ part or subdivision</th>
 		  <th data-field="type" data-filter-control="select" data-sortable="true">Type</th>
-		  <th data-field="anatomic_system" data-filter-control="select" data-sortable="true">Anatomical system</th>
+		  <th data-field="anatomic_system" data-filter-control="input" data-sortable="true">Anatomical system</th>
         </tr>
       </thead>
     </table>
