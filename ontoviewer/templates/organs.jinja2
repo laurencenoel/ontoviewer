@@ -13,7 +13,8 @@
 	<style>
 .filter-control  { margin: 0px 20px 10px 20px;}
 .table td { padding: .2rem .4rem; font-size: .8rem;}
-.intro {text-align: center; margin: 10px 30px;}
+.intro {text-align: center; margin: 10px 30px 50px 30px;}
+.fixed-table-pagination { font-size: .6rem; }
 </style>
 
   {% endblock %}
@@ -28,7 +29,7 @@
 <p>You can also check <a href="http://ontology.staging.data.humancellatlas.org/ontologies/hcao/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F{{ itemId }}" target="_blank">hca tree ontology</a> or the <a href="" target="_blank">tree about main anatomic components</a></p>
 
 {% else %}
-<h1>Organs, and organs part and subdivisions</h1>
+<h1>Organs, organ parts and subdivisions</h1>
 <p>You can also check the organs listed in the <a href="http://ontology.staging.data.humancellatlas.org/ontologies/hcao/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000062" target="_blank">hca tree ontology</a> or the <a href="" target="_blank">tree about main anatomic components</a></p>
 
 {% endif %}
@@ -66,12 +67,21 @@
   $(function() {
 
 	$table.bootstrapTable()	
-	var $selectControl = $(".bootstrap-table-filter-control-organ"); 
+
+    var $selectControl = $(".bootstrap-table-filter-control-organ"); 
+	$selectControl.attr('placeholder', 'start typing to filter the results');	
+	
+	{% if label != "" %}
 	$selectControl.val('{{ label }}'); 
 	$selectControl.change();
+	{% endif %}
 	
-	var $selectControl = $(".bootstrap-table-filter-control-organ_part"); 
-	$selectControl.attr('placeholder', 'type your search to filter the results');	
+	var $selectControlot = $(".bootstrap-table-filter-control-organ_type"); 
+	$selectControlot.attr('placeholder', 'start typing to filter the results');	
+	
+	var $selectControlas = $(".bootstrap-table-filter-control-anatomic_system"); 
+	$selectControlas.attr('placeholder', 'start typing to filter the results');	
+
 
   })
   
