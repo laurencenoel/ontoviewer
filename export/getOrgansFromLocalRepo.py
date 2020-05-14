@@ -6,6 +6,8 @@ import sys
 import getopt
 import requests
 import csv
+import json
+
 
 requestURL = HCAOQUERY
 
@@ -69,6 +71,32 @@ def getChildrenOrAxiom(broader,withLabel=False) :
                 childrenList.extend(childL)
         
     return childrenList
+
+def getLabels(idList) : 
+    
+    labels = ""
+    for identifier in idList : 
+
+        query = """
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX obo-term: <http://purl.obolibrary.org/obo/>
+        PREFIX owl: <http://www.w3.org/2002/07/owl#>
+        SELECT distinct ?label {{
+        obo-term:{ide} rdfs:label ?label .
+        }}
+        """.format(ide=identifier)
+    
+    headers = {'Accept' : 'application/sparql-results+json'}
+    r=requests.get(requestURL,params=myparam, headers=headers)
+    results=r.json()
+    
+    for row in results["results"]["bindings"] : 
+        label = row["label"]["value"]
+        labels += label + ", "
+    if len(labels) > 2 :      
+        labels = labels[:-2]
+        
+    return labels
 
 
 
@@ -157,6 +185,11 @@ def askParent(identifier) :
     else :
         return ["HUDECA_0000002"]
         
+def askSystem(identifier) : 
+    if identifier in dicoChildSyst.keys() : 
+        return dicoChildSyst[identifier]
+    return ["HUDECA_0000002"]
+        
 def askOrganPart(identifier) : 
     for elt in listAllOrgPart : 
         if elt[0] == identifier : 
@@ -167,7 +200,9 @@ def askTissue(identifier) :
     for elt in listAllTissue : 
         if elt[0] == identifier : 
             return "UBERON_0000479"
-    return ""       
+    return ""     
+
+      
             
 def askCell(identifier) : 
     for elt in listAllCells : 
@@ -222,6 +257,7 @@ if __name__ == "__main__":
         unique = {}
         listAllChildren = getChildrenOrAxiom(elt)
         dico[elt]= listAllChildren
+        #to have the element as its own parent
         addToDico(elt,elt)
         
         unique = {}
@@ -299,25 +335,49 @@ if __name__ == "__main__":
             label = cell[1]
             fcells.write(identifier+";"+label+"\n") 
 
+
+
+    print("Get anatomic_system")
+    with open("PV/anatomic-system.csv", "r") as f:
+        csv_reader = csv.reader(f, delimiter=',')
+        print("skipping headers")
+        next(csv_reader)
+        for lines in csv_reader:
+            systList.append(lines[0])
+    dicoSyst={}
+    for elt in systList : 
+        unique = {}
+        listAllSyst = getChildrenOrAxiom(elt)
+        dicoSyst[elt]= listAllSyst
+        
+    dicoChildSyst = {}
+    print("create file for systems with their children as keys")
+    for syst,value in dicoSyst.items() : 
+        for child in value : 
+            if child in dicoChildSyst.keys() : 
+                myList = dicoChildSyst[child]
+                myList.append(syst)
+                dicoChildSyst[child] = myList
+            else :
+                dicoChildSyst[child] = [syst]
+                    
+    with open("PV/system-child.csv", "w") as fsyst:
+        for child,parentList in dicoChildSyst.items() : 
+            parentStr = " ".join(parentList)
+            fsyst.write(child+";"+parentStr+"\n")
+
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("Get all organs, find their parents, and create file")
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
+    unique = {}
+    organList = getChildrenOrAxiom("UBERON_0000062", True)
+    
     with open("PV/organ-PV.csv", "w") as f:
     
         f.write("IDENTIFIER,CONCEPT_CODE,SHORT_URI,DEFINITION,DESCRIPTORS,PARENTS,value,PUBLIC_ID\n")
     
-        unique = {}
-    
-        #organL = getChildren("UBERON_0000062", True)
-        #organAxiomTop = getAxiomChildren("UBERON_0000062",True)
-        #organList = organL + organAxiomTop
-        #print("remove duplicates if any")
-
-        organList = getChildrenOrAxiom("UBERON_0000062", True)
-  
-
         for organ in organList :        
             identifier = organ[0]
             label = organ[1]
@@ -336,6 +396,29 @@ if __name__ == "__main__":
         print("add bone marrow")
         f.write('"getNextPvId()","","UBERON_0002371","","UBERON_0000479","UBERON_0004765","Bone marrow","organ_type"\n')
     
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    print("Create json file with main organs, organ part, type, system ")
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
+    datajson = []
+    for organ in organList : 
+        identifier = organ[0]
+        label = organ[1]
+        if askTissue(identifier) == "" and askCell(identifier) == "" : 
+            mainOrganIdList = askParent(identifier)
+            organList = getLabels(mainOrganIdList)
+            systemIdList = askSystem(identifier)
+            systemList = getLabels(systemIdList)
+            descriptors = askOrganPart(identifier)
+            if descriptors == "" : 
+                descriptors = "subClass"
+            else : 
+                descriptors = "specific organ part"
+            datajson.append({"organ":organList,"organ_type":label,"type":descriptors,"anatomic_system":systemList})
+    
+    with open("../ontoviewer/static/organ.json", "w") as outfile:
+        json.dump(data, outfile)
+    
+
 
     
