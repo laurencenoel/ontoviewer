@@ -380,13 +380,15 @@ if __name__ == "__main__":
             if askTissue(identifier) == "" and askCell(identifier) == "" : 
                 mainOrganIdList = askParent(identifier)
                 organList = getLabels(mainOrganIdList)
+                if organList == "" : 
+                    organList = "other"
                 systemIdList = askSystem(identifier)
                 systemList = getLabels(systemIdList)
                 descriptors = askOrganPart(identifier)
                 if descriptors == "" : 
-                    descriptors = "subClass"
+                    descriptors = "primary subdibisions"
                 else : 
-                    descriptors = "specific organ part"
+                    descriptors = "secondary subdivisions"
                 if organList != label :
                     datajson.append({"organ":organList,"organ_type":label,"type":descriptors,"anatomic_system":systemList})
     
