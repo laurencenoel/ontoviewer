@@ -4,12 +4,12 @@ import requests
 from ontoviewer.utils.Entry import *
 
 @view_config(route_name='home', renderer='../templates/home.jinja2')
-def my_view(request):  
+def home(request): 
     return {'project': 'ontoviewer'}
         
 
 @view_config(route_name='organs', renderer='../templates/organs.jinja2')
-def my_view(request):
+def organs(request):
     itemId = ""
     label = ""
     if 'main_organ' in request.params :
