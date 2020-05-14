@@ -3,7 +3,7 @@ import json
 import requests
 from ontoviewer.utils.Entry import *
 
-@view_config(route_name='home', renderer='../templates/organs.jinja2')
+@view_config(route_name='home', renderer='../templates/layout.jinja2')
 def my_view(request):  
     return {'project': 'ontoviewer'}
         
