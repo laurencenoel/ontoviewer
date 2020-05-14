@@ -19,15 +19,28 @@
   {% endblock %}
 
 {% block content %}
+
+
 <div class="intro">
+
+{% if label != "" %}
 <h1>Labels related to : {{ label }}</h1>
-<p>You can also check <a href="http://ontology.staging.data.humancellatlas.org/ontologies/hcao/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F{{ itemId }}" target="_blank">hca tree ontology</a> or the <a href="" target="_blank">tree about main anatomic component</a></p>
+<p>You can also check <a href="http://ontology.staging.data.humancellatlas.org/ontologies/hcao/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F{{ itemId }}" target="_blank">hca tree ontology</a> or the <a href="" target="_blank">tree about main anatomic components</a></p>
+
+{% else %}
+<h1>Organs, and organs part and subdivisions</h1>
+<p>You can also check the organs listed in the <a href="http://ontology.staging.data.humancellatlas.org/ontologies/hcao/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000062" target="_blank">hca tree ontology</a> or the <a href="" target="_blank">tree about main anatomic components</a></p>
+
+{% endif %}
+
 </div>
+
  
 <table
   id="table"
   data-filter-control="true"
-  data-virtual-scroll="true"
+  data-pagination="true"
+  data-page-size="50"
   data-sort-name="name"
   data-sort-order="desc"
   data-url="{{request.static_url('ontoviewer:static/organ.json')}}"
