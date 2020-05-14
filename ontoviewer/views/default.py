@@ -11,5 +11,7 @@ def my_view(request):
 @view_config(route_name='organsId', renderer='../templates/organs.jinja2')
 def my_view(request):
     itemId = request.matchdict['itemId']
-    label = HcaoEntry(itemId).getLabel()    
+    print("identifiant : " + itemId)  
+    label = HcaoEntry(itemId).getLabel()
+    print("label : " + label)      
     return {'project': 'ontoviewer', 'label': label}
