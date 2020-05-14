@@ -13,19 +13,21 @@
 	<style>
 .filter-control  { margin: 0px 20px 10px 20px;}
 .table td { padding: .2rem .4rem; font-size: .8rem;}
+.intro {text-align: center; margin: 10px 30px;}
 </style>
 
   {% endblock %}
 
 {% block content %}
-
+<div class="intro">
 <h1>Labels related to : {{ label }}</h1>
-<p>You can also check <a href="http://ontology.staging.data.humancellatlas.org/ontologies/hcao/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F{{ itemId }} target="_blank">hca tree ontology</a> or the <a href="" target="_blank">tree about main anatomic component</a></p>
-
+<p>You can also check <a href="http://ontology.staging.data.humancellatlas.org/ontologies/hcao/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F{{ itemId }}" target="_blank">hca tree ontology</a> or the <a href="" target="_blank">tree about main anatomic component</a></p>
+</div>
+ 
 <table
   id="table"
   data-filter-control="true"
-  data-pagination="true"
+  data-virtual-scroll="true"
   data-sort-name="name"
   data-sort-order="desc"
   data-url="{{request.static_url('ontoviewer:static/organ.json')}}"

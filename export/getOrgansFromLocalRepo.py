@@ -365,7 +365,7 @@ if __name__ == "__main__":
                         f.write('"getNextPvId()","","'+identifier+'","","'+descriptors+'","'+parentStr+'","'+label+'","organ_type"\n')
     
         print("add bone marrow")
-        f.write('"getNextPvId()","","UBERON_0002371","","UBERON_0000479","UBERON_0004765","Bone marrow","organ_type"\n')
+        f.write('"getNextPvId()","","UBERON_0002371","","UBERON_0000479","UBERON_0004765","bone marrow","organ_type"\n')
     
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     print("Create json file with main organs, organ part, type, system ")
@@ -380,17 +380,18 @@ if __name__ == "__main__":
             if askTissue(identifier) == "" and askCell(identifier) == "" : 
                 mainOrganIdList = askParent(identifier)
                 organList = getLabels(mainOrganIdList)
-                if organList == "" : 
-                    organList = "other"
                 systemIdList = askSystem(identifier)
-                systemList = getLabels(systemIdList)
+                systemList = getLabels(systemIdList
                 descriptors = askOrganPart(identifier)
                 if descriptors == "" : 
-                    descriptors = "primary subdibisions"
+                    descriptors = "primary subdivisions"
                 else : 
                     descriptors = "secondary subdivisions"
                 if organList != label :
+                    if organList == "" : organList = "other"
+                    if systemList == "" : systemList = "other"
                     datajson.append({"organ":organList,"organ_type":label,"type":descriptors,"anatomic_system":systemList})
+    datajson.append({"organ":"skeletal element","organ_type":"bone marrow","type":"primary subdivisions","anatomic_system":"hematopeitic system, musculoskeletal system"})
     
     with open("../ontoviewer/static/organ.json", "w") as outfile:
         json.dump(datajson, outfile)

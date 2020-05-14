@@ -8,10 +8,12 @@ def my_view(request):
     return {'project': 'ontoviewer'}
         
 
-@view_config(route_name='organsId', renderer='../templates/organs.jinja2')
+@view_config(route_name='organs', renderer='../templates/organs.jinja2')
 def my_view(request):
-    itemId = request.matchdict['itemId']
-    print("identifiant : " + itemId)  
-    label = HcaoEntry(itemId).getLabel()
-    print("label : " + label)      
+    itemId = ""
+    label = ""
+    if 'main_organ' in request.params :
+        itemId = request.params['main_organ']
+        label = HcaoEntry(itemId).getLabel()   
+       
     return {'project': 'ontoviewer', 'label': label, 'itemId' : itemId}
