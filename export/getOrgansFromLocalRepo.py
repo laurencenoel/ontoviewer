@@ -381,7 +381,7 @@ if __name__ == "__main__":
                 mainOrganIdList = askParent(identifier)
                 organList = getLabels(mainOrganIdList)
                 systemIdList = askSystem(identifier)
-                systemList = getLabels(systemIdList
+                systemList = getLabels(systemIdList)
                 descriptors = askOrganPart(identifier)
                 if descriptors == "" : 
                     descriptors = "primary subdivisions"
