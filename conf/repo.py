@@ -12,5 +12,6 @@ if settings == None :
 HCAOQUERY = settings['repo_hcao_query']
 HCAOUPDATE = settings['repo_hcao_update']
 MONDOQUERY = settings['repo_mondo_query']
+EHDAAQUERY = settings['repo_ehdaa_query']
 
 STR_HCAO = "http://purl.obolibrary.org/obo/"
