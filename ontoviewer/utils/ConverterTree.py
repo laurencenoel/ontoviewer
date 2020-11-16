@@ -77,9 +77,17 @@ def organ_json():
                 dict["size"] = "1.0"
                 data.append(dict)
                 
-   
+    
+    
+    finalDict = {}
+    finalDict["uri"] = "#"
+    finalDict["name"] = "cells by localisation"
+    finalDict["size"] = "1.0"
+    finalDict["children" = data
+    
+    
     # Serializing json  
-    json_object = json.dumps(data, indent = 4) 
+    json_object = json.dumps(finalDict, indent = 4) 
   
     # Writing to sample.json 
     with open(jsonfile, "w") as outfile: 
