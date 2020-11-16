@@ -2,7 +2,7 @@ import json, csv
 
 def getChildren(elt,dico) :
     children = []
-    for key,dicoV in dico.values() : 
+    for key,dicoV in dico.items() : 
         for item in dicoV : 
             if item == elt : 
                 children.append(key)
