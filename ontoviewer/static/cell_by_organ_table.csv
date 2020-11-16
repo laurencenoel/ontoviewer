@@ -1,0 +1,780 @@
+adrenal gland;adrenal cortex chromaffin cell;CL_1000427
+adrenal gland;adrenal gland glandular cell;CL_1001601
+adrenal gland;adrenal medulla chromaffin cell;CL_0000336
+adrenal gland;chromaffin cell of adrenal gland;CL_1000426
+adrenal gland;cortical cell of adrenal gland;CL_0002097
+adrenal gland;type I cell of adrenal cortex;CL_0002099
+adrenal gland;type I cell of adrenal medulla;CL_0002083
+adrenal gland;type II cell of adrenal cortex;CL_0002136
+adrenal gland;type II cell of adrenal medulla;CL_0002082
+adrenal gland;type III cell of adrenal cortex;CL_0002137
+brain;Meynert cell;CL_2000056
+brain;Purkinje cell;CL_0000121
+brain;acidophil cell of pars distalis of adenohypophysis;CL_0000638
+brain;astrocyte of the cerebellum;CL_0002603
+brain;astrocyte of the cerebral cortex;CL_0002605
+brain;astrocyte of the forebrain;CL_0012000
+brain;astrocyte of the hippocampus;CL_0002604
+brain;basophil cell of pars distalis of adenohypophysis;CL_0000639
+brain;brain macroglial cell;CL_2000005
+brain;brain pericyte;CL_2000043
+brain;brainstem motor neuron;CL_2000047
+brain;cerebellar neuron;CL_1001611
+brain;cerebellum glutamatergic neuron;CL_2000028
+brain;cerebral cortex endothelial cell;CL_1001602
+brain;cerebral cortex glial cell;CL_1001579
+brain;cerebral cortex neuron;CL_0010012
+brain;choroid plexus epithelial cell;CL_0000706
+brain;chromophil cell of anterior pituitary gland;CL_0000637
+brain;fibroblast of choroid plexus;CL_0002549
+brain;folliculostellate cell of pars distalis of adenohypophysis;CL_0002177
+brain;forebrain neuroblast;CL_1000042
+brain;hippocampal interneuron;CL_1001569
+brain;hippocampal neuron;CL_0002608
+brain;hippocampal pyramidal neuron;CL_1001571
+brain;hippocampus glial cell;CL_1001580
+brain;hypothalamus native cell;CL_2000030
+brain;lateral ventricle glial cell;CL_1001581
+brain;lateral ventricle neuron;CL_1001582
+brain;midbrain dopaminergic neuron;CL_2000097
+brain;neuron of cerebral cortex;CL_0002609
+brain;neuron of the forebrain;CL_0012001
+brain;pituitary gland cell;CL_2000004
+brain;raphe nuclei neuron;CL_0002610
+brain;smooth muscle cell of the brain vasculature;CL_0002590
+brain;corticotroph;CL_0002309
+brain;gonadtroph;CL_0000437
+brain;mammosomatotroph;CL_0002310
+brain;mammotroph;CL_0002311
+brain;pinealocyte;CL_0000652
+brain;somatotroph;CL_0002312
+brain;thyrotroph;CL_0000476
+colon;appendix glandular cell;CL_1001585
+colon;appendix goblet cell;CL_1000327
+colon;colon endothelial cell;CL_1001572
+colon;colon epithelial cell;CL_0011108
+colon;colon glandular cell;CL_1001588
+colon;epithelial cell of appendix;CL_1000405
+colon;microfold cell of epithelium proper of appendix;CL_1000359
+colon;paneth cell of the appendix;CL_0002624
+colon;smooth muscle cell of cecum;CL_1000281
+colon;smooth muscle cell of colon;CL_1000280
+colon;smooth muscle cell of sigmoid colon;CL_1000285
+colon;smooth muscle fiber of ascending colon;CL_1000282
+colon;smooth muscle fiber of descending colon;CL_1000284
+colon;smooth muscle fiber of transverse colon;CL_1000283
+colon;type D cell of colon;CL_0002265
+colon;vacuolar absorptive cell of epithelium of colon;CL_1000347
+ear;Claudius cell;CL_0000634
+ear;Deiters cell;CL_0000635
+ear;Hensen cell;CL_0000633
+ear;auditory hair cell;CL_0000202
+ear;border cell of cochlea;CL_0002168
+ear;cochlear inner hair cell;CL_0000589
+ear;epithelial cell of external acoustic meatus;CL_1000434
+ear;external limiting cell of vestibular epithelium;CL_0002317
+ear;external pillar cell of cochlea;CL_0002164
+ear;external supporting cell of vestibular epithelium;CL_0002314
+ear;inner phalangeal cell;CL_0005015
+ear;interdental cell of cochlea;CL_0002172
+ear;internal epithelial cell of tympanic membrane;CL_0002162
+ear;internal pillar cell of cochlea;CL_0002163
+ear;macular hair cell;CL_0005008
+ear;organ of Corti supporting cell;CL_0002490
+ear;outer hair cell;CL_0000601
+ear;phalangeal cell;CL_0002165
+ear;pillar cell;CL_1000191
+ear;supporting cell of cochlea;CL_0002315
+ear;supporting cell of vestibular epithelium;CL_0002316
+ear;type 1 vestibular sensory cell of epithelium of crista of ampulla of semicircular duct of membranous labyrinth;CL_1000381
+ear;type 1 vestibular sensory cell of epithelium of macula of saccule of membranous labyrinth;CL_1000380
+ear;type 1 vestibular sensory cell of epithelium of macula of utricle of membranous labyrinth;CL_1000379
+ear;type 2 vestibular sensory cell of epithelium of crista of ampulla of semicircular duct of membranous labyrinth;CL_1000385
+ear;type 2 vestibular sensory cell of epithelium of macula of saccule of membranous labyrinth;CL_1000384
+ear;type 2 vestibular sensory cell of epithelium of macula of utricle of membranous labyrinth;CL_1000383
+esophagus;ciliated epithelial cell of esophagus;CL_3000000
+esophagus;epithelial cell of esophageal cardiac gland;CL_0002642
+esophagus;epithelial cell of esophageal gland proper;CL_0002641
+esophagus;epithelial cell of esophagus;CL_0002252
+esophagus;epithelial cell of stratum corneum of esophageal epithelium;CL_0002654
+esophagus;epithelial cell of stratum germinativum of esophagus;CL_1000447
+esophagus;epithelial cell of stratum spinosum of esophageal epithelium;CL_0002655
+esophagus;glandular cell of esophagus;CL_0002657
+esophagus;keratinized squamous cell of esophagus;CL_0002221
+esophagus;nonkeratinized cell of stratum corneum of esophageal epithelium;CL_0002643
+esophagus;smooth muscle cell of the esophagus;CL_0002599
+eye;anterior lens cell;CL_0002223
+eye;camera-type eye photoreceptor cell;CL_0010009
+eye;ciliary muscle cell;CL_1000443
+eye;cone retinal bipolar cell;CL_0000752
+eye;conjunctiva goblet cell;CL_2000084
+eye;conjunctival epithelial cell;CL_1000432
+eye;corneal epithelial cell;CL_0000575
+eye;epithelial cell of lacrimal canaliculus;CL_1000433
+eye;epithelial cell of lacrimal duct;CL_1000435
+eye;epithelial cell of lacrimal sac;CL_1000436
+eye;epithelial cell of nasolacrimal duct;CL_1000437
+eye;eye photoreceptor cell;CL_0000287
+eye;fibroblast of the conjunctiva;CL_0002550
+eye;iris pigment epithelial cell;CL_0002565
+eye;lens epithelial cell;CL_0002224
+eye;lens fiber cell;CL_0011004
+eye;melanocyte of eyelid;CL_1000391
+eye;mesothelial cell of anterior chamber of eye;CL_1000444
+eye;myoepithelial cell of dilator pupillae;CL_1000445
+eye;non-nucleated secondary lens fiber;CL_0002226
+eye;nucleated secondary lens fiber;CL_0002227
+eye;optic choroid fibroblast;CL_2000070
+eye;primary lens fiber;CL_0002228
+eye;retinal bipolar neuron;CL_0000748
+eye;retinal blood vessel endothelial cell;CL_0002585
+eye;retinal cell;CL_0009004
+eye;retinal cone cell;CL_0000573
+eye;retinal ganglion cell;CL_0000740
+eye;retinal melanocyte;CL_0002485
+eye;retinal pigment epithelial cell;CL_0002586
+eye;retinal rod cell;CL_0000604
+eye;rod bipolar cell;CL_0000751
+eye;secondary lens fiber;CL_0002225
+eye;smooth muscle cell of sphincter of pupil;CL_0002243
+eye;vertebrate lens cell;CL_0002222
+eye;keratocyte;CL_0002363
+gall bladder;epithelial cell of gall bladder;CL_1000415
+gall bladder;gall bladder glandular cell;CL_1001592
+gall bladder;gallbladder fibroblast;CL_2000069
+ganglion;ganglion interneuron;CL_0000397
+gonad;Leydig cell;CL_0000178
+gonad;Sertoli cell;CL_0000216
+gonad;chromaffin cell of left ovary;CL_1000467
+gonad;chromaffin cell of ovary;CL_1000465
+gonad;chromaffin cell of right ovary;CL_1000466
+gonad;hilus cell of ovary;CL_0002095
+gonad;interstitial cell of ovary;CL_0002094
+gonad;large luteal cell;CL_0000592
+gonad;luteal cell;CL_0000175
+gonad;male gonocyte;CL_0002238
+gonad;ovarian fibroblast;CL_2000063
+gonad;ovarian surface epithelial cell;CL_2000064
+gonad;peritubular myoid cell;CL_0002481
+gonad;seminal vesicle glandular cell;CL_1001597
+gonad;seminiferous tubule epithelial cell;CL_0002625
+gonad;small luteal cell;CL_0000590
+gonad;stromal cell of ovarian cortex;CL_0002133
+gonad;stromal cell of ovarian medulla;CL_0002134
+gonad;stromal cell of ovary;CL_0002132
+gonad;ooblast;CL_0002239
+heart;His-Purkinje system cell;CL_0010007
+heart;Purkinje myocyte of atrioventricular bundle;CL_1000484
+heart;Purkinje myocyte of atrioventricular node;CL_1000479
+heart;Purkinje myocyte of internodal tract;CL_1000483
+heart;Purkinje myocyte of interventricular septum;CL_1000376
+heart;adipocyte of epicardial fat of left ventricle;CL_1000311
+heart;adipocyte of epicardial fat of right ventricle;CL_1000310
+heart;atrioventricular bundle cell;CL_0010005
+heart;cardiac atrium fibroblast;CL_2000067
+heart;cardiac blood vessel endothelial cell;CL_0010006
+heart;cardiac endothelial cell;CL_0010008
+heart;cardiac glial cell;CL_0010020
+heart;cardiac muscle myoblast;CL_0000513
+heart;cardiac neuron;CL_0010022
+heart;cardiac pacemaker cell of sinoatrial node;CL_1000477
+heart;cardiac septum native cell;CL_2000022
+heart;cardiac ventricle fibroblast;CL_2000066
+heart;endocardial cell;CL_0002350
+heart;endocardial cushion cell;CL_0008022
+heart;epicardial adipocyte;CL_1000309
+heart;fibroblast of cardiac tissue;CL_0002548
+heart;internodal tract myocyte;CL_0002096
+heart;myocardial endocrine cell of atrium;CL_0002663
+heart;myocardial endocrine cell of interventricular septum;CL_1000482
+heart;myocardial endocrine cell of septal division of left branch of atrioventricular bundle;CL_1000375
+heart;myocyte of anterior internodal tract;CL_1000287
+heart;myocyte of atrial branch of anterior internodal tract;CL_1000288
+heart;myocyte of atrial septal branch of anterior internodal tract;CL_1000289
+heart;myocyte of atrioventricular node;CL_1000410
+heart;myocyte of middle internodal tract;CL_1000290
+heart;myocyte of posterior internodal tract;CL_1000291
+heart;myocyte of sinoatrial node;CL_1000409
+heart;transitional myocyte of anterior division of left branch of atrioventricular bundle;CL_1000368
+heart;transitional myocyte of anterior internodal tract;CL_1000364
+heart;transitional myocyte of atrial branch of anterior internodal tract;CL_1000363
+heart;transitional myocyte of atrial part of atrioventricular bundle;CL_1000372
+heart;transitional myocyte of atrial septal branch of anterior internodal tract;CL_1000365
+heart;transitional myocyte of atrioventricular bundle;CL_1000481
+heart;transitional myocyte of interatrial septum;CL_1000361
+heart;transitional myocyte of internodal tract;CL_1000480
+heart;transitional myocyte of interventricular septum;CL_1000362
+heart;transitional myocyte of left branch of atrioventricular bundle;CL_1000370
+heart;transitional myocyte of middle internodal tract;CL_1000366
+heart;transitional myocyte of posterior division of left branch of atrioventricular bundle;CL_1000374
+heart;transitional myocyte of posterior internodal tract;CL_1000367
+heart;transitional myocyte of right branch of atrioventricular bundle;CL_1000371
+heart;transitional myocyte of septal division of left branch of atrioventricular bundle;CL_1000369
+heart;transitional myocyte of sinoatrial node;CL_1000478
+heart;transitional myocyte of ventricular part of atrioventricular bundle;CL_1000373
+heart;ventricular cardiac muscle cell;CL_2000046
+immune organ;CD24-positive, CD4 single-positive thymocyte;CL_0002432
+immune organ;CD24-positive, CD8 single-positive thymocyte;CL_0002434
+immune organ;CD4-intermediate, CD8-positive double-positive thymocyte;CL_0002430
+immune organ;CD4-positive, CD8-intermediate double-positive thymocyte;CL_0002431
+immune organ;CD4-positive, alpha-beta thymocyte;CL_0000810
+immune organ;CD69-positive double-positive thymocyte;CL_0002429
+immune organ;CD69-positive, CD4-positive single-positive thymocyte;CL_0002433
+immune organ;CD69-positive, CD8-positive single-positive thymocyte;CL_0002435
+immune organ;CD8-positive, alpha-beta thymocyte;CL_0000811
+immune organ;CD8alpha-negative thymic conventional dendritic cell;CL_0002460
+immune organ;CD8alpha-positive thymic conventional dendritic cell;CL_0002059
+immune organ;DN1 thymic pro-T cell;CL_0000894
+immune organ;DN2 thymocyte;CL_0000806
+immune organ;DN2a thymocyte;CL_0002423
+immune organ;DN2b thymocyte;CL_0002424
+immune organ;DN3 thymocyte;CL_0000807
+immune organ;DN4 thymocyte;CL_0000808
+immune organ;cortical thymic epithelial cell;CL_0002364
+immune organ;double negative thymocyte;CL_0002489
+immune organ;double-positive blast;CL_0002428
+immune organ;double-positive, alpha-beta thymocyte;CL_0000809
+immune organ;endothelial cell of venous sinus of red pulp of spleen;CL_1000397
+immune organ;epithelial cell of thymus;CL_0002293
+immune organ;immature single positive thymocyte;CL_0000805
+immune organ;lymph node macrophage;CL_0000868
+immune organ;medullary thymic epithelial cell;CL_0002365
+immune organ;resting double-positive thymocyte;CL_0002427
+immune organ;reticular cell of splenic cord;CL_1000489
+immune organ;splenic endothelial cell;CL_2000053
+immune organ;splenic fibroblast;CL_2000051
+immune organ;splenic macrophage;CL_0000871
+immune organ;thymic conventional dendritic cell;CL_0000941
+immune organ;type-1 epithelial cell of thymus;CL_0002294
+immune organ;type-2 epithelial cell of thymus;CL_0002299
+immune organ;type-3 epithelial cell of thymus;CL_0002297
+immune organ;type-4 epithelial cell of thymus;CL_0002296
+immune organ;type-5 epithelial cell of thymus;CL_0002298
+immune organ;type-6 epithelial cell of thymus;CL_0002295
+immune organ;splenocyte;CL_2000074
+immune organ;thymocyte;CL_0000893
+kidney;arcuate artery cell;CL_1001135
+kidney;arcuate artery endothelial cell;CL_1001213
+kidney;arcuate artery smooth muscle cell;CL_1001214
+kidney;epithelial cell of distal tubule;CL_0002305
+kidney;epithelial cell of glomerular capsule;CL_1000450
+kidney;epithelial cell of intermediate tubule;CL_1000453
+kidney;epithelial cell of nephron;CL_1000449
+kidney;epithelial cell of proximal tubule;CL_0002306
+kidney;epithelial cell of visceral layer of glomerular capsule;CL_1000451
+kidney;extraglomerular mesangial cell;CL_0002173
+kidney;glomerular capillary endothelial cell;CL_1001005
+kidney;glomerular cell;CL_1000746
+kidney;glomerular endothelial cell;CL_0002188
+kidney;juxtaglomerular complex cell;CL_1000618
+kidney;kidney arterial blood vessel cell;CL_1000891
+kidney;kidney artery smooth muscle cell;CL_1001064
+kidney;kidney blood vessel cell;CL_1000854
+kidney;kidney capillary endothelial cell;CL_1000892
+kidney;kidney cell;CL_1000497
+kidney;kidney collecting duct cell;CL_1001225
+kidney;kidney collecting duct epithelial cell;CL_1000454
+kidney;kidney collecting duct intercalated cell;CL_1001432
+kidney;kidney corpuscule cell;CL_1000612
+kidney;kidney cortex artery cell;CL_1001045
+kidney;kidney cortex collecting duct epithelial cell;CL_1000549
+kidney;kidney cortex collecting duct intercalated cell;CL_1000715
+kidney;kidney cortex interstitial cell;CL_1000681
+kidney;kidney cortex tubule cell;CL_1000615
+kidney;kidney cortex vein cell;CL_1001052
+kidney;kidney cortical cell;CL_0002681
+kidney;kidney distal convoluted tubule epithelial cell;CL_1000849
+kidney;kidney epithelial cell;CL_0002518
+kidney;kidney glomerular epithelial cell;CL_1000510
+kidney;kidney granular cell;CL_0000648
+kidney;kidney interstitial cell;CL_1000500
+kidney;kidney loop of Henle descending limb epithelial cell;CL_1001021
+kidney;kidney loop of Henle epithelial cell;CL_1000909
+kidney;kidney loop of Henle thin descending limb epithelial cell;CL_1001111
+kidney;kidney medulla cell;CL_1000504
+kidney;kidney medulla collecting duct epithelial cell;CL_1000546
+kidney;kidney medulla interstitial cell;CL_1000682
+kidney;kidney nerve cell;CL_1000606
+kidney;kidney outer medulla cell;CL_1000616
+kidney;kidney outer medulla collecting duct epithelial cell;CL_1000548
+kidney;kidney outer medulla collecting duct intercalated cell;CL_1000717
+kidney;kidney outer medulla interstitial cell;CL_1000804
+kidney;kidney pelvis cell;CL_1000505
+kidney;kidney pelvis smooth muscle cell;CL_1000702
+kidney;kidney pelvis urothelial cell;CL_1000703
+kidney;kidney proximal convoluted tubule epithelial cell;CL_1000838
+kidney;kidney proximal straight tubule epithelial cell;CL_1000839
+kidney;kidney tubule cell;CL_1000507
+kidney;kidney venous blood vessel cell;CL_1000893
+kidney;macula densa epithelial cell;CL_1000850
+kidney;metanephric nephron tubule epithelial cell;CL_1000123
+kidney;nephron tubule epithelial cell;CL_1000494
+kidney;parietal epithelial cell;CL_1000452
+kidney;pronephric nephron tubule epithelial cell;CL_1000090
+kidney;renal cortical epithelial cell;CL_0002584
+kidney;renal intercalated cell;CL_0005010
+kidney;renal interstitial pericyte;CL_1001318
+large intestine;Brush cell of epithelium proper of large intestine;CL_0002203
+large intestine;appendix glandular cell;CL_1001585
+large intestine;appendix goblet cell;CL_1000327
+large intestine;colon endothelial cell;CL_1001572
+large intestine;colon epithelial cell;CL_0011108
+large intestine;colon glandular cell;CL_1001588
+large intestine;enterocyte of epithelium of large intestine;CL_0002071
+large intestine;epithelial cell of anal column;CL_0002634
+large intestine;epithelial cell of appendix;CL_1000405
+large intestine;epithelial cell of large intestine;CL_0002253
+large intestine;epithelial cell of wall of inferior part of anal canal;CL_1000438
+large intestine;glandular cell of the large intestine;CL_0002658
+large intestine;keratinized epithelial cell of the anal canal;CL_0002637
+large intestine;large intestine crypt goblet cell;CL_1000321
+large intestine;large intestine goblet cell;CL_1000320
+large intestine;microfold cell of epithelium proper of appendix;CL_1000359
+large intestine;microfold cell of epithelium proper of large intestine;CL_1000360
+large intestine;nonkeratinized epithelial cell of anal column;CL_0002635
+large intestine;nonkeratinized epithelial cell of inferior part of anal canal;CL_0002636
+large intestine;paneth cell of the appendix;CL_0002624
+large intestine;rectum glandular cell;CL_1001595
+large intestine;smooth muscle cell of cecum;CL_1000281
+large intestine;smooth muscle cell of colon;CL_1000280
+large intestine;smooth muscle cell of large intestine;CL_1000279
+large intestine;smooth muscle cell of rectum;CL_1000286
+large intestine;smooth muscle cell of sigmoid colon;CL_1000285
+large intestine;smooth muscle fiber of ascending colon;CL_1000282
+large intestine;smooth muscle fiber of descending colon;CL_1000284
+large intestine;smooth muscle fiber of transverse colon;CL_1000283
+large intestine;type D cell of colon;CL_0002265
+large intestine;vacuolar absorptive cell of epithelium of colon;CL_1000347
+large intestine;vacuolar absorptive cell of epithelium proper of large intestine;CL_1000346
+liver;endothelial cell of hepatic sinusoid;CL_1000398
+liver;fetal liver hematopoietic progenitor cell;CL_0002353
+liver;hepatic mesenchymal stem cell;CL_0002571
+liver;hepatic oval stem cell;CL_0002196
+liver;hepatic stellate cell;CL_0000632
+liver;hepatic stem cell;CL_0002195
+liver;intrahepatic bile duct epithelial cell;CL_0002538
+liver;liver dendritic cell;CL_2000055
+liver;hepatocyte;CL_0000182
+lung;basal cell of epithelium of lobular bronchiole;CL_1000352
+lung;basal cell of epithelium of respiratory bronchiole;CL_1000351
+lung;basal cell of epithelium of terminal bronchiole;CL_1000350
+lung;bronchioalveolar stem cell;CL_0002638
+lung;bronchus fibroblast of lung;CL_2000093
+lung;brush cell of lobular bronchiole;CL_0002205
+lung;brush cell of terminal bronchiole;CL_0002206
+lung;epithelial cell of alveolus of lung;CL_0010003
+lung;epithelial cell of lung;CL_0000082
+lung;fibroblast of lung;CL_0002553
+lung;lung ciliated cell;CL_1000271
+lung;lung endothelial cell;CL_1001567
+lung;lung goblet cell;CL_1000143
+lung;lung macrophage;CL_1001603
+lung;lung neuroendocrine cell;CL_1000223
+lung;lung secretory cell;CL_1000272
+lung;mesothelial cell of visceral pleura;CL_1000493
+lung;serous cell of epithelium of lobular bronchiole;CL_1000333
+lung;serous cell of epithelium of terminal bronchiole;CL_1000332
+lung;type I pneumocyte;CL_0002062
+lung;type II pneumocyte;CL_0002063
+lung;pneumocyte;CL_0000322
+pancreas;epithelial cell of exocrine pancreas;CL_1001433
+pancreas;epithelial cell of pancreas;CL_0000083
+pancreas;pancreas exocrine glandular cell;CL_1001599
+pancreas;pancreatic A cell;CL_0000171
+pancreas;pancreatic D cell;CL_0000173
+pancreas;pancreatic PP cell;CL_0002275
+pancreas;pancreatic acinar cell;CL_0002064
+pancreas;pancreatic centro-acinar cell;CL_0002080
+pancreas;pancreatic ductal cell;CL_0002079
+pancreas;pancreatic endocrine cell;CL_0008024
+pancreas;pancreatic goblet cell;CL_1000322
+pancreas;stromal cell of pancreas;CL_0002574
+pancreas;type B pancreatic cell;CL_0000169
+respiratory tract;basal cell of epithelium of bronchus;CL_1000349
+respiratory tract;basal cell of epithelium of lobular bronchiole;CL_1000352
+respiratory tract;basal cell of epithelium of respiratory bronchiole;CL_1000351
+respiratory tract;basal cell of epithelium of terminal bronchiole;CL_1000350
+respiratory tract;basal cell of epithelium of trachea;CL_1000348
+respiratory tract;basal cell of olfactory epithelium;CL_0002169
+respiratory tract;basal epithelial cell of tracheobronchial tree;CL_0002329
+respiratory tract;basal proper cell of olfactory epithelium;CL_0002184
+respiratory tract;bronchial epithelial cell;CL_0002328
+respiratory tract;bronchial goblet cell;CL_1000312
+respiratory tract;bronchial smooth muscle cell;CL_0002598
+respiratory tract;bronchioalveolar stem cell;CL_0002638
+respiratory tract;bronchus fibroblast of lung;CL_2000093
+respiratory tract;brush cell of bronchus;CL_0002208
+respiratory tract;brush cell of lobular bronchiole;CL_0002205
+respiratory tract;brush cell of terminal bronchiole;CL_0002206
+respiratory tract;brush cell of trachea;CL_0002207
+respiratory tract;brush cell of trachebronchial tree;CL_0002075
+respiratory tract;ciliated cell of the bronchus;CL_0002332
+respiratory tract;ciliated columnar cell of tracheobronchial tree;CL_0002145
+respiratory tract;club cell;CL_0000158
+respiratory tract;dense-core granulated cell of epithelium of trachea;CL_1000377
+respiratory tract;enterocyte of epithelium of duodenal gland;CL_1000337
+respiratory tract;epithelial cell of alveolus of lung;CL_0010003
+respiratory tract;epithelial cell of lower respiratory tract;CL_0002632
+respiratory tract;epithelial cell of lung;CL_0000082
+respiratory tract;epithelial cell of tracheobronchial tree;CL_0002202
+respiratory tract;epithelial cell of upper respiratory tract;CL_0002631
+respiratory tract;fibroblast of lung;CL_0002553
+respiratory tract;globose cell of olfactory epithelium;CL_0002171
+respiratory tract;intermediate epitheliocyte;CL_0002209
+respiratory tract;lung ciliated cell;CL_1000271
+respiratory tract;lung endothelial cell;CL_1001567
+respiratory tract;lung goblet cell;CL_1000143
+respiratory tract;lung macrophage;CL_1001603
+respiratory tract;lung neuroendocrine cell;CL_1000223
+respiratory tract;lung secretory cell;CL_1000272
+respiratory tract;mesothelial cell of parietal pleura;CL_1000492
+respiratory tract;mesothelial cell of pleura;CL_1000491
+respiratory tract;mesothelial cell of visceral pleura;CL_1000493
+respiratory tract;nasal mucosa goblet cell;CL_0002480
+respiratory tract;olfactory epithelial support cell;CL_0000853
+respiratory tract;respiratory basal cell;CL_0002633
+respiratory tract;respiratory epithelial cell;CL_0002368
+respiratory tract;respiratory goblet cell;CL_0002370
+respiratory tract;serous cell of epithelium of bronchus;CL_1000331
+respiratory tract;serous cell of epithelium of lobular bronchiole;CL_1000333
+respiratory tract;serous cell of epithelium of terminal bronchiole;CL_1000332
+respiratory tract;serous cell of epithelium of trachea;CL_1000330
+respiratory tract;smooth muscle cell of trachea;CL_0002600
+respiratory tract;tracheal epithelial cell;CL_0000307
+respiratory tract;tracheal goblet cell;CL_1000329
+respiratory tract;type I pneumocyte;CL_0002062
+respiratory tract;type II pneumocyte;CL_0002063
+respiratory tract;pneumocyte;CL_0000322
+skeletal element;CD34-positive, CD38-positive granulocyte monocyte progenitor;CL_0002001
+skeletal element;CD9-positive, CD41-positive megakaryocyte cell;CL_0002027
+skeletal element;Claudius cell;CL_0000634
+skeletal element;Deiters cell;CL_0000635
+skeletal element;Hensen cell;CL_0000633
+skeletal element;Kit-positive granulocyte monocyte progenitor;CL_0002002
+skeletal element;bone cell;CL_0001035
+skeletal element;bone marrow cell;CL_0002092
+skeletal element;bone marrow hematopoietic cell;CL_1001610
+skeletal element;bone marrow macrophage;CL_0002476
+skeletal element;border cell of cochlea;CL_0002168
+skeletal element;dental pulp cell;CL_0002148
+skeletal element;endosteal cell;CL_0002157
+skeletal element;external pillar cell of cochlea;CL_0002164
+skeletal element;granulocyte monocyte progenitor cell;CL_0000557
+skeletal element;inner phalangeal cell;CL_0005015
+skeletal element;interdental cell of cochlea;CL_0002172
+skeletal element;internal pillar cell of cochlea;CL_0002163
+skeletal element;marrow fibroblast;CL_0002240
+skeletal element;mesenchymal stem cell of the bone marrow;CL_0002540
+skeletal element;mononuclear cell of bone marrow;CL_0010004
+skeletal element;mononuclear odontoclast;CL_0000781
+skeletal element;mononuclear osteoclast;CL_0000778
+skeletal element;multinuclear odontoclast;CL_0000780
+skeletal element;multinuclear osteoclast;CL_0000779
+skeletal element;non-terminally differentiated osteoblast;CL_0001040
+skeletal element;organ of Corti supporting cell;CL_0002490
+skeletal element;phalangeal cell;CL_0002165
+skeletal element;pillar cell;CL_1000191
+skeletal element;stromal cell of bone marrow;CL_0010001
+skeletal element;supporting cell of cochlea;CL_0002315
+skeletal element;cementocyte;CL_0000141
+skeletal element;megakaryocyte;CL_0000556
+skeletal element;odontoclast;CL_0000588
+skeletal element;osteoclast;CL_0000092
+skeletal element;osteocyte;CL_0000137
+skeletal element;preosteoblast;CL_0007010
+skin;Merkel cell;CL_0000242
+skin;acinar cell of sebaceous gland;CL_0002140
+skin;basal cell of epidermis;CL_0002187
+skin;clear cell of eccrine sweat gland;CL_0002146
+skin;dark cell of eccrine sweat gland;CL_0002142
+skin;dermal melanocyte;CL_0002482
+skin;dermis blood vessel endothelial cell;CL_2000010
+skin;dermis lymphatic vessel endothelial cell;CL_2000011
+skin;epidermal melanocyte;CL_2000000
+skin;epithelial cell of skin gland;CL_0002308
+skin;epithelial cell of sweat gland;CL_1000448
+skin;fibroblast of dermis;CL_0002551
+skin;fibroblast of papillary layer of dermis;CL_1000302
+skin;fibroblast of skin of abdomen;CL_2000013
+skin;granular cell of epidermis;CL_0002189
+skin;hair follicle cell;CL_0002559
+skin;hair follicle melanocyte;CL_0002483
+skin;hair follicular keratinocyte;CL_2000092
+skin;melanocyte of skin of face;CL_2000081
+skin;melanocyte of skin;CL_1000458
+skin;myoepithelial cell of sweat gland;CL_1000417
+skin;nonkeratinized cell of epidermis;CL_0002135
+skin;prickle cell;CL_0000649
+skin;sebaceous gland native cell;CL_2000021
+skin;sebum secreting cell;CL_0000317
+skin;skin fibroblast;CL_0002620
+skin;squamous cell of epidermis;CL_0002190
+skin;stem cell of epidermis;CL_1000428
+skin;stratum granulosum cell;CL_0000712
+skin;taste receptor cell;CL_0000209
+skin;type I taste bud cell;CL_0002289
+skin;type II taste cell;CL_0002286
+skin;type III taste bud cell;CL_0002285
+skin;type IV taste receptor cell;CL_0002287
+skin;type V taste receptor cell;CL_0002288
+skin;keratinocyte;CL_0000312
+small intestine;duodenal goblet cell;CL_1000324
+small intestine;duodenum glandular cell;CL_1001589
+small intestine;endothelial cell of Peyers patch;CL_1000411
+small intestine;enterocyte of epithelium of crypt of Lieberkuhn of small intestine;CL_1000338
+small intestine;enterocyte of epithelium of duodenal gland;CL_1000337
+small intestine;enterocyte of epithelium of intestinal villus;CL_1000335
+small intestine;enterocyte of epithelium of small intestine;CL_1000334
+small intestine;enterocyte of epithelium proper of duodenum;CL_1000340
+small intestine;enterocyte of epithelium proper of ileum;CL_1000342
+small intestine;enterocyte of epithelium proper of jejunum;CL_1000341
+small intestine;enterocyte of epithelium proper of small intestine;CL_1000339
+small intestine;epithelial cell of small intestine;CL_0002254
+small intestine;ileal goblet cell;CL_1000326
+small intestine;intestinal villus goblet cell;CL_1000317
+small intestine;jejunal goblet cell;CL_1000325
+small intestine;microfold cell of epithelium of intestinal villus;CL_1000354
+small intestine;microfold cell of epithelium of small intestine;CL_1000353
+small intestine;microfold cell of epithelium proper of duodenum;CL_1000356
+small intestine;microfold cell of epithelium proper of ileum;CL_1000358
+small intestine;microfold cell of epithelium proper of jejunum;CL_1000357
+small intestine;microfold cell of epithelium proper of small intestine;CL_1000355
+small intestine;paneth cell of epithelium of crypt of Lieberkuhn of small intestine;CL_1000345
+small intestine;paneth cell of epithelium of small intestine;CL_1000343
+small intestine;paneth cell of epithelium proper of small intestine;CL_1000344
+small intestine;small intestine glandular cell;CL_1001598
+small intestine;small intestine goblet cell;CL_1000495
+small intestine;smooth muscle cell of small intestine;CL_1000275
+small intestine;smooth muscle fiber of duodenum;CL_1000276
+small intestine;smooth muscle fiber of ileum;CL_1000278
+small intestine;smooth muscle fiber of jejunum;CL_1000277
+small intestine;type D cell of small intestine;CL_0002266
+small intestine;type M enteroendocrine cell;CL_0002502
+spinal cord;astrocyte of the spinal cord;CL_0002606
+spinal cord;spinal cord interneuron;CL_0005000
+spinal cord;spinal cord motor neuron;CL_0011001
+spinal cord;spinal cord oligodendrocyte;CL_2000025
+stomach;epithelial cell of stomach;CL_0002178
+stomach;foveolar cell of stomach;CL_0002179
+stomach;gastric cardiac gland goblet cell;CL_1000314
+stomach;gastric goblet cell;CL_1000313
+stomach;glandular cell of stomach;CL_0002659
+stomach;mucous cell of stomach;CL_0002180
+stomach;mucus neck cell of gastric gland;CL_0002181
+stomach;parietal cell;CL_0000162
+stomach;peptic cell;CL_0000155
+stomach;principal gastric gland goblet cell;CL_1000315
+stomach;pylroric gastric gland goblet cell;CL_1000323
+stomach;stem cell of gastric gland;CL_0002183
+stomach;stomach neuroendocrine cell;CL_1000222
+stomach;surface mucosal cell of stomach;CL_0002182
+stomach;type A cell of stomach;CL_0002264
+stomach;type D cell of stomach;CL_0002267
+stomach;type G enteroendocrine cell;CL_0000508
+thyroid gland;epithelial cell of thyroid gland;CL_0002257
+thyroid gland;oxyphil cell of thyroid;CL_0002200
+thyroid gland;parafollicular cell;CL_0000570
+thyroid gland;thyroid follicular cell;CL_0002258
+umbilical cord;mesenchymal stem cell of umbilical cord;CL_0002569
+umbilical cord;mononuclear cell of umbilical cord;CL_2000085
+umbilical cord;umbilical artery endothelial cell;CL_2000052
+urethra;epithelial cell of urethra;CL_1000296
+urethra;urethra urothelial cell;CL_1001430
+urinary bladder;bladder urothelial cell;CL_1001428
+urinary bladder;smooth muscle cell of bladder;CL_0002597
+urinary bladder;urothelial cell of trigone of urinary bladder;CL_1000442
+uterus;columnar cell of endocervix;CL_0002152
+uterus;epithelial cell of cervix;CL_0002535
+uterus;epithelial cell of uterus;CL_0002149
+uterus;glandular cell of endometrium;CL_0002656
+uterus;squamous cell of ectocervix;CL_0002244
+uterus;stromal cell of endometrium;CL_0002255
+uterus;uterine cervix glandular cell;CL_1001587
+uterus;uterine cervix squamous cell;CL_1001575
+uterus;uterine smooth muscle cell;CL_0002601
+precursor cell;CD115-positive monocyte;CL_0001022
+precursor cell;CD14-low, CD16-positive monocyte;CL_0002396
+precursor cell;CD14-positive monocyte;CL_0001054
+precursor cell;CD14-positive, CD16-low monocyte;CL_0001055
+precursor cell;CD14-positive, CD16-positive monocyte;CL_0002397
+precursor cell;CD34-positive, CD38-negative hematopoietic stem cell;CL_0001024
+precursor cell;CD34-positive, CD38-positive common lymphoid progenitor;CL_0001021
+precursor cell;CD34-positive, CD38-positive common myeloid progenitor;CL_0001026
+precursor cell;CD34-positive, CD38-positive eosinophil progenitor cell;CL_0002008
+precursor cell;CD34-positive, CD38-positive granulocyte monocyte progenitor;CL_0002001
+precursor cell;CD34-positive, CD38-positive megakaryocyte erythroid progenitor cell;CL_0002005
+precursor cell;CD34-positive, GlyA-negative erythroid progenitor cell;CL_0002003
+precursor cell;CD7-negative lymphoid progenitor cell;CL_0001027
+precursor cell;CD7-positive lymphoid progenitor cell;CL_0001028
+precursor cell;CD71-low, GlyA-positive polychromatic erythroblast;CL_0002016
+precursor cell;CD71-negative, GlyA-positive orthochromatic erythroblast;CL_0002018
+precursor cell;DN1 thymic pro-T cell;CL_0000894
+precursor cell;Fc-epsilon RIalpha-high basophil progenitor cell;CL_0002030
+precursor cell;Fc-epsilon RIalpha-low mast cell progenitor;CL_0002029
+precursor cell;Fraction A pre-pro B cell;CL_0002045
+precursor cell;GlyA-positive basophillic erythroblast;CL_0002013
+precursor cell;Gr1-high classical monocyte;CL_0002395
+precursor cell;Gr1-low non-classical monocyte;CL_0002058
+precursor cell;Gr1-positive, CD43-positive monocyte;CL_0002398
+precursor cell;Kit and Sca1-positive hematopoietic stem cell;CL_0001008
+precursor cell;Kit-low, CD34-positive eosinophil progenitor cell;CL_0002007
+precursor cell;Kit-negative, Ly-76 high basophilic erythroblast;CL_0002014
+precursor cell;Kit-negative, Ly-76 high orthochromatophilic erythroblasts;CL_0002017
+precursor cell;Kit-negative, Ly-76 high polychromatophilic erythroblast;CL_0002015
+precursor cell;Kit-positive erythroid progenitor cell;CL_0002000
+precursor cell;Kit-positive granulocyte monocyte progenitor;CL_0002002
+precursor cell;Kit-positive macrophage dendritic cell progenitor;CL_0002011
+precursor cell;Kit-positive megakaryocyte progenitor cell;CL_0002024
+precursor cell;Kit-positive, CD34-negative megakaryocyte erythroid progenitor cell;CL_0002006
+precursor cell;Kit-positive, CD34-positive common myeloid progenitor;CL_0001023
+precursor cell;Kit-positive, Sca1-positive common lymphoid progenitor;CL_0001025
+precursor cell;Kit-positive, integrin beta7-high basophil mast progenitor cell;CL_0002044
+precursor cell;MHC-II-high non-classical monocyte;CL_0002473
+precursor cell;MHC-II-low non-classical monocyte;CL_0002472
+precursor cell;MHC-II-negative classical monocyte;CL_0002469
+precursor cell;MHC-II-negative non-classical monocyte;CL_0002471
+precursor cell;MHC-II-positive classical monocyte;CL_0002470
+precursor cell;Schwann cell precursor;CL_0002375
+precursor cell;adult skeletal muscle myoblast;CL_0008017
+precursor cell;angioblastic mesenchymal cell;CL_0000566
+precursor cell;basal cell of epidermis;CL_0002187
+precursor cell;basal cell of epithelium of bronchus;CL_1000349
+precursor cell;basal cell of epithelium of lobular bronchiole;CL_1000352
+precursor cell;basal cell of epithelium of respiratory bronchiole;CL_1000351
+precursor cell;basal cell of epithelium of terminal bronchiole;CL_1000350
+precursor cell;basal cell of epithelium of trachea;CL_1000348
+precursor cell;basal cell of urothelium;CL_1000486
+precursor cell;basal cell;CL_0000646
+precursor cell;basophil mast progenitor cell;CL_0002028
+precursor cell;basophil progenitor cell;CL_0000613
+precursor cell;basophilic erythroblast;CL_0000549
+precursor cell;basophilic metamyelocyte;CL_0000769
+precursor cell;basophilic myeloblast;CL_0000829
+precursor cell;basophilic promyelocyte;CL_0000830
+precursor cell;bronchioalveolar stem cell;CL_0002638
+precursor cell;calvarial osteoblast;CL_2000058
+precursor cell;cardiac muscle myoblast;CL_0000513
+precursor cell;cardiac myoblast;CL_0010021
+precursor cell;chorionic membrane mesenchymal stem cell;CL_0002541
+precursor cell;classical monocyte;CL_0000860
+precursor cell;common lymphoid progenitor;CL_0000051
+precursor cell;common myeloid progenitor, CD34-positive;CL_0001059
+precursor cell;cord blood hematopoietic stem cell;CL_2000095
+precursor cell;early T lineage precursor;CL_0002425
+precursor cell;early lymphoid progenitor;CL_0000936
+precursor cell;early promyelocyte;CL_0002154
+precursor cell;embryonic stem cell;CL_0002322
+precursor cell;eosinophil progenitor cell;CL_0000611
+precursor cell;eosinophilic metamyelocyte;CL_0000773
+precursor cell;eosinophilic myeloblast;CL_0000832
+precursor cell;eosinophilic myelocyte;CL_0000612
+precursor cell;eosinophilic promyelocyte;CL_0000833
+precursor cell;epithelial cell of stratum germinativum of esophagus;CL_1000447
+precursor cell;epithelial fate stem cell;CL_0000036
+precursor cell;erythroid progenitor cell;CL_0000038
+precursor cell;erythroid progenitor cell, mammalian;CL_0001066
+precursor cell;fast muscle myoblast;CL_0000858
+precursor cell;female germ line stem cell;CL_0000022
+precursor cell;fetal liver hematopoietic progenitor cell;CL_0002353
+precursor cell;forebrain neuroblast;CL_1000042
+precursor cell;germ line stem cell;CL_0000014
+precursor cell;gestational hematopoietic stem cell;CL_0002352
+precursor cell;glioblast (sensu Vertebrata);CL_0000339
+precursor cell;granulocyte monocyte progenitor cell;CL_0000557
+precursor cell;granulocytopoietic cell;CL_0002191
+precursor cell;hematopoietic stem cell;CL_0000037
+precursor cell;hepatic mesenchymal stem cell;CL_0002571
+precursor cell;hepatic oval stem cell;CL_0002196
+precursor cell;hepatic stem cell;CL_0002195
+precursor cell;intermediate monocyte;CL_0002393
+precursor cell;intestinal crypt stem cell;CL_0002250
+precursor cell;late promyelocyte;CL_0002151
+precursor cell;long term hematopoietic stem cell;CL_0002034
+precursor cell;lymphoid MHC-II-negative classical monocyte;CL_0002474
+precursor cell;lymphoid MHC-II-negative non-classical monocyte;CL_0002475
+precursor cell;lymphoid lineage restricted progenitor cell;CL_0000838
+precursor cell;macrophage dendritic cell progenitor;CL_0002009
+precursor cell;mast cell progenitor;CL_0000831
+precursor cell;megakaryocyte progenitor cell;CL_0000553
+precursor cell;megakaryocyte-erythroid progenitor cell;CL_0000050
+precursor cell;mesenchymal stem cell of abdominal adipose;CL_2000080
+precursor cell;mesenchymal stem cell of adipose;CL_0002570
+precursor cell;mesenchymal stem cell of the bone marrow;CL_0002540
+precursor cell;mesenchymal stem cell of umbilical cord;CL_0002569
+precursor cell;mesenchymal stem cell;CL_0000134
+precursor cell;migratory cardiac neural crest cell;CL_2000073
+precursor cell;migratory cranial neural crest cell;CL_0000008
+precursor cell;migratory neural crest cell;CL_0000333
+precursor cell;migratory trunk neural crest cell;CL_0000011
+precursor cell;monopoietic cell;CL_0002194
+precursor cell;multi fate stem cell;CL_0000048
+precursor cell;multi-potent skeletal muscle stem cell;CL_0000355
+precursor cell;muscle precursor cell;CL_0000680
+precursor cell;myeloid lineage restricted progenitor cell;CL_0000839
+precursor cell;neural crest cell;CL_0011012
+precursor cell;neural crest derived neuroblast;CL_0002676
+precursor cell;neuroblast (sensu Vertebrata);CL_0000337
+precursor cell;neuroepithelial stem cell;CL_0002259
+precursor cell;neuronal stem cell;CL_0000047
+precursor cell;neutrophil progenitor cell;CL_0000834
+precursor cell;neutrophilic metamyelocyte;CL_0000582
+precursor cell;neutrophilic myeloblast;CL_0000042
+precursor cell;neutrophilic myelocyte;CL_0000580
+precursor cell;neutrophilic promyelocyte;CL_0000564
+precursor cell;non-classical monocyte;CL_0000875
+precursor cell;non-terminally differentiated cell;CL_0000055
+precursor cell;non-terminally differentiated osteoblast;CL_0001040
+precursor cell;orthochromatic erythroblast;CL_0000552
+precursor cell;peripheral blood stem cell;CL_0002246
+precursor cell;placental amniotic mesenchymal stromal cell;CL_2000061
+precursor cell;placental hematopoietic stem cell;CL_0002359
+precursor cell;pluripotent stem cell;CL_0002248
+precursor cell;polychromatophilic erythroblast;CL_0000550
+precursor cell;premigratory neural crest cell;CL_0007004
+precursor cell;primitive cardiac myocyte;CL_0002249
+precursor cell;pro-B cell;CL_0000826
+precursor cell;pro-NK cell;CL_0000825
+precursor cell;pro-T cell;CL_0000827
+precursor cell;progenitor cell of endocrine pancreas;CL_0002351
+precursor cell;prostate stem cell;CL_0002339
+precursor cell;respiratory basal cell;CL_0002633
+precursor cell;retinal progenitor cell;CL_0002672
+precursor cell;short term hematopoietic stem cell;CL_0002033
+precursor cell;single fate stem cell;CL_0000035
+precursor cell;skeletal muscle myoblast;CL_0000515
+precursor cell;slow muscle myoblast;CL_0000857
+precursor cell;smooth muscle myoblast;CL_0000514
+precursor cell;somatic stem cell;CL_0000723
+precursor cell;stem cell of epidermis;CL_1000428
+precursor cell;stem cell of gastric gland;CL_0002183
+precursor cell;stem cell;CL_0000034
+precursor cell;stratified epithelial stem cell;CL_0000357
+precursor cell;totipotent stem cell;CL_0000052
+precursor cell;type III taste bud cell;CL_0002285
+precursor cell;type IV taste receptor cell;CL_0002287
+precursor cell;vascular lymphangioblast;CL_0005022
+precursor cell;yolk sac hematopoietic stem cell;CL_0002354
+precursor cell;cementoblast;CL_0000061
+precursor cell;chondroblast;CL_0000058
+precursor cell;erythroblast;CL_0000765
+precursor cell;glioblast;CL_0000030
+precursor cell;hepatoblast;CL_0005026
+precursor cell;lymphangioblast;CL_0005020
+precursor cell;melanoblast;CL_0000541
+precursor cell;metamyelocyte;CL_0002192
+precursor cell;monoblast;CL_0000040
+precursor cell;monocyte;CL_0000576
+precursor cell;myeloblast;CL_0000835
+precursor cell;myelocyte;CL_0002193
+precursor cell;myoblast;CL_0000056
+precursor cell;neuroblast;CL_0000031
+precursor cell;odontoblast;CL_0000060
+precursor cell;osteoblast;CL_0000062
+precursor cell;preameloblast;CL_0007000
+precursor cell;precementoblast;CL_0007002
+precursor cell;prechondroblast;CL_0007009
+precursor cell;preodontoblast;CL_0007003
+precursor cell;preosteoblast;CL_0007010
+precursor cell;promonocyte;CL_0000559
+precursor cell;promyelocyte;CL_0000836
+precursor cell;thromboblast;CL_0000828
