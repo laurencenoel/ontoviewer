@@ -64,7 +64,7 @@ def organ_json():
             if enfantParent[key] == [] :
                 dict = {}
                 if "CL:" in key : 
-                    dict["uri"] = ontoLink + "CL_" + key.split("CL_")[1][-1]
+                    dict["uri"] = ontoLink + "CL_" + key.split("CL:")[1][-1]
                 else : 
                     dict["uri"] = "#"
                 dict["name"] = key
