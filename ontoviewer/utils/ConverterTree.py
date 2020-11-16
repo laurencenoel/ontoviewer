@@ -83,7 +83,7 @@ def organ_json():
     finalDict["uri"] = "#"
     finalDict["name"] = "cells by localisation"
     finalDict["size"] = "1.0"
-    finalDict["children" = data
+    finalDict["children"] = data
     
     
     # Serializing json  
