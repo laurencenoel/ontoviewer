@@ -15,7 +15,7 @@ def getChildren(elt,dico) :
         for child in children :
             dict = {}
             if "CL:" in key : 
-                dict["uri"] = ontoLink + "CL_" + child.split("CL_")[1][-1]
+                dict["uri"] = ontoLink + "CL_" + child.split("CL:")[1][-1]
             else : 
                 dict["uri"] = "#"
             dict["name"] = child
