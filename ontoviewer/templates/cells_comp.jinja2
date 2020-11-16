@@ -64,7 +64,7 @@ path.link {
 
 	
 	
-	var m = [0, 80, 40, 80],
+	var m = [0, 20, 40, 20],
     w = 1200 - m[1] - m[3],
     h = 1200 - m[0] - m[2],
     i = 0,
@@ -108,7 +108,7 @@ function update(source) {
   var nodes = tree.nodes(root).reverse();
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 240; });
+  nodes.forEach(function(d) { d.y = d.depth * 280; });
 
   // Update the nodes…
   var node = vis.selectAll("g.node")
