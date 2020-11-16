@@ -24,5 +24,7 @@ def organs_comp(request):
     return {'project': 'ontoviewer'}
     
 @view_config(route_name='cells', renderer='../templates/cells.jinja2')
-def organs_comp(request):    
+def cells(request):    
     return {'project': 'ontoviewer'}
+
+
