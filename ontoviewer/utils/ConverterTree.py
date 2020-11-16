@@ -15,7 +15,9 @@ def getChildren(elt,dico) :
         for child in children :
             dict = {}
             if "CL:" in child : 
-                dict["uri"] = ontoLink + "CL_" + child.split("CL:")[1][-1]
+                identifier = child.split("CL:")[1]
+                print(identifier)
+                dict["uri"] = ontoLink + "CL_" + child.split("CL:")[1][:-1]
             else : 
                 dict["uri"] = "#"
             dict["name"] = child
@@ -57,7 +59,7 @@ def organ_json():
                             parents.append(row[i-1])
                             enfantParent[row[i]] = parents
                             
-        print(enfantParent)
+
         data = []
                         
         for key,value in enfantParent.items() : 
@@ -66,8 +68,8 @@ def organ_json():
                 dict = {}
                 if "CL:" in key : 
                     identifier = key.split("CL:")[1]
-                    print(identifier)
-                    dict["uri"] = ontoLink + "CL_" + key.split("CL:")[1][-1]
+                    #print(identifier)
+                    dict["uri"] = ontoLink + "CL_" + key.split("CL:")[1][:-1]
                 else : 
                     dict["uri"] = "#"
                 dict["name"] = key
