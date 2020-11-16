@@ -19,7 +19,7 @@ def getChildren(elt,dico) :
             else : 
                 dict["uri"] = "#"
             dict["name"] = child
-            childR = getChildren(child,enfantParent)
+            childR = getChildren(child,dico)
             if children != [] : 
                 dict["children"] = childR
             dict["size"] = "1.0"
