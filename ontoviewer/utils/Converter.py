@@ -1,5 +1,4 @@
 import json, csv
-from conf.repo import *
 
 def organ_json():
     csvfile = "../static/cell_by_organ_table.csv"
