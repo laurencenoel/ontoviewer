@@ -2,6 +2,7 @@ import json, csv
 
 def getChildren(elt,dico) :
     children = []
+    ontoLink = "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F"
     for key,dicoV in dico.items() : 
         for item in dicoV : 
             if item == elt : 
