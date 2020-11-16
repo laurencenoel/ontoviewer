@@ -2,7 +2,7 @@ import json, csv
 
 def organ_json():
     csvfile = "../static/cell_by_organ_table.csv"
-    jsonfile = "../static/cell_by_organ_table.josn"
+    jsonfile = "../static/cell_by_organ_table.json"
     data = []
     
     with open(csvfile,"r") as csvF :
@@ -17,7 +17,7 @@ def organ_json():
             data.append(dict);
     
     # Serializing json  
-    json_object = json.dumps(dict, indent = 4) 
+    json_object = json.dumps(data, indent = 4) 
   
     # Writing to sample.json 
     with open(jsonfile, "w") as outfile: 
