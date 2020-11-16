@@ -21,6 +21,8 @@ def getChildren(elt,dico) :
             else : 
                 dict["uri"] = "#"
             dict["name"] = child
+            if "(" in child : 
+                dict["name"] = child.split("(")[0]
             childR = getChildren(child,dico)
             if childR != [] : 
                 dict["children"] = childR
@@ -73,6 +75,8 @@ def organ_json():
                 else : 
                     dict["uri"] = "#"
                 dict["name"] = key
+                if "(" in key : 
+                    dict["name"] = key.split("(")[0]
                 dict["children"] = getChildren(key,enfantParent)
                 dict["size"] = "1.0"
                 data.append(dict)
