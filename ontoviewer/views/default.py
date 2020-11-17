@@ -31,4 +31,6 @@ def cells(request):
 def cells_comp(request):    
     return {'project': 'ontoviewer'}
 
-
+@view_config(route_name='stages', renderer='../templates/stages.jinja2')
+def stages(request):    
+    return {'project': 'ontoviewer'}
