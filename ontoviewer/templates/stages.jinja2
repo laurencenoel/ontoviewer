@@ -52,7 +52,7 @@
 		{% set nb = i + 6 %}
 		{% if nb %7 == 0 %}
 			{% set __ = week.append(1) %}
-			<td rowspan="7">{{ week|length }}</td>
+			<td rowspan="7">{{ week|length }}{% if week|length == 1 %}st{% elif week|length == 2 %}nd{% elif week|length == 3 %}rd{% else %}th{% endif %} week post-fertilization human stage</td>
 		{% endif %}		
 		
 		{% if i in carnegie_stages.keys() %}
