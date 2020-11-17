@@ -70,6 +70,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
      
     dicoCS  = {}
     for i,elt in enumerate(data) : 
+    
         if elt["startDay"] == 0.0 : 
             nbDay = 0
         else : 
