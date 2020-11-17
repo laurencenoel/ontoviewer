@@ -26,7 +26,7 @@
 
 <div class="intro">
 <h1>Human developmental stages</h1>
-<p>You can also check the different cell types in the <a href="http://ontology.staging.data.humancellatlas.org/ontologies/hcao/" target="_blank">hca ontology</a> or in the <a href="/cells_comp" target="_blank">tree component</a> to see hierarchical subdivisions</p>
+<p>You can also check the <a href="https://www.ebi.ac.uk/ols/ontologies/hsapdv" target="_blank">Human Developmental Stages ontology (HSAPdv)</a> or the <a href="https://www.ebi.ac.uk/ols/ontologies/ehdaa2/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCS_0" target="_blank">carnegie stages in the Human developmental anatomy ontology (EHDAA2)</a></p>
 </div>
 
  
@@ -35,15 +35,15 @@
   >
 <thead>
         <tr>
-          <th>Days</th>
-          <th>Week</th>
+          <th style="width:40px">Days</th>
+          <th style="width:100px">Week</th>
 		  <th>Carnegie stages</th>
         </tr>
       </thead>
 	
 <tbody>
 {% set week = [] %}
-{% set carnegie_days = {1:2,3:2,5:3,8:4} %}
+
 {% for i in range(1,211) %}
         <tr>		
 		<td>{{ i }}</td>
@@ -55,8 +55,8 @@
 			<td rowspan="7">{{ week|length }}</td>
 		{% endif %}		
 		
-		{% if i in carnegie_days.keys() %}
-			<td rowspan="{{ carnegie_days[i] }}">test</td>		
+		{% if i in carnegie_stages.keys() %}
+			<td rowspan="{{ carnegie_stages[0]["duration"] }}">{{ carnegie_stages[0]["label"] }}</td>		
 		{% endif %}	
 		
 		</tr>
