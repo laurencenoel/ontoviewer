@@ -71,7 +71,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     dicoCS  = {}
     for i,elt in enumerate(data) : 
         nbDay = int(elt["startDay"])
-        if nbDay = 0 : 
+        if nbDay == 0 : 
             nbDay = 1
         dicoInfo = {}
         dicoInfo["label"] = elt["label"]
