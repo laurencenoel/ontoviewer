@@ -76,7 +76,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         dicoInfo = {}
         dicoInfo["label"] = elt["label"]
         dicoInfo["comment"] = elt["comment"]
-        if i < len(data) : 
+        if i < len(data) -1 : 
             dicoInfo["duration"] = int(float(data[i+1]["startDay"])) - nbDay
         else : 
             dicoInfo["duration"] = 1
