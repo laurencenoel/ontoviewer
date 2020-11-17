@@ -92,4 +92,4 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     otherStage[56] = [210, "Fetal stage","Prenatal development is a continuum, with no clear defining feature distinguishing an embryo from a fetus. The use of the term 'fetus' generally implies that a mammalian embryo has developed to the point of being recognizable as belonging to its own species, though the point at which this occurs is subjective."]
     
         
-    return {'project': 'ontoviewer', 'carnegie_stages':data, 'other_stages' : otherStage}
+    return {'project': 'ontoviewer', 'carnegie_stages':dicoCS, 'other_stages' : otherStage}
