@@ -77,7 +77,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         ?restrictedClass owl:someValuesFrom ?EHDAACS ; owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000068> .
         ?element rdfs:subClassOf ?restrictedClass .
         ?element rdfs:label ?labelElt .
-        FILTER (NOT EXISTS(regex(?labelElt,"CS20","i")))
+        FILTER (!regex(?labelElt,"CS20","i"))
         ?element oboInOwl:id ?labelId .
         BIND (CONCAT(?labelElt,"|",?labelId) AS ?eltInfo)
        } GROUP BY ?EHDAACS
