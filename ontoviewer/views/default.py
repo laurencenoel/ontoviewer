@@ -79,6 +79,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                 dict[elt] = ""
         data.append(dict)
      
+    print(data)
+    
     dicoCS  = {}
     for i,elt in enumerate(data) : 
         nbDay = int(float(elt["startDay"]))
