@@ -139,7 +139,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         dicoInfo["comment"] = elt["comment"]
         ehdaa = elt["EHDAACS"]
         
-        eltL2 = ""
+        eltL2 = []
         for key,value in dictCS2.items() : 
             if ehdaa == key :                 
                 eltL = value.split("||")
@@ -148,11 +148,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                     identifier = item.split("|")[1]
                     idForUrl = identifier.replace(":","_")
                     link="<a href='https://www.ebi.ac.uk/ols/ontologies/ehdaa2/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F"+idForUrl+"'>"+nom+"</a>"
-                    eltL2 += link + ", "
-        if len(eltL2) > 2 : 
-            dicoInfo["eltList"] = eltL2[:-2]
-        else : 
-            dicoInfo["eltList"] = ""
+                    eltL2.append(link)
+        dicoInfo["eltList"] = eltL2
         if i < len(data) -1 : 
             dicoInfo["duration"] = int(float(data[i+1]["startDay"])) - nbDay
         else : 
