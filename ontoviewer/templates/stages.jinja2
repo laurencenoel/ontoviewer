@@ -60,11 +60,11 @@
 		
 	
 		{% if i in other_stages.keys() %}
-			<td rowspan="{{ other_stages[i][0] }}">{{ other_stages[i][1] }}</td>		
+			<td rowspan="{{ other_stages[i][0] }}"><span data-toggle="tooltip" title="{{ other_stages[i][2] }}">{{ other_stages[i][1] }}</span></td>		
 		{% endif %}	
 		
 		{% if i in carnegie_stages.keys() %}
-			<td rowspan="{{ carnegie_stages[i]["duration"] }}"><span data-toggle="tooltip" title="Some tooltip text!">{{ carnegie_stages[i]["label"] }}</span></td>		
+			<td rowspan="{{ carnegie_stages[i]["duration"] }}"><span data-toggle="tooltip" title="{{ carnegie_stages[i]["comment"] }}">{{ carnegie_stages[i]["label"] }}</span></td>		
 		{% endif %}
 		
 		{% if i in carnegie_stages.keys() %}
