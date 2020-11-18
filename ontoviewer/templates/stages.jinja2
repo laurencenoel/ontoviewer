@@ -36,11 +36,11 @@
 <table>
 <thead>
         <tr>
-          <th style="width:40px">Days</th>
-          <th style="width:100px">Week</th>
-		  <th>Prenatal stages</th>
-		  <th>Carnegie stages</th>
-		  <th>Anatomical element appearing at that stage</th>
+          <th style="width:5%">Days</th>
+          <th style="width:20%">Week</th>
+		  <th style="width:20%">Prenatal stages</th>
+		  <th style="width:20%">Carnegie stages</th>
+		  <th style="width:35%">Anatomical element appearing at that stage</th>
         </tr>
       </thead>
 	
@@ -72,7 +72,7 @@
 				{% if carnegie_stages[i]["eltList"]|length > 10 %}
 				{% for link in carnegie_stages[i]["eltList"][:10] %}{{ link|safe }}, {% endfor %}
 				<br />
-				<a onclick="$( ".shortlist{{ i }}" ).toggle();$( ".longlist{{ i }}" ).toggle();"/>See more</a>
+				<a href="#" onclick="$( ".shortlist{{ i }}" ).toggle();$( ".longlist{{ i }}" ).toggle();"/>View more</a>
 				</div>				
 				<div id="longlist{{ i }}" style="display: none">{% for link in carnegie_stages[i]["eltList"] %}{{ link|safe }}, {% endfor %}</div>
 				{% else %}
