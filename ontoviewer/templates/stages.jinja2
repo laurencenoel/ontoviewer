@@ -33,9 +33,7 @@
 
 
  
-<table
-  id="table"
-  >
+<table>
 <thead>
         <tr>
           <th style="width:40px">Days</th>
@@ -74,7 +72,8 @@
 				<div id="shortlist{{ i }}">{{ carnegie_stages[i]["eltList"]|safe }}
 				{% if carnegie_stages[i]["eltList"]|length > 10 %}
 				{% for link in carnegie_stages[i]["eltList"][:10] %}{{ link|safe }}, {% endfor %}
-				<button onclick="$( ".shortlist{{ i }}" ).toggle();$( ".longlist{{ i }}" ).toggle();"/></button>
+				<br />
+				<a onclick="$( ".shortlist{{ i }}" ).toggle();$( ".longlist{{ i }}" ).toggle();"/>See more</a>
 				</div>				
 				<div id="longlist{{ i }}" style="display: none">{% for link in carnegie_stages[i]["eltList"] %}{{ link|safe }}, {% endfor %}</div>
 				{% else %}
@@ -94,28 +93,7 @@
 
 {% block comp_script %}
 
-<script>
 
- var $table = $('#table')
-  $(function() {
-
-	$table.bootstrapTable()	
-	
-
-    var $selectControl = $(".bootstrap-table-filter-control-organ"); 
-	$selectControl.attr('placeholder', 'start typing to filter the results');	
-	
-	{% if label != "" %}
-	$selectControl.val('{{ label }}'); 
-	$selectControl.change();
-	{% endif %}
-	
-
-  })
-  
-
-
-</script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
