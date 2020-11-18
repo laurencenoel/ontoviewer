@@ -40,8 +40,9 @@
         <tr>
           <th style="width:40px">Days</th>
           <th style="width:100px">Week</th>
-		  <th>Carnegie stages</th>
 		  <th>Prenatal stages</th>
+		  <th>Carnegie stages</th>
+		  <th>Anatomical element appearing at that stage</th>
         </tr>
       </thead>
 	
@@ -59,13 +60,18 @@
 			<td rowspan="7">{{ week|length }}{% if week|length == 1 or week|length == 21 or week|length == 31 %}st{% elif week|length == 2 or week|length == 22 or week|length == 32 %}nd{% elif week|length == 3 or week|length == 23 or week|length ==33 %}rd{% else %}th{% endif %} week post-fertilization human stage</td>
 		{% endif %}		
 		
-		{% if i in carnegie_stages.keys() %}
-			<td rowspan="{{ carnegie_stages[i]["duration"] }}">{{ carnegie_stages[i]["label"] }}</td>		
-		{% endif %}	
-		
+	
 		{% if i in other_stages.keys() %}
 			<td rowspan="{{ other_stages[i][0] }}">{{ other_stages[i][1] }}</td>		
 		{% endif %}	
+		
+		{% if i in carnegie_stages.keys() %}
+			<td rowspan="{{ carnegie_stages[i]["duration"] }}">{{ carnegie_stages[i]["label"] }}</td>		
+		{% endif %}
+		
+		{% if i in carnegie_stages.keys() %}
+			<td rowspan="{{ carnegie_stages[i]["duration"] }}">{{ carnegie_stages[i]["eltList"] }}</td>		
+		{% endif %}
 		
 		</tr>
 {% endfor %}

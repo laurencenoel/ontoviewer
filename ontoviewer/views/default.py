@@ -48,14 +48,21 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX obo: <http://purl.obolibrary.org/obo/>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
         PREFIX hsapdv: <http://purl.obolibrary.org/obo/hsapdv#>
-        SELECT distinct ?CS ?label ?startDay ?comment 
+        SELECT ?CS ?label ?startDay ?comment (GROUP_CONCAT(DISTINCT ?eltInfo; SEPARATOR="||") AS ?eltList)
         WHERE {
         ?CS rdfs:subClassOf obo:HsapDv_0000000 .
         ?CS rdfs:label ?label .
         FILTER regex(str(?label), "Carnegie","i") 
         ?CS hsapdv:start_dpf ?startDay .
         OPTIONAL{ ?CS rdfs:comment ?comment . }
-       } ORDER BY ?startDay
+        ?CS oboInOwl:hasDbXref ?CSref .
+        FILTER regex(str(?CSref), "EHDA", "i")
+        BIND (IRI(CONCAT("http://purl.obolibrary.org/obo/ehdaa2#",strafter(?CSref,":"))) AS ?EHDAACS)
+        ?element <http://purl.obolibrary.org/obo/BFO_0000068> ?EHDAACS .
+        ?element rdfs:label ?labelElt .
+        ?element oboInOwl:id ?labelId .
+        BIND (CONCAT(?labelElt,"|",?labelId) AS ?eltInfo)
+       } GROUP BY ?CS ?label ?startDay ?comment ORDER BY ?startDay
   """
     headers = {'content-type' : 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
     myparam = { 'query': querystr }
@@ -80,13 +87,22 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         dicoInfo = {}
         dicoInfo["label"] = elt["label"]
         dicoInfo["comment"] = elt["comment"]
+        eltL = elt["eltList"].split("||")
+        eltL2 = ""
+        for item in eltL : 
+            nom = item.split("|")[0]
+            identifier = item.split("|")[1]
+            idForUrl = identifier.replace(":","_")
+            link="<a href='https://www.ebi.ac.uk/ols/ontologies/ehdaa2/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F"+idForUrl+"'>"+nom+"</a>"
+            eltL2 += link + ", "
+        dicoInfo["eltList"] = eltL2[:-2]
         if i < len(data) -1 : 
             dicoInfo["duration"] = int(float(data[i+1]["startDay"])) - nbDay
         else : 
             dicoInfo["duration"] = 1
         dicoCS[nbDay] = dicoInfo
     
-    dicoCS[57] = {"label":"", "comment":"", "duration":56}
+    dicoCS[57] = {"label":"", "comment":"", "duration":56, "eltList":""}
      
     otherStage = {}
     otherStage[1] = [1,""]
