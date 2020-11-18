@@ -29,15 +29,23 @@
 <p>You can also check the <a href="https://www.ebi.ac.uk/ols/ontologies/hsapdv" target="_blank">Human Developmental Stages ontology (HSAPdv)</a> or the <a href="https://www.ebi.ac.uk/ols/ontologies/ehdaa2/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCS_0" target="_blank">carnegie stages in the Human developmental anatomy ontology (EHDAA2)</a></p>
 </div>
 
+<div id="toolbar" class="select">
+  <select class="form-control">
+    <option value="">Export Basic</option>
+    <option value="all">Export All</option>
+  </select>
+</div>
  
 <table
   id="table"
+  data-show-export="true"
   >
 <thead>
         <tr>
           <th style="width:40px">Days</th>
           <th style="width:100px">Week</th>
 		  <th>Carnegie stages</th>
+		  <th>Prenatal stages</th>
         </tr>
       </thead>
 	
@@ -59,6 +67,10 @@
 			<td rowspan="{{ carnegie_stages[i]["duration"] }}">{{ carnegie_stages[i]["label"] }}</td>		
 		{% endif %}	
 		
+		{% if i in other_stages.keys() %}
+			<td rowspan="{{ other_stages[i][0] }}">{{ other_stages[i][1] }}</td>		
+		{% endif %}	
+		
 		</tr>
 {% endfor %}
 	</tbody>
@@ -75,6 +87,13 @@
   $(function() {
 
 	$table.bootstrapTable()	
+	
+	 $('#toolbar').find('select').change(function () {
+      $table.bootstrapTable('destroy').bootstrapTable({
+        exportDataType: $(this).val(),
+        exportTypes: ['json', 'xml', 'csv', 'txt', 'sql', 'excel', 'pdf']
+      })
+    }).trigger('change')
 
     var $selectControl = $(".bootstrap-table-filter-control-organ"); 
 	$selectControl.attr('placeholder', 'start typing to filter the results');	
@@ -93,7 +112,15 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="{{request.static_url('ontoviewer:static/tableExport.min.js')}}"></script>	
+<script src="{{request.static_url('ontoviewer:static/libs/jsPDF/jspdf.min.js')}}"></script>	
+<script src="{{request.static_url('ontoviewer:static/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js')}}"></script>	
     <script src="{{request.static_url('ontoviewer:static/bootstrap-table.min.js')}}"></script>	
 	<script src="{{request.static_url('ontoviewer:static/extensions/filter-control/bootstrap-table-filter-control.min.js')}}"></script>
+<script  src="{{request.static_url('ontoviewer:static/extensions/export/bootstrap-table-export.min.js')}}"></script>
+	
+	
+
+	
  
 {% endblock comp_script %}
