@@ -130,6 +130,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                 dictCS2[newkey] = value                
         else : 
             dictCS2[key] = value
+            
+    print(dictCS2)
     
     dicoCS  = {}
     for i,elt in enumerate(data) : 
@@ -140,7 +142,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         dicoInfo["label"] = elt["label"]
         dicoInfo["comment"] = elt["comment"]
         ehdaa = elt["EHDAACS"]
-        
+        print("EHDAA",ehdaa)
         eltL2 = []
         for key,value in dictCS2.items() : 
             if ehdaa == key :                 
