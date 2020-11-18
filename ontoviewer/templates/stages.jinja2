@@ -73,7 +73,7 @@
 				<div id="shortlist{{ i }}" style="display:block">
 				{% for link in carnegie_stages[i]["eltList"][:10] %}{{ link|safe }}, {% endfor %}
 				<br />
-				<a href="javascript:showHide('shortlist{{ i }}','longlist{{ i }}')" />View more</a>
+				<a style="background-color:#007bff;color:white;display:inline;padding:3px;" href="javascript:showHide('shortlist{{ i }}','longlist{{ i }}')" />View all</a>
 				</div>				
 				<div id="longlist{{ i }}" style="display: none">{% for link in carnegie_stages[i]["eltList"] %}{{ link|safe }}, {% endfor %}</div>
 				{% else %}
