@@ -73,10 +73,10 @@
 				<div id="shortlist{{ i }}" style="display:block">
 				{% for link in carnegie_stages[i]["eltList"][:10] %}{{ link|safe }}, {% endfor %}
 				<br />
-				<a class="rounded mb-0" style="background-color:#007bff;color:white;display:inline;padding:2px 5px;" href="javascript:showHide('shortlist{{ i }}','longlist{{ i }}')" />View all</a>
+				<a class="rounded mb-0" style="background-color:#6cbcf5;color:white;display:inline;padding:2px 5px; margin-top: 5px" href="javascript:showHide('shortlist{{ i }}','longlist{{ i }}')" />View all</a>
 				</div>				
-				<div id="longlist{{ i }}" style="display: none">{% for link in carnegie_stages[i]["eltList"] %}{{ link|safe }}, {% endfor %}</div>
-				<a class="rounded mb-0" style="background-color:#007bff;color:white;display:inline;padding:2px 5px;" href="javascript:showHide('longlist{{ i }}','shortlist{{ i }}')" />Hide</a>
+				<div id="longlist{{ i }}" style="display: none">{% for link in carnegie_stages[i]["eltList"] %}{{ link|safe }}, {% endfor %} <br /> <a class="rounded mb-0" style="background-color:#6cbcf5;color:white;display:inline;padding:2px 5px; margin-top:5px" href="javascript:showHide('longlist{{ i }}','shortlist{{ i }}')" />Hide</a> </div>
+				
 				{% else %}
 				<div>{% for link in carnegie_stages[i]["eltList"] %}{{ link|safe }}, {% endfor %}</div>
 				{% endif %}
