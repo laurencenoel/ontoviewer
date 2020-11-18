@@ -61,7 +61,7 @@ def humandev_json():
         ?child rdfs:label ?childLabel .
         ?child oboInOwl:id ?childId .
         BIND (CONCAT(?childId,"|",?childLabel) AS ?childInfo)
-       } LIMIT 800
+       } 
     """
     
     headers = {'content-type' : 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
@@ -80,8 +80,7 @@ def humandev_json():
                 dict[elt] = ""
         data.append(dict)
     
-    print(data)
-    
+
     enfantParent = {}
     print("sort child")
     for item in data : 
@@ -91,7 +90,9 @@ def humandev_json():
             enfantParent[item["childInfo"]] = parent
         else : 
             enfantParent[item["childInfo"]] = [item["parentInfo"]]
-       
+    
+    print(enfantParent)
+    
                            
     print("get initial Children")
     initialData = []
