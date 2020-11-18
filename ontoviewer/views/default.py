@@ -93,7 +93,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     otherStage[13] = [2,"Gastrula stage", "Embryonic stage defined by a complex and coordinated series of cellular movements that occurs at the end of cleavage"]
     otherStage[15] = [4,"Neurula stage", "Embryonic stage defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate."]
     otherStage[19] = [38,"Organogenesis stage", "Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism"]
-    otherStage[56] = [210, "Fetal stage","Prenatal development is a continuum, with no clear defining feature distinguishing an embryo from a fetus. The use of the term 'fetus' generally implies that a mammalian embryo has developed to the point of being recognizable as belonging to its own species, though the point at which this occurs is subjective."]
+    otherStage[57] = [55, "Fetal stage","Prenatal development is a continuum, with no clear defining feature distinguishing an embryo from a fetus. The use of the term 'fetus' generally implies that a mammalian embryo has developed to the point of being recognizable as belonging to its own species, though the point at which this occurs is subjective."]
     
         
     return {'project': 'ontoviewer', 'carnegie_stages':dicoCS, 'other_stages' : otherStage}
