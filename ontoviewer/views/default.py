@@ -31,6 +31,10 @@ def cells(request):
 def cells_comp(request):    
     return {'project': 'ontoviewer'}
 
+@view_config(route_name='cells_precursor', renderer='../templates/cells_precursor.jinja2')
+def cells_precursor(request):    
+    return {'project': 'ontoviewer'}
+
 @view_config(route_name='stages', renderer='../templates/stages.jinja2')
 def stages(request):
     endpoint = "http://localhost:8080/rdf4j-server/repositories/hcao"

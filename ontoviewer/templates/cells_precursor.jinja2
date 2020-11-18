@@ -48,7 +48,7 @@ path.link {
 
 <div class="intro">
 <h1>Cells by localisation</h1>
-<p>Click on the circles to view sub items. You can also check the cells listed by organ in the  <a href="/cells">table view</a> or check the <a href="/cells_precursor" >precursor cells</a></p>
+<p>Click on the circles to view sub items. You can also check the cells by organ listed in the  <a href="/cells" >table view</a> or in the <a href="/cells_comp" >tree view</a> </p>
 
 </div>
 
@@ -66,7 +66,7 @@ path.link {
 	
 	var m = [0, 20, 40, 20],
     w = 2000 - m[1] - m[3],
-    h = 1200 - m[0] - m[2],
+    h = 1000 - m[0] - m[2],
     i = 0,
     root;
 
@@ -108,7 +108,7 @@ function update(source) {
   var nodes = tree.nodes(root).reverse();
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 280; });
+  nodes.forEach(function(d) { d.y = d.depth * 240; });
 
   // Update the nodes…
   var node = vis.selectAll("g.node")
@@ -213,7 +213,7 @@ function toggle(d) {
 
 
 	xmlhttp.open("GET",
-	"{{request.static_url('ontoviewer:static/cell_by_organ_tree.json')}}", true);
+	"{{request.static_url('ontoviewer:static/cell_precursor_tree.json')}}", true);
 	xmlhttp.send();
 
 
