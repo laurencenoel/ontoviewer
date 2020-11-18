@@ -1,4 +1,5 @@
 import json, csv
+import requests
 
 def getChildren(elt,dico) :
     children = []
