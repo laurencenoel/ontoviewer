@@ -55,9 +55,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         FILTER regex(str(?label), "Carnegie","i") 
         ?CS hsapdv:start_dpf ?startDay .
         OPTIONAL{ ?CS rdfs:comment ?comment . }
+        OPTIONAL{
         ?CS oboInOwl:hasDbXref ?CSref .
         FILTER regex(str(?CSref), "EHDA", "i")
-        BIND (IRI(CONCAT("http://purl.obolibrary.org/obo/ehdaa2#",strafter(?CSref,":"))) AS ?EHDAACS)
+        BIND (IRI(CONCAT("http://purl.obolibrary.org/obo/ehdaa2#",strafter(?CSref,":"))) AS ?EHDAACS) }
        }  ORDER BY ?startDay
   """
   
@@ -138,9 +139,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         dicoInfo["comment"] = elt["comment"]
         ehdaa = elt["EHDAACS"]
         
+        eltL2 = ""
         for key,value in dictCS2.items() : 
-            if ehdaa == key : 
-                eltL2 = ""
+            if ehdaa == key :                 
                 eltL = value.split("||")
                 for item in eltL : 
                     nom = item.split("|")[0]
@@ -148,7 +149,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                     idForUrl = identifier.replace(":","_")
                     link="<a href='https://www.ebi.ac.uk/ols/ontologies/ehdaa2/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F"+idForUrl+"'>"+nom+"</a>"
                     eltL2 += link + ", "
-        dicoInfo["eltList"] = eltL2[:-2]
+        if len(eltL2) > 2 : 
+            dicoInfo["eltList"] = eltL2[:-2]
+        else : 
+            dicoInfo["eltList"] = ""
         if i < len(data) -1 : 
             dicoInfo["duration"] = int(float(data[i+1]["startDay"])) - nbDay
         else : 
