@@ -136,7 +136,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         dicoInfo = {}
         dicoInfo["label"] = elt["label"]
         dicoInfo["comment"] = elt["comment"]
-        ehdaa = dicoInfo["EHDAACS"]
+        ehdaa = elt["EHDAACS"]
         
         for key,value in dictCS2.items() : 
             if ehdaa == key : 
