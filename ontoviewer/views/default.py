@@ -120,10 +120,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     
     dictCS2 = {}
     for key,value in dictCS.items() : 
-        print(key)
+        #print(key)
         if key.endswith("a") or key.endswith("b") or key.endswith("c") : 
             newkey = key[:-1]
-            print("NEWKEY ", newkey)
+            #print("NEWKEY ", newkey)
             if newkey in dictCS2.keys() : 
                 value2 = dictCS2[newkey]
                 dictCS2[newkey] = value2 + "||" + value
@@ -132,7 +132,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         else : 
             dictCS2[key] = value
             
-    print(dictCS2)
+    #print(dictCS2)
     
     dicoCS  = {}
     for i,elt in enumerate(data) : 
