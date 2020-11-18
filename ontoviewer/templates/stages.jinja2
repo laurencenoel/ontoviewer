@@ -39,8 +39,8 @@
           <th style="width:5%">Days</th>
           <th style="width:20%">Week</th>
 		  <th style="width:20%">Prenatal stages</th>
-		  <th style="width:20%">Carnegie stages</th>
-		  <th style="width:35%">Anatomical element appearing at that stage</th>
+		  <th style="width:25%">Carnegie stages</th>
+		  <th style="width:30%">Anatomical element appearing at that stage</th>
         </tr>
       </thead>
 	
@@ -70,9 +70,10 @@
 		{% if i in carnegie_stages.keys() %}
 			<td rowspan="{{ carnegie_stages[i]["duration"] }}">
 				{% if carnegie_stages[i]["eltList"]|length > 10 %}
+				<div id="shortlist{{ i }}" style="display:block">
 				{% for link in carnegie_stages[i]["eltList"][:10] %}{{ link|safe }}, {% endfor %}
 				<br />
-				<a href="#" onclick="$( ".shortlist{{ i }}" ).toggle();$( ".longlist{{ i }}" ).toggle();"/>View more</a>
+				<a href="javascript:showHide('shortlist{{ i }}','longlist{{ i }}'" />View more</a>
 				</div>				
 				<div id="longlist{{ i }}" style="display: none">{% for link in carnegie_stages[i]["eltList"] %}{{ link|safe }}, {% endfor %}</div>
 				{% else %}
@@ -102,6 +103,10 @@
 
   })
   
+ function showHide(id1,id2) {
+ document.getElementById(id1).style.display = "none";
+ document.getElementById(id2).style.display = "block";
+ }
 
 
 </script>
