@@ -171,8 +171,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     otherStage[4] = [9,"Blastula stage", "Embryonic stage that is an early stage of embryonic development in animals and is produced by cleavage of a fertilized ovum, with formation of a central fluid-filled cavity called the blastocoel"]
     otherStage[13] = [2,"Gastrula stage", "Embryonic stage defined by a complex and coordinated series of cellular movements that occurs at the end of cleavage"]
     otherStage[15] = [4,"Neurula stage", "Embryonic stage defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate."]
-    otherStage[19] = [38,"Organogenesis stage", "Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism"]
-    otherStage[57] = [56, "Fetal stage","Prenatal development is a continuum, with no clear defining feature distinguishing an embryo from a fetus. The use of the term 'fetus' generally implies that a mammalian embryo has developed to the point of being recognizable as belonging to its own species, though the point at which this occurs is subjective."]
+    otherStage[19] = [10,"Organogenesis stage", "Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism"]
+    otherStage[57] = [28, "Fetal stage","Prenatal development is a continuum, with no clear defining feature distinguishing an embryo from a fetus. The use of the term 'fetus' generally implies that a mammalian embryo has developed to the point of being recognizable as belonging to its own species, though the point at which this occurs is subjective."]
     
         
     return {'project': 'ontoviewer', 'carnegie_stages':dicoCS, 'other_stages' : otherStage}
