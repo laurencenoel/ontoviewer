@@ -61,7 +61,7 @@ def humandev_json():
         ?child rdfs:label ?childLabel .
         ?child oboInOwl:id ?childId .
         BIND (CONCAT(?childId,"|",?childLabel) AS ?childInfo)
-       } LIMIT 10
+       } LIMIT 1000
     """
     
     headers = {'content-type' : 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
@@ -89,14 +89,18 @@ def humandev_json():
             enfantParent[item["childInfo"]] = parent
         else : 
             enfantParent[item["childInfo"]] = [item["parentInfo"]]
-        
+       
                            
     print("get initial Children")
     initialData = []
-    initialData.append({"uri":ontoLink + "UBERON_0006603","name":"presumptive mesoderm","children":getchildren("UBERON:0006603|presumptive mesoderm",enfantParent),"size":"1.0"})
-    initialData.append({"uri":ontoLink + "UBERON_0007285","name":"presumptive paraxial mesoderm","children":getchildren("UBERON:0007285|presumptive paraxial mesoderm",enfantParent),"size":"1.0"})
-    initialData.append({"uri":ontoLink + "UBERON_0006595","name":"presumptive endoderm","children":getchildren("UBERON:0006595|presumptive endoderm",enfantParent),"size":"1.0"})
-    initialData.append({"uri":ontoLink + "UBERON_0006601","name":"presumptive ectoderm","children":getchildren("UBERON:0006601|presumptive ectoderm",enfantParent),"size":"1.0"})
+    data1=getChildren("UBERON:0006603|presumptive mesoderm",enfantParent)
+    data2 = getChildren("UBERON:0007285|presumptive paraxial mesoderm",enfantParent)
+    data3 = getChildren("UBERON:0006595|presumptive endoderm",enfantParent)
+    data4 = getChildren("UBERON:0006601|presumptive ectoderm",enfantParent)
+    initialData.append({"uri":ontoLink + "UBERON_0006603","name":"presumptive mesoderm","children":data1,"size":"1.0"})
+    initialData.append({"uri":ontoLink + "UBERON_0007285","name":"presumptive paraxial mesoderm","children":data2,"size":"1.0"})
+    initialData.append({"uri":ontoLink + "UBERON_0006595","name":"presumptive endoderm","children":data3,"size":"1.0"})
+    initialData.append({"uri":ontoLink + "UBERON_0006601","name":"presumptive ectoderm","children":data4,"size":"1.0"})
     
     finalDict = {"uri":"","name":"blastula","children":initialData,"size":"1.0"}
         
