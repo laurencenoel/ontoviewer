@@ -97,9 +97,7 @@ def humandev_json():
     
     finalDict = {"uri":"","name":"blastula","children":initialData,"size":"1.0"}
         
-        
-
-  
+   
     # Serializing json  
     json_object = json.dumps(finalDict, indent = 4) 
   
@@ -109,6 +107,6 @@ def humandev_json():
 
 
 if __name__ == '__main__':
-    organ_json()
+    humandev_json()
 
  
