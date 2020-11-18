@@ -163,7 +163,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             dicoInfo["duration"] = 1
         dicoCS[nbDay] = dicoInfo
     
-    dicoCS[57] = {"label":"", "comment":"", "duration":56, "eltList":""}
+    dicoCS[57] = {"label":"", "comment":"", "duration":28, "eltList":""}
      
     otherStage = {}
     otherStage[1] = [1,""]
