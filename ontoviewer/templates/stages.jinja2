@@ -70,7 +70,7 @@
 		{% endif %}
 		
 		{% if i in carnegie_stages.keys() %}
-			<td rowspan="{{ carnegie_stages[i]["duration"] }}">{{ carnegie_stages[i]["eltList"] }}</td>		
+			<td rowspan="{{ carnegie_stages[i]["duration"] }}">{{ carnegie_stages[i]["eltList"]|safe }}</td>		
 		{% endif %}
 		
 		</tr>
