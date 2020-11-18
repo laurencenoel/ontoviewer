@@ -48,7 +48,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX obo: <http://purl.obolibrary.org/obo/>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
         PREFIX hsapdv: <http://purl.obolibrary.org/obo/hsapdv#>
-        SELECT ?CS ?label ?startDay ?comment (GROUP_CONCAT(DISTINCT ?eltInfo; SEPARATOR="||") AS ?eltList)
+        SELECT ?CS ?label ?startDay ?comment ?EHDAACS
         WHERE {
         ?CS rdfs:subClassOf obo:HsapDv_0000000 .
         ?CS rdfs:label ?label .
@@ -58,12 +58,30 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         ?CS oboInOwl:hasDbXref ?CSref .
         FILTER regex(str(?CSref), "EHDA", "i")
         BIND (IRI(CONCAT("http://purl.obolibrary.org/obo/ehdaa2#",strafter(?CSref,":"))) AS ?EHDAACS)
-        ?element <http://purl.obolibrary.org/obo/BFO_0000068> ?EHDAACS .
+       }  ORDER BY ?startDay
+  """
+  
+      #to get the cells/organs appearing a that stage
+      querystr2 = """
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+         PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>  
+        PREFIX model: <http://purl.amypdb.org/model/> 
+        PREFIX thes: <http://purl.amypdb.org/thesaurus/> 
+        PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
+        PREFIX obo: <http://purl.obolibrary.org/obo/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+        PREFIX hsapdv: <http://purl.obolibrary.org/obo/hsapdv#>
+        SELECT ?EHDAACS (GROUP_CONCAT(DISTINCT ?eltInfo; SEPARATOR="||") AS ?eltList)
+        WHERE {
+        ?restrictedClass owl:someValuesFrom ?EHDAACS ; owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000068> .
+        ?element rdfs:subClassOf ?restrictedClass .
         ?element rdfs:label ?labelElt .
         ?element oboInOwl:id ?labelId .
         BIND (CONCAT(?labelElt,"|",?labelId) AS ?eltInfo)
-       } GROUP BY ?CS ?label ?startDay ?comment ORDER BY ?startDay
+       } GROUP BY ?EHDAACS
   """
+
+  
     headers = {'content-type' : 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
     myparam = { 'query': querystr }
     r=requests.get(endpoint,myparam,headers=headers)    
@@ -79,7 +97,36 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                 dict[elt] = ""
         data.append(dict)
      
-    print(data)
+
+    myparam2 = { 'query': querystr2 }
+    r2=requests.get(endpoint,myparam2,headers=headers)    
+    results2 = r2.json()
+      
+    data2=[]
+    for row in results2["results"]["bindings"] :
+        dict =  {}
+        for elt in results2["head"]["vars"] : 
+            if elt in row :
+                dict[elt] = row[elt]["value"] 
+            else : 
+                dict[elt] = ""
+        data2.append(dict)
+    
+    dictCS = {}
+    for elt in data2 :
+        dictCS[elt["EHDAACS"]] = elt["eltList"]
+    
+    dictCS2 = {}
+    for key,value in dictCS.items() : 
+        if key.endswith("a") or key.endswith("b") or key.endswith("c") : 
+            newkey = key[:-1]
+            if newkey in dictCS2.keys() : 
+                value2 = dictCS2[newkey]
+                dictCS2[newkey] = value2 + "||" + value
+            else : 
+                dictCS2[newkey] = value                
+        else : 
+            dictCS2[key] = value
     
     dicoCS  = {}
     for i,elt in enumerate(data) : 
@@ -89,14 +136,18 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         dicoInfo = {}
         dicoInfo["label"] = elt["label"]
         dicoInfo["comment"] = elt["comment"]
-        eltL = elt["eltList"].split("||")
-        eltL2 = ""
-        for item in eltL : 
-            nom = item.split("|")[0]
-            identifier = item.split("|")[1]
-            idForUrl = identifier.replace(":","_")
-            link="<a href='https://www.ebi.ac.uk/ols/ontologies/ehdaa2/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F"+idForUrl+"'>"+nom+"</a>"
-            eltL2 += link + ", "
+        ehdaa = dicoInfo["EHDAACS"]
+        
+        for key,value in dictCS2.items() : 
+            if ehdaa == key : 
+                eltL2 = ""
+                eltL = value.split("||")
+                for item in eltL : 
+                    nom = item.split("|")[0]
+                    identifier = item.split("|")[1]
+                    idForUrl = identifier.replace(":","_")
+                    link="<a href='https://www.ebi.ac.uk/ols/ontologies/ehdaa2/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F"+idForUrl+"'>"+nom+"</a>"
+                    eltL2 += link + ", "
         dicoInfo["eltList"] = eltL2[:-2]
         if i < len(data) -1 : 
             dicoInfo["duration"] = int(float(data[i+1]["startDay"])) - nbDay
