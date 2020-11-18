@@ -66,8 +66,6 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     querystr2 = """
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
          PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>  
-        PREFIX model: <http://purl.amypdb.org/model/> 
-        PREFIX thes: <http://purl.amypdb.org/thesaurus/> 
         PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
         PREFIX obo: <http://purl.obolibrary.org/obo/>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
@@ -168,7 +166,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
      
     otherStage = {}
     otherStage[1] = [1,""]
-    otherStage[2] = [2,"Cleavage stage, Morula stage","Early stage of Carnegie stage 02 consisting of division of cells in the early embryo. The morula stage is the later part of Carnegie stage 02 when the cells have coalesced into a mass but the blastocystic cavity has not formed. Formation of the cavity marks the beginning of Carnegie stage 03"]
+    otherStage[2] = [2,"Cleavage stage, Morula stage","Cleavage stage is the early stage of Carnegie stage 02 consisting of division of cells in the early embryo. The morula stage is the later part of Carnegie stage 02 when the cells have coalesced into a mass but the blastocystic cavity has not formed. Formation of the cavity marks the beginning of Carnegie stage 03"]
     otherStage[4] = [9,"Blastula stage", "Embryonic stage that is an early stage of embryonic development in animals and is produced by cleavage of a fertilized ovum, with formation of a central fluid-filled cavity called the blastocoel"]
     otherStage[13] = [2,"Gastrula stage", "Embryonic stage defined by a complex and coordinated series of cellular movements that occurs at the end of cleavage"]
     otherStage[15] = [4,"Neurula stage", "Embryonic stage defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate."]
