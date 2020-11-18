@@ -62,7 +62,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   """
   
       #to get the cells/organs appearing a that stage
-      querystr2 = """
+    querystr2 = """
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
          PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>  
         PREFIX model: <http://purl.amypdb.org/model/> 
