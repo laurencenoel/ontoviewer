@@ -61,7 +61,7 @@ def humandev_json():
         ?child rdfs:label ?childLabel .
         ?child oboInOwl:id ?childId .
         BIND (CONCAT(?childId,"|",?childLabel) AS ?childInfo)
-       } 
+       } LIMIT 10
     """
     
     headers = {'content-type' : 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
