@@ -77,6 +77,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         ?restrictedClass owl:someValuesFrom ?EHDAACS ; owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000068> .
         ?element rdfs:subClassOf ?restrictedClass .
         ?element rdfs:label ?labelElt .
+        FILTER (NOT EXISTS(regex(?labelElt,"CS20","i")))
         ?element oboInOwl:id ?labelId .
         BIND (CONCAT(?labelElt,"|",?labelId) AS ?eltInfo)
        } GROUP BY ?EHDAACS
@@ -167,7 +168,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
      
     otherStage = {}
     otherStage[1] = [1,""]
-    otherStage[2] = [2,"Cleavage stage and morula stage",""]
+    otherStage[2] = [2,"Cleavage stage, Morula stage",""]
     otherStage[4] = [9,"Blastula stage", "Embryonic stage that is an early stage of embryonic development in animals and is produced by cleavage of a fertilized ovum, with formation of a central fluid-filled cavity called the blastocoel"]
     otherStage[13] = [2,"Gastrula stage", "Embryonic stage defined by a complex and coordinated series of cellular movements that occurs at the end of cleavage"]
     otherStage[15] = [4,"Neurula stage", "Embryonic stage defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate."]
