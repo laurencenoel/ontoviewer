@@ -142,7 +142,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         dicoInfo["label"] = elt["label"]
         dicoInfo["comment"] = elt["comment"]
         ehdaa = elt["EHDAACS"]
-        print("EHDAA",ehdaa)
+        if elt["label"].endswith("5") : 
+            ehdaa = "http://purl.obolibrary.org/obo/ehdaa2#CS05"
+        if elt["label"].endswith("6") : 
+            ehdaa = "http://purl.obolibrary.org/obo/ehdaa2#CS06"
         eltL2 = []
         for key,value in dictCS2.items() : 
             if ehdaa == key :                 
