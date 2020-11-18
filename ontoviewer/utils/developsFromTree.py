@@ -66,9 +66,10 @@ def humandev_json():
     
     headers = {'content-type' : 'application/x-www-form-urlencoded', 'Accept': 'application/json'}
     myparam = { 'query': querystr }
+    print("QUERY")
     r=requests.get(endpoint,myparam,headers=headers)    
     results = r.json()
-    
+    print("RESULTS")
     data=[]
     for row in results["results"]["bindings"] :
         dict =  {}
@@ -80,6 +81,7 @@ def humandev_json():
         data.append(dict)
     
     enfantParent = {}
+    print("sort child")
     for item in data : 
         if item["childInfo"] in enfantParent.keys() : 
             parent = enfantParent[item["childInfo"]].copy()
@@ -89,7 +91,7 @@ def humandev_json():
             enfantParent[item["childInfo"]] = [item["parentInfo"]]
         
                            
-
+    print("get initial Children")
     initialData = []
     initialData.append({"uri":ontoLink + "UBERON_0006603","name":"presumptive mesoderm","children":getchildren("UBERON:0006603|presumptive mesoderm",enfantParent),"size":"1.0"})
     initialData.append({"uri":ontoLink + "UBERON_0007285","name":"presumptive paraxial mesoderm","children":getchildren("UBERON:0007285|presumptive paraxial mesoderm",enfantParent),"size":"1.0"})
