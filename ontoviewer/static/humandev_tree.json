@@ -1,0 +1,497 @@
+{
+    "uri": "",
+    "size": "1.0",
+    "name": "blastula",
+    "children": [
+        {
+            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0006603",
+            "size": "1.0",
+            "name": "presumptive mesoderm",
+            "children": [
+                {
+                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000926",
+                    "size": "1.0",
+                    "name": "mesoderm",
+                    "children": [
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0004120",
+                            "name": "mesoderm-derived structure",
+                            "size": "1.0"
+                        },
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0003064",
+                            "size": "1.0",
+                            "name": "intermediate mesoderm",
+                            "children": [
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0004876",
+                                    "size": "1.0",
+                                    "name": "urogenital fold",
+                                    "children": [
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0035106",
+                                            "name": "raphe of perineum",
+                                            "size": "1.0"
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000989",
+                                            "name": "penis",
+                                            "size": "1.0"
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0013241",
+                                            "size": "1.0",
+                                            "name": "embryonic urethral groove",
+                                            "children": [
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000057",
+                                                    "name": "urethra",
+                                                    "size": "1.0"
+                                                },
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0017732",
+                                                    "name": "raphe of scrotum",
+                                                    "size": "1.0"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0004875",
+                                            "name": "nephrogenic cord",
+                                            "size": "1.0"
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0005294",
+                                            "size": "1.0",
+                                            "name": "gonadal ridge",
+                                            "children": [
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0005295",
+                                                    "name": "sex cord",
+                                                    "size": "1.0"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0004014",
+                                            "name": "labium minora",
+                                            "size": "1.0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0006858",
+                                    "name": "adrenal/interrenal gland",
+                                    "size": "1.0"
+                                },
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000164",
+                                    "size": "1.0",
+                                    "name": "primitive urogenital sinus",
+                                    "children": [
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000057",
+                                            "name": "urethra",
+                                            "size": "1.0"
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000996",
+                                            "name": "vagina",
+                                            "size": "1.0"
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000460",
+                                            "name": "major vestibular gland",
+                                            "size": "1.0"
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0001255",
+                                            "name": "urinary bladder",
+                                            "size": "1.0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0003890",
+                                    "size": "1.0",
+                                    "name": "Mullerian duct",
+                                    "children": [
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0003889",
+                                            "name": "fallopian tube",
+                                            "size": "1.0"
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0013262",
+                                            "name": "remnnant of ductus deferens",
+                                            "size": "1.0"
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0013247",
+                                            "size": "1.0",
+                                            "name": "male paramesonephric duct",
+                                            "children": [
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0006651",
+                                                    "name": "appendix testis",
+                                                    "size": "1.0"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0013250",
+                                            "name": "vesicular appendage of epoophoron",
+                                            "size": "1.0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0004346",
+                                    "size": "1.0",
+                                    "name": "gubernaculum (male or female)",
+                                    "children": [
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0008847",
+                                            "name": "ovarian ligament",
+                                            "size": "1.0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0007128",
+                                    "size": "1.0",
+                                    "name": "glomeral mesenchyme",
+                                    "children": [
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0004739",
+                                            "name": "pronephric glomerulus",
+                                            "size": "1.0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0003060",
+                                    "size": "1.0",
+                                    "name": "pronephric duct",
+                                    "children": [
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0003074",
+                                            "size": "1.0",
+                                            "name": "mesonephric duct",
+                                            "children": [
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0011283",
+                                                    "name": "epoophoron",
+                                                    "size": "1.0"
+                                                },
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0006641",
+                                                    "name": "appendix epididymis",
+                                                    "size": "1.0"
+                                                },
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0003220",
+                                                    "size": "1.0",
+                                                    "name": "metanephric mesenchyme",
+                                                    "children": [
+                                                        {
+                                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0005110",
+                                                            "name": "metanephric nephron",
+                                                            "size": "1.0"
+                                                        },
+                                                        {
+                                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0010531",
+                                                            "size": "1.0",
+                                                            "name": "metanephros induced blastemal cells",
+                                                            "children": [
+                                                                {
+                                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0005113",
+                                                                    "size": "1.0",
+                                                                    "name": "metanephric cortex mesenchyme",
+                                                                    "children": [
+                                                                        {
+                                                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0010533",
+                                                                            "name": "metanephros cortex",
+                                                                            "size": "1.0"
+                                                                        },
+                                                                        {
+                                                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0005147",
+                                                                            "name": "metanephric renal vesicle",
+                                                                            "size": "1.0"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0001287",
+                                                            "name": "proximal convoluted tubule",
+                                                            "size": "1.0"
+                                                        },
+                                                        {
+                                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000081",
+                                                            "size": "1.0",
+                                                            "name": "metanephros",
+                                                            "children": [
+                                                                {
+                                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000082",
+                                                                    "name": "adult mammalian kidney",
+                                                                    "size": "1.0"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0001292",
+                                                            "name": "distal convoluted tubule",
+                                                            "size": "1.0"
+                                                        },
+                                                        {
+                                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0005146",
+                                                            "name": "metanephric nephron tubule",
+                                                            "size": "1.0"
+                                                        },
+                                                        {
+                                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0005749",
+                                                            "size": "1.0",
+                                                            "name": "glomerular tuft",
+                                                            "children": [
+                                                                {
+                                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000074",
+                                                                    "name": "renal glomerulus",
+                                                                    "size": "1.0"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0004737",
+                                                            "name": "metanephric collecting duct",
+                                                            "size": "1.0"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0001301",
+                                                    "name": "epididymis",
+                                                    "size": "1.0"
+                                                },
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000084",
+                                                    "size": "1.0",
+                                                    "name": "ureteric bud",
+                                                    "children": [
+                                                        {
+                                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0014706",
+                                                            "size": "1.0",
+                                                            "name": "primitive renal collecting duct system",
+                                                            "children": [
+                                                                {
+                                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0004737",
+                                                                    "name": "metanephric collecting duct",
+                                                                    "size": "1.0"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0006649",
+                                                    "name": "suspensory ligament of ovary",
+                                                    "size": "1.0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0005805",
+                                    "size": "1.0",
+                                    "name": "dorsal aorta",
+                                    "children": [
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0014907",
+                                            "name": "intersomitic vessel",
+                                            "size": "1.0"
+                                        },
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0001514",
+                                            "name": "descending aorta",
+                                            "size": "1.0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0003068",
+                            "name": "axial mesoderm",
+                            "size": "1.0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0007285",
+            "size": "1.0",
+            "name": "presumptive paraxial mesoderm",
+            "children": [
+                {
+                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0003077",
+                    "name": "paraxial mesoderm",
+                    "size": "1.0"
+                }
+            ]
+        },
+        {
+            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0006595",
+            "size": "1.0",
+            "name": "presumptive endoderm",
+            "children": [
+                {
+                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000925",
+                    "size": "1.0",
+                    "name": "endoderm",
+                    "children": [
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0003921",
+                            "name": "pancreas primordium",
+                            "size": "1.0"
+                        },
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0004119",
+                            "name": "endoderm-derived structure",
+                            "size": "1.0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0006601",
+            "size": "1.0",
+            "name": "presumptive ectoderm",
+            "children": [
+                {
+                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000924",
+                    "size": "1.0",
+                    "name": "ectoderm",
+                    "children": [
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0016879",
+                            "size": "1.0",
+                            "name": "future central nervous system",
+                            "children": [
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0001017",
+                                    "name": "central nervous system",
+                                    "size": "1.0"
+                                }
+                            ]
+                        },
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000931",
+                            "size": "1.0",
+                            "name": "proctodeum",
+                            "children": [
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0001245",
+                                    "name": "anus",
+                                    "size": "1.0"
+                                }
+                            ]
+                        },
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0034875",
+                            "size": "1.0",
+                            "name": "future pituitary gland",
+                            "children": [
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000007",
+                                    "name": "pituitary gland",
+                                    "size": "1.0"
+                                }
+                            ]
+                        },
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0004121",
+                            "name": "ectoderm-derived structure",
+                            "size": "1.0"
+                        },
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0006268",
+                            "size": "1.0",
+                            "name": "notochordal process",
+                            "children": [
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0006267",
+                                    "size": "1.0",
+                                    "name": "notochordal plate",
+                                    "children": [
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0002328",
+                                            "size": "1.0",
+                                            "name": "notochord",
+                                            "children": [
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0003079",
+                                                    "name": "floor plate",
+                                                    "size": "1.0"
+                                                },
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0002242",
+                                                    "name": "nucleus pulposus",
+                                                    "size": "1.0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0003374",
+                            "name": "chorionic ectoderm",
+                            "size": "1.0"
+                        },
+                        {
+                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0008425",
+                            "size": "1.0",
+                            "name": "mammary ridge",
+                            "children": [
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0005311",
+                                    "size": "1.0",
+                                    "name": "mammary placode",
+                                    "children": [
+                                        {
+                                            "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0005333",
+                                            "size": "1.0",
+                                            "name": "mammary bud",
+                                            "children": [
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0004182",
+                                                    "name": "mammary gland cord",
+                                                    "size": "1.0"
+                                                },
+                                                {
+                                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0001911",
+                                                    "name": "mammary gland",
+                                                    "size": "1.0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "uri": "https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0002030",
+                                    "name": "nipple",
+                                    "size": "1.0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
