@@ -175,3 +175,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     
         
     return {'project': 'ontoviewer', 'carnegie_stages':dicoCS, 'other_stages' : otherStage}
+
+@view_config(route_name='humandev', renderer='../templates/humandev.jinja2')
+def humandev(request):    
+    return {'project': 'ontoviewer'}
